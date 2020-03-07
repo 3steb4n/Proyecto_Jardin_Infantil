@@ -1,0 +1,8 @@
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Entidades\bin\Debug\Entidades.dll
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Entidades\bin\Debug\Entidades.pdb
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Entidades\obj\Debug\Entidades.dll
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Entidades\obj\Debug\Entidades.pdb
+C:\Users\garra\Desktop\Jardin\Entidades\bin\Debug\Entidades.dll
+C:\Users\garra\Desktop\Jardin\Entidades\bin\Debug\Entidades.pdb
+C:\Users\garra\Desktop\Jardin\Entidades\obj\Debug\Entidades.dll
+C:\Users\garra\Desktop\Jardin\Entidades\obj\Debug\Entidades.pdb

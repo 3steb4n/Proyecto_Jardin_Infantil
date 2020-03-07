@@ -1,0 +1,4 @@
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Jardin_Windows\obj\Debug\Jardin_Windows.csprojAssemblyReference.cache
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Jardin_Windows\obj\Debug\Jardin.Frm_Inicio_Sesion.resources
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Jardin_Windows\obj\Debug\Jardin_Windows.Properties.Resources.resources
+C:\Users\garra\Desktop\ProyectoJardin\ProyectoJardin\Jardin\Jardin_Windows\obj\Debug\Jardin_Windows.csproj.GenerateResource.cache
