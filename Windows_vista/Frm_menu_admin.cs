@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Windows_vista
 {
     public partial class Frm_menu_admin : Form
     {
-        public Frm_menu_admin()
+        public Frm_menu_admin(Usuario usuario)
         {
             InitializeComponent();
         }

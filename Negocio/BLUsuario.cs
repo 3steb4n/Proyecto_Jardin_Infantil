@@ -10,6 +10,13 @@ namespace Negocio
 {
     public class BLUsuario
     {
+
+        public Usuario IniciarSesion(String correo_electronico, String clave)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+
+            return daoUsuario.IniciarSesion(correo_electronico,clave);
+        }
         public List<Usuario> ListarUsuarios()
         {
             DaoUsuario daoUsuario = new DaoUsuario();

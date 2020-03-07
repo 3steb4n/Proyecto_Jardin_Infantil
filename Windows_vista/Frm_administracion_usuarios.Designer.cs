@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_administracion_usuarios));
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_logros = new System.Windows.Forms.Button();
             this.Btn_materias = new System.Windows.Forms.Button();
@@ -60,6 +59,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_busquedaCedula = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,36 +71,20 @@
             // 
             this.PanelMenuLateral.BackColor = System.Drawing.Color.Teal;
             this.PanelMenuLateral.Controls.Add(this.Btn_cerrar);
+            this.PanelMenuLateral.Controls.Add(this.button1);
             this.PanelMenuLateral.Controls.Add(this.Btn_reportes);
             this.PanelMenuLateral.Controls.Add(this.Btn_logros);
             this.PanelMenuLateral.Controls.Add(this.Btn_materias);
             this.PanelMenuLateral.Controls.Add(this.Btn_usuarios);
             this.PanelMenuLateral.Controls.Add(this.panel1);
-            this.PanelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.PanelMenuLateral.Name = "PanelMenuLateral";
             this.PanelMenuLateral.Size = new System.Drawing.Size(250, 671);
             this.PanelMenuLateral.TabIndex = 0;
             // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 329);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(250, 45);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
-            // 
             // Btn_reportes
             // 
             this.Btn_reportes.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_reportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,6 +375,35 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 45);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Mi Perfil";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.BackColor = System.Drawing.Color.Gainsboro;
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 329);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(250, 45);
+            this.Btn_cerrar.TabIndex = 7;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            // 
             // Frm_administracion_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,6 +460,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_usuario;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Btn_cerrar;
     }
 }

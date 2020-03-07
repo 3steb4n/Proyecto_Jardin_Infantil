@@ -327,5 +327,40 @@ namespace Datos
             
         }
 
+        public Usuario IniciarSesion(String correo_electronico, String clave)
+        {
+            Usuario usuario = new Usuario();
+            try
+            {
+                String clave_encrypt = IncriptarContraseña(clave);
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("IniciarSesion", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Correo_Electronico", correo_electronico);
+                    cmd.Parameters.AddWithValue("@Usuario_Clave", clave_encrypt);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        dr.Read();
+                        usuario = new Usuario();
+                        usuario.Id_usuario = (int)dr["ID"];
+                        usuario.Nombres = (String)dr["Nombres"];
+                        usuario.Apellidos = (String)dr["Apellidos"];
+                        usuario.EstadoUsuario = (String)dr["Estado_Usuario"];
+                        usuario.EstadoClave = (String)dr["Estado_Clave"];
+                        usuario.TipoUsuario = (String)dr["Tipo_Usuario"];
+                    }
+                }
+                return usuario;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al intentar iniciar sesion: " + e);
+                return usuario;
+            }
+        }
+
     }
 }

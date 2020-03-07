@@ -196,5 +196,10 @@ namespace Windows_vista
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

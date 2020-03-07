@@ -89,6 +89,18 @@
     <Compile Include="Frm_menu_admin.Designer.cs">
       <DependentUpon>Frm_menu_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_menu_docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_menu_docente.Designer.cs">
+      <DependentUpon>Frm_menu_docente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_menu_secretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_menu_secretaria.Designer.cs">
+      <DependentUpon>Frm_menu_secretaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_modificar_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
