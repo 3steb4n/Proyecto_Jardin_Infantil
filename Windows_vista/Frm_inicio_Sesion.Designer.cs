@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_inicio_Sesion));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Label_Error = new System.Windows.Forms.Label();
             this.PanelError = new System.Windows.Forms.Label();
             this.viewPass = new System.Windows.Forms.PictureBox();
             this.Panel_bienvenida = new System.Windows.Forms.Panel();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Label_Error = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewPass)).BeginInit();
             this.Panel_bienvenida.SuspendLayout();
@@ -65,6 +65,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 404);
             this.panel1.TabIndex = 2;
+            // 
+            // Label_Error
+            // 
+            this.Label_Error.AutoSize = true;
+            this.Label_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Error.Location = new System.Drawing.Point(120, 330);
+            this.Label_Error.Name = "Label_Error";
+            this.Label_Error.Size = new System.Drawing.Size(0, 15);
+            this.Label_Error.TabIndex = 8;
             // 
             // PanelError
             // 
@@ -186,16 +195,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // Label_Error
-            // 
-            this.Label_Error.AutoSize = true;
-            this.Label_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Error.Location = new System.Drawing.Point(120, 330);
-            this.Label_Error.Name = "Label_Error";
-            this.Label_Error.Size = new System.Drawing.Size(41, 15);
-            this.Label_Error.TabIndex = 8;
-            this.Label_Error.Text = "label3";
             // 
             // Frm_inicio_Sesion
             // 

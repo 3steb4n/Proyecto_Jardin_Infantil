@@ -75,85 +75,9 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al consultar mediante listaGeneral: ", e);
+                Console.WriteLine("Error al consultar mediante listaGeneral: "+e);
                 return list;
             }
-        }
-
-        public String OrdenarTipoDocumento(String tipo)
-        {
-            String valor = "";
-
-            if(tipo == "CC")
-            {
-                valor = "Cedula de ciudadania";
-            }
-            else if (tipo == "TI")
-            {
-                valor = "Tarjeta de identidad";
-            }
-            else if (tipo == "P")
-            {
-                valor = "Pasaporte";
-            }
-            else if (tipo == "DNI")
-            {
-                valor = "DNI";
-            }
-            else if (tipo == "CE")
-            {
-                valor = "Cedula de extranjeria";
-            }
-            return valor;
-        }
-
-        public String OrdenarTipoUsuario(String tipo)
-        {
-            String valor = "";
-
-            if (tipo == "D")
-            {
-                valor = "Docente";
-            }
-            else if (tipo == "A")
-            {
-                valor = "Administrador";
-            }
-            else if (tipo == "S")
-            {
-                valor = "Secretaria";
-            }
-            return valor;
-        }
-
-        public String OrdenarEstadoUsuario(String tipo)
-        {
-            String valor ="";
-            if(tipo == "A")
-            {
-                valor = "Activo";
-            }
-            else
-            {
-                valor = "Inactivo";
-            }
-
-            return valor;
-        }
-
-        public String OrdenarEstadoClave(String tipo)
-        {
-            String valor ="";
-
-            if(tipo == "C")
-            {
-                valor = "Cambiada";
-            }
-            else
-            {
-                valor = "Sin cambiar";
-            }
-            return valor;
         }
 
         public Usuario ListaPorDocumento(String documento)
@@ -360,6 +284,82 @@ namespace Datos
                 Console.WriteLine("Error al intentar iniciar sesion: " + e);
                 return usuario;
             }
+        }
+
+        public String OrdenarTipoDocumento(String tipo)
+        {
+            String valor = "";
+
+            if (tipo == "CC")
+            {
+                valor = "Cedula de ciudadania";
+            }
+            else if (tipo == "TI")
+            {
+                valor = "Tarjeta de identidad";
+            }
+            else if (tipo == "P")
+            {
+                valor = "Pasaporte";
+            }
+            else if (tipo == "DNI")
+            {
+                valor = "DNI";
+            }
+            else if (tipo == "CE")
+            {
+                valor = "Cedula de extranjeria";
+            }
+            return valor;
+        }
+
+        public String OrdenarTipoUsuario(String tipo)
+        {
+            String valor = "";
+
+            if (tipo == "D")
+            {
+                valor = "Docente";
+            }
+            else if (tipo == "A")
+            {
+                valor = "Administrador";
+            }
+            else if (tipo == "S")
+            {
+                valor = "Secretaria";
+            }
+            return valor;
+        }
+
+        public String OrdenarEstadoUsuario(String tipo)
+        {
+            String valor = "";
+            if (tipo == "A")
+            {
+                valor = "Activo";
+            }
+            else
+            {
+                valor = "Inactivo";
+            }
+
+            return valor;
+        }
+
+        public String OrdenarEstadoClave(String tipo)
+        {
+            String valor = "";
+
+            if (tipo == "C")
+            {
+                valor = "Cambiada";
+            }
+            else
+            {
+                valor = "Sin cambiar";
+            }
+            return valor;
         }
 
     }

@@ -6,3 +6,7 @@ C:\Users\garra\Desktop\Jardin\Entidades\bin\Debug\Entidades.dll
 C:\Users\garra\Desktop\Jardin\Entidades\bin\Debug\Entidades.pdb
 C:\Users\garra\Desktop\Jardin\Entidades\obj\Debug\Entidades.dll
 C:\Users\garra\Desktop\Jardin\Entidades\obj\Debug\Entidades.pdb
+C:\Users\garra\Documents\proyecto\jardin\Entidades\bin\Debug\Entidades.dll
+C:\Users\garra\Documents\proyecto\jardin\Entidades\bin\Debug\Entidades.pdb
+C:\Users\garra\Documents\proyecto\jardin\Entidades\obj\Debug\Entidades.dll
+C:\Users\garra\Documents\proyecto\jardin\Entidades\obj\Debug\Entidades.pdb
