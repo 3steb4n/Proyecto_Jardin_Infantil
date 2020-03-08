@@ -145,6 +145,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Estudiantes\Frm_administracion_estudiantes.resx">
+      <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Frm_administracion_grupos.resx">
+      <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Frm_crear_grupo.resx">
+      <DependentUpon>Frm_crear_grupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\Frm_modificar_grupo.resx">
+      <DependentUpon>Frm_modificar_grupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Frm_administracion_usuarios.resx">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>
     </EmbeddedResource>

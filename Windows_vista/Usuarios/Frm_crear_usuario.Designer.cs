@@ -308,7 +308,7 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // Frm_Crear_Usuario
+            // Frm_crear_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,7 +316,7 @@
             this.ClientSize = new System.Drawing.Size(771, 546);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm_Crear_Usuario";
+            this.Name = "Frm_crear_usuario";
             this.Text = "Crear usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Crear_Usuario_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Crear_Usuario_Load);

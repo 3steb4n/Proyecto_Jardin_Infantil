@@ -16,5 +16,10 @@ namespace Windows_vista
         {
             InitializeComponent();
         }
+
+        private void Combo_tipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

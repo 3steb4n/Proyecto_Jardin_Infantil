@@ -16,5 +16,20 @@ namespace Windows_vista
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_grupos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Frm_administracion_grupos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
