@@ -1,12 +1,16 @@
 -- select * from Usuarios;
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DROP DATABASE IF EXISTS JardinInfantil;
 
 create database JardinInfantil;
+
 use JardinInfantil;
+
 GO
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop table Usuarios;
+
 
 create table Usuarios (
     Id_Usuario int IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -83,6 +87,7 @@ SELECT  Id_Usuario [ID],
 
 FROM Usuarios where Documento = @Documento AND Estado_Usuario = 'A';;
 GO
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarUsuario
 CREATE PROCEDURE registrarUsuario
@@ -104,6 +109,7 @@ CREATE PROCEDURE registrarUsuario
    INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico,Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
 			VALUES   (@Documento,@Tipo_Documento,@Nombres,@Apellidos,@Direccion,@Celular,@Telefono,@Correo_Electronico,@UsuarioClave,@UsuarioCreacion,@FechaCreacion,@Estado_Usuario,@Estado_Clave,@Tipo_Usuario);  
 GO
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE modificarUsuario
 
@@ -149,7 +155,65 @@ SELECT  Id_Usuario [ID],
 
 FROM Usuarios where Correo_Electronico=@Correo_Electronico AND Usuario_Clave=@Usuario_Clave COLLATE Latin1_General_CS_AS;
 GO
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 create table Grados(
     Id_Grado int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Nombre_Grado varchar(20) NOT NULL,
@@ -158,164 +222,22 @@ create table Grados(
     Fecha_creacion datetime,
     Usuario_Modificacion varchar(30),
     Fecha_Modificacion datetime,
-    Estado varchar(2) NOT NULL CHECK (Estado IN('A', 'I'))
+    Estado 
 );
 
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para niños de 1 y 2 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para niños de 2 y 3 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niños de 3 y 4 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niños de 3 y 4 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para niños de 4 y 5 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-
-select * from Grados;
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- select * from Grupos;
--- drop table Grupos;
-create table Grupos(
-    id_grupo int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    nombre_grupo varchar(50) NOT NULL,
-    descripcion_grupo text,
-    usuario_creacion varchar(30),
-    fecha_creacion datetime,
-    usuario_modificacion varchar(30),
-    fecha_modificacion datetime,
-    estado_grupo varchar(30) NOT NULL CHECK(estado_grupo IN ('A', 'I')),
-    id_grado int
+create table GRUPOS_GRADOS_ESCOLARES(
+    ID_GRUPO int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    NOMBRE_GRUPO varchar(50) NOT NULL,
+    DESCRIPCION_GRUPO text,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ESTADO_GRUPO int NOT NULL CHECK(ESTADO_GRUPO IN ('1', '0')),
+    ID_GRADO int
 );
 
-ALTER TABLE Grupos ADD FOREIGN KEY (id_grado) REFERENCES Grados(Id_Grado);
-
--- insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK001','Primer curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
--- insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK002','Seg curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-select * from Grupos
-
-CREATE PROCEDURE ListarGrupos
-AS
-SELECT  g.id_grupo [IdGrupo],
-		g.nombre_grupo [NombreGrupo],
-		g.descripcion_grupo [DescripcionGrupo],
-		g.usuario_creacion [UsuarioCreacion],
-		g.fecha_creacion [FechaCreacion],
-		g.usuario_modificacion [UsuarioModificacion],
-		g.fecha_modificacion [FechaModificacion],
-		g.estado_grupo [EstadoGrupo],
-		gr.Id_Grado [IdGrado],
-		gr.Nombre_Grado [NombreGrado]
-		FROM Grupos g  INNER JOIN Grados gr ON g.id_grado = gr.Id_Grado;
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE ListarGrupoPorNombre
-@nombre_grupo varchar(50)
-AS
-SELECT  g.id_grupo [IdGrupo],
-		g.nombre_grupo [NombreGrupo],
-		g.descripcion_grupo [DescripcionGrupo],
-		g.usuario_creacion [UsuarioCreacion],
-		g.fecha_creacion [FechaCreacion],
-		g.usuario_modificacion [UsuarioModificacion],
-		g.fecha_modificacion [FechaModificacion],
-		g.estado_grupo [EstadoGrupo],
-		gr.Id_Grado [IdGrado],
-		gr.Nombre_Grado [NombreGrado]
-		FROM Grupos g  INNER JOIN Grados gr ON g.id_grado = gr.Id_Grado where g.nombre_grupo=@nombre_grupo;
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---DROP PROCEDURE registrarGrupo
-CREATE PROCEDURE registrarGrupo
-   @nombre_grupo varchar(50),
-   @descripcion_grupo varchar(50),
-   @usuario_creacion varchar(50),
-   @fecha_creacion varchar(50),
-   @usuario_modificacion varchar(50),
-   @fecha_modificacion varchar(30),
-   @estado_grupo varchar(30),
-   @id_grado varchar(100)
-   AS
-   insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado)
-   values (@nombre_grupo,@descripcion_grupo,@usuario_creacion,@fecha_creacion,@usuario_modificacion,@fecha_modificacion,@estado_grupo,@id_grado);
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---DROP PROCEDURE registrarGrupo
-CREATE PROCEDURE registrarGrupo
-   @NombreGrupo varchar(50),
-   @DescripcionGrupo varchar(50),
-   @UsuarioCreacion varchar(50),
-   @FechaCreacion varchar(50),
-   @UsuarioModificacion varchar(50),
-   @FechaModificacion varchar(30),
-   @EstadoGrupo varchar(30),
-   @IdGrado varchar(100)
-   AS
-   insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado)
-   values (@NombreGrupo,@DescripcionGrupo,@UsuarioCreacion,@FechaCreacion,@UsuarioModificacion,@FechaModificacion,@EstadoGrupo,@IdGrado);
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- use JardinInfantil;
--- DROP PROCEDURE modificarGrupo
-CREATE PROCEDURE modificarGrupo
-   @id_grupo int,
-   @NombreGrupo varchar(50),
-   @DescripcionGrupo varchar(50),
-   @UsuarioCreacion varchar(50),
-   @FechaCreacion varchar(50),
-   @UsuarioModificacion varchar(50),
-   @FechaModificacion varchar(30),
-   @EstadoGrupo varchar(30),
-   @IdGrado varchar(100)
-   AS
-   update Grupos set nombre_grupo=@NombreGrupo, descripcion_grupo=@DescripcionGrupo, usuario_creacion=@UsuarioCreacion, fecha_creacion=@FechaCreacion, usuario_modificacion=@UsuarioModificacion, fecha_modificacion=@FechaModificacion, estado_grupo=@EstadoGrupo,id_grado=@IdGrado where id_grupo=@id_grupo;
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ALTER TABLE GRUPOS_GRADOS_ESCOLARES ADD FOREIGN KEY (ID_GRADO) REFERENCES GRADOS_ESCOLARES(ID_GRADO);
 
 
 
