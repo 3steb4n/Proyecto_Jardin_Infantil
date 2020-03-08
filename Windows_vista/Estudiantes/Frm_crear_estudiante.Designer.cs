@@ -1,6 +1,6 @@
 ﻿namespace Windows_vista
 {
-    partial class Frm_menu_secretaria
+    partial class Frm_crear_estudiante
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Frm_menu_secretaria";
+            this.Text = "Frm_crear_estudiante";
         }
 
         #endregion

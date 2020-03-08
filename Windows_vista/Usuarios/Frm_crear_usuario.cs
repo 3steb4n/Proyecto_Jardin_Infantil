@@ -12,9 +12,9 @@ using Negocio;
 
 namespace Windows_vista
 {
-    public partial class Frm_Crear_Usuario : Form
+    public partial class Frm_crear_usuario : Form
     {
-        public Frm_Crear_Usuario()
+        public Frm_crear_usuario()
         {
             InitializeComponent();
             CargarDatos();

@@ -12,9 +12,9 @@ using Entidades;
 
 namespace Windows_vista
 {
-    public partial class Frm_inicio_Sesion : Form
+    public partial class Frm_inicio_sesion : Form
     {
-        public Frm_inicio_Sesion()
+        public Frm_inicio_sesion()
         {
             InitializeComponent();
         }

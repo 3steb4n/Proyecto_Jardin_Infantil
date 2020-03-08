@@ -1,6 +1,6 @@
 ﻿namespace Windows_vista
 {
-    partial class Frm_Crear_Usuario
+    partial class Frm_crear_usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Crear_Usuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crear_usuario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();

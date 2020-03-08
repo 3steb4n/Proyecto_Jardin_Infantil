@@ -1,6 +1,6 @@
 ﻿namespace Windows_vista
 {
-    partial class Frm_menu_admin
+    partial class Frm_menu_docente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu_docente));
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
@@ -53,8 +54,8 @@
             this.PanelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.PanelMenuLateral.Name = "PanelMenuLateral";
-            this.PanelMenuLateral.Size = new System.Drawing.Size(250, 556);
-            this.PanelMenuLateral.TabIndex = 1;
+            this.PanelMenuLateral.Size = new System.Drawing.Size(250, 485);
+            this.PanelMenuLateral.TabIndex = 2;
             // 
             // Btn_cerrar
             // 
@@ -125,7 +126,6 @@
             this.Btn_usuarios.TabIndex = 1;
             this.Btn_usuarios.Text = "Usuarios";
             this.Btn_usuarios.UseVisualStyleBackColor = false;
-            this.Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
             // 
             // panel1
             // 
@@ -148,14 +148,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Frm_menu_admin
+            // Frm_menu_docente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 556);
+            this.ClientSize = new System.Drawing.Size(898, 485);
             this.Controls.Add(this.PanelMenuLateral);
-            this.Name = "Frm_menu_admin";
-            this.Text = "Frm_menu";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Frm_menu_docente";
+            this.Text = "Menu principal - docente";
             this.PanelMenuLateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

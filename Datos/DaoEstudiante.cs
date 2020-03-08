@@ -10,7 +10,7 @@ using Entidades;
 
 namespace Datos
 {
-    class DaoEstudiante
+    public class DaoEstudiante
     {
         String _cadenaConexion;
 

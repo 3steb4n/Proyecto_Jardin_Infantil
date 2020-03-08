@@ -1,6 +1,6 @@
 ﻿namespace Windows_vista
 {
-    partial class Frm_inicio_Sesion
+    partial class Frm_inicio_sesion
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_inicio_Sesion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_inicio_sesion));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Label_Error = new System.Windows.Forms.Label();
             this.PanelError = new System.Windows.Forms.Label();

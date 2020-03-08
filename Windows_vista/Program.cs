@@ -16,7 +16,7 @@ namespace Windows_vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_inicio_Sesion());
+            Application.Run(new Frm_inicio_sesion());
         }
     }
 }

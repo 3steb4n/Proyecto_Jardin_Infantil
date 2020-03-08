@@ -45,13 +45,13 @@ namespace Windows_vista
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_Crear_Usuario frm_crear_usuario = new Frm_Crear_Usuario();
+            Frm_crear_usuario frm_crear_usuario = new Frm_crear_usuario();
             frm_crear_usuario.Show();
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
-            Frm_inicio_Sesion frm_login = new Frm_inicio_Sesion();
+            Frm_inicio_sesion frm_login = new Frm_inicio_sesion();
             frm_login.Show();
         }
 
