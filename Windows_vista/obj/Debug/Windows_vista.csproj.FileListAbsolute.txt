@@ -64,3 +64,7 @@ C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.c
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.csproj.CopyComplete
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.exe
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.pdb
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_administracion_estudiantes.resources
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_administracion_grupos.resources
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_crear_grupo.resources
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_modificar_grupo.resources

@@ -9,7 +9,6 @@ namespace Entidades
     public class Grupo
     {
         int _idGrupo;
-        String _codigGrupo;
         String _nombreGrupo;
         String _descripcionGrupo;
         String _usuarioCreacion;
@@ -17,17 +16,17 @@ namespace Entidades
         String _usuarioModificacion;
         DateTime _fechaModificacion;
         String _estadoGrupo;
-        int _idgrado;
+        int _idGrado;
+        String _nombreGrado;
 
         public Grupo()
         {
 
         }
 
-        public Grupo(int idGrupo, String codigoCrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, int idgrado)
+        public Grupo(int idGrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, int idgrado,String nombreGrado)
         {
             this._idGrupo = idGrupo;
-            this._codigGrupo = codigoCrupo;
             this._nombreGrupo = nombreGrupo;
             this._descripcionGrupo = descripcionGrupo;
             this._usuarioCreacion = usuarioCreacion;
@@ -37,19 +36,14 @@ namespace Entidades
             this._usuarioModificacion = usuarioModificacion;
             this._fechaModificacion = fechaModificacion;
             this._estadoGrupo = estadoGrupo;
-            this._idgrado = idgrado;
+            this._idGrado = idgrado;
+            this._nombreGrado = nombreGrado;
         }
 
         public int IdGrupo
         {
             get => _idGrupo;
             set => _idGrupo = value;
-        }
-
-        public string CodigGrupo
-        {
-            get => _codigGrupo;
-            set => _codigGrupo = value;
         }
 
         public string NombreGrupo
@@ -90,11 +84,16 @@ namespace Entidades
             set => _estadoGrupo = value;
         }
 
-        public int Idgrado
+        public int IdGrado
         {
-            get => _idgrado;
-            set => _idgrado = value;
+            get => _idGrado;
+            set => _idGrado = value;
         }
 
+        public String NombreGrado
+        {
+            get => _nombreGrado;
+            set => _nombreGrado = value;
+        }
     }
 }

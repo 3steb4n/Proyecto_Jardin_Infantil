@@ -49,7 +49,6 @@ namespace Datos
                             Grupo grupo = new Grupo();
 
                             grupo.IdGrupo = (int)dr["IdGrupo"];
-                            grupo.CodigGrupo = (String)dr["CodigoGrupo"];
                             grupo.NombreGrupo = (String)dr["NombreGrupo"];
                             grupo.DescripcionGrupo = (String)dr["DescripcionGrupo"];
                             grupo.UsuarioCreacion = (String)dr["UsuarioCreacion"];
@@ -57,7 +56,8 @@ namespace Datos
                             grupo.UsuarioModificacion = (String)dr["UsuarioModificacion"];
                             grupo.FechaModificacion = (DateTime)dr["FechaModificacion"];
                             grupo.EstadoGrupo = (String)dr["EstadoGrupo"];
-                            grupo.Idgrado = (int)dr["IdGrado"];
+                            grupo.IdGrado = (int)dr["IdGrado"];
+                            grupo.NombreGrado = (String)dr["NombreGrado"];
 
                             list.Add(grupo);
                         }
@@ -72,7 +72,7 @@ namespace Datos
             }
         }
 
-        public Grupo ListaPorCodigo(String codigoGrupo)
+        public Grupo ListaPorNombre(String nombre)
         {
 
             Grupo grupo = new Grupo();
@@ -82,16 +82,15 @@ namespace Datos
                 {
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("ListarGrupoPorCodigo", con);
+                    SqlCommand cmd = new SqlCommand("ListarGrupoPorNombre", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CodigoGrupo", codigoGrupo);
+                    cmd.Parameters.AddWithValue("@nombre_grupo", nombre);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr != null & dr.HasRows)
                     {
                         dr.Read();
                         grupo = new Grupo();
                         grupo.IdGrupo = (int)dr["IdGrupo"];
-                        grupo.CodigGrupo = (String)dr["CodigoGrupo"];
                         grupo.NombreGrupo = (String)dr["NombreGrupo"];
                         grupo.DescripcionGrupo = (String)dr["DescripcionGrupo"];
                         grupo.UsuarioCreacion = (String)dr["UsuarioCreacion"];
@@ -99,7 +98,8 @@ namespace Datos
                         grupo.UsuarioModificacion = (String)dr["UsuarioModificacion"];
                         grupo.FechaModificacion = (DateTime)dr["FechaModificacion"];
                         grupo.EstadoGrupo = (String)dr["EstadoGrupo"];
-                        grupo.Idgrado = (int)dr["IdGrado"];
+                        grupo.IdGrado = (int)dr["IdGrado"];
+                        grupo.NombreGrado = (String)dr["NombreGrado"];
                     }
                 }
 
@@ -107,7 +107,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al consultar mediante listar por codigo: " + e);
+                Console.WriteLine("Error al consultar mediante listar por nombre: " + e);
                 return grupo;
             }
         }
@@ -124,7 +124,6 @@ namespace Datos
                     SqlCommand cmd = new SqlCommand("registrarGrupo", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@CodigoGrupo", grupo.CodigGrupo);
                     cmd.Parameters.AddWithValue("@NombreGrupo", grupo.NombreGrupo);
                     cmd.Parameters.AddWithValue("@DescripcionGrupo", grupo.DescripcionGrupo);
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", grupo.UsuarioCreacion);
@@ -132,7 +131,8 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", grupo.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", grupo.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
-                    cmd.Parameters.AddWithValue("@IdGrado", grupo.Idgrado);
+                    cmd.Parameters.AddWithValue("@IdGrado", grupo.IdGrado);
+                    cmd.Parameters.AddWithValue("@NombreGrado", grupo.NombreGrado);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -158,7 +158,6 @@ namespace Datos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@IdGrupo", grupo.IdGrupo);
-                    cmd.Parameters.AddWithValue("@CodigoGrupo", grupo.CodigGrupo);
                     cmd.Parameters.AddWithValue("@NombreGrupo", grupo.NombreGrupo);
                     cmd.Parameters.AddWithValue("@DescripcionGrupo", grupo.DescripcionGrupo);
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", grupo.UsuarioCreacion);

@@ -11,35 +11,35 @@ namespace Negocio
     class BLGrupo
     {
 
-        public List<Estudiante> ListarEstudiantes()
+        public List<Grupo> ListarGrupos()
         {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
-            return daoEstudiante.ListaGeneral();
+            DaoGrupo daoGrupo = new DaoGrupo();
+            return daoGrupo.ListaGeneral();
         }
 
-        public Estudiante ListarEstudianteID(String documento)
+        public Grupo ListarGrupoPorNombre(String nombre)
         {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
+            DaoGrupo daoGrupo = new DaoGrupo();
 
-            return daoEstudiante.ListaPorDocumento(documento);
+            return daoGrupo.ListaPorNombre(nombre);
         }
 
-        public bool InsertarEstudiante(Estudiante estudiante)
+        public bool InsertarGrupo(Grupo grupo)
         {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
-            return daoEstudiante.InsertarEstudiante(estudiante);
+            DaoGrupo daoGrupo = new DaoGrupo();
+            return daoGrupo.InsertarGrupo(grupo);
         }
 
-        public bool ModificarEstudiante(Estudiante estudiante)
+        public bool ModificarEstudiante(Grupo grupo)
         {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
-            return daoEstudiante.ModificarEstudiante(estudiante);
+            DaoGrupo daoGrupo = new DaoGrupo();
+            return daoGrupo.ModificarGrupo(grupo);
         }
 
         public bool EliminarEstudiante(int id)
         {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
-            return daoEstudiante.EliminarEstudiante(id);
+            DaoGrupo daoGrupo = new DaoGrupo();
+            return daoGrupo.EliminarGrupo(id);
         }
     }
 }
