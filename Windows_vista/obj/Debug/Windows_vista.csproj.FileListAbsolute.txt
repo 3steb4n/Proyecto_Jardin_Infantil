@@ -68,3 +68,5 @@ C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.F
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_administracion_grupos.resources
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_crear_grupo.resources
 C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_modificar_grupo.resources
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_crear_estudiante.resources
+C:\Users\garra\Documents\proyecto\jardin\Windows_vista\obj\Debug\Windows_vista.Frm_modificar_estudiante.resources

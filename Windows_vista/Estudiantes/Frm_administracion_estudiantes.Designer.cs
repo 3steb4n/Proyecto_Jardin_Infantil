@@ -39,16 +39,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_grupos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelMenuLateral = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Btn_reportes = new System.Windows.Forms.Button();
-            this.Btn_logros = new System.Windows.Forms.Button();
-            this.Btn_materias = new System.Windows.Forms.Button();
-            this.Btn_usuarios = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.id_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +54,16 @@
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PanelMenuLateral = new System.Windows.Forms.Panel();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_reportes = new System.Windows.Forms.Button();
+            this.Btn_logros = new System.Windows.Forms.Button();
+            this.Btn_materias = new System.Windows.Forms.Button();
+            this.Btn_usuarios = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -200,6 +200,96 @@
             this.dgv_grupos.Size = new System.Drawing.Size(881, 426);
             this.dgv_grupos.TabIndex = 43;
             // 
+            // id_estudiante
+            // 
+            this.id_estudiante.HeaderText = "";
+            this.id_estudiante.Name = "id_estudiante";
+            this.id_estudiante.ReadOnly = true;
+            // 
+            // Documento_estudiante
+            // 
+            this.Documento_estudiante.HeaderText = "Documento identificación";
+            this.Documento_estudiante.Name = "Documento_estudiante";
+            this.Documento_estudiante.ReadOnly = true;
+            // 
+            // Tipo_documento
+            // 
+            this.Tipo_documento.HeaderText = "Tipo de documento";
+            this.Tipo_documento.Name = "Tipo_documento";
+            this.Tipo_documento.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Fecha_nacimiento
+            // 
+            this.Fecha_nacimiento.HeaderText = "Fecha nacimiento";
+            this.Fecha_nacimiento.Name = "Fecha_nacimiento";
+            this.Fecha_nacimiento.ReadOnly = true;
+            // 
+            // Nombre_acudiente
+            // 
+            this.Nombre_acudiente.HeaderText = "Nombre acudiente";
+            this.Nombre_acudiente.Name = "Nombre_acudiente";
+            this.Nombre_acudiente.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccción";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Genero
+            // 
+            this.Genero.HeaderText = "Genero";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono Acudiente";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "Celular acudiente";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            // 
+            // Correo_electronico
+            // 
+            this.Correo_electronico.HeaderText = "Correo Electrónico";
+            this.Correo_electronico.Name = "Correo_electronico";
+            this.Correo_electronico.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado_Estudiante";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Grupo
+            // 
+            this.Grupo.HeaderText = "Grupo";
+            this.Grupo.Name = "Grupo";
+            this.Grupo.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -329,96 +419,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // id_estudiante
-            // 
-            this.id_estudiante.HeaderText = "";
-            this.id_estudiante.Name = "id_estudiante";
-            this.id_estudiante.ReadOnly = true;
-            // 
-            // Documento_estudiante
-            // 
-            this.Documento_estudiante.HeaderText = "Documento identificación";
-            this.Documento_estudiante.Name = "Documento_estudiante";
-            this.Documento_estudiante.ReadOnly = true;
-            // 
-            // Tipo_documento
-            // 
-            this.Tipo_documento.HeaderText = "Tipo de documento";
-            this.Tipo_documento.Name = "Tipo_documento";
-            this.Tipo_documento.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Fecha_nacimiento
-            // 
-            this.Fecha_nacimiento.HeaderText = "Fecha nacimiento";
-            this.Fecha_nacimiento.Name = "Fecha_nacimiento";
-            this.Fecha_nacimiento.ReadOnly = true;
-            // 
-            // Nombre_acudiente
-            // 
-            this.Nombre_acudiente.HeaderText = "Nombre acudiente";
-            this.Nombre_acudiente.Name = "Nombre_acudiente";
-            this.Nombre_acudiente.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccción";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // Genero
-            // 
-            this.Genero.HeaderText = "Genero";
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono Acudiente";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Celular acudiente";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            // 
-            // Correo_electronico
-            // 
-            this.Correo_electronico.HeaderText = "Correo Electrónico";
-            this.Correo_electronico.Name = "Correo_electronico";
-            this.Correo_electronico.ReadOnly = true;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado_Estudiante";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Grupo
-            // 
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.ReadOnly = true;
-            // 
             // Frm_administracion_estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +434,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_administracion_estudiantes";
             this.Text = "Administración de estudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).EndInit();

@@ -148,6 +148,12 @@
     <EmbeddedResource Include="Estudiantes\Frm_administracion_estudiantes.resx">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estudiantes\Frm_crear_estudiante.resx">
+      <DependentUpon>Frm_crear_estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estudiantes\Frm_modificar_estudiante.resx">
+      <DependentUpon>Frm_modificar_estudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Frm_administracion_grupos.resx">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </EmbeddedResource>

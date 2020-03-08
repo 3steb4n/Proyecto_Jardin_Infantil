@@ -203,6 +203,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_menu_admin";
             this.Text = "Menu principal - administrador";
             this.Load += new System.EventHandler(this.Frm_menu_admin_Load);

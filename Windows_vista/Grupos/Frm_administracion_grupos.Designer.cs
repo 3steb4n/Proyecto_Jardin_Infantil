@@ -39,6 +39,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_grupos = new System.Windows.Forms.DataGridView();
+            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.Btn_cerrar = new System.Windows.Forms.Button();
@@ -49,10 +53,6 @@
             this.Btn_usuarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -178,6 +178,30 @@
             this.dgv_grupos.Size = new System.Drawing.Size(881, 426);
             this.dgv_grupos.TabIndex = 34;
             this.dgv_grupos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_grupos_CellContentClick);
+            // 
+            // id_grupo
+            // 
+            this.id_grupo.HeaderText = "";
+            this.id_grupo.Name = "id_grupo";
+            this.id_grupo.ReadOnly = true;
+            // 
+            // Nombre_grupo
+            // 
+            this.Nombre_grupo.HeaderText = "Nombre de grupo";
+            this.Nombre_grupo.Name = "Nombre_grupo";
+            this.Nombre_grupo.ReadOnly = true;
+            // 
+            // Descripcion_Grupo
+            // 
+            this.Descripcion_Grupo.HeaderText = "Descripción de grupo";
+            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
+            this.Descripcion_Grupo.ReadOnly = true;
+            // 
+            // Estado_grupo
+            // 
+            this.Estado_grupo.HeaderText = "Estado grupo";
+            this.Estado_grupo.Name = "Estado_grupo";
+            this.Estado_grupo.ReadOnly = true;
             // 
             // label1
             // 
@@ -309,30 +333,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // id_grupo
-            // 
-            this.id_grupo.HeaderText = "";
-            this.id_grupo.Name = "id_grupo";
-            this.id_grupo.ReadOnly = true;
-            // 
-            // Nombre_grupo
-            // 
-            this.Nombre_grupo.HeaderText = "Nombre de grupo";
-            this.Nombre_grupo.Name = "Nombre_grupo";
-            this.Nombre_grupo.ReadOnly = true;
-            // 
-            // Descripcion_Grupo
-            // 
-            this.Descripcion_Grupo.HeaderText = "Descripción de grupo";
-            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
-            this.Descripcion_Grupo.ReadOnly = true;
-            // 
-            // Estado_grupo
-            // 
-            this.Estado_grupo.HeaderText = "Estado grupo";
-            this.Estado_grupo.Name = "Estado_grupo";
-            this.Estado_grupo.ReadOnly = true;
-            // 
             // Frm_administracion_grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +348,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_administracion_grupos";
             this.Text = "Administración de grupos";
             this.Load += new System.EventHandler(this.Frm_administracion_grupos_Load);

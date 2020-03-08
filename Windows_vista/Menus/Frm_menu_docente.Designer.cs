@@ -204,6 +204,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_menu_docente";
             this.Text = "Menu principal - docente";
             this.Load += new System.EventHandler(this.Frm_menu_docente_Load);

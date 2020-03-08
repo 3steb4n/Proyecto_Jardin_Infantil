@@ -131,8 +131,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", grupo.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", grupo.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
-                    cmd.Parameters.AddWithValue("@IdGrado", grupo.IdGrado);
-                    cmd.Parameters.AddWithValue("@NombreGrado", grupo.NombreGrado);
+                    cmd.Parameters.AddWithValue("@@IdGrado", grupo.IdGrado);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -154,10 +153,10 @@ namespace Datos
                 {
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("ModificarGrupo", con);
+                    SqlCommand cmd = new SqlCommand("modificarGrupo", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdGrupo", grupo.IdGrupo);
+                    cmd.Parameters.AddWithValue("@id_grupo", grupo.IdGrupo);
                     cmd.Parameters.AddWithValue("@NombreGrupo", grupo.NombreGrupo);
                     cmd.Parameters.AddWithValue("@DescripcionGrupo", grupo.DescripcionGrupo);
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", grupo.UsuarioCreacion);

@@ -316,6 +316,7 @@
             this.ClientSize = new System.Drawing.Size(771, 546);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_crear_usuario";
             this.Text = "Crear usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Crear_Usuario_FormClosing);

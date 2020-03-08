@@ -192,6 +192,7 @@
             this.ClientSize = new System.Drawing.Size(770, 458);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_modificar_grupo";
             this.Text = "Modificar grupo";
             this.panel1.ResumeLayout(false);
