@@ -18,7 +18,7 @@ namespace Entidades
         String _nombreAcudiente;
         String _direccion;
         String _genero;
-        String _telefonoEstudiante;
+        String _telefonoAcudiente;
         String _celularAcudiente;
         String _correoElectronicoAcudiente;
         String _observacionesEstudiante;
@@ -26,6 +26,7 @@ namespace Entidades
         DateTime _fechaCreacion;
         String _usuarioModificacion;
         DateTime _fechaModificacion;
+        String _estadoEstudiante;
         int _idGrupo;
 
 
@@ -34,7 +35,7 @@ namespace Entidades
 
         }
 
-        public Estudiante(int id_estudiante,String documentoEstudiante,String tipoDocumento,String nombreEstudiante,String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion,String genero,String telefonoEstudiante,String celularAcudiante,String correoElectronicoAcudiente,String observacionesEstudiante,String usuarioCreacion,DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, int idGrupo)
+        public Estudiante(int id_estudiante,String documentoEstudiante,String tipoDocumento,String nombreEstudiante,String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion,String genero,String telefonoAcudiente,String celularAcudiante,String correoElectronicoAcudiente,String observacionesEstudiante,String usuarioCreacion,DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, int idGrupo, String EstadoEstudiante)
         {
             this._id_estudiante = id_estudiante;
             this._documentoEstudiante = documentoEstudiante;
@@ -46,7 +47,7 @@ namespace Entidades
             this._nombreAcudiente = nombreAcudiente;
             this._direccion = direccion;
             this._genero = genero;
-            this._telefonoEstudiante = telefonoEstudiante;
+            this._telefonoAcudiente = telefonoAcudiente;
             this._celularAcudiente = celularAcudiante;
             this._correoElectronicoAcudiente = correoElectronicoAcudiente;
             this._observacionesEstudiante = observacionesEstudiante;
@@ -55,6 +56,7 @@ namespace Entidades
             this._usuarioModificacion = usuarioModificacion;
             this._fechaModificacion = fechaModificacion;
             this._idGrupo = idGrupo;
+            this._estadoEstudiante = EstadoEstudiante;
         }
 
         public int Id_estudiante
@@ -112,10 +114,10 @@ namespace Entidades
             set => _genero = value;
         }
 
-        public String telefonoEstudiante
+        public String TelefonoAcudiente
         {
-            get => _telefonoEstudiante;
-            set => _telefonoEstudiante = value;
+            get => _telefonoAcudiente;
+            set => _telefonoAcudiente = value;
         }
 
         
@@ -164,5 +166,12 @@ namespace Entidades
             get => _idGrupo;
             set => _idGrupo = value;
         }
+
+        public string EstadoEstudiante
+        {
+            get => _estadoEstudiante;
+            set => _estadoEstudiante = value;
+        }
+        
     }
 }

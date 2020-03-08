@@ -9,6 +9,7 @@ namespace Entidades
     public class Grupo
     {
         int _idGrupo;
+        String _codigGrupo;
         String _nombreGrupo;
         String _descripcionGrupo;
         String _usuarioCreacion;
@@ -23,9 +24,10 @@ namespace Entidades
 
         }
 
-        public Grupo(int idGrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, int idgrado)
+        public Grupo(int idGrupo, String codigoCrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, int idgrado)
         {
             this._idGrupo = idGrupo;
+            this._codigGrupo = codigoCrupo;
             this._nombreGrupo = nombreGrupo;
             this._descripcionGrupo = descripcionGrupo;
             this._usuarioCreacion = usuarioCreacion;
@@ -43,6 +45,13 @@ namespace Entidades
             get => _idGrupo;
             set => _idGrupo = value;
         }
+
+        public string CodigGrupo
+        {
+            get => _codigGrupo;
+            set => _codigGrupo = value;
+        }
+
         public string NombreGrupo
         {
             get => _nombreGrupo;

@@ -101,7 +101,7 @@ namespace Datos
                         usuario = new Usuario();
                         usuario.Id_usuario = (int)dr["ID"];
                         usuario.Documento = (String)dr["Documento"];
-                        usuario.TipoDocumento= (String)dr["Tipo_Documento"];
+                        usuario.TipoDocumento= OrdenarTipoDocumento((String)dr["Tipo_Documento"]);
                         usuario.Nombres = (String)dr["Nombres"];
                         usuario.Apellidos = (String)dr["Apellidos"];
                         usuario.Direccion = (String)dr["Direccion"];
@@ -112,9 +112,9 @@ namespace Datos
                         usuario.FechaCreacion = (DateTime)dr["Fecha_Creacion"];
                         usuario.UsuarioModificacion = (String)dr["Usuario_Modificacion"];
                         usuario.FechaModificacion = (DateTime)dr["Fecha_Modificacion"];
-                        usuario.EstadoUsuario = (String)dr["Estado_Usuario"];
-                        usuario.EstadoClave = (String)dr["Estado_Clave"];
-                        usuario.TipoUsuario = (String)dr["Tipo_Usuario"];
+                        usuario.EstadoUsuario = OrdenarEstadoUsuario((String)dr["Estado_Usuario"]);
+                        usuario.EstadoClave = OrdenarEstadoClave((String)dr["Estado_Clave"]);
+                        usuario.TipoUsuario = OrdenarTipoUsuario((String)dr["Tipo_Usuario"]);
 
                     }
                 }
