@@ -38,7 +38,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.dgv_grupos = new System.Windows.Forms.DataGridView();
+            this.dgv_estudiantes = new System.Windows.Forms.DataGridView();
             this.id_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +53,8 @@
             this.Correo_electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.Btn_cerrar = new System.Windows.Forms.Button();
@@ -64,7 +65,7 @@
             this.Btn_usuarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +84,7 @@
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 49;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Txt_busquedaCedula
             // 
@@ -143,14 +145,14 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // dgv_grupos
+            // dgv_estudiantes
             // 
-            this.dgv_grupos.AllowUserToAddRows = false;
-            this.dgv_grupos.AllowUserToDeleteRows = false;
-            this.dgv_grupos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_grupos.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgv_grupos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_grupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_estudiantes.AllowUserToAddRows = false;
+            this.dgv_estudiantes.AllowUserToDeleteRows = false;
+            this.dgv_estudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_estudiantes.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgv_estudiantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_estudiantes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,10 +160,10 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_grupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_grupos.ColumnHeadersHeight = 30;
-            this.dgv_grupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_grupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_estudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_estudiantes.ColumnHeadersHeight = 30;
+            this.dgv_estudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_estudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_estudiante,
             this.Documento_estudiante,
             this.Tipo_documento,
@@ -176,13 +178,14 @@
             this.Correo_electronico,
             this.Observaciones,
             this.Estado,
-            this.Grupo});
-            this.dgv_grupos.EnableHeadersVisualStyles = false;
-            this.dgv_grupos.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_grupos.Location = new System.Drawing.Point(228, 91);
-            this.dgv_grupos.Name = "dgv_grupos";
-            this.dgv_grupos.ReadOnly = true;
-            this.dgv_grupos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Nombre_Grupo,
+            this.idGrupo});
+            this.dgv_estudiantes.EnableHeadersVisualStyles = false;
+            this.dgv_estudiantes.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgv_estudiantes.Location = new System.Drawing.Point(228, 91);
+            this.dgv_estudiantes.Name = "dgv_estudiantes";
+            this.dgv_estudiantes.ReadOnly = true;
+            this.dgv_estudiantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,17 +193,18 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_grupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_grupos.RowHeadersVisible = false;
+            this.dgv_estudiantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_estudiantes.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_grupos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_grupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_grupos.Size = new System.Drawing.Size(881, 426);
-            this.dgv_grupos.TabIndex = 43;
+            this.dgv_estudiantes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_estudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_estudiantes.Size = new System.Drawing.Size(881, 426);
+            this.dgv_estudiantes.TabIndex = 43;
+            this.dgv_estudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_estudiantes_CellContentClick);
             // 
             // id_estudiante
             // 
@@ -286,11 +290,17 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // Grupo
+            // Nombre_Grupo
             // 
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.ReadOnly = true;
+            this.Nombre_Grupo.HeaderText = "Grupo";
+            this.Nombre_Grupo.Name = "Nombre_Grupo";
+            this.Nombre_Grupo.ReadOnly = true;
+            // 
+            // idGrupo
+            // 
+            this.idGrupo.HeaderText = "idGrupo";
+            this.idGrupo.Name = "idGrupo";
+            this.idGrupo.ReadOnly = true;
             // 
             // label1
             // 
@@ -432,14 +442,15 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.dgv_grupos);
+            this.Controls.Add(this.dgv_estudiantes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_administracion_estudiantes";
             this.Text = "Administración de estudiantes";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).EndInit();
+            this.Load += new System.EventHandler(this.Frm_administracion_estudiantes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).EndInit();
             this.PanelMenuLateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -456,7 +467,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.DataGridView dgv_grupos;
+        private System.Windows.Forms.DataGridView dgv_estudiantes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelMenuLateral;
         private System.Windows.Forms.Button Btn_cerrar;
@@ -481,6 +492,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo_electronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Grupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Grupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGrupo;
     }
 }

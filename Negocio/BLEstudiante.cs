@@ -17,7 +17,7 @@ namespace Negocio
             return daoEstudiante.ListaGeneral();
         }
 
-        public Estudiante ListarEstudianteID(String documento)
+        public Estudiante ListarEstudiantePorDocumento(String documento)
         {
             DaoEstudiante daoEstudiante = new DaoEstudiante();
 

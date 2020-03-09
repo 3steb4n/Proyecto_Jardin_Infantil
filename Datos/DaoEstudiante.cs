@@ -39,7 +39,7 @@ namespace Datos
                 {
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("ListarEstudiante", con);
+                    SqlCommand cmd = new SqlCommand("ListarEstudiantes", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr != null & dr.HasRows)
@@ -55,19 +55,16 @@ namespace Datos
                             estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
                             estudiante.FechaNacimiento = (DateTime)dr["FechaNacimiento"];
                             estudiante.Ruta_foto = (String)dr["RutaFoto"];
-                            estudiante.NombreAcudiente = (String)dr["NombreAcudiente"];
+                            estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
                             estudiante.Direccion = (String)dr["Direccion"];
-                            estudiante.Genero = (String)dr["Genero"];
-                            estudiante.TelefonoAcudiente = (String)dr["TelefonoAcudiente"];
-                            estudiante.CelularAcudiente = (String)dr["CelularEstudiante"];
-                            estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronicoAcudiente"];
-                            estudiante.ObservacionesEstudiante = (String)dr["ObservacionesEstudiante"];
-                            estudiante.UsuarioCreacion = (String)dr["UsuarioCreacion"];
-                            estudiante.FechaCreacion = (DateTime)dr["FechaCreaacion"];
-                            estudiante.UsuarioModificacion = (String)dr["UsuarioModificacion"];
-                            estudiante.FechaModificacion = (DateTime)dr["FechaModificacion"];
+                            estudiante.Genero = (String)dr["GeneroEstudiante"];
+                            estudiante.TelefonoAcudiente = (String)dr["Telefono"];
+                            estudiante.CelularAcudiente = (String)dr["Celular"];
+                            estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            estudiante.ObservacionesEstudiante = (String)dr["Observaciones"];
                             estudiante.EstadoEstudiante = OrdenarEstadoEstudiante((String)dr["EstadoEstudiante"]);
-                            estudiante.IdGrupo = (int)dr["IdGrupo"];
+                            estudiante.grupo.NombreGrupo = (String)dr["NombreGrupo"];
+                            estudiante.grupo.IdGrupo = (int)dr["IDgrupo"];
 
                             list.Add(estudiante);
                         }
@@ -93,7 +90,7 @@ namespace Datos
 
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("ListarEstudiante", con);
+                    SqlCommand cmd = new SqlCommand("ListarEstudiantePorDocumento", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Documento", documento);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -109,19 +106,16 @@ namespace Datos
                         estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
                         estudiante.FechaNacimiento = (DateTime)dr["FechaNacimiento"];
                         estudiante.Ruta_foto = (String)dr["RutaFoto"];
-                        estudiante.NombreAcudiente = (String)dr["NombreAcudiente"];
+                        estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
                         estudiante.Direccion = (String)dr["Direccion"];
-                        estudiante.Genero = (String)dr["Genero"];
-                        estudiante.TelefonoAcudiente = (String)dr["TelefonoAcudiente"];
-                        estudiante.CelularAcudiente = (String)dr["CelularEstudiante"];
-                        estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronicoAcudiente"];
-                        estudiante.ObservacionesEstudiante = (String)dr["ObservacionesEstudiante"];
-                        estudiante.UsuarioCreacion = (String)dr["UsuarioCreacion"];
-                        estudiante.FechaCreacion = (DateTime)dr["FechaCreaacion"];
-                        estudiante.UsuarioModificacion = (String)dr["UsuarioModificacion"];
-                        estudiante.FechaModificacion = (DateTime)dr["FechaModificacion"];
+                        estudiante.Genero = (String)dr["GeneroEstudiante"];
+                        estudiante.TelefonoAcudiente = (String)dr["Telefono"];
+                        estudiante.CelularAcudiente = (String)dr["Celular"];
+                        estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                        estudiante.ObservacionesEstudiante = (String)dr["Observaciones"];
                         estudiante.EstadoEstudiante = OrdenarEstadoEstudiante((String)dr["EstadoEstudiante"]);
-                        estudiante.IdGrupo = (int)dr["IdGrupo"];
+                        estudiante.grupo.NombreGrupo = (String)dr["NombreGrupo"];
+                        estudiante.grupo.IdGrupo = (int)dr["IdGrupo"];
 
                     }
                 }
@@ -166,7 +160,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", estudiante.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", estudiante.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoEstudiante", estudiante.EstadoEstudiante);
-                    cmd.Parameters.AddWithValue("@IdGrupo",estudiante.IdGrupo);
+                    cmd.Parameters.AddWithValue("@IdGrupo",estudiante.grupo.IdGrupo);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -210,7 +204,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", estudiante.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", estudiante.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoEstudiante", estudiante.EstadoEstudiante);
-                    cmd.Parameters.AddWithValue("@IdGrupo", estudiante.IdGrupo);
+                    cmd.Parameters.AddWithValue("@IdGrupo", estudiante.grupo.IdGrupo);
 
                     flag = cmd.ExecuteNonQuery() != 0;
 
@@ -250,7 +244,7 @@ namespace Datos
         {
             String valor = "";
 
-            if (tipo == "RG")
+            if (tipo == "RC")
             {
                 valor = "Registro civil";
             }

@@ -153,7 +153,14 @@ namespace Windows_vista
 
         private void button7_Click(object sender, EventArgs e)
         {
-            CargarDatoFiltro(Txt_busquedaCedula.Text);
+            if (Txt_busquedaCedula.Text == "") {
+                CargarDatos();
+            }
+            else
+            {
+               CargarDatoFiltro(Txt_busquedaCedula.Text);
+            }
+               
         }
 
         private void button6_Click(object sender, EventArgs e)

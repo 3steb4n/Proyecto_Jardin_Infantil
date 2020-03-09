@@ -30,6 +30,11 @@ create table Usuarios (
 
 INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
 			VALUES   ('1031181586','CC','Diego Alejandro','Astaiza Borja','CRA 25 A # 32 A 76 SUR','3133717966','6941093','diego.astaiza@itac.co','qwerty','','','','','A','S','A');
+
+INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
+			VALUES   ('846468','CC','dawwdadw','wadwawa','dwadwwddaw','454334543','54534543','awdawdwadwad','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','A');
+
+select * from usuarios;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- DROP PROCEDURE ListarUsuarios
 
@@ -272,8 +277,9 @@ CREATE PROCEDURE eliminarGrupo
    AS
    UPDATE Grupos set estado_grupo='I' where id_grupo=@ID;
 GO
-use JardinInfantil
--- select * from grados;
+-- use JardinInfantil
+-- select * from grupos;
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop table Estudiantes
 create table Estudiantes(
@@ -300,78 +306,174 @@ create table Estudiantes(
 );
 
 ALTER TABLE Estudiantes ADD FOREIGN KEY (ID_grupo) REFERENCES Grupos(id_grupo);
+
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+			VALUES   ('8548964684','RC','Manuel ','Castillo','2020-03-07 00:00:00.000','','Ivan Duque','KR 32 Norte','M','6941023','313371823','padre@misena.edu.co','estudiante 1 mi pez','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','1');  
+			INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+			VALUES   ('54435435','RC','Manuela ','Castilla','2020-03-07 00:00:00.000','','Ivan Duque','KR 32 Norte','M','6941023','313371823','padre@misena.edu.co','estudiante 2 mi pez','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');  
+select * from Estudiantes;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantes
 CREATE PROCEDURE ListarEstudiantes
 AS
-SELECT   ID_estudiante [ID_estudiante],
-	     Documento_Estudiante [Documento_Estudiante],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombre_Estudiante [Nombre_Estudiante],
-		 Apellido_Estudiante [Apellido_Estudiante],
-		 Fecha_Nacimiento [Fecha_Nacimiento],
-		 Ruta_foto [Ruta_foto],
-		 Acudiente_Nombre [Acudiente_Nombre],
-		 Direccion [Direccion],
-		 Genero_Estudiante [Genero_Estudiante],
-	     Telefono [Telefono],
-		 Celular [Celular],
-		 Correo_Electronico [Correo_Electronico],
-		 Observaciones [Observaciones],
-		 Estado_Estudiante [EstadoEstudiante],
-		 ID_grupo [ID_grupo]
+SELECT   e.ID_estudiante [IdEstudiante],
+	     e.Documento_Estudiante [DocumentoEstudiante],
+	     e.Tipo_Documento [TipoDocumento],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Fecha_Nacimiento [FechaNacimiento],
+		 e.Ruta_foto [RutaFoto],
+		 e.Acudiente_Nombre [AcudienteNombre],
+		 e.Direccion [Direccion],
+		 e.Genero_Estudiante [GeneroEstudiante],
+	     e.Telefono [Telefono],
+		 e.Celular [Celular],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Observaciones [Observaciones],
+		 e.Estado_Estudiante [EstadoEstudiante],
+		 e.ID_grupo [IDgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
 
-FROM Estudiantes where Estado_Estudiante = 'A';
+FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A';
 GO
+EXEC ListarEstudiantes
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarEstudiantePorDocumento
 CREATE PROCEDURE ListarEstudiantePorDocumento
-@DocumentoEstudiante varchar(40)
+@Documento varchar(40)
 AS
-SELECT   ID_estudiante [ID_estudiante],
-	     Documento_Estudiante [Documento_Estudiante],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombre_Estudiante [Nombre_Estudiante],
-		 Apellido_Estudiante [Apellido_Estudiante],
-		 Fecha_Nacimiento [Fecha_Nacimiento],
-		 Ruta_foto [Ruta_foto],
-		 Acudiente_Nombre [Acudiente_Nombre],
-		 Direccion [Direccion],
-		 Genero_Estudiante [Genero_Estudiante],
-	     Telefono [Telefono],
-		 Celular [Celular],
-		 Correo_Electronico [Correo_Electronico],
-		 Observaciones [Observaciones],
-		 Estado_Estudiante [EstadoEstudiante],
-		 ID_grupo [ID_grupo]
+SELECT   e.ID_estudiante [IdEstudiante],
+	     e.Documento_Estudiante [DocumentoEstudiante],
+	     e.Tipo_Documento [TipoDocumento],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Fecha_Nacimiento [FechaNacimiento],
+		 e.Ruta_foto [RutaFoto],
+		 e.Acudiente_Nombre [AcudienteNombre],
+		 e.Direccion [Direccion],
+		 e.Genero_Estudiante [GeneroEstudiante],
+	     e.Telefono [Telefono],
+		 e.Celular [Celular],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Observaciones [Observaciones],
+		 e.Estado_Estudiante [EstadoEstudiante],
+		 e.ID_grupo [IDgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
 
-FROM Estudiantes where  Documento_Estudiante=@DocumentoEstudiante AND Estado_Estudiante = 'A';
+FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A' AND Documento_Estudiante=@Documento;
 GO
+EXEC ListarEstudiantePorDocumento '8548964684'
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---DROP PROCEDURE registrarUsuario
-CREATE PROCEDURE registrarUsuario
-   @Documento varchar(50),
-   @Tipo_Documento varchar(50),
-   @Nombres varchar(50),
-   @Apellidos varchar(50),
+--DROP PROCEDURE registrarEstudiante
+CREATE PROCEDURE registrarEstudiante
+   @Documento_Estudiante varchar(40),
+   @Tipo_Documento varchar(20),
+   @Nombre_Estudiante varchar(30),
+   @Apellido_Estudiante varchar(30),
+   @Fecha_Nacimiento date,
+   @Ruta_foto varchar(100),
+   @Acudiente_Nombre varchar(50),
    @Direccion varchar(50),
-   @Celular varchar(30),
-   @Telefono varchar(30),
+   @Genero_Estudiante varchar(20),
+   @Telefono varchar(10),
+   @Celular varchar(20),
    @Correo_Electronico varchar(100),
-   @UsuarioClave varchar(100),
-   @UsuarioCreacion varchar(30),
-   @FechaCreacion datetime,
-   @Estado_Usuario varchar(2),
-   @Estado_Clave varchar(2),
-   @Tipo_Usuario varchar(2)
+   @Observaciones text,
+   @Usuario_Creacion varchar(30),
+   @Fecha_Creacion datetime,
+   @Usuario_Modificacion varchar(30),
+   @Fecha_Modificacion datetime,
+   @Estado_Estudiante varchar(2),
+   @ID_grupo int
    AS
-   INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico,Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   (@Documento,@Tipo_Documento,@Nombres,@Apellidos,@Direccion,@Celular,@Telefono,@Correo_Electronico,@UsuarioClave,@UsuarioCreacion,@FechaCreacion,@Estado_Usuario,@Estado_Clave,@Tipo_Usuario);  
+   INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+			VALUES   (@Documento_Estudiante,@Tipo_Documento,@Nombre_Estudiante,@Apellido_Estudiante,@Fecha_Nacimiento,@Ruta_foto,@Acudiente_Nombre,@Direccion,@Genero_Estudiante,@Telefono,@Celular,@Correo_Electronico,@Observaciones,@Usuario_Creacion,@Fecha_Creacion,@Usuario_Modificacion,@Fecha_Modificacion,@Estado_Estudiante,@ID_grupo);  
 GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE modificarEstudiante
+CREATE PROCEDURE modificarEstudiante
+   @ID_estudiante int,
+   @Documento_Estudiante varchar(40),
+   @Tipo_Documento varchar(20),
+   @Nombre_Estudiante varchar(30),
+   @Apellido_Estudiante varchar(30),
+   @Fecha_Nacimiento date,
+   @Ruta_foto varchar(100),
+   @Acudiente_Nombre varchar(50),
+   @Direccion varchar(50),
+   @Genero_Estudiante varchar(20),
+   @Telefono varchar(10),
+   @Celular varchar(20),
+   @Correo_Electronico varchar(100),
+   @Observaciones text,
+   @Usuario_Creacion varchar(30),
+   @Fecha_Creacion datetime,
+   @Usuario_Modificacion varchar(30),
+   @Fecha_Modificacion datetime,
+   @Estado_Estudiante varchar(2),
+   @ID_grupo int
+   AS
+   UPDATE Estudiantes SET Documento_Estudiante=@Documento_Estudiante, Tipo_Documento=@Tipo_Documento, Nombre_Estudiante=@Nombre_Estudiante, Apellido_Estudiante=@Apellido_Estudiante, Fecha_Nacimiento=@Fecha_Nacimiento, Ruta_foto=@Ruta_foto, Acudiente_Nombre=@Acudiente_Nombre, Direccion=@Direccion, Genero_Estudiante=@Genero_Estudiante, Telefono=@Telefono,  Celular=@Celular, Correo_Electronico=@Correo_Electronico, Observaciones=@Observaciones, Usuario_Creacion=@Usuario_Creacion, Fecha_Creacion=@Fecha_Creacion, Usuario_Modificacion=@Usuario_Modificacion, Fecha_Modificacion=@Fecha_Modificacion, Estado_Estudiante=@Estado_Estudiante, ID_grupo=@ID_grupo where ID_estudiante=@ID_estudiante;
+GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--DROP PROCEDURE eliminarEstudiante
+CREATE PROCEDURE eliminarEstudiante
+   @ID int
+   AS
+   UPDATE Estudiantes set Estado_Estudiante='I' where ID_estudiante=@ID;
+GO
+-- use JardinInfantil
+-- select * from grados;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ID_estudiante int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    Documento_Estudiante varchar(40) NOT NULL,
+    Tipo_Documento varchar(20) NOT NULL CHECK (Tipo_Documento IN('RC', 'TI', 'DNI')),
+    Nombre_Estudiante varchar(30) NOT NULL,
+    Apellido_Estudiante varchar(30) NOT NULL,
+    Fecha_Nacimiento date NOT NULL,
+    Ruta_foto varchar(100) NULL DEFAULT '',
+    Acudiente_Nombre varchar(50) NOT NULL,
+    Direccion varchar(50) NOT NULL,
+    Genero_Estudiante varchar(20) NOT NULL CHECK(Genero_Estudiante IN ('M', 'F')),
+    Telefono varchar(10),
+    Celular varchar(20),
+    Correo_Electronico varchar(100),
+    Observaciones text NOT NULL,
+    Usuario_Creacion varchar(30),
+    Fecha_Creacion datetime ,
+    Usuario_Modificacion varchar(30) NULL DEFAULT '',
+    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
+	Estado_Estudiante varchar (2) NOT NULL CHECK(Estado_Estudiante IN ('A', 'I')),
+    ID_grupo int
 
 
 

@@ -57,6 +57,7 @@ namespace Windows_vista
 
 
         }
+
         private void label10_Click(object sender, EventArgs e)
         {
 
@@ -103,7 +104,7 @@ namespace Windows_vista
             }
             if (Txt_celular.Text == "")
             {
-                errorProvider.SetError(Txt_celular, "Ingrese el correo electrónico");
+                errorProvider.SetError(Txt_celular, "Ingrese el celular");
                 Txt_celular.Focus();
                 flag = false;
             }
