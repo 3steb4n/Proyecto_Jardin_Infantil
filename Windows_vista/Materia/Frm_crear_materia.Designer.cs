@@ -1,6 +1,6 @@
-﻿namespace Windows_vista
+﻿namespace Windows_vista.Materia
 {
-    partial class Frm_crear_usuario
+    partial class Frm_crear_materia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crear_usuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crear_materia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();
@@ -53,10 +52,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,8 +83,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 530);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            this.panel1.TabIndex = 1;
             // 
             // Combo_tipo_usuario
             // 
@@ -112,7 +108,6 @@
             this.btn_guardar.TabIndex = 27;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // Combo_tipo_documento
             // 
@@ -209,7 +204,6 @@
             this.label10.Size = new System.Drawing.Size(72, 20);
             this.label10.TabIndex = 11;
             this.label10.Text = "Dirección";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -260,7 +254,6 @@
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tipo usuario (*)";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -298,34 +291,24 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(26, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 32);
+            this.label1.Size = new System.Drawing.Size(195, 32);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Registrar usuario";
+            this.label1.Text = "Registrar materia";
             // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkRate = 0;
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
-            // 
-            // Frm_crear_usuario
+            // Frm_crear_materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 560);
+            this.ClientSize = new System.Drawing.Size(775, 587);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Frm_crear_usuario";
-            this.Text = "Crear usuario";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Crear_Usuario_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_Crear_Usuario_Load);
+            this.Name = "Frm_crear_materia";
+            this.Text = "Crear materia";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,18 +316,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox Combo_tipo_usuario;
+        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.ComboBox Combo_tipo_documento;
         private System.Windows.Forms.TextBox Txt_nombres;
         private System.Windows.Forms.TextBox Txt_apellidos;
@@ -353,8 +326,17 @@
         private System.Windows.Forms.TextBox Txt_telefono;
         private System.Windows.Forms.TextBox Txt_correo_electronico;
         private System.Windows.Forms.TextBox Txt_numero_documento;
-        private System.Windows.Forms.ComboBox Combo_tipo_usuario;
-        private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

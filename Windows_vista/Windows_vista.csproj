@@ -77,6 +77,24 @@
     <Compile Include="Grupos\Frm_administracion_grupos.Designer.cs">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materia\Frm_admin_materia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia\Frm_admin_materia.Designer.cs">
+      <DependentUpon>Frm_admin_materia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materia\Frm_crear_materia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia\Frm_crear_materia.Designer.cs">
+      <DependentUpon>Frm_crear_materia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materia\Frm_modificar_materia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia\Frm_modificar_materia.Designer.cs">
+      <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Frm_administracion_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +180,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grupos\Frm_modificar_grupo.resx">
       <DependentUpon>Frm_modificar_grupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia\Frm_admin_materia.resx">
+      <DependentUpon>Frm_admin_materia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia\Frm_crear_materia.resx">
+      <DependentUpon>Frm_crear_materia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia\Frm_modificar_materia.resx">
+      <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Frm_administracion_usuarios.resx">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>

@@ -8,13 +8,12 @@ using Datos;
 
 namespace Negocio
 {
-    public class BLGrado
+    public class BLArea
     {
-        public List<Grado> ListarGados()
+        public List<Area> ListarAreas()
         {
-            DaoGrado daoGrado = new DaoGrado();
-            return daoGrado.ListaGeneral();
+            DaoArea daoArea = new DaoArea();
+            return daoArea.ListaGeneral();
         }
-
     }
 }

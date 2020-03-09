@@ -444,6 +444,37 @@ create table Periodos (
     Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000'
 );
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE  ListarPeriodos
+CREATE PROCEDURE ListarPeriodos
+AS
+SELECT  Id_periodo [IdPeriodo],
+		Nombre_Periodo [NombreArea]
+		FROM Periodos;
+GO
+
+EXEC ListarPeriodos;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create table Areas(
+    Id_Area int IDENTITY(1,1) NOT Null PRIMARY KEY,
+    Nombre varchar(50) NOT NULL,
+    Usuario_Creacion varchar(30),
+    Fecha_Creacion datetime,
+    Usuario_Modificacion varchar(30) NULL DEFAULT '',
+    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
+    Estado varchar(2) NOT NULL CHECK(Estado IN('A', 'I'))
+);
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DROP PROCEDURE  ListarAreas
+CREATE PROCEDURE ListarAreas
+AS
+SELECT  Id_Area [IdArea],
+		Nombre [NombreArea]
+		FROM Grados  where Estado = 'A';
+GO
+
+EXEC ListarAreas;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+drop table Materias;
 create table Materias(
     Id_Materia int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Nomre_Materia varchar(30) NOT NULL,
@@ -453,18 +484,15 @@ create table Materias(
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
     Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
     Estado_Materia  varchar(2) NOT NULL CHECK(Estado_Materia IN('A', 'I')),
-    Numero_Horas int NOT NULL
+    Numero_Horas int NOT NULL,
+	Id_Area int,
+	Id_Grado int
 );
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Areas(
-    Id_Area int IDENTITY(1,1) NOT Null PRIMARY KEY,
-    Nombre varchar(50) NOT NULL,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-    Estado varchar(2) NOT NULL CHECK(Estado_Area IN('A', 'I'))
-);
+
+
+ALTER TABLE Materias ADD FOREIGN KEY (Id_Area) REFERENCES Areas(Id_Area);
+ALTER TABLE Materias ADD FOREIGN KEY (Id_Grado) REFERENCES Grados(Id_Grado);
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Materias_Area(
     Id_Materia int,

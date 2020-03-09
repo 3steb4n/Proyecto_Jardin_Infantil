@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLArea.cs" />
     <Compile Include="BLEstudiante.cs" />
     <Compile Include="BLGrado.cs" />
     <Compile Include="BLGrupo.cs" />
+    <Compile Include="BLPeriodo.cs" />
     <Compile Include="BLUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

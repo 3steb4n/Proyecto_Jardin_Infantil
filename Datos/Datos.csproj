@@ -90,9 +90,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoArea.cs" />
     <Compile Include="DaoEstudiante.cs" />
     <Compile Include="DaoGrado.cs" />
     <Compile Include="DaoGrupo.cs" />
+    <Compile Include="DaoPeriodo.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
