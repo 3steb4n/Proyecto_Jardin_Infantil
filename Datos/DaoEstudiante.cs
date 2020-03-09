@@ -191,18 +191,15 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@ApellidoEstudiante", estudiante.ApellidoEstudiante);
                     cmd.Parameters.AddWithValue("@FechaNacimiento", estudiante.FechaNacimiento);
                     cmd.Parameters.AddWithValue("@RutaFoto", estudiante.Ruta_foto);
-                    cmd.Parameters.AddWithValue("@NombreAcudiente", estudiante.NombreAcudiente);
+                    cmd.Parameters.AddWithValue("@AcudienteNombre", estudiante.NombreAcudiente);
                     cmd.Parameters.AddWithValue("@Direccion", estudiante.Direccion);
-                    cmd.Parameters.AddWithValue("@Genero", estudiante.Genero);
-                    cmd.Parameters.AddWithValue("@TelefonoAcudiente", estudiante.TelefonoAcudiente);
-                    cmd.Parameters.AddWithValue("@CelularEstudiante", estudiante.CelularAcudiente);
-                    cmd.Parameters.AddWithValue("@CorreoElectronicoAcudiente", "A");
-                    cmd.Parameters.AddWithValue("@ObservacionesEstudiante", "S");
-                    cmd.Parameters.AddWithValue("@UsuarioCreacion", estudiante.UsuarioCreacion);
-                    cmd.Parameters.AddWithValue("@FechaCreaacion", estudiante.FechaCreacion);
+                    cmd.Parameters.AddWithValue("@GeneroEstudiante", estudiante.Genero);
+                    cmd.Parameters.AddWithValue("@Telefono", estudiante.TelefonoAcudiente);
+                    cmd.Parameters.AddWithValue("@Celular", estudiante.CelularAcudiente);
+                    cmd.Parameters.AddWithValue("@CorreoElectronico", estudiante.CorreoElectronicoAcudiente);
+                    cmd.Parameters.AddWithValue("@Observaciones", estudiante.ObservacionesEstudiante);
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", estudiante.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", estudiante.FechaModificacion);
-                    cmd.Parameters.AddWithValue("@EstadoEstudiante", estudiante.EstadoEstudiante);
                     cmd.Parameters.AddWithValue("@IdGrupo", estudiante.grupo.IdGrupo);
 
                     flag = cmd.ExecuteNonQuery() != 0;

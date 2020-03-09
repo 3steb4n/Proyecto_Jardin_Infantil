@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_modificar_estudiante));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Txt_foto = new System.Windows.Forms.TextBox();
             this.combo_grupo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_observaciones = new System.Windows.Forms.TextBox();
@@ -60,9 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txt_foto = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +107,33 @@
             this.panel1.Size = new System.Drawing.Size(934, 617);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(871, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 27);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(683, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 20);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Foto (*)";
+            // 
+            // Txt_foto
+            // 
+            this.Txt_foto.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_foto.Location = new System.Drawing.Point(687, 315);
+            this.Txt_foto.Name = "Txt_foto";
+            this.Txt_foto.Size = new System.Drawing.Size(178, 27);
+            this.Txt_foto.TabIndex = 45;
             // 
             // combo_grupo
             // 
@@ -215,6 +242,7 @@
             this.btn_guardar.TabIndex = 27;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // Combo_tipo_documento
             // 
@@ -391,33 +419,6 @@
             this.label1.Size = new System.Drawing.Size(235, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Modificar estudiante";
-            // 
-            // Txt_foto
-            // 
-            this.Txt_foto.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_foto.Location = new System.Drawing.Point(687, 315);
-            this.Txt_foto.Name = "Txt_foto";
-            this.Txt_foto.Size = new System.Drawing.Size(178, 27);
-            this.Txt_foto.TabIndex = 45;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(683, 292);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 20);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "Foto (*)";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(871, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 27);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Frm_modificar_estudiante
             // 

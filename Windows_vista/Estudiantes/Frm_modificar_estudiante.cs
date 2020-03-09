@@ -83,5 +83,143 @@ namespace Windows_vista
         {
 
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            Estudiante estudiante = new Estudiante();
+            DateTime fechaActual = DateTime.Today;
+
+            estudiante.Id_estudiante = id_Estudiante;
+            estudiante.DocumentoEstudiante = Txt_numero_documento.Text;
+            estudiante.TipoDocumento = OrdenarTipoDocumento(Combo_tipo_documento.Text);
+            estudiante.FechaNacimiento = date_fecha.Value;
+            estudiante.NombreEstudiante = Txt_nombres.Text;
+            estudiante.ApellidoEstudiante = Txt_apellidos.Text;
+            estudiante.Genero = OrdenarGenero(combo_genero.Text);
+            estudiante.Direccion = Txt_direccion.Text;
+            estudiante.CorreoElectronicoAcudiente = Txt_correo_electronico.Text;
+            estudiante.TelefonoAcudiente = Txt_telefono.Text;
+            estudiante.CelularAcudiente = Txt_celular.Text;
+            estudiante.NombreAcudiente = Txt_nombre_acudiente.Text;
+            estudiante.Ruta_foto = Txt_direccion.Text;
+            estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
+            estudiante.UsuarioModificacion = "1";
+            estudiante.FechaModificacion = fechaActual;
+            estudiante.grupo.IdGrupo = IDPorNombre(combo_grupo.Text);
+
+
+            bool flag = blEstudiante.ModificarEstudiante(estudiante);
+            if (flag)
+            {
+                MessageBox.Show("Estudiante modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public int IDPorNombre(String nombre)
+        {
+            int value = 0;
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].NombreGrupo == nombre)
+                {
+                    value = lista[i].IdGrupo;
+                }
+            }
+
+            return value;
+        }
+
+        public String OrdenarTipoDocumento(String tipoDocumento)
+        {
+            String value = "";
+
+            if (tipoDocumento == "Registro civil")
+            {
+                value = "RC";
+
+            }
+            else if (tipoDocumento == "Tarjeta de identidad")
+            {
+                value = "TI";
+            }
+            else if (tipoDocumento == "DNI")
+            {
+                value = "DNI";
+            }
+
+            return value;
+        }
+
+
+        public String OrdenarGenero(String genero)
+        {
+            String value = "";
+
+            if (genero == "Femenino")
+            {
+                value = "F";
+
+            }
+            else 
+            {
+                value = "M";
+            }
+
+            return value;
+        }
+
+
+
+        public Usuario Ordenar(Usuario usuario)
+        {
+            // formato a combobox tipo documento
+
+            
+            // formato a combobox tipo usuario
+
+            if (usuario.TipoUsuario == "Administrador")
+            {
+                usuario.TipoUsuario = "A";
+            }
+            else if (usuario.TipoUsuario == "Docente")
+            {
+                usuario.TipoUsuario = "D";
+            }
+            else if (usuario.TipoUsuario == "Secretaria")
+            {
+                usuario.TipoUsuario = "S";
+            }
+
+            // ordenar estado usuario
+            if (usuario.EstadoUsuario == "Activo")
+            {
+                usuario.EstadoUsuario = "A";
+            }
+            else
+            {
+                usuario.EstadoUsuario = "I";
+            }
+
+            // ordenar estado clave
+
+            if (usuario.EstadoClave == "Cambiada")
+            {
+                usuario.EstadoClave = "C";
+            }
+            else
+            {
+                usuario.EstadoClave = "S";
+            }
+            return usuario;
+
+        }
+
     }
 }

@@ -167,12 +167,12 @@ create table Grados(
     Estado varchar(2) NOT NULL CHECK (Estado IN('A', 'I'))
 );
 
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para niï¿½os de 1 y 2 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para niï¿½os de 2 y 3 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niï¿½os de 3 y 4 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niï¿½os de 3 y 4 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para niï¿½os de 4 y 5 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Primero','Competencia para niï¿½os de 4 y 5 aï¿½os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para niños de 1 y 2 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para niños de 2 y 3 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niños de 3 y 4 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para niños de 3 y 4 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para niños de 4 y 5 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Primero','Competencia para niños de 4 y 5 años','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 select * from Grados;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -402,27 +402,29 @@ GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE modificarEstudiante
 CREATE PROCEDURE modificarEstudiante
-   @IDEstudiante int,
-   @DocumentoEstudiante varchar(40),
-   @TipoDocumento varchar(20),
-   @NombreEstudiante varchar(30),
-   @ApellidoEstudiante varchar(30),
-   @FechaNacimiento date,
-   @RutaFoto varchar(100),
-   @AcudienteNombre varchar(50),
+   @ID_estudiante int,
+   @Documento_Estudiante varchar(40),
+   @Tipo_Documento varchar(20),
+   @Nombre_Estudiante varchar(30),
+   @Apellido_Estudiante varchar(30),
+   @Fecha_Nacimiento date,
+   @Ruta_foto varchar(100),
+   @Acudiente_Nombre varchar(50),
    @Direccion varchar(50),
-   @GeneroEstudiante varchar(20),
+   @Genero_Estudiante varchar(20),
    @Telefono varchar(10),
    @Celular varchar(20),
-   @CorreoElectronico varchar(100),
+   @Correo_Electronico varchar(100),
    @Observaciones text,
-   @UsuarioModificacion varchar(30),
-   @FechaModificacion datetime,
-   @IdGrupo int
+   @Usuario_Creacion varchar(30),
+   @Fecha_Creacion datetime,
+   @Usuario_Modificacion varchar(30),
+   @Fecha_Modificacion datetime,
+   @Estado_Estudiante varchar(2),
+   @ID_grupo int
    AS
-   UPDATE Estudiantes SET Documento_Estudiante=@DocumentoEstudiante, Tipo_Documento=@TipoDocumento, Nombre_Estudiante=@NombreEstudiante, Apellido_Estudiante=@ApellidoEstudiante, Fecha_Nacimiento=@FechaNacimiento, Ruta_foto=@RutaFoto, Acudiente_Nombre=@AcudienteNombre, Direccion=@Direccion, Genero_Estudiante=@GeneroEstudiante, Telefono=@Telefono,  Celular=@Celular, Correo_Electronico=@CorreoElectronico, Observaciones=@Observaciones, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, ID_grupo=@IdGrupo where ID_estudiante=@IDEstudiante;
+   UPDATE Estudiantes SET Documento_Estudiante=@Documento_Estudiante, Tipo_Documento=@Tipo_Documento, Nombre_Estudiante=@Nombre_Estudiante, Apellido_Estudiante=@Apellido_Estudiante, Fecha_Nacimiento=@Fecha_Nacimiento, Ruta_foto=@Ruta_foto, Acudiente_Nombre=@Acudiente_Nombre, Direccion=@Direccion, Genero_Estudiante=@Genero_Estudiante, Telefono=@Telefono,  Celular=@Celular, Correo_Electronico=@Correo_Electronico, Observaciones=@Observaciones, Usuario_Creacion=@Usuario_Creacion, Fecha_Creacion=@Fecha_Creacion, Usuario_Modificacion=@Usuario_Modificacion, Fecha_Modificacion=@Fecha_Modificacion, Estado_Estudiante=@Estado_Estudiante, ID_grupo=@ID_grupo where ID_estudiante=@ID_estudiante;
 GO
-use JardinInfantil
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --DROP PROCEDURE eliminarEstudiante
@@ -434,201 +436,187 @@ GO
 -- use JardinInfantil
 -- select * from grados;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Periodos (
-    Id_periodo int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Periodo varchar(20) NOT NULL,
-    Descripcion_Periodo text,
-    Usuario_Cracion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000'
-);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Materias(
-    Id_Materia int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nomre_Materia varchar(30) NOT NULL,
-    Descripcion_Materia text,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-    Estado_Materia  varchar(2) NOT NULL CHECK(Estado_Materia IN('A', 'I')),
-    Numero_Horas int NOT NULL
-);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Areas(
-    Id_Area int IDENTITY(1,1) NOT Null PRIMARY KEY,
-    Nombre varchar(50) NOT NULL,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-    Estado varchar(2) NOT NULL CHECK(Estado_Area IN('A', 'I'))
-);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Materias_Area(
-    Id_Materia int,
-    Id_Area int
-);
 
-ALTER TABLE Materias_Area ADD FOREIGN KEY (Id_Materia) REFERENCES Materias(Id_Materia);
-ALTER TABLE Materias_Area ADD FOREIGN KEY (Id_Area) REFERENCES Areas(Id_Area);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Logros(
-    Id_Logro int IDENTITY(1,1) NOT NULL,
-    Nombe_Logro varchar(50) NOT NULL,
-    Descripcion_Logro text,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ID_estudiante int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    Documento_Estudiante varchar(40) NOT NULL,
+    Tipo_Documento varchar(20) NOT NULL CHECK (Tipo_Documento IN('RC', 'TI', 'DNI')),
+    Nombre_Estudiante varchar(30) NOT NULL,
+    Apellido_Estudiante varchar(30) NOT NULL,
+    Fecha_Nacimiento date NOT NULL,
+    Ruta_foto varchar(100) NULL DEFAULT '',
+    Acudiente_Nombre varchar(50) NOT NULL,
+    Direccion varchar(50) NOT NULL,
+    Genero_Estudiante varchar(20) NOT NULL CHECK(Genero_Estudiante IN ('M', 'F')),
+    Telefono varchar(10),
+    Celular varchar(20),
+    Correo_Electronico varchar(100),
+    Observaciones text NOT NULL,
     Usuario_Creacion varchar(30),
-    Fecha_Creacion  datetime NOT NULL, 
+    Fecha_Creacion datetime ,
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
     Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-    Estado_Logro int NOT NULL CHECK(Estado_Logro IN('A', 'I')),
-    Id_materia int
+	Estado_Estudiante varchar (2) NOT NULL CHECK(Estado_Estudiante IN ('A', 'I')),
+    ID_grupo int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table PERIODOS_ACADEMICOS (
+    ID_PERIODO int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    NOMBRE_PERIODO varchar(20) NOT NULL,
+    DESCRIPCION_PERIODO text,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime
 );
 
-ALTER TABLE Logros ADD FOREIGN KEY (Id_materia) REFERENCES Materias(Id_Materia);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-create table Salones(
-    Id_Salon int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Salon varchar (30) NOT NULL,
-    Descripcion_Salon varchar (100) NOT NULL,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-    Estado varchar (2) NOT NULL CHECK(Estado IN('A', 'I'))
-);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Concepto_Pago(
-    Id_Concepto int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Concepto varchar(50) NOT NULL,
-    Descripcion_Concepto text,
-    Valor_Concepto decimal (18,2),
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30),
-    Fecha_Modificacion datetime
-);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Pagos(
-    Id_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Valor_Monto decimal(18,2),
-    Descripcion_Pago text,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Id_Concepto_Pago int,
-    Id_Estudiante int
+create table ESTUDIANTES(
+    ID_ESTUDIANTE int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    DOCUMENTO_ESTUDIANTE bigint NOT NULL,
+    TIPO_DOCUMENTO varchar(20) NOT NULL CHECK (TIPO_DOCUMENTO IN('Registro Civil', 'Tarjeta de Identidad', 'DNI')),
+    NOMBRE_ESTUDIANTE varchar(30) NOT NULL,
+    APELLIDO_ESTUDIANTE varchar(30) NOT NULL,
+    FECHA_NACIMIENTO date NOT NULL,
+    RUTA_FOTO varchar(100),
+    ACUDIENTE_NOMBRE varchar(50) NOT NULL,
+    DIRECCION varchar(50) NOT NULL,
+    GENERO_ESTUDIANTE varchar(20) NOT NULL CHECK(GENERO_ESTUDIANTE IN ('Masculino', 'Femenino')),
+    TELEFONO_ESTUDIANTE varchar(10),
+    CELULAR_ACUDIENTE varchar(20),
+    EMAIL_ACUDIENTE varchar(100),
+    OBSERVACION_ESTUDIANTE text NOT NULL,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ID_GRUPO int
 );
 
-ALTER TABLE Pagos ADD FOREIGN KEY (Id_Concepto_Pago) REFERENCES Concepto_Pago(Id_Concepto);
-ALTER TABLE Pagos ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estudiante);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Abono_Pago(
-    Id_Abono_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Tipo_Abono varchar(20) NOT NULL CHECK(T IN('P', 'C')),
-    Valor_Abonado decimal(18,2) NOT NULL,
-    Descripcion_Abono varchar(100),
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime NOT NULL,
-    Id_Pago_Registrado int,
+ALTER TABLE ESTUDIANTES ADD FOREIGN KEY (ID_GRUPO) REFERENCES GRUPOS_GRADOS_ESCOLARES(ID_GRUPO);
+
+create table MATERIAS_ACADEMICAS(
+    ID_MATERIA int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    NOMBRE_MATERIA varchar(30) NOT NULL,
+    DESCRIPCION_MATERIA text,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ESTADO_MATERIA int NOT NULL CHECK(ESTADO_MATERIA IN('1', '0')),
+    NUMERO_HORAS_MAXIMO int NOT NULL
 );
 
-ALTER TABLE Abono_Pago ADD FOREIGN KEY (Id_Pago_Registrado) REFERENCES Pagos(Id_Pago); 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Notas(
-    Id_Nota int IDENTITY (1,1) NOT NULL PRIMARY KEY,
-    Nota decimal (2,1) NOT NULL,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30),
-    Fecha_Modificacion datetime,
-    Id_usuario int,
-    Id_estudiante int,
-    Id_materia int,
-    Id_periodo int
+create table AREAS(
+    ID_AREA int IDENTITY(1,1) NOT Null PRIMARY KEY,
+    NOMBRE_AREA varchar(50) NOT NULL,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ESTADO_AREA int NOT NULL CHECK(ESTADO_AREA IN('1', '0'))
 );
 
-ALTER TABLE Notas ADD FOREIGN KEY (Id_usuario) REFERENCES Usuarios(Id_Usuario);
-ALTER TABLE Notas ADD FOREIGN KEY (Id_estudiante) REFERENCES Estudiantes(ID_estudiante);
-ALTER TABLE Notas ADD FOREIGN KEY (Id_materia) REFERENCES Materias(Id_Materia);
-ALTER TABLE Notas ADD FOREIGN KEY (Id_periodo) REFERENCES Periodos(Id_periodo);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Promedios_Generales(
-    Id_Promedio int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Promedio_General decimal (2,1) NOT NULL,
-    Id_Estudiante int
+create table AREAS_MATERIAS_ACADEMICAS(
+    ID_AREA int,
+    ID_MATERIA int
 );
 
-ALTER TABLE Promedios_Generales ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estudiante);
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ALTER TABLE AREAS_MATERIAS_ACADEMICAS ADD FOREIGN KEY (ID_AREA) REFERENCES AREAS(ID_AREA);
+ALTER TABLE AREAS_MATERIAS_ACADEMICAS ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_ACADEMICAS(ID_MATERIA);
+
+create table LOGROS_MATERIA(
+    ID_LOGRO int IDENTITY(1,1) NOT NULL,
+    NOMBRE_LOGRO varchar(50) NOT NULL,
+    DESCRIPCION_LOGRO text,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION  datetime NOT NULL, 
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ESTADO_LOGRO int NOT NULL CHECK(ESTADO_LOGRO IN('1', '0')),
+    ID_MATERIA int
+);
+
+ALTER TABLE LOGROS_MATERIA ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_ACADEMICAS(ID_MATERIA);
+
+create table MATERIAS_DOCENTES( 
+    ID_MATERIA int,
+    ID_USUARIO int
+);
+
+ALTER TABLE MATERIAS_DOCENTES ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_ACADEMICAS(ID_MATERIA);
+ALTER TABLE MATERIAS_DOCENTES ADD FOREIGN KEY (ID_USUARIO) REFERENCES USUARIOS(ID_USUARIO);
+
+create table SALONES_ACADEMICOS(
+    ID_SALON int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    COD_SALON int NOT NULL,
+    DESCRIPCION_SALON text,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ESTADO_SALON int NOT NULL CHECK(ESTADO_SALON IN('1', '0')),
+);
 
 create table CARGAS_ACADEMICAS(
     ID_CARGA int IDENTITY(1,1) NOT NULL,
@@ -648,9 +636,31 @@ ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_A
 ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_SALON) REFERENCES SALONES_ACADEMICOS(ID_SALON);
 ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_USUARIO) REFERENCES USUARIOS(ID_USUARIO);
 
+create table NOTAS_ESTUDIANTES(
+    ID_NOTA int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+    NOTA decimal (2,1) NOT NULL,
+    USUARIO_CREACION varchar(30),
+    FECHA_CREACION datetime,
+    USUARIO_MODIFICACION varchar(30),
+    FECHA_MODIFICACION datetime,
+    ID_USUARIO int,
+    ID_ESTUDIANTE int,
+    ID_MATERIA int,
+    ID_PERIODO int
+);
 
+ALTER TABLE NOTAS_ESTUDIANTES ADD FOREIGN KEY (ID_USUARIO) REFERENCES USUARIOS(ID_USUARIO);
+ALTER TABLE NOTAS_ESTUDIANTES ADD FOREIGN KEY (ID_ESTUDIANTE) REFERENCES ESTUDIANTES(ID_ESTUDIANTE);
+ALTER TABLE NOTAS_ESTUDIANTES ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_ACADEMICAS(ID_MATERIA);
+ALTER TABLE NOTAS_ESTUDIANTES ADD FOREIGN KEY (ID_PERIODO) REFERENCES PERIODOS_ACADEMICOS(ID_PERIODO);
 
+create table PROMEDIOS_GENERALES(
+    ID_PROMEDIO int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    PROMEDIO_GENERAL decimal (2,1) NOT NULL,
+    ID_ESTUDIANTE int
+);
 
+ALTER TABLE PROMEDIOS_GENERALES ADD FOREIGN KEY (ID_ESTUDIANTE) REFERENCES ESTUDIANTES(ID_ESTUDIANTE);
 
 create table CONCEPTOS_PAGOS(
     ID_CONCEPTO_PAGOS int IDENTITY(1,1) NOT NULL PRIMARY KEY,
