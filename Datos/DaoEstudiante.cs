@@ -57,7 +57,7 @@ namespace Datos
                             estudiante.Ruta_foto = (String)dr["RutaFoto"];
                             estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
                             estudiante.Direccion = (String)dr["Direccion"];
-                            estudiante.Genero = (String)dr["GeneroEstudiante"];
+                            estudiante.Genero = OrdenarGenero((String)dr["GeneroEstudiante"]);
                             estudiante.TelefonoAcudiente = (String)dr["Telefono"];
                             estudiante.CelularAcudiente = (String)dr["Celular"];
                             estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
@@ -108,7 +108,7 @@ namespace Datos
                         estudiante.Ruta_foto = (String)dr["RutaFoto"];
                         estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
                         estudiante.Direccion = (String)dr["Direccion"];
-                        estudiante.Genero = (String)dr["GeneroEstudiante"];
+                        estudiante.Genero = OrdenarGenero((String)dr["GeneroEstudiante"]);
                         estudiante.TelefonoAcudiente = (String)dr["Telefono"];
                         estudiante.CelularAcudiente = (String)dr["Celular"];
                         estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
@@ -268,6 +268,21 @@ namespace Datos
             else
             {
                 valor = "Inactivo";
+            }
+
+            return valor;
+        }
+
+        public String OrdenarGenero(String tipo)
+        {
+            String valor = "";
+            if (tipo == "F")
+            {
+                valor = "Femenino";
+            }
+            else
+            {
+                valor = "Masculino";
             }
 
             return valor;

@@ -37,9 +37,39 @@ namespace Windows_vista
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Frm_modificar_estudiante frm_modificar_estudiante = new Frm_modificar_estudiante();
-            frm_modificar_estudiante.Show();
-            this.Close();
+            if (null != dgv_estudiantes.CurrentRow)
+            {
+                if (dgv_estudiantes.RowCount > 0)
+                {
+                    Estudiante estudiante = new Estudiante();
+
+                    estudiante.Id_estudiante = (int)dgv_estudiantes[0, dgv_estudiantes.CurrentRow.Index].Value;
+                    estudiante.DocumentoEstudiante = (String)dgv_estudiantes[1, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.TipoDocumento = (String)dgv_estudiantes[2, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.NombreEstudiante = (String)dgv_estudiantes[3, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.ApellidoEstudiante = (String)dgv_estudiantes[4, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.FechaNacimiento = (DateTime)dgv_estudiantes[5, dgv_estudiantes.CurrentRow.Index].Value;
+                    estudiante.NombreAcudiente = (String)dgv_estudiantes[6, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.Direccion = (String)dgv_estudiantes[7, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.Genero = (String)dgv_estudiantes[8, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.TelefonoAcudiente = (String)dgv_estudiantes[9, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.CelularAcudiente = (String)dgv_estudiantes[10, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.CorreoElectronicoAcudiente = (String)dgv_estudiantes[11, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.ObservacionesEstudiante = (String)dgv_estudiantes[12, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.EstadoEstudiante = (String)dgv_estudiantes[13, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.grupo.NombreGrupo = (String)dgv_estudiantes[14, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.grupo.IdGrupo = (int)dgv_estudiantes[15, dgv_estudiantes.CurrentRow.Index].Value;
+                    estudiante.Ruta_foto = (String)dgv_estudiantes[16, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+
+                    Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante);
+                    frm_admin_usuarios.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione registro para modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Frm_administracion_estudiantes_Load(object sender, EventArgs e)
@@ -70,7 +100,8 @@ namespace Windows_vista
                     lista[i].ObservacionesEstudiante,
                     lista[i].EstadoEstudiante,
                     lista[i].grupo.NombreGrupo,
-                    lista[i].grupo.IdGrupo
+                    lista[i].grupo.IdGrupo,
+                    lista[i].Ruta_foto
                 );
                 ;
             }
@@ -119,7 +150,8 @@ namespace Windows_vista
                 estudiante.ObservacionesEstudiante,
                 estudiante.EstadoEstudiante,
                 estudiante.grupo.NombreGrupo,
-                estudiante.grupo.IdGrupo
+                estudiante.grupo.IdGrupo,
+                estudiante.Ruta_foto
             );
 
             dgv_estudiantes.ClearSelection();

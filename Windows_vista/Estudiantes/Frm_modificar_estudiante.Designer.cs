@@ -30,16 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_modificar_estudiante));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.combo_grupo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Txt_observaciones = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo_genero = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_nombre_acudiente = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_fecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.Combo_tipo_documento = new System.Windows.Forms.ComboBox();
@@ -61,6 +60,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Txt_foto = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -68,16 +70,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.Txt_foto);
+            this.panel1.Controls.Add(this.combo_grupo);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.Txt_observaciones);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.combo_genero);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.Txt_nombre_acudiente);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.date_fecha);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btn_guardar);
             this.panel1.Controls.Add(this.Combo_tipo_documento);
@@ -100,36 +104,58 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 574);
+            this.panel1.Size = new System.Drawing.Size(934, 617);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox3
+            // combo_grupo
             // 
-            this.textBox3.Location = new System.Drawing.Point(41, 384);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(860, 117);
-            this.textBox3.TabIndex = 40;
+            this.combo_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_grupo.FormattingEnabled = true;
+            this.combo_grupo.Location = new System.Drawing.Point(42, 534);
+            this.combo_grupo.Name = "combo_grupo";
+            this.combo_grupo.Size = new System.Drawing.Size(271, 28);
+            this.combo_grupo.TabIndex = 44;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(38, 511);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Grupo (*)";
+            // 
+            // Txt_observaciones
+            // 
+            this.Txt_observaciones.Location = new System.Drawing.Point(41, 391);
+            this.Txt_observaciones.Multiline = true;
+            this.Txt_observaciones.Name = "Txt_observaciones";
+            this.Txt_observaciones.Size = new System.Drawing.Size(860, 117);
+            this.Txt_observaciones.TabIndex = 40;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(38, 361);
+            this.label16.Location = new System.Drawing.Point(38, 368);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(125, 20);
             this.label16.TabIndex = 39;
             this.label16.Text = "Observaciones (*)";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // comboBox1
+            // combo_genero
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(687, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 28);
-            this.comboBox1.TabIndex = 38;
+            this.combo_genero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_genero.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_genero.FormattingEnabled = true;
+            this.combo_genero.Location = new System.Drawing.Point(687, 183);
+            this.combo_genero.Name = "combo_genero";
+            this.combo_genero.Size = new System.Drawing.Size(214, 28);
+            this.combo_genero.TabIndex = 38;
             // 
             // label15
             // 
@@ -141,21 +167,13 @@
             this.label15.TabIndex = 37;
             this.label15.Text = "Genero estudiante (*)";
             // 
-            // textBox1
+            // Txt_nombre_acudiente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(687, 315);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 27);
-            this.textBox1.TabIndex = 36;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(385, 315);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 27);
-            this.textBox2.TabIndex = 35;
+            this.Txt_nombre_acudiente.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_nombre_acudiente.Location = new System.Drawing.Point(385, 315);
+            this.Txt_nombre_acudiente.Name = "Txt_nombre_acudiente";
+            this.Txt_nombre_acudiente.Size = new System.Drawing.Size(271, 27);
+            this.Txt_nombre_acudiente.TabIndex = 35;
             // 
             // label14
             // 
@@ -167,32 +185,13 @@
             this.label14.TabIndex = 34;
             this.label14.Text = "Nombre acudiente";
             // 
-            // button1
+            // date_fecha
             // 
-            this.button1.Location = new System.Drawing.Point(871, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(683, 292);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 20);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Foto (*)";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(687, 118);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 20);
-            this.dateTimePicker1.TabIndex = 30;
+            this.date_fecha.CalendarFont = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_fecha.Location = new System.Drawing.Point(687, 118);
+            this.date_fecha.Name = "date_fecha";
+            this.date_fecha.Size = new System.Drawing.Size(214, 20);
+            this.date_fecha.TabIndex = 30;
             // 
             // label5
             // 
@@ -210,7 +209,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(422, 518);
+            this.btn_guardar.Location = new System.Drawing.Point(422, 569);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 27;
@@ -393,12 +392,39 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Modificar estudiante";
             // 
+            // Txt_foto
+            // 
+            this.Txt_foto.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_foto.Location = new System.Drawing.Point(687, 315);
+            this.Txt_foto.Name = "Txt_foto";
+            this.Txt_foto.Size = new System.Drawing.Size(178, 27);
+            this.Txt_foto.TabIndex = 45;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(683, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 20);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Foto (*)";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(871, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 27);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Frm_modificar_estudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(938, 579);
+            this.ClientSize = new System.Drawing.Size(938, 623);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_modificar_estudiante";
@@ -415,16 +441,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txt_observaciones;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combo_genero;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_nombre_acudiente;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_fecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.ComboBox Combo_tipo_documento;
@@ -446,5 +469,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox combo_grupo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Txt_foto;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }
