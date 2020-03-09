@@ -127,6 +127,7 @@
             this.button5.TabIndex = 45;
             this.button5.Text = "Modificar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btn_guardar
             // 
@@ -140,6 +141,7 @@
             this.btn_guardar.TabIndex = 44;
             this.btn_guardar.Text = "Registrar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // dgv_grupos
             // 

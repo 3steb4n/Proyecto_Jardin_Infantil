@@ -42,5 +42,19 @@ namespace Windows_vista
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos();
+            frm_admin_grupos.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
+            frm_admin_estudiantes.Show();
+            this.Close();
+        }
     }
 }

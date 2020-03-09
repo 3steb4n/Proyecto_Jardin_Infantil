@@ -8,7 +8,7 @@ using Datos;
 
 namespace Negocio
 {
-    class BLEstudiante
+    public class BLEstudiante
     {
 
         public List<Estudiante> ListarEstudiante()

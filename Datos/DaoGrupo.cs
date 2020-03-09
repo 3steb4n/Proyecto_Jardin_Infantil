@@ -51,13 +51,9 @@ namespace Datos
                             grupo.IdGrupo = (int)dr["IdGrupo"];
                             grupo.NombreGrupo = (String)dr["NombreGrupo"];
                             grupo.DescripcionGrupo = (String)dr["DescripcionGrupo"];
-                            grupo.UsuarioCreacion = (String)dr["UsuarioCreacion"];
-                            grupo.FechaCreacion = (DateTime)dr["FechaCreacion"];
-                            grupo.UsuarioModificacion = (String)dr["UsuarioModificacion"];
-                            grupo.FechaModificacion = (DateTime)dr["FechaModificacion"];
-                            grupo.EstadoGrupo = (String)dr["EstadoGrupo"];
-                            grupo.IdGrado = (int)dr["IdGrado"];
-                            grupo.NombreGrado = (String)dr["NombreGrado"];
+                            grupo.EstadoGrupo = OrdenarEstado((String)dr["EstadoGrupo"]);
+                            grupo.Grado.IdGrado = (int)dr["IdGrado"];
+                            grupo.Grado.NombreGrado = (String)dr["NombreGrado"];
 
                             list.Add(grupo);
                         }
@@ -93,13 +89,9 @@ namespace Datos
                         grupo.IdGrupo = (int)dr["IdGrupo"];
                         grupo.NombreGrupo = (String)dr["NombreGrupo"];
                         grupo.DescripcionGrupo = (String)dr["DescripcionGrupo"];
-                        grupo.UsuarioCreacion = (String)dr["UsuarioCreacion"];
-                        grupo.FechaCreacion = (DateTime)dr["FechaCreacion"];
-                        grupo.UsuarioModificacion = (String)dr["UsuarioModificacion"];
-                        grupo.FechaModificacion = (DateTime)dr["FechaModificacion"];
-                        grupo.EstadoGrupo = (String)dr["EstadoGrupo"];
-                        grupo.IdGrado = (int)dr["IdGrado"];
-                        grupo.NombreGrado = (String)dr["NombreGrado"];
+                        grupo.EstadoGrupo = OrdenarEstado((String)dr["EstadoGrupo"]);
+                        grupo.Grado.IdGrado = (int)dr["IdGrado"];
+                        grupo.Grado.NombreGrado = (String)dr["NombreGrado"];
                     }
                 }
 
@@ -128,10 +120,8 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@DescripcionGrupo", grupo.DescripcionGrupo);
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", grupo.UsuarioCreacion);
                     cmd.Parameters.AddWithValue("@FechaCreacion", grupo.FechaCreacion);
-                    cmd.Parameters.AddWithValue("@UsuarioModificacion", grupo.UsuarioModificacion);
-                    cmd.Parameters.AddWithValue("@FechaModificacion", grupo.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
-                    cmd.Parameters.AddWithValue("@@IdGrado", grupo.IdGrado);
+                    cmd.Parameters.AddWithValue("@IdGrado", grupo.Grado.IdGrado);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -159,12 +149,10 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@id_grupo", grupo.IdGrupo);
                     cmd.Parameters.AddWithValue("@NombreGrupo", grupo.NombreGrupo);
                     cmd.Parameters.AddWithValue("@DescripcionGrupo", grupo.DescripcionGrupo);
-                    cmd.Parameters.AddWithValue("@UsuarioCreacion", grupo.UsuarioCreacion);
-                    cmd.Parameters.AddWithValue("@FechaCreacion", grupo.FechaCreacion);
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", grupo.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", grupo.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
-                    cmd.Parameters.AddWithValue("@IdGrado", grupo.IdGrupo);
+                    cmd.Parameters.AddWithValue("@IdGrado", grupo.Grado.IdGrado);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -199,5 +187,19 @@ namespace Datos
             }
         }
 
+        public String OrdenarEstado(String tipo)
+        {
+            String valor = "";
+            if (tipo == "A")
+            {
+                valor = "Activo";
+            }
+            else
+            {
+                valor = "Inactivo";
+            }
+
+            return valor;
+        }
     }
 }

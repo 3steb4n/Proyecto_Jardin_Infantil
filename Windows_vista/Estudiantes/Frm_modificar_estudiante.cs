@@ -16,5 +16,11 @@ namespace Windows_vista
         {
             InitializeComponent();
         }
+
+        private void Frm_modificar_estudiante_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
+            frm_admin_estudiantes.Show();
+        }
     }
 }

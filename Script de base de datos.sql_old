@@ -157,8 +157,8 @@ create table Grados(
     Descripcion_Grado text,
     Usuario_Creacion varchar(30),
     Fecha_creacion datetime,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
+    Usuario_Modificacion varchar(30),
+    Fecha_Modificacion datetime,
     Estado varchar(2) NOT NULL CHECK (Estado IN('A', 'I'))
 );
 
@@ -257,12 +257,14 @@ CREATE PROCEDURE modificarGrupo
    @id_grupo int,
    @NombreGrupo varchar(50),
    @DescripcionGrupo varchar(50),
+   @UsuarioCreacion varchar(50),
+   @FechaCreacion varchar(50),
    @UsuarioModificacion varchar(50),
    @FechaModificacion varchar(30),
    @EstadoGrupo varchar(30),
    @IdGrado varchar(100)
    AS
-   update Grupos set nombre_grupo=@NombreGrupo, descripcion_grupo=@DescripcionGrupo, usuario_modificacion=@UsuarioModificacion, fecha_modificacion=@FechaModificacion, estado_grupo=@EstadoGrupo,id_grado=@IdGrado where id_grupo=@id_grupo;
+   update Grupos set nombre_grupo=@NombreGrupo, descripcion_grupo=@DescripcionGrupo, usuario_creacion=@UsuarioCreacion, fecha_creacion=@FechaCreacion, usuario_modificacion=@UsuarioModificacion, fecha_modificacion=@FechaModificacion, estado_grupo=@EstadoGrupo,id_grado=@IdGrado where id_grupo=@id_grupo;
 GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -272,102 +274,19 @@ CREATE PROCEDURE eliminarGrupo
    AS
    UPDATE Grupos set estado_grupo='I' where id_grupo=@ID;
 GO
-use JardinInfantil
--- select * from grados;
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- drop table Estudiantes
-create table Estudiantes(
-    ID_estudiante int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Documento_Estudiante varchar(40) NOT NULL,
-    Tipo_Documento varchar(20) NOT NULL CHECK (Tipo_Documento IN('RC', 'TI', 'DNI')),
-    Nombre_Estudiante varchar(30) NOT NULL,
-    Apellido_Estudiante varchar(30) NOT NULL,
-    Fecha_Nacimiento date NOT NULL,
-    Ruta_foto varchar(100) NULL DEFAULT '',
-    Acudiente_Nombre varchar(50) NOT NULL,
-    Direccion varchar(50) NOT NULL,
-    Genero_Estudiante varchar(20) NOT NULL CHECK(Genero_Estudiante IN ('M', 'F')),
-    Telefono varchar(10),
-    Celular varchar(20),
-    Correo_Electronico varchar(100),
-    Observaciones text NOT NULL,
-    Usuario_Creacion varchar(30),
-    Fecha_Creacion datetime ,
-    Usuario_Modificacion varchar(30) NULL DEFAULT '',
-    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
-	Estado_Estudiante varchar (2) NOT NULL CHECK(Estado_Estudiante IN ('A', 'I')),
-    ID_grupo int
-);
 
-ALTER TABLE Estudiantes ADD FOREIGN KEY (ID_grupo) REFERENCES Grupos(id_grupo);
+-- select * from Usuarios;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- drop procedure ListarEstudiantes
-CREATE PROCEDURE ListarEstudiantes
-AS
-SELECT   ID_estudiante [ID_estudiante],
-	     Documento_Estudiante [Documento_Estudiante],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombre_Estudiante [Nombre_Estudiante],
-		 Apellido_Estudiante [Apellido_Estudiante],
-		 Fecha_Nacimiento [Fecha_Nacimiento],
-		 Ruta_foto [Ruta_foto],
-		 Acudiente_Nombre [Acudiente_Nombre],
-		 Direccion [Direccion],
-		 Genero_Estudiante [Genero_Estudiante],
-	     Telefono [Telefono],
-		 Celular [Celular],
-		 Correo_Electronico [Correo_Electronico],
-		 Observaciones [Observaciones],
-		 Estado_Estudiante [EstadoEstudiante],
-		 ID_grupo [ID_grupo]
 
-FROM Estudiantes where Estado_Estudiante = 'A';
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE ListarEstudiantePorDocumento
-@DocumentoEstudiante varchar(40)
-AS
-SELECT   ID_estudiante [ID_estudiante],
-	     Documento_Estudiante [Documento_Estudiante],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombre_Estudiante [Nombre_Estudiante],
-		 Apellido_Estudiante [Apellido_Estudiante],
-		 Fecha_Nacimiento [Fecha_Nacimiento],
-		 Ruta_foto [Ruta_foto],
-		 Acudiente_Nombre [Acudiente_Nombre],
-		 Direccion [Direccion],
-		 Genero_Estudiante [Genero_Estudiante],
-	     Telefono [Telefono],
-		 Celular [Celular],
-		 Correo_Electronico [Correo_Electronico],
-		 Observaciones [Observaciones],
-		 Estado_Estudiante [EstadoEstudiante],
-		 ID_grupo [ID_grupo]
 
-FROM Estudiantes where  Documento_Estudiante=@DocumentoEstudiante AND Estado_Estudiante = 'A';
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---DROP PROCEDURE registrarUsuario
-CREATE PROCEDURE registrarUsuario
-   @Documento varchar(50),
-   @Tipo_Documento varchar(50),
-   @Nombres varchar(50),
-   @Apellidos varchar(50),
-   @Direccion varchar(50),
-   @Celular varchar(30),
-   @Telefono varchar(30),
-   @Correo_Electronico varchar(100),
-   @UsuarioClave varchar(100),
-   @UsuarioCreacion varchar(30),
-   @FechaCreacion datetime,
-   @Estado_Usuario varchar(2),
-   @Estado_Clave varchar(2),
-   @Tipo_Usuario varchar(2)
-   AS
-   INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico,Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   (@Documento,@Tipo_Documento,@Nombres,@Apellidos,@Direccion,@Celular,@Telefono,@Correo_Electronico,@UsuarioClave,@UsuarioCreacion,@FechaCreacion,@Estado_Usuario,@Estado_Clave,@Tipo_Usuario);  
-GO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 
@@ -617,7 +536,7 @@ CREATE PROCEDURE inhabilitarUsuario
    WHERE DOCUMENTO_USUARIO=@documentoUsuario
 GO
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 use JardinInfantil registrarUsuario
 DROP PROCEDURE IF EXISTS registrarUsuario;
 GO
@@ -644,27 +563,3 @@ CREATE PROCEDURE registrarUsuario
    (@DocumentoUsuario, @TipoDocumento, @NombreUsuario, @ApellidoUsuario, @DireccionUsuario, @NumeroCelular, 
    @Telefono, @Email, @UsuarioLogin, @UsuarioClave, @UsuarioCreacion, @FechaCreacion, @EstadoUsuario, @TipoUsuario);
 GO
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE ListarUsuarios
-AS
-SELECT   Id_Usuario [ID],
-	     Documento [Documento],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombres [Nombres],
-		 Apellidos [Apellidos],
-		 Direccion [Direccion],
-		 Celular [Celular],
-		 Telefono [Telefono],
-		 Correo_Electronico [Correo_Electronico],
-		 Usuario_Clave [Usuario_Clave],
-	     Usuario_Creacion [Usuario_Creacion],
-		 Fecha_Creacion [Fecha_Creacion],
-		 Usuario_Modificacion [Usuario_Modificacion],
-		 Fecha_Modificacion [Fecha_Modificacion],
-		 Estado_Usuario [Estado_Usuario],
-		 Estado_Clave [Estado_Clave],
-		 Tipo_Usuario [Tipo_Usuario]
-
-FROM Usuarios where Estado_Usuario = 'A';
-GO
-

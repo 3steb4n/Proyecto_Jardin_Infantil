@@ -145,6 +145,7 @@
             this.Txt_clave.PasswordChar = '*';
             this.Txt_clave.Size = new System.Drawing.Size(284, 26);
             this.Txt_clave.TabIndex = 3;
+            this.Txt_clave.Text = "9070";
             // 
             // Txt_usuario
             // 
@@ -155,6 +156,7 @@
             this.Txt_usuario.Name = "Txt_usuario";
             this.Txt_usuario.Size = new System.Drawing.Size(284, 26);
             this.Txt_usuario.TabIndex = 2;
+            this.Txt_usuario.Text = "dwawadadw";
             // 
             // textUser
             // 

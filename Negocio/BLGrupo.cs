@@ -8,7 +8,7 @@ using Datos;
 
 namespace Negocio
 {
-    class BLGrupo
+    public class BLGrupo
     {
 
         public List<Grupo> ListarGrupos()
@@ -30,13 +30,13 @@ namespace Negocio
             return daoGrupo.InsertarGrupo(grupo);
         }
 
-        public bool ModificarEstudiante(Grupo grupo)
+        public bool ModificarGrupo(Grupo grupo)
         {
             DaoGrupo daoGrupo = new DaoGrupo();
             return daoGrupo.ModificarGrupo(grupo);
         }
 
-        public bool EliminarEstudiante(int id)
+        public bool EliminarGrupo(int id)
         {
             DaoGrupo daoGrupo = new DaoGrupo();
             return daoGrupo.EliminarGrupo(id);

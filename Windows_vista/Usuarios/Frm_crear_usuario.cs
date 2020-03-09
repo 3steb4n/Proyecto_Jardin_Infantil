@@ -21,27 +21,40 @@ namespace Windows_vista
         }
 
         BLUsuario blUsuario = new BLUsuario();
-        Usuario usuario;
-        String tipo;
+
 
         private void CargarDatos()
         {
-            // se llenan valores fijos de los tipos de documentos
-            Combo_tipo_documento.Items.Add("Seleccione...").ToString();
-            Combo_tipo_documento.Items.Add("Cedula de ciudadania").ToString();
-            Combo_tipo_documento.Items.Add("Tarjeta de identidad").ToString();
-            Combo_tipo_documento.Items.Add("Pasaporte").ToString();
-            Combo_tipo_documento.Items.Add("DNI").ToString();
-            Combo_tipo_documento.Items.Add("Cedula de extranjeria").ToString();
+            ComboboxItem item_td1 = new ComboboxItem(); item_td1.Text = "Seleccione..."; item_td1.Value = "";
+            ComboboxItem item_td2 = new ComboboxItem(); item_td2.Text = "Cedula de ciudadania"; item_td2.Value = "CC";
+            ComboboxItem item_td3 = new ComboboxItem(); item_td3.Text = "Tarjeta de identidad"; item_td3.Value = "TI";
+            ComboboxItem item_td4 = new ComboboxItem(); item_td4.Text = "Pasaporte"; item_td4.Value = "P";
+            ComboboxItem item_td5 = new ComboboxItem(); item_td5.Text = "DNI"; item_td5.Value = "DNI";
+            ComboboxItem item_td6 = new ComboboxItem(); item_td6.Text = "Cedula de exntrajeria"; item_td6.Value = "CE";
+            Object[] items_td = new Object[6];
+            items_td[0] = item_td1;
+            items_td[1] = item_td2;
+            items_td[2] = item_td3;
+            items_td[3] = item_td4;
+            items_td[4] = item_td5;
+            items_td[5] = item_td6;
+            Combo_tipo_documento.Items.AddRange(items_td);
             Combo_tipo_documento.SelectedIndex = 0;
 
 
-            // se llenan valores fijos de tipos de usuarios
-            Combo_tipo_usuario.Items.Add("Seleccione...").ToString();
-            Combo_tipo_usuario.Items.Add("Administrador").ToString();
-            Combo_tipo_usuario.Items.Add("Secretaria").ToString();
-            Combo_tipo_usuario.Items.Add("Docente").ToString();
+            ComboboxItem item_rol1 = new ComboboxItem(); item_rol1.Text = "Seleccione..."; item_rol1.Value = "";
+            ComboboxItem item_rol2 = new ComboboxItem(); item_rol2.Text = "Administrador"; item_rol2.Value = "A";
+            ComboboxItem item_rol3 = new ComboboxItem(); item_rol3.Text = "Secretaria"; item_rol3.Value = "S";
+            ComboboxItem item_rol4 = new ComboboxItem(); item_rol4.Text = "Docente"; item_rol4.Value = "D";
+            Object[] items_rol = new Object[4];
+            items_rol[0] = item_rol1;
+            items_rol[1] = item_rol2;
+            items_rol[2] = item_rol3;
+            items_rol[3] = item_rol4;
+
+            Combo_tipo_usuario.Items.AddRange(items_rol);
             Combo_tipo_usuario.SelectedIndex = 0;
+
 
         }
         private void label10_Click(object sender, EventArgs e)
@@ -56,6 +69,7 @@ namespace Windows_vista
 
         private bool ValidarCampos()
         {
+
             bool flag = true;
             if (Txt_numero_documento.Text == "")
             {
@@ -119,6 +133,7 @@ namespace Windows_vista
             DateTime fechaActual = DateTime.Today;
 
             usuario.Documento = Txt_numero_documento.Text;
+            usuario.TipoDocumento = (Combo_tipo_documento.SelectedItem as ComboboxItem).Value.ToString();
             usuario.Nombres = Txt_nombres.Text;
             usuario.Apellidos = Txt_apellidos.Text;
             usuario.Direccion = Txt_direccion.Text;
@@ -127,46 +142,8 @@ namespace Windows_vista
             usuario.Telefono = Txt_telefono.Text;
             usuario.UsuarioCreacion = "1";
             usuario.FechaCreacion = fechaActual;
+            usuario.TipoUsuario = (Combo_tipo_usuario.SelectedItem as ComboboxItem).Value.ToString();
 
-            // formato a combobox tipo documento
-
-            if (Combo_tipo_documento.Text == "Cedula de ciudadania")
-            {
-                usuario.TipoDocumento = "CC";
-
-            }
-            else if (Combo_tipo_documento.Text == "Tarjeta de identidad")
-            {
-                usuario.TipoDocumento = "TI";
-            }
-            else if (Combo_tipo_documento.Text == "Pasaporte")
-            {
-                usuario.TipoDocumento = "P";
-            }
-            else if (Combo_tipo_documento.Text == "DNI")
-            {
-                usuario.TipoDocumento = "DNI";
-            }
-            else if (Combo_tipo_documento.Text == "Cedula de extranjeria")
-            {
-                usuario.TipoDocumento = "CE";
-            }
-
-            // formato a combobox tipo usuario
-
-            if (Combo_tipo_usuario.Text == "Administrador")
-            {
-                usuario.TipoUsuario = "A";
-
-            }
-            else if (Combo_tipo_usuario.Text == "Docente")
-            {
-                usuario.TipoUsuario = "D";
-            }
-            else if (Combo_tipo_usuario.Text == "Secretaria")
-            {
-                usuario.TipoUsuario = "S";
-            }
 
             bool bandera = blUsuario.InsertarUsuario(usuario);
 

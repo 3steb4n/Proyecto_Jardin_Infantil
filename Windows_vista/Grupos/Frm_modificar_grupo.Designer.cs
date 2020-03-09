@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_modificar_grupo));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
+            this.Combo_estado_grupo = new System.Windows.Forms.ComboBox();
+            this.Combo_grado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.Txt_nombres = new System.Windows.Forms.TextBox();
-            this.Txt_direccion = new System.Windows.Forms.TextBox();
-            this.Txt_numero_documento = new System.Windows.Forms.TextBox();
+            this.Txt_nombre_grupo = new System.Windows.Forms.TextBox();
+            this.Txt_descripcion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,15 +49,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.Combo_tipo_usuario);
+            this.panel1.Controls.Add(this.Combo_estado_grupo);
+            this.panel1.Controls.Add(this.Combo_grado);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btn_guardar);
-            this.panel1.Controls.Add(this.Txt_nombres);
-            this.panel1.Controls.Add(this.Txt_direccion);
-            this.panel1.Controls.Add(this.Txt_numero_documento);
+            this.panel1.Controls.Add(this.Txt_nombre_grupo);
+            this.panel1.Controls.Add(this.Txt_descripcion);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -65,16 +65,37 @@
             this.panel1.Size = new System.Drawing.Size(752, 441);
             this.panel1.TabIndex = 2;
             // 
-            // Combo_tipo_usuario
+            // Combo_estado_grupo
             // 
-            this.Combo_tipo_usuario.BackColor = System.Drawing.SystemColors.Window;
-            this.Combo_tipo_usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Combo_tipo_usuario.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Combo_tipo_usuario.FormattingEnabled = true;
-            this.Combo_tipo_usuario.Location = new System.Drawing.Point(42, 328);
-            this.Combo_tipo_usuario.Name = "Combo_tipo_usuario";
-            this.Combo_tipo_usuario.Size = new System.Drawing.Size(300, 28);
-            this.Combo_tipo_usuario.TabIndex = 28;
+            this.Combo_estado_grupo.BackColor = System.Drawing.SystemColors.Window;
+            this.Combo_estado_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combo_estado_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Combo_estado_grupo.FormattingEnabled = true;
+            this.Combo_estado_grupo.Location = new System.Drawing.Point(42, 328);
+            this.Combo_estado_grupo.Name = "Combo_estado_grupo";
+            this.Combo_estado_grupo.Size = new System.Drawing.Size(249, 28);
+            this.Combo_estado_grupo.TabIndex = 34;
+            // 
+            // Combo_grado
+            // 
+            this.Combo_grado.BackColor = System.Drawing.SystemColors.Window;
+            this.Combo_grado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combo_grado.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Combo_grado.FormattingEnabled = true;
+            this.Combo_grado.Location = new System.Drawing.Point(390, 328);
+            this.Combo_grado.Name = "Combo_grado";
+            this.Combo_grado.Size = new System.Drawing.Size(249, 28);
+            this.Combo_grado.TabIndex = 32;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(386, 305);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Grado (*)";
             // 
             // btn_guardar
             // 
@@ -88,37 +109,30 @@
             this.btn_guardar.TabIndex = 27;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // Txt_nombres
+            // Txt_nombre_grupo
             // 
-            this.Txt_nombres.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_nombres.Location = new System.Drawing.Point(241, 118);
-            this.Txt_nombres.Name = "Txt_nombres";
-            this.Txt_nombres.Size = new System.Drawing.Size(411, 27);
-            this.Txt_nombres.TabIndex = 20;
+            this.Txt_nombre_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_nombre_grupo.Location = new System.Drawing.Point(42, 128);
+            this.Txt_nombre_grupo.Name = "Txt_nombre_grupo";
+            this.Txt_nombre_grupo.Size = new System.Drawing.Size(411, 27);
+            this.Txt_nombre_grupo.TabIndex = 20;
             // 
-            // Txt_direccion
+            // Txt_descripcion
             // 
-            this.Txt_direccion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_direccion.Location = new System.Drawing.Point(42, 192);
-            this.Txt_direccion.Multiline = true;
-            this.Txt_direccion.Name = "Txt_direccion";
-            this.Txt_direccion.Size = new System.Drawing.Size(610, 89);
-            this.Txt_direccion.TabIndex = 18;
-            // 
-            // Txt_numero_documento
-            // 
-            this.Txt_numero_documento.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_numero_documento.Location = new System.Drawing.Point(41, 118);
-            this.Txt_numero_documento.Name = "Txt_numero_documento";
-            this.Txt_numero_documento.Size = new System.Drawing.Size(169, 27);
-            this.Txt_numero_documento.TabIndex = 14;
+            this.Txt_descripcion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_descripcion.Location = new System.Drawing.Point(42, 192);
+            this.Txt_descripcion.Multiline = true;
+            this.Txt_descripcion.Name = "Txt_descripcion";
+            this.Txt_descripcion.Size = new System.Drawing.Size(610, 89);
+            this.Txt_descripcion.TabIndex = 18;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(237, 93);
+            this.label12.Location = new System.Drawing.Point(38, 105);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(149, 20);
             this.label12.TabIndex = 13;
@@ -143,16 +157,6 @@
             this.label4.Size = new System.Drawing.Size(139, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Estado de grupo (*)";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Código de grupo (*)";
             // 
             // label2
             // 
@@ -195,6 +199,7 @@
             this.MaximizeBox = false;
             this.Name = "Frm_modificar_grupo";
             this.Text = "Modificar grupo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_modificar_grupo_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -206,17 +211,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox Combo_tipo_usuario;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.TextBox Txt_nombres;
-        private System.Windows.Forms.TextBox Txt_direccion;
-        private System.Windows.Forms.TextBox Txt_numero_documento;
+        private System.Windows.Forms.TextBox Txt_nombre_grupo;
+        private System.Windows.Forms.TextBox Txt_descripcion;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox Combo_grado;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox Combo_estado_grupo;
     }
 }

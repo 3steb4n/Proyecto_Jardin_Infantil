@@ -43,8 +43,11 @@
             this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
@@ -72,6 +75,7 @@
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 40;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Txt_busquedaCedula
             // 
@@ -103,6 +107,7 @@
             this.button6.TabIndex = 37;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -116,6 +121,7 @@
             this.button5.TabIndex = 36;
             this.button5.Text = "Modificar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btn_guardar
             // 
@@ -129,6 +135,7 @@
             this.btn_guardar.TabIndex = 35;
             this.btn_guardar.Text = "Registrar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // dgv_grupos
             // 
@@ -152,7 +159,9 @@
             this.id_grupo,
             this.Nombre_grupo,
             this.Descripcion_Grupo,
-            this.Estado_grupo});
+            this.Estado_grupo,
+            this.Nombre_grado,
+            this.id_grado});
             this.dgv_grupos.EnableHeadersVisualStyles = false;
             this.dgv_grupos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv_grupos.Location = new System.Drawing.Point(239, 119);
@@ -187,13 +196,13 @@
             // 
             // Nombre_grupo
             // 
-            this.Nombre_grupo.HeaderText = "Nombre de grupo";
+            this.Nombre_grupo.HeaderText = "Grupo";
             this.Nombre_grupo.Name = "Nombre_grupo";
             this.Nombre_grupo.ReadOnly = true;
             // 
             // Descripcion_Grupo
             // 
-            this.Descripcion_Grupo.HeaderText = "Descripción de grupo";
+            this.Descripcion_Grupo.HeaderText = "Descripción";
             this.Descripcion_Grupo.Name = "Descripcion_Grupo";
             this.Descripcion_Grupo.ReadOnly = true;
             // 
@@ -202,6 +211,18 @@
             this.Estado_grupo.HeaderText = "Estado grupo";
             this.Estado_grupo.Name = "Estado_grupo";
             this.Estado_grupo.ReadOnly = true;
+            // 
+            // Nombre_grado
+            // 
+            this.Nombre_grado.HeaderText = "Grado";
+            this.Nombre_grado.Name = "Nombre_grado";
+            this.Nombre_grado.ReadOnly = true;
+            // 
+            // id_grado
+            // 
+            this.id_grado.HeaderText = "id_grado";
+            this.id_grado.Name = "id_grado";
+            this.id_grado.ReadOnly = true;
             // 
             // label1
             // 
@@ -216,6 +237,7 @@
             // PanelMenuLateral
             // 
             this.PanelMenuLateral.BackColor = System.Drawing.Color.Teal;
+            this.PanelMenuLateral.Controls.Add(this.button2);
             this.PanelMenuLateral.Controls.Add(this.Btn_cerrar);
             this.PanelMenuLateral.Controls.Add(this.button1);
             this.PanelMenuLateral.Controls.Add(this.Btn_reportes);
@@ -227,6 +249,20 @@
             this.PanelMenuLateral.Name = "PanelMenuLateral";
             this.PanelMenuLateral.Size = new System.Drawing.Size(216, 683);
             this.PanelMenuLateral.TabIndex = 32;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 374);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(216, 45);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Grupos";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Btn_cerrar
             // 
@@ -310,6 +346,7 @@
             this.Btn_usuarios.TabIndex = 1;
             this.Btn_usuarios.Text = "Usuarios";
             this.Btn_usuarios.UseVisualStyleBackColor = false;
+            this.Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
             // 
             // panel1
             // 
@@ -384,5 +421,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_grupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_grado;
+        private System.Windows.Forms.Button button2;
     }
 }
