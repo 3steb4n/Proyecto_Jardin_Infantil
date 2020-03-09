@@ -126,6 +126,41 @@ namespace Windows_vista
             dgv_estudiantes.CurrentCell = null;
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dgv_estudiantes.RowCount > 0)
+            {
+                if (null != dgv_estudiantes.CurrentRow)
+                {
+                    int id = (int)dgv_estudiantes[0, dgv_estudiantes.CurrentRow.Index].Value;
+
+                    DialogResult response = MessageBox.Show("¿Esta seguro de eliminar el registro del estudiante?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (response == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        bool flag = blestudiante.EliminarEstudiante(id);
+                        if (flag == true)
+                        {
+                            MessageBox.Show("Registro eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarDatos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error del sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione registro a eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No existen registros para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 
 }

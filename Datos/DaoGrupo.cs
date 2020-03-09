@@ -104,6 +104,41 @@ namespace Datos
             }
         }
 
+        public List<Grupo> ListarGruposNombreyID()
+        {
+
+            List<Grupo> list = new List<Grupo>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarGruposNombreyID", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Grupo grupo = new Grupo();
+
+                            grupo.IdGrupo = (int)dr["IdGrupo"];
+                            grupo.NombreGrupo = (String)dr["NombreGrupo"];
+
+                            list.Add(grupo);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante listaGeneral: " + e);
+                return list;
+            }
+        }
+
         public bool InsertarGrupo(Grupo grupo)
         {
             bool flag = false;

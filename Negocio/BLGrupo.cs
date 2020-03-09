@@ -24,6 +24,13 @@ namespace Negocio
             return daoGrupo.ListaPorNombre(nombre);
         }
 
+        public List<Grupo> ListarGruposNombreyID()
+        {
+            DaoGrupo daoGrupo = new DaoGrupo();
+
+            return daoGrupo.ListarGruposNombreyID();
+        }
+
         public bool InsertarGrupo(Grupo grupo)
         {
             DaoGrupo daoGrupo = new DaoGrupo();

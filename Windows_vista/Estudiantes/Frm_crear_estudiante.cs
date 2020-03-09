@@ -19,7 +19,10 @@ namespace Windows_vista
             InitializeComponent();
             CargarDatos();
         }
+
         BLEstudiante blEstudiante = new BLEstudiante();
+        BLGrupo blGrupo = new BLGrupo();
+        List<Grupo> lista = null;
 
         private void CargarDatos()
         {
@@ -37,8 +40,8 @@ namespace Windows_vista
 
 
             ComboboxItem item_g1 = new ComboboxItem(); item_g1.Text = "Seleccione..."; item_g1.Value = "";
-            ComboboxItem item_g2 = new ComboboxItem(); item_g2.Text = "Administrador"; item_g2.Value = "A";
-            ComboboxItem item_g3 = new ComboboxItem(); item_g3.Text = "Secretaria"; item_g3.Value = "S";
+            ComboboxItem item_g2 = new ComboboxItem(); item_g2.Text = "Femenino"; item_g2.Value = "F";
+            ComboboxItem item_g3 = new ComboboxItem(); item_g3.Text = "Masculino"; item_g3.Value = "M";
             Object[] items_g = new Object[3];
             items_g[0] = item_g1;
             items_g[1] = item_g2;
@@ -46,6 +49,12 @@ namespace Windows_vista
 
             combo_genero.Items.AddRange(items_g);
             combo_genero.SelectedIndex = 0;
+
+            lista = blGrupo.ListarGruposNombreyID();
+            combo_grupo.DataSource = lista;
+            combo_grupo.DisplayMember = "NombreGrupo";
+            combo_grupo.ValueMember = "IdGrupo";
+
         }
 
         private void Frm_crear_estudiante_Load(object sender, EventArgs e)
@@ -81,10 +90,10 @@ namespace Windows_vista
 
             estudiante.DocumentoEstudiante = Txt_numero_documento.Text;
             estudiante.TipoDocumento = (Combo_tipo_documento.SelectedItem as ComboboxItem).Value.ToString();
-            estudiante.FechaModificacion = date_fecha.Value;
+            estudiante.FechaNacimiento = date_fecha.Value.Date;
             estudiante.NombreEstudiante = Txt_nombres.Text;
             estudiante.ApellidoEstudiante = Txt_apellidos.Text;
-            estudiante.Genero = combo_genero.Text;
+            estudiante.Genero = (combo_genero.SelectedItem as ComboboxItem).Value.ToString();
             estudiante.Direccion = Txt_direccion.Text;
             estudiante.CorreoElectronicoAcudiente = Txt_correo_electronico.Text;
             estudiante.TelefonoAcudiente = Txt_telefono.Text;
@@ -93,14 +102,14 @@ namespace Windows_vista
             estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
             estudiante.UsuarioCreacion = "1";
             estudiante.FechaCreacion = fechaActual;
-            
-
+            estudiante.Ruta_foto = Txt_foto.Text;
+            estudiante.grupo.IdGrupo = IDPorNombre(combo_grupo.Text);
 
             bool bandera = blEstudiante.InsertarEstudiante(estudiante);
 
             if (bandera)
             {
-                MessageBox.Show("Usuario creado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Estudiante creado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -192,6 +201,27 @@ namespace Windows_vista
                 flag = false;
             }
             return flag;
+        }
+
+
+        public int IDPorNombre(String nombre)
+        {
+            int value = 0;
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].NombreGrupo == nombre)
+                {
+                    value = lista[i].IdGrupo;
+                }
+            }
+
+            return value;
+        }
+
+        private void combo_genero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

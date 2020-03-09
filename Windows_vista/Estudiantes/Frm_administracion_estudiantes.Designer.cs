@@ -116,6 +116,7 @@
             this.button6.TabIndex = 46;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 

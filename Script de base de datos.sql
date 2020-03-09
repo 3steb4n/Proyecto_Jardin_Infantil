@@ -242,6 +242,18 @@ SELECT  g.id_grupo [IdGrupo],
 		FROM Grupos g  INNER JOIN Grados gr ON g.id_grado = gr.Id_Grado where g.nombre_grupo=@nombre_grupo and g.estado_grupo = 'A';
 GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+select * from Grupos
+DROP PROCEDURE  ListarGruposNombreyID
+CREATE PROCEDURE ListarGruposNombreyID
+AS
+SELECT  id_grupo [IdGrupo],
+		nombre_grupo [NombreGrupo]
+		
+		FROM Grupos  where estado_grupo = 'A';
+GO
+
+EXEC ListarGruposNombreyID;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarGrupo
 CREATE PROCEDURE registrarGrupo
    @NombreGrupo varchar(50),
@@ -366,28 +378,26 @@ EXEC ListarEstudiantePorDocumento '8548964684'
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarEstudiante
 CREATE PROCEDURE registrarEstudiante
-   @Documento_Estudiante varchar(40),
-   @Tipo_Documento varchar(20),
-   @Nombre_Estudiante varchar(30),
-   @Apellido_Estudiante varchar(30),
-   @Fecha_Nacimiento date,
-   @Ruta_foto varchar(100),
-   @Acudiente_Nombre varchar(50),
+   @DocumentoEstudiante varchar(40),
+   @TipoDocumento varchar(20),
+   @NombreEstudiante varchar(30),
+   @ApellidoEstudiante varchar(30),
+   @FechaNacimiento date,
+   @RutaFoto varchar(100),
+   @AcudienteNombre varchar(50),
    @Direccion varchar(50),
-   @Genero_Estudiante varchar(20),
+   @GeneroEstudiante varchar(20),
    @Telefono varchar(10),
    @Celular varchar(20),
-   @Correo_Electronico varchar(100),
+   @CorreoElectronico varchar(100),
    @Observaciones text,
-   @Usuario_Creacion varchar(30),
-   @Fecha_Creacion datetime,
-   @Usuario_Modificacion varchar(30),
-   @Fecha_Modificacion datetime,
-   @Estado_Estudiante varchar(2),
-   @ID_grupo int
+   @UsuarioCreacion varchar(30),
+   @FechaCreacion datetime,
+   @EstadoEstudiante varchar(2),
+   @IDgrupo int
    AS
-   INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-			VALUES   (@Documento_Estudiante,@Tipo_Documento,@Nombre_Estudiante,@Apellido_Estudiante,@Fecha_Nacimiento,@Ruta_foto,@Acudiente_Nombre,@Direccion,@Genero_Estudiante,@Telefono,@Celular,@Correo_Electronico,@Observaciones,@Usuario_Creacion,@Fecha_Creacion,@Usuario_Modificacion,@Fecha_Modificacion,@Estado_Estudiante,@ID_grupo);  
+   INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Estado_Estudiante,ID_grupo) 
+			VALUES   (@DocumentoEstudiante,@TipoDocumento,@NombreEstudiante,@ApellidoEstudiante,@FechaNacimiento,@RutaFoto,@AcudienteNombre,@Direccion,@GeneroEstudiante,@Telefono,@Celular,@CorreoElectronico,@Observaciones,@UsuarioCreacion,@FechaCreacion,@EstadoEstudiante,@IDgrupo);  
 GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE modificarEstudiante
