@@ -492,7 +492,80 @@ create table Materias(
 
 ALTER TABLE Materias ADD FOREIGN KEY (Id_Area) REFERENCES Areas(Id_Area);
 ALTER TABLE Materias ADD FOREIGN KEY (Id_Grado) REFERENCES Grados(Id_Grado);
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarMaterias
+CREATE PROCEDURE ListarMaterias
+AS
+SELECT   m.Id_Materia [IdMateria],
+	     m.Nomre_Materia [NomreMateria],
+	     m.Descripcion_Materia [DescripcionMateria],
+		 m.Estado_Materia [EstadoMateria],
+		 m.Numero_Horas [NumeroHoras],
+		 a.Id_Area [IdArea],
+		 a.Nombre [NombreArea],
+		 g.Id_Grado [IdGrado],
+		 g.Nombre_Grado [NombreGrado]
 
+FROM Materias m INNER JOIN Areas a ON m.Id_Area = a.Id_Area   INNER JOIN Grados g ON m.Id_Grado = g.Id_Grado     where m.Estado_Materia='A';
+GO
+EXEC ListarMaterias
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarMateriasPorNombre
+CREATE PROCEDURE ListarMateriasPorNombre
+@nombreMateria varchar(30)
+AS
+SELECT   m.Id_Materia [IdMateria],
+	     m.Nomre_Materia [NomreMateria],
+	     m.Descripcion_Materia [DescripcionMateria],
+		 m.Estado_Materia [EstadoMateria],
+		 m.Numero_Horas [NumeroHoras],
+		 a.Id_Area [IdArea],
+		 a.Nombre [NombreArea],
+		 g.Id_Grado [IdGrado],
+		 g.Nombre_Grado [NombreGrado]
+
+FROM Materias m INNER JOIN Areas a ON m.Id_Area = a.Id_Area   INNER JOIN Grados g ON m.Id_Grado = g.Id_Grado     where m.Estado_Materia='A' AND m.Nomre_Materia=@nombreMateria;
+GO
+EXEC ListarMaterias
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE registrarMateria
+CREATE PROCEDURE registrarMateria
+   @NombreMateria varchar(30),
+   @DescripcionMateria text,
+   @UsuarioCreacion varchar(30),
+   @FechaCreacion datetime,
+   @EstadoMateria varchar(2),
+   @NumeroHoras int,
+   @IdArea int,
+   @IdGrado int
+   AS
+   INSERT INTO Materias (Nomre_Materia, Descripcion_Materia, Usuario_Creacion, Fecha_Creacion, Estado_Materia, Numero_Horas, Id_Area, Id_Grado) 
+			VALUES   (@NombreMateria, @DescripcionMateria, @UsuarioCreacion, @FechaCreacion, @EstadoMateria, @NumeroHoras, @IdArea, @IdGrado);  
+GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE modificarMateria
+CREATE PROCEDURE modificarMateria
+   @IdMateria int,
+   @NombreMateria varchar(30),
+   @DescripcionMateria text,
+   @UsuarioModificacion varchar(30),
+   @FechaModificacion datetime,
+   @EstadoMateria varchar(2),
+   @NumeroHoras int,
+   @IdArea int,
+   @IdGrado int
+   AS
+
+   UPDATE Materias SET Nomre_Materia=@NombreMateria, Descripcion_Materia=@DescripcionMateria, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Estado_Materia=@EstadoMateria, Numero_Horas=@NumeroHoras, Id_Area=@IdArea, Id_Grado=@IdGrado where Id_Materia=@IdMateria;
+
+GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE eliminarMateria
+CREATE PROCEDURE eliminarMateria
+   @IdMateria int
+   AS
+   UPDATE Materias SET Estado_Materia='I'  where Id_Materia=@IdMateria;
+GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Materias_Area(
     Id_Materia int,
