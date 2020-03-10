@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Windows_vista.Materia;
+using Windows_vista.Logros;
 
 namespace Windows_vista
 {
@@ -54,6 +56,32 @@ namespace Windows_vista
         {
             Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
             frm_admin_estudiantes.Show();
+            this.Close();
+        }
+
+        private void Btn_materias_Click(object sender, EventArgs e)
+        {
+            Frm_admin_materia frm = new Frm_admin_materia();
+            frm.Show();
+            this.Close();
+        }
+
+        private void Btn_logros_Click(object sender, EventArgs e)
+        {
+            Frm_admin_logros  frm = new Frm_admin_logros();
+            frm.Show();
+            this.Close();
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm = new Frm_inicio_sesion();
+            frm.Show();
             this.Close();
         }
     }

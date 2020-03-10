@@ -28,166 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button Btn_usuarios;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu_admin));
-            this.PanelMenuLateral = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_logros = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_materias = new System.Windows.Forms.Button();
-            this.Btn_usuarios = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_rol = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labe_nombre_usuario = new System.Windows.Forms.Label();
-            this.PanelMenuLateral.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            Btn_usuarios = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PanelMenuLateral
+            // Btn_cerrar
             // 
-            this.PanelMenuLateral.BackColor = System.Drawing.Color.Teal;
-            this.PanelMenuLateral.Controls.Add(this.button2);
-            this.PanelMenuLateral.Controls.Add(this.button1);
-            this.PanelMenuLateral.Controls.Add(this.Btn_cerrar);
-            this.PanelMenuLateral.Controls.Add(this.Btn_reportes);
-            this.PanelMenuLateral.Controls.Add(this.Btn_logros);
-            this.PanelMenuLateral.Controls.Add(this.Btn_materias);
-            this.PanelMenuLateral.Controls.Add(this.Btn_usuarios);
-            this.PanelMenuLateral.Controls.Add(this.panel1);
-            this.PanelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelMenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenuLateral.Name = "PanelMenuLateral";
-            this.PanelMenuLateral.Size = new System.Drawing.Size(250, 508);
-            this.PanelMenuLateral.TabIndex = 1;
+            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 264);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.Btn_cerrar.TabIndex = 5;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
             // 
-            // button2
+            // Btn_reportes
             // 
-            this.button2.BackColor = System.Drawing.Color.Gainsboro;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 419);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Estudiantes";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_reportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_reportes.Image = global::Windows_vista.Properties.Resources.tablero__1_;
+            this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_reportes.Location = new System.Drawing.Point(0, 174);
+            this.Btn_reportes.Name = "Btn_reportes";
+            this.Btn_reportes.Size = new System.Drawing.Size(238, 45);
+            this.Btn_reportes.TabIndex = 4;
+            this.Btn_reportes.Text = "Reportes";
+            this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
+            // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Usuarios";
+            Btn_usuarios.UseVisualStyleBackColor = false;
+            Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
+            // 
+            // Btn_logros
+            // 
+            this.Btn_logros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_logros.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_logros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_logros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_logros.Image = global::Windows_vista.Properties.Resources.editar__1_;
+            this.Btn_logros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_logros.Location = new System.Drawing.Point(0, 90);
+            this.Btn_logros.Name = "Btn_logros";
+            this.Btn_logros.Size = new System.Drawing.Size(238, 39);
+            this.Btn_logros.TabIndex = 3;
+            this.Btn_logros.Text = "Logros";
+            this.Btn_logros.UseVisualStyleBackColor = false;
+            this.Btn_logros.Click += new System.EventHandler(this.Btn_logros_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Windows_vista.Properties.Resources.grupo__1_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 374);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 45);
+            this.button1.Size = new System.Drawing.Size(238, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "Grupos";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 329);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(250, 45);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
-            // 
-            // Btn_reportes
-            // 
-            this.Btn_reportes.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_reportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reportes.Location = new System.Drawing.Point(0, 284);
-            this.Btn_reportes.Name = "Btn_reportes";
-            this.Btn_reportes.Size = new System.Drawing.Size(250, 45);
-            this.Btn_reportes.TabIndex = 4;
-            this.Btn_reportes.Text = "Reportes";
-            this.Btn_reportes.UseVisualStyleBackColor = false;
-            // 
-            // Btn_logros
-            // 
-            this.Btn_logros.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_logros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_logros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_logros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_logros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_logros.Location = new System.Drawing.Point(0, 239);
-            this.Btn_logros.Name = "Btn_logros";
-            this.Btn_logros.Size = new System.Drawing.Size(250, 45);
-            this.Btn_logros.TabIndex = 3;
-            this.Btn_logros.Text = "Logros";
-            this.Btn_logros.UseVisualStyleBackColor = false;
-            // 
             // Btn_materias
             // 
-            this.Btn_materias.BackColor = System.Drawing.Color.Gainsboro;
+            this.Btn_materias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.Btn_materias.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_materias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_materias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_materias.Image = global::Windows_vista.Properties.Resources.cuaderno__1_;
             this.Btn_materias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_materias.Location = new System.Drawing.Point(0, 194);
+            this.Btn_materias.Location = new System.Drawing.Point(0, 45);
             this.Btn_materias.Name = "Btn_materias";
-            this.Btn_materias.Size = new System.Drawing.Size(250, 45);
+            this.Btn_materias.Size = new System.Drawing.Size(238, 45);
             this.Btn_materias.TabIndex = 2;
             this.Btn_materias.Text = "Materias";
             this.Btn_materias.UseVisualStyleBackColor = false;
+            this.Btn_materias.Click += new System.EventHandler(this.Btn_materias_Click);
             // 
-            // Btn_usuarios
+            // button2
             // 
-            this.Btn_usuarios.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_usuarios.Location = new System.Drawing.Point(0, 149);
-            this.Btn_usuarios.Name = "Btn_usuarios";
-            this.Btn_usuarios.Size = new System.Drawing.Size(250, 45);
-            this.Btn_usuarios.TabIndex = 1;
-            this.Btn_usuarios.Text = "Usuarios";
-            this.Btn_usuarios.UseVisualStyleBackColor = false;
-            this.Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 149);
-            this.panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.pictureBox1.Image = global::Windows_vista.Properties.Resources.LOGO_EVOLUTION_KIDS_01___copia;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Windows_vista.Properties.Resources.equipo__1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 129);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(238, 45);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Estudiantes";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -228,45 +204,91 @@
             this.labe_nombre_usuario.TabIndex = 3;
             this.labe_nombre_usuario.Text = "Diego Alejandro Astaiza Borja";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(238, 141);
+            this.panel1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox1.Image = global::Windows_vista.Properties.Resources.LOGO_EVOLUTION_KIDS_01___copia;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(238, 507);
+            this.panel4.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.Btn_cerrar);
+            this.panel5.Controls.Add(Btn_usuarios);
+            this.panel5.Controls.Add(this.Btn_reportes);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.Btn_logros);
+            this.panel5.Controls.Add(this.Btn_materias);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 141);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.TabIndex = 12;
+            // 
             // Frm_menu_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 508);
+            this.ClientSize = new System.Drawing.Size(944, 507);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_admin";
             this.Text = "Menu principal - administrador";
             this.Load += new System.EventHandler(this.Frm_menu_admin_Load);
-            this.PanelMenuLateral.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelMenuLateral;
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Button Btn_reportes;
         private System.Windows.Forms.Button Btn_logros;
         private System.Windows.Forms.Button Btn_materias;
-        private System.Windows.Forms.Button Btn_usuarios;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_rol;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labe_nombre_usuario;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

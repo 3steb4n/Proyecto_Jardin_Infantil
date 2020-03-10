@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Windows_vista.Materia
+namespace Windows_vista.Logros
 {
-    public partial class Frm_modificar_materia : Form
+    public partial class Frm_admin_logros : Form
     {
-        public Frm_modificar_materia()
+        public Frm_admin_logros()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

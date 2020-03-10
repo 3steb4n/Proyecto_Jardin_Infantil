@@ -77,6 +77,24 @@
     <Compile Include="Grupos\Frm_administracion_grupos.Designer.cs">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logros\Frm_admin_logros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logros\Frm_admin_logros.Designer.cs">
+      <DependentUpon>Frm_admin_logros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logros\Frm_crear_logro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logros\Frm_crear_logro.Designer.cs">
+      <DependentUpon>Frm_crear_logro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logros\Frm_modificar_logro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logros\Frm_modificar_logro.Designer.cs">
+      <DependentUpon>Frm_modificar_logro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materia\Frm_admin_materia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,7 +254,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\iniciar-sesion.png" />
+    <None Include="resources\iniciar-sesion %282%29.png" />
+    <None Include="resources\grupo.png" />
+    <None Include="resources\grupo1.png" />
+    <None Include="resources\equipo.png" />
+    <None Include="resources\cuaderno.png" />
+    <None Include="resources\editar.png" />
+    <None Include="resources\flecha.png" />
+    <None Include="resources\grupo %281%29.png" />
+    <None Include="resources\equipo %281%29.png" />
+    <None Include="resources\cuaderno %281%29.png" />
+    <None Include="resources\editar %281%29.png" />
     <Content Include="resources\noView.PNG" />
+    <None Include="resources\tablero.png" />
+    <None Include="resources\tablero %281%29.png" />
     <Content Include="resources\view.PNG" />
     <None Include="resources\usuario %282%29.png" />
     <None Include="resources\group-2-512.png" />

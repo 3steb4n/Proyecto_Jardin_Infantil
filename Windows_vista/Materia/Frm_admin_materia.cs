@@ -16,5 +16,10 @@ namespace Windows_vista.Materia
         {
             InitializeComponent();
         }
+
+        public  void Frm_admin_materia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

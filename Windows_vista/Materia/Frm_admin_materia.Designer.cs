@@ -39,12 +39,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_mateiras = new System.Windows.Forms.DataGridView();
-            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horas_Maximas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -152,12 +156,16 @@
             this.dgv_mateiras.ColumnHeadersHeight = 30;
             this.dgv_mateiras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_mateiras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_grupo,
-            this.Nombre_grupo,
-            this.Descripcion_Grupo,
-            this.Estado_grupo,
-            this.Nombre_grado,
-            this.id_grado});
+            this.idMateria,
+            this.Nombre_materia,
+            this.Descripcion_materia,
+            this.EstadoMateria,
+            this.Horas_Maximas,
+            this.id_grado,
+            this.idArea,
+            this.NombreArea,
+            this.idGrado,
+            this.NombreGrado});
             this.dgv_mateiras.EnableHeadersVisualStyles = false;
             this.dgv_mateiras.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv_mateiras.Location = new System.Drawing.Point(253, 131);
@@ -183,41 +191,65 @@
             this.dgv_mateiras.Size = new System.Drawing.Size(881, 426);
             this.dgv_mateiras.TabIndex = 43;
             // 
-            // id_grupo
+            // idMateria
             // 
-            this.id_grupo.HeaderText = "";
-            this.id_grupo.Name = "id_grupo";
-            this.id_grupo.ReadOnly = true;
+            this.idMateria.HeaderText = "";
+            this.idMateria.Name = "idMateria";
+            this.idMateria.ReadOnly = true;
             // 
-            // Nombre_grupo
+            // Nombre_materia
             // 
-            this.Nombre_grupo.HeaderText = "Grupo";
-            this.Nombre_grupo.Name = "Nombre_grupo";
-            this.Nombre_grupo.ReadOnly = true;
+            this.Nombre_materia.HeaderText = "Materia";
+            this.Nombre_materia.Name = "Nombre_materia";
+            this.Nombre_materia.ReadOnly = true;
             // 
-            // Descripcion_Grupo
+            // Descripcion_materia
             // 
-            this.Descripcion_Grupo.HeaderText = "Descripción";
-            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
-            this.Descripcion_Grupo.ReadOnly = true;
+            this.Descripcion_materia.HeaderText = "Descripción";
+            this.Descripcion_materia.Name = "Descripcion_materia";
+            this.Descripcion_materia.ReadOnly = true;
             // 
-            // Estado_grupo
+            // EstadoMateria
             // 
-            this.Estado_grupo.HeaderText = "Estado grupo";
-            this.Estado_grupo.Name = "Estado_grupo";
-            this.Estado_grupo.ReadOnly = true;
+            this.EstadoMateria.HeaderText = "Estado";
+            this.EstadoMateria.Name = "EstadoMateria";
+            this.EstadoMateria.ReadOnly = true;
             // 
-            // Nombre_grado
+            // Horas_Maximas
             // 
-            this.Nombre_grado.HeaderText = "Grado";
-            this.Nombre_grado.Name = "Nombre_grado";
-            this.Nombre_grado.ReadOnly = true;
+            this.Horas_Maximas.HeaderText = "Horas maximas";
+            this.Horas_Maximas.Name = "Horas_Maximas";
+            this.Horas_Maximas.ReadOnly = true;
             // 
             // id_grado
             // 
             this.id_grado.HeaderText = "id_grado";
             this.id_grado.Name = "id_grado";
             this.id_grado.ReadOnly = true;
+            // 
+            // idArea
+            // 
+            this.idArea.HeaderText = "idArea";
+            this.idArea.Name = "idArea";
+            this.idArea.ReadOnly = true;
+            // 
+            // NombreArea
+            // 
+            this.NombreArea.HeaderText = "Area";
+            this.NombreArea.Name = "NombreArea";
+            this.NombreArea.ReadOnly = true;
+            // 
+            // idGrado
+            // 
+            this.idGrado.HeaderText = "idGrado";
+            this.idGrado.Name = "idGrado";
+            this.idGrado.ReadOnly = true;
+            // 
+            // NombreGrado
+            // 
+            this.NombreGrado.HeaderText = "Grado";
+            this.NombreGrado.Name = "NombreGrado";
+            this.NombreGrado.ReadOnly = true;
             // 
             // label1
             // 
@@ -380,6 +412,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_materia";
             this.Text = "Administración de materias";
+            this.Load += new System.EventHandler(this.Frm_admin_materia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_mateiras)).EndInit();
             this.PanelMenuLateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -398,12 +431,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_mateiras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_grupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Grupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado_grupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_grado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelMenuLateral;
         private System.Windows.Forms.Button button2;
@@ -415,5 +442,15 @@
         private System.Windows.Forms.Button Btn_usuarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horas_Maximas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_grado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idArea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreArea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGrado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreGrado;
     }
 }
