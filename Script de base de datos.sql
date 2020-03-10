@@ -167,13 +167,14 @@ create table Grados(
     Estado varchar(2) NOT NULL CHECK (Estado IN('A', 'I'))
 );
 
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para ni�os de 1 y 2 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para ni�os de 2 y 3 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ni�os de 3 y 4 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ni�os de 3 y 4 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para ni�os de 4 y 5 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Primero','Competencia para ni�os de 4 y 5 a�os','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para ninos de 1 y 2 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para ninos de 2 y 3 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ninos de 3 y 4 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ninos de 3 y 4 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para ninos de 4 y 5 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
+insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Primero','Competencia para ninos de 4 y 5 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 select * from Grados;
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DROP PROCEDURE  ListarGrados
@@ -203,8 +204,8 @@ create table Grupos(
 
 ALTER TABLE Grupos ADD FOREIGN KEY (id_grado) REFERENCES Grados(Id_Grado);
 
--- insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK001','Primer curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
--- insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK002','Seg curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
+insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK001','Primer curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
+insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado) values ('PK002','Seg curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3');
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 select * from Grupos
 DROP PROCEDURE  ListarGrupos
@@ -463,6 +464,11 @@ create table Areas(
     Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
     Estado varchar(2) NOT NULL CHECK(Estado IN('A', 'I'))
 );
+
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Tecnologica','1','2020-03-07 00:00:00.000','A');
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Ciencias','1','2020-03-07 00:00:00.000','A');
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Sociales','1','2020-03-07 00:00:00.000','A');
+-- select * from Areas;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DROP PROCEDURE  ListarAreas
 CREATE PROCEDURE ListarAreas
@@ -489,9 +495,12 @@ create table Materias(
 	Id_Grado int
 );
 
-
 ALTER TABLE Materias ADD FOREIGN KEY (Id_Area) REFERENCES Areas(Id_Area);
 ALTER TABLE Materias ADD FOREIGN KEY (Id_Grado) REFERENCES Grados(Id_Grado);
+
+insert into Materias (Nomre_Materia,Descripcion_Materia,Usuario_Creacion,Fecha_Creacion,Estado_Materia,Numero_Horas,Id_Area,Id_Grado) VALUES ('Matematicas','Matematicas para ninos','1','2020-03-07 00:00:00.000','A','10','1','2');
+insert into Materias (Nomre_Materia,Descripcion_Materia,Usuario_Creacion,Fecha_Creacion,Estado_Materia,Numero_Horas,Id_Area,Id_Grado) VALUES ('Sociales','Sociales para ninos','1','2020-03-07 00:00:00.000','A','10','1','2');
+-- select * from Grados;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarMaterias
 CREATE PROCEDURE ListarMaterias
