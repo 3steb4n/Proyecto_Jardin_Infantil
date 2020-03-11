@@ -95,6 +95,7 @@
     <Compile Include="DaoGrado.cs" />
     <Compile Include="DaoGrupo.cs" />
     <Compile Include="DaoMateria.cs" />
+    <Compile Include="DaoPago.cs" />
     <Compile Include="DaoPeriodo.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

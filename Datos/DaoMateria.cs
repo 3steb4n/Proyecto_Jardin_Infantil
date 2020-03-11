@@ -1,12 +1,9 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entidades;
 
 namespace Datos
 {
@@ -30,9 +27,9 @@ namespace Datos
             set { _cadenaConexion = value; }
         }
 
-        public List<Materia> ListaGeneral()
+        public List<Materias> ListaGeneral()
         {
-            List<Materia> list = new List<Materia>();
+            List<Materias> list = new List<Materias>();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -46,7 +43,7 @@ namespace Datos
                     {
                         while (dr.Read())
                         {
-                            Materia materia = new Materia();
+                            Materias materia = new Materias();
 
                             materia.IdMateria = (int)dr["IdMateria"];
                             materia.NombreMateria = (String)dr["NomreMateria"];
@@ -71,10 +68,10 @@ namespace Datos
             }
         }
 
-        public Materia ListaPorNombre(String nombre)
+        public Materias ListaPorNombre(String nombre)
         {
 
-            Materia materia = new Materia();
+            Materias materia = new Materias();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -89,10 +86,10 @@ namespace Datos
                     if (dr != null & dr.HasRows)
                     {
                         dr.Read();
-                        materia = new Materia();
+                        materia = new Materias();
 
                         materia.IdMateria = (int)dr["IdMateria"];
-                        materia.NombreMateria = (String)dr["Nomre_Materia "];
+                        materia.NombreMateria = (String)dr["NombreMateria"];
                         materia.DescripcionMateria = (String)dr["DescripcionMateria"];
                         materia.EstadoMateria = (String)dr["EstadoMateria"];
                         materia.NumeroHorasMaterias = (int)dr["NumeroHoras"];
@@ -113,7 +110,7 @@ namespace Datos
             }
         }
 
-        public bool InsertarMateria(Materia materia)
+        public bool InsertarMateria(Materias materia)
         {
             bool flag = false;
             try
@@ -126,7 +123,6 @@ namespace Datos
                     SqlCommand cmd = new SqlCommand("registrarMateria", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@IdMateria", materia.IdMateria);
                     cmd.Parameters.AddWithValue("@NombreMateria", materia.NombreMateria);
                     cmd.Parameters.AddWithValue("@DescripcionMateria", materia.DescripcionMateria);
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", materia.UsuarioCreacion);
@@ -148,7 +144,7 @@ namespace Datos
             }
         }
 
-        public bool ModificarMateria(Materia materia)
+        public bool ModificarMateria(Materias materia)
         {
             bool flag = false;
             try
@@ -165,7 +161,6 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@DescripcionMateria", materia.DescripcionMateria);
                     cmd.Parameters.AddWithValue("@UsuarioModificacion", materia.UsuarioModificacion);
                     cmd.Parameters.AddWithValue("@FechaModificacion", materia.FechaModificacion);
-                    cmd.Parameters.AddWithValue("@EstadoMateria", materia.EstadoMateria);
                     cmd.Parameters.AddWithValue("@NumeroHoras", materia.NumeroHorasMaterias);
                     cmd.Parameters.AddWithValue("@IdArea", materia.Area.IdArea);
                     cmd.Parameters.AddWithValue("@IdGrado", materia.Grado.IdGrado);

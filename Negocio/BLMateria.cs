@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Datos;
 using Entidades;
-using Datos;
+using System;
+using System.Collections.Generic;
 
 namespace Negocio
 {
     public class BLMateria
     {
-        public List<Materia> ListarMateria()
+        public List<Materias> ListarMateria()
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.ListaGeneral();
         }
 
-        public Materia ListarMateriaPorNombre(String nombre)
+        public Materias ListarMateriaPorNombre(String nombre)
         {
             DaoMateria daoMateria = new DaoMateria();
 
             return daoMateria.ListaPorNombre(nombre);
         }
 
-        public bool InsertarMateria(Materia materia)
+        public bool InsertarMateria(Materias materia)
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.InsertarMateria(materia);
         }
 
-        public bool ModificarMateria(Materia materia)
+        public bool ModificarMateria(Materias materia)
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.ModificarMateria(materia);

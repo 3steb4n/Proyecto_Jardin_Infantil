@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Datos;
 using Entidades;
-using Datos;
+using System;
+using System.Collections.Generic;
 
 namespace Negocio
 {
@@ -15,7 +12,7 @@ namespace Negocio
         {
             DaoUsuario daoUsuario = new DaoUsuario();
 
-            return daoUsuario.IniciarSesion(correo_electronico,clave);
+            return daoUsuario.IniciarSesion(correo_electronico, clave);
         }
         public List<Usuario> ListarUsuarios()
         {

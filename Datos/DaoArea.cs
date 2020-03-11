@@ -1,12 +1,9 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entidades;
 
 namespace Datos
 {
@@ -49,8 +46,8 @@ namespace Datos
                         {
                             Area area = new Area();
 
-                            area.IdArea = (int)dr["idGrado"];
-                            area.NombreArea = (String)dr["NombreGrado"];
+                            area.IdArea = (int)dr["IdArea"];
+                            area.NombreArea = (String)dr["NombreArea"];
 
                             list.Add(area);
                         }

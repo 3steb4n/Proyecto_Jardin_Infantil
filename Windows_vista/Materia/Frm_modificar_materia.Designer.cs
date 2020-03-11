@@ -34,9 +34,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Combo_area = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.Txt_nombres = new System.Windows.Forms.TextBox();
-            this.Txt_apellidos = new System.Windows.Forms.TextBox();
-            this.Txt_numero_documento = new System.Windows.Forms.TextBox();
+            this.Txt_descripcion = new System.Windows.Forms.TextBox();
+            this.Txt_horas = new System.Windows.Forms.TextBox();
+            this.TxtMateria = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,9 +55,9 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.Combo_area);
             this.panel1.Controls.Add(this.btn_guardar);
-            this.panel1.Controls.Add(this.Txt_nombres);
-            this.panel1.Controls.Add(this.Txt_apellidos);
-            this.panel1.Controls.Add(this.Txt_numero_documento);
+            this.panel1.Controls.Add(this.Txt_descripcion);
+            this.panel1.Controls.Add(this.Txt_horas);
+            this.panel1.Controls.Add(this.TxtMateria);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label4);
@@ -114,31 +114,32 @@
             this.btn_guardar.TabIndex = 27;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // Txt_nombres
+            // Txt_descripcion
             // 
-            this.Txt_nombres.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_nombres.Location = new System.Drawing.Point(41, 181);
-            this.Txt_nombres.Multiline = true;
-            this.Txt_nombres.Name = "Txt_nombres";
-            this.Txt_nombres.Size = new System.Drawing.Size(605, 74);
-            this.Txt_nombres.TabIndex = 20;
+            this.Txt_descripcion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_descripcion.Location = new System.Drawing.Point(41, 181);
+            this.Txt_descripcion.Multiline = true;
+            this.Txt_descripcion.Name = "Txt_descripcion";
+            this.Txt_descripcion.Size = new System.Drawing.Size(605, 74);
+            this.Txt_descripcion.TabIndex = 20;
             // 
-            // Txt_apellidos
+            // Txt_horas
             // 
-            this.Txt_apellidos.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_apellidos.Location = new System.Drawing.Point(420, 118);
-            this.Txt_apellidos.Name = "Txt_apellidos";
-            this.Txt_apellidos.Size = new System.Drawing.Size(226, 27);
-            this.Txt_apellidos.TabIndex = 19;
+            this.Txt_horas.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_horas.Location = new System.Drawing.Point(420, 118);
+            this.Txt_horas.Name = "Txt_horas";
+            this.Txt_horas.Size = new System.Drawing.Size(226, 27);
+            this.Txt_horas.TabIndex = 19;
             // 
-            // Txt_numero_documento
+            // TxtMateria
             // 
-            this.Txt_numero_documento.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_numero_documento.Location = new System.Drawing.Point(41, 118);
-            this.Txt_numero_documento.Name = "Txt_numero_documento";
-            this.Txt_numero_documento.Size = new System.Drawing.Size(359, 27);
-            this.Txt_numero_documento.TabIndex = 14;
+            this.TxtMateria.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMateria.Location = new System.Drawing.Point(41, 118);
+            this.TxtMateria.Name = "TxtMateria";
+            this.TxtMateria.Size = new System.Drawing.Size(359, 27);
+            this.TxtMateria.TabIndex = 14;
             // 
             // label12
             // 
@@ -220,6 +221,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_modificar_materia";
             this.Text = "Modificar materia";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_modificar_materia_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -235,9 +237,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox Combo_area;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.TextBox Txt_nombres;
-        private System.Windows.Forms.TextBox Txt_apellidos;
-        private System.Windows.Forms.TextBox Txt_numero_documento;
+        private System.Windows.Forms.TextBox Txt_descripcion;
+        private System.Windows.Forms.TextBox Txt_horas;
+        private System.Windows.Forms.TextBox TxtMateria;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;

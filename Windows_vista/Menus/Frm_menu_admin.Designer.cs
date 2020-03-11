@@ -53,6 +53,22 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Usuarios";
+            Btn_usuarios.UseVisualStyleBackColor = false;
+            Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
+            // 
             // Btn_cerrar
             // 
             this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
@@ -84,22 +100,6 @@
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
             this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
-            // 
-            // Btn_usuarios
-            // 
-            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
-            Btn_usuarios.Name = "Btn_usuarios";
-            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
-            Btn_usuarios.TabIndex = 1;
-            Btn_usuarios.Text = "Usuarios";
-            Btn_usuarios.UseVisualStyleBackColor = false;
-            Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
             // 
             // Btn_logros
             // 
@@ -178,11 +178,11 @@
             this.label_rol.AutoSize = true;
             this.label_rol.Dock = System.Windows.Forms.DockStyle.Right;
             this.label_rol.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_rol.Location = new System.Drawing.Point(45, 0);
+            this.label_rol.Location = new System.Drawing.Point(49, 0);
             this.label_rol.Name = "label_rol";
-            this.label_rol.Size = new System.Drawing.Size(126, 20);
+            this.label_rol.Size = new System.Drawing.Size(122, 20);
             this.label_rol.TabIndex = 4;
-            this.label_rol.Text = "Administradora";
+            this.label_rol.Text = "input temporal";
             // 
             // panel2
             // 
@@ -198,11 +198,11 @@
             this.labe_nombre_usuario.Dock = System.Windows.Forms.DockStyle.Right;
             this.labe_nombre_usuario.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labe_nombre_usuario.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labe_nombre_usuario.Location = new System.Drawing.Point(129, 0);
+            this.labe_nombre_usuario.Location = new System.Drawing.Point(250, 0);
             this.labe_nombre_usuario.Name = "labe_nombre_usuario";
-            this.labe_nombre_usuario.Size = new System.Drawing.Size(263, 25);
+            this.labe_nombre_usuario.Size = new System.Drawing.Size(142, 25);
             this.labe_nombre_usuario.TabIndex = 3;
-            this.labe_nombre_usuario.Text = "Diego Alejandro Astaiza Borja";
+            this.labe_nombre_usuario.Text = "imput temporal";
             // 
             // panel1
             // 
@@ -254,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(944, 507);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -261,7 +262,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_admin";
-            this.Text = "Menu principal - administrador";
+            this.Text = "Menu administrador";
             this.Load += new System.EventHandler(this.Frm_menu_admin_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

@@ -65,168 +65,171 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Estudiantes\Frm_administracion_estudiantes.cs">
+    <Compile Include="estudiantes\Frm_administracion_estudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estudiantes\Frm_administracion_estudiantes.Designer.cs">
+    <Compile Include="estudiantes\Frm_administracion_estudiantes.Designer.cs">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupos\Frm_administracion_grupos.cs">
+    <Compile Include="grupos\Frm_administracion_grupos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos\Frm_administracion_grupos.Designer.cs">
+    <Compile Include="grupos\Frm_administracion_grupos.Designer.cs">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logros\Frm_admin_logros.cs">
+    <Compile Include="logros\Frm_admin_logros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logros\Frm_admin_logros.Designer.cs">
+    <Compile Include="logros\Frm_admin_logros.Designer.cs">
       <DependentUpon>Frm_admin_logros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logros\Frm_crear_logro.cs">
+    <Compile Include="logros\Frm_crear_logro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logros\Frm_crear_logro.Designer.cs">
+    <Compile Include="logros\Frm_crear_logro.Designer.cs">
       <DependentUpon>Frm_crear_logro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logros\Frm_modificar_logro.cs">
+    <Compile Include="logros\Frm_modificar_logro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logros\Frm_modificar_logro.Designer.cs">
+    <Compile Include="logros\Frm_modificar_logro.Designer.cs">
       <DependentUpon>Frm_modificar_logro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materia\Frm_admin_materia.cs">
+    <Compile Include="materia\Frm_admin_materia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materia\Frm_admin_materia.Designer.cs">
+    <Compile Include="materia\Frm_admin_materia.Designer.cs">
       <DependentUpon>Frm_admin_materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materia\Frm_crear_materia.cs">
+    <Compile Include="materia\Frm_crear_materia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materia\Frm_crear_materia.Designer.cs">
+    <Compile Include="materia\Frm_crear_materia.Designer.cs">
       <DependentUpon>Frm_crear_materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Materia\Frm_modificar_materia.cs">
+    <Compile Include="materia\Frm_modificar_materia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Materia\Frm_modificar_materia.Designer.cs">
+    <Compile Include="materia\Frm_modificar_materia.Designer.cs">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Frm_administracion_usuarios.cs">
+    <Compile Include="usuarios\Frm_administracion_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Frm_administracion_usuarios.Designer.cs">
+    <Compile Include="usuarios\Frm_administracion_usuarios.Designer.cs">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estudiantes\Frm_crear_estudiante.cs">
+    <Compile Include="estudiantes\Frm_crear_estudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estudiantes\Frm_crear_estudiante.Designer.cs">
+    <Compile Include="estudiantes\Frm_crear_estudiante.Designer.cs">
       <DependentUpon>Frm_crear_estudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupos\Frm_crear_grupo.cs">
+    <Compile Include="grupos\Frm_crear_grupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos\Frm_crear_grupo.Designer.cs">
+    <Compile Include="grupos\Frm_crear_grupo.Designer.cs">
       <DependentUpon>Frm_crear_grupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Frm_crear_usuario.cs">
+    <Compile Include="usuarios\Frm_crear_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Frm_crear_usuario.Designer.cs">
+    <Compile Include="usuarios\Frm_crear_usuario.Designer.cs">
       <DependentUpon>Frm_crear_usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\Frm_inicio_sesion.cs">
+    <Compile Include="menus\Frm_inicio_sesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus\Frm_inicio_sesion.Designer.cs">
+    <Compile Include="menus\Frm_inicio_sesion.Designer.cs">
       <DependentUpon>Frm_inicio_sesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\Frm_menu_admin.cs">
+    <Compile Include="menus\Frm_menu_admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus\Frm_menu_admin.Designer.cs">
+    <Compile Include="menus\Frm_menu_admin.Designer.cs">
       <DependentUpon>Frm_menu_admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\Frm_menu_docente.cs">
+    <Compile Include="menus\Frm_menu_docente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus\Frm_menu_docente.Designer.cs">
+    <Compile Include="menus\Frm_menu_docente.Designer.cs">
       <DependentUpon>Frm_menu_docente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\Frm_menu_secretaria.cs">
+    <Compile Include="menus\Frm_menu_secretaria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus\Frm_menu_secretaria.Designer.cs">
+    <Compile Include="menus\Frm_menu_secretaria.Designer.cs">
       <DependentUpon>Frm_menu_secretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estudiantes\Frm_modificar_estudiante.cs">
+    <Compile Include="estudiantes\Frm_modificar_estudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estudiantes\Frm_modificar_estudiante.Designer.cs">
+    <Compile Include="estudiantes\Frm_modificar_estudiante.Designer.cs">
       <DependentUpon>Frm_modificar_estudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupos\Frm_modificar_grupo.cs">
+    <Compile Include="grupos\Frm_modificar_grupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupos\Frm_modificar_grupo.Designer.cs">
+    <Compile Include="grupos\Frm_modificar_grupo.Designer.cs">
       <DependentUpon>Frm_modificar_grupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\Frm_modificar_usuario.cs">
+    <Compile Include="usuarios\Frm_modificar_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Frm_modificar_usuario.Designer.cs">
+    <Compile Include="usuarios\Frm_modificar_usuario.Designer.cs">
       <DependentUpon>Frm_modificar_usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Estudiantes\Frm_administracion_estudiantes.resx">
+    <EmbeddedResource Include="estudiantes\Frm_administracion_estudiantes.resx">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estudiantes\Frm_crear_estudiante.resx">
+    <EmbeddedResource Include="estudiantes\Frm_crear_estudiante.resx">
       <DependentUpon>Frm_crear_estudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estudiantes\Frm_modificar_estudiante.resx">
+    <EmbeddedResource Include="estudiantes\Frm_modificar_estudiante.resx">
       <DependentUpon>Frm_modificar_estudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos\Frm_administracion_grupos.resx">
+    <EmbeddedResource Include="grupos\Frm_administracion_grupos.resx">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos\Frm_crear_grupo.resx">
+    <EmbeddedResource Include="grupos\Frm_crear_grupo.resx">
       <DependentUpon>Frm_crear_grupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupos\Frm_modificar_grupo.resx">
+    <EmbeddedResource Include="grupos\Frm_modificar_grupo.resx">
       <DependentUpon>Frm_modificar_grupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materia\Frm_admin_materia.resx">
+    <EmbeddedResource Include="logros\Frm_crear_logro.resx">
+      <DependentUpon>Frm_crear_logro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="materia\Frm_admin_materia.resx">
       <DependentUpon>Frm_admin_materia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materia\Frm_crear_materia.resx">
+    <EmbeddedResource Include="materia\Frm_crear_materia.resx">
       <DependentUpon>Frm_crear_materia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Materia\Frm_modificar_materia.resx">
+    <EmbeddedResource Include="materia\Frm_modificar_materia.resx">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Frm_administracion_usuarios.resx">
+    <EmbeddedResource Include="usuarios\Frm_administracion_usuarios.resx">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Frm_crear_usuario.resx">
+    <EmbeddedResource Include="usuarios\Frm_crear_usuario.resx">
       <DependentUpon>Frm_crear_usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\Frm_inicio_sesion.resx">
+    <EmbeddedResource Include="menus\Frm_inicio_sesion.resx">
       <DependentUpon>Frm_inicio_sesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\Frm_menu_admin.resx">
+    <EmbeddedResource Include="menus\Frm_menu_admin.resx">
       <DependentUpon>Frm_menu_admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\Frm_menu_docente.resx">
+    <EmbeddedResource Include="menus\Frm_menu_docente.resx">
       <DependentUpon>Frm_menu_docente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\Frm_menu_secretaria.resx">
+    <EmbeddedResource Include="menus\Frm_menu_secretaria.resx">
       <DependentUpon>Frm_menu_secretaria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\Frm_modificar_usuario.resx">
+    <EmbeddedResource Include="usuarios\Frm_modificar_usuario.resx">
       <DependentUpon>Frm_modificar_usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

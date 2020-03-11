@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_administracion_grupos));
             this.button7 = new System.Windows.Forms.Button();
-            this.Txt_busquedaCedula = new System.Windows.Forms.TextBox();
+            this.Txt_busqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -77,13 +77,13 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // Txt_busquedaCedula
+            // Txt_busqueda
             // 
-            this.Txt_busquedaCedula.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busquedaCedula.Location = new System.Drawing.Point(315, 80);
-            this.Txt_busquedaCedula.Name = "Txt_busquedaCedula";
-            this.Txt_busquedaCedula.Size = new System.Drawing.Size(266, 22);
-            this.Txt_busquedaCedula.TabIndex = 39;
+            this.Txt_busqueda.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_busqueda.Location = new System.Drawing.Point(315, 80);
+            this.Txt_busqueda.Name = "Txt_busqueda";
+            this.Txt_busqueda.Size = new System.Drawing.Size(266, 22);
+            this.Txt_busqueda.TabIndex = 39;
             // 
             // label2
             // 
@@ -376,7 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 600);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.Txt_busquedaCedula);
+            this.Controls.Add(this.Txt_busqueda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -401,7 +401,7 @@
         #endregion
 
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox Txt_busquedaCedula;
+        private System.Windows.Forms.TextBox Txt_busqueda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;

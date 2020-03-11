@@ -29,9 +29,6 @@ create table Usuarios (
 );
 
 INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('1031181586','CC','Diego Alejandro','Astaiza Borja','CRA 25 A # 32 A 76 SUR','3133717966','6941093','diego.astaiza@itac.co','qwerty','','','','','A','S','A');
-
-INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
 			VALUES   ('846468','CC','dawwdadw','wadwawa','dwadwwddaw','454334543','54534543','awdawdwadwad','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','A');
 
 select * from usuarios;
@@ -475,7 +472,7 @@ CREATE PROCEDURE ListarAreas
 AS
 SELECT  Id_Area [IdArea],
 		Nombre [NombreArea]
-		FROM Grados  where Estado = 'A';
+		FROM Areas  where Estado = 'A';
 GO
 
 EXEC ListarAreas;
@@ -524,7 +521,7 @@ CREATE PROCEDURE ListarMateriasPorNombre
 @nombreMateria varchar(30)
 AS
 SELECT   m.Id_Materia [IdMateria],
-	     m.Nomre_Materia [NomreMateria],
+	     m.Nomre_Materia [NombreMateria],
 	     m.Descripcion_Materia [DescripcionMateria],
 		 m.Estado_Materia [EstadoMateria],
 		 m.Numero_Horas [NumeroHoras],
@@ -559,15 +556,14 @@ CREATE PROCEDURE modificarMateria
    @DescripcionMateria text,
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime,
-   @EstadoMateria varchar(2),
    @NumeroHoras int,
    @IdArea int,
    @IdGrado int
    AS
 
-   UPDATE Materias SET Nomre_Materia=@NombreMateria, Descripcion_Materia=@DescripcionMateria, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Estado_Materia=@EstadoMateria, Numero_Horas=@NumeroHoras, Id_Area=@IdArea, Id_Grado=@IdGrado where Id_Materia=@IdMateria;
-
+   UPDATE Materias SET Nomre_Materia=@NombreMateria, Descripcion_Materia=@DescripcionMateria, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Numero_Horas=@NumeroHoras, Id_Area=@IdArea, Id_Grado=@IdGrado where Id_Materia=@IdMateria;
 GO
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE eliminarMateria
 CREATE PROCEDURE eliminarMateria

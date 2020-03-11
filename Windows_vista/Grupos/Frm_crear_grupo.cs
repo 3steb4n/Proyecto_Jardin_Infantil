@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Windows_vista
 {
@@ -39,7 +33,7 @@ namespace Windows_vista
 
         private void CargarDatos()
         {
-            
+
             // se llenan valores fijos del estado
             ComboboxItem item_td1 = new ComboboxItem(); item_td1.Text = "Seleccione..."; item_td1.Value = "";
             ComboboxItem item_td2 = new ComboboxItem(); item_td2.Text = "Activo..."; item_td2.Value = "A";
@@ -51,7 +45,7 @@ namespace Windows_vista
             Combo_estado_grupo.Items.AddRange(items_td);
             Combo_estado_grupo.SelectedIndex = 0;
 
-            
+
             // se llenan valores del selector de grado
 
             lista = blGrado.ListarGados();
@@ -60,12 +54,12 @@ namespace Windows_vista
             Object[] item_gr = new Object[lista.Count];
             for (int i = 0; i < lista.Count; i++)
             {
-                item_gr[i] = item = new ComboboxItem(); item.Text = lista[i].NombreGrado; item.Value =lista[i].IdGrado;
+                item_gr[i] = item = new ComboboxItem(); item.Text = lista[i].NombreGrado; item.Value = lista[i].IdGrado;
             }
             Combo_grado.Items.Add(item_gr1);
             Combo_grado.Items.AddRange(item_gr);
             Combo_grado.SelectedIndex = 0;
-            
+
 
 
 

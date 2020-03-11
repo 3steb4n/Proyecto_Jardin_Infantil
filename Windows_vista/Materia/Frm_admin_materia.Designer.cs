@@ -33,18 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_admin_materia));
             this.button7 = new System.Windows.Forms.Button();
-            this.Txt_busquedaCedula = new System.Windows.Forms.TextBox();
+            this.Txt_busquedaNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.dgv_mateiras = new System.Windows.Forms.DataGridView();
+            this.dgv_materias = new System.Windows.Forms.DataGridView();
             this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Horas_Maximas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +59,7 @@
             this.Btn_usuarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_mateiras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_materias)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,14 +78,15 @@
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 49;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // Txt_busquedaCedula
+            // Txt_busquedaNombre
             // 
-            this.Txt_busquedaCedula.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busquedaCedula.Location = new System.Drawing.Point(306, 93);
-            this.Txt_busquedaCedula.Name = "Txt_busquedaCedula";
-            this.Txt_busquedaCedula.Size = new System.Drawing.Size(266, 22);
-            this.Txt_busquedaCedula.TabIndex = 48;
+            this.Txt_busquedaNombre.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_busquedaNombre.Location = new System.Drawing.Point(306, 93);
+            this.Txt_busquedaNombre.Name = "Txt_busquedaNombre";
+            this.Txt_busquedaNombre.Size = new System.Drawing.Size(266, 22);
+            this.Txt_busquedaNombre.TabIndex = 48;
             // 
             // label2
             // 
@@ -110,6 +110,7 @@
             this.button6.TabIndex = 46;
             this.button6.Text = "Eliminar";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -123,6 +124,7 @@
             this.button5.TabIndex = 45;
             this.button5.Text = "Modificar";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btn_guardar
             // 
@@ -136,15 +138,16 @@
             this.btn_guardar.TabIndex = 44;
             this.btn_guardar.Text = "Registrar";
             this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // dgv_mateiras
+            // dgv_materias
             // 
-            this.dgv_mateiras.AllowUserToAddRows = false;
-            this.dgv_mateiras.AllowUserToDeleteRows = false;
-            this.dgv_mateiras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_mateiras.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgv_mateiras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_mateiras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_materias.AllowUserToAddRows = false;
+            this.dgv_materias.AllowUserToDeleteRows = false;
+            this.dgv_materias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_materias.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgv_materias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_materias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,26 +155,25 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_mateiras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_mateiras.ColumnHeadersHeight = 30;
-            this.dgv_mateiras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_mateiras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_materias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_materias.ColumnHeadersHeight = 30;
+            this.dgv_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_materias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idMateria,
             this.Nombre_materia,
             this.Descripcion_materia,
             this.EstadoMateria,
             this.Horas_Maximas,
-            this.id_grado,
             this.idArea,
             this.NombreArea,
             this.idGrado,
             this.NombreGrado});
-            this.dgv_mateiras.EnableHeadersVisualStyles = false;
-            this.dgv_mateiras.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_mateiras.Location = new System.Drawing.Point(253, 131);
-            this.dgv_mateiras.Name = "dgv_mateiras";
-            this.dgv_mateiras.ReadOnly = true;
-            this.dgv_mateiras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_materias.EnableHeadersVisualStyles = false;
+            this.dgv_materias.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgv_materias.Location = new System.Drawing.Point(253, 131);
+            this.dgv_materias.Name = "dgv_materias";
+            this.dgv_materias.ReadOnly = true;
+            this.dgv_materias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,17 +181,18 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_mateiras.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_mateiras.RowHeadersVisible = false;
+            this.dgv_materias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_materias.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_mateiras.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_mateiras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_mateiras.Size = new System.Drawing.Size(881, 426);
-            this.dgv_mateiras.TabIndex = 43;
+            this.dgv_materias.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_materias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_materias.Size = new System.Drawing.Size(881, 426);
+            this.dgv_materias.TabIndex = 43;
+            this.dgv_materias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_materias_CellContentClick);
             // 
             // idMateria
             // 
@@ -220,12 +223,6 @@
             this.Horas_Maximas.HeaderText = "Horas maximas";
             this.Horas_Maximas.Name = "Horas_Maximas";
             this.Horas_Maximas.ReadOnly = true;
-            // 
-            // id_grado
-            // 
-            this.id_grado.HeaderText = "id_grado";
-            this.id_grado.Name = "id_grado";
-            this.id_grado.ReadOnly = true;
             // 
             // idArea
             // 
@@ -401,19 +398,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 613);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.Txt_busquedaCedula);
+            this.Controls.Add(this.Txt_busquedaNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.dgv_mateiras);
+            this.Controls.Add(this.dgv_materias);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_materia";
             this.Text = "Administración de materias";
             this.Load += new System.EventHandler(this.Frm_admin_materia_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_mateiras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_materias)).EndInit();
             this.PanelMenuLateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -425,12 +422,12 @@
         #endregion
 
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox Txt_busquedaCedula;
+        private System.Windows.Forms.TextBox Txt_busquedaNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.DataGridView dgv_mateiras;
+        private System.Windows.Forms.DataGridView dgv_materias;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PanelMenuLateral;
         private System.Windows.Forms.Button button2;
@@ -447,7 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Horas_Maximas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_grado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn idGrado;

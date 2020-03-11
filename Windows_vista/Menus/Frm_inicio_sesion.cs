@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Entidades;
 using Negocio;
-using Entidades;
+using System;
+using System.Windows.Forms;
 
 namespace Windows_vista
 {
@@ -36,19 +29,21 @@ namespace Windows_vista
                 usuario = blUsuario.IniciarSesion(Txt_usuario.Text, Txt_clave.Text);
                 if (usuario.Id_usuario != 0)
                 {
-                    if(usuario.EstadoUsuario == "A")
+                    if (usuario.EstadoUsuario == "A")
                     {
                         if (usuario.TipoUsuario == "D")
                         {
                             Frm_menu_docente frm_docente = new Frm_menu_docente(usuario);
                             frm_docente.Show();
                             this.Hide();
-                        } else if (usuario.TipoUsuario == "A")
+                        }
+                        else if (usuario.TipoUsuario == "A")
                         {
                             Frm_menu_admin frm_admin = new Frm_menu_admin(usuario);
                             frm_admin.Show();
                             this.Hide();
-                        } else if (usuario.TipoUsuario == "S")
+                        }
+                        else if (usuario.TipoUsuario == "S")
                         {
                             Frm_menu_secretaria frm_secretaria = new Frm_menu_secretaria(usuario);
                             frm_secretaria.Show();
@@ -64,10 +59,10 @@ namespace Windows_vista
                 {
                     Label_Error.Text = "Usuario inexistente en el sistema";
                 }
-            } 
+            }
 
 
-            
+
         }
 
         private void viewPass_Click(object sender, EventArgs e)

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace Windows_vista
@@ -69,7 +63,7 @@ namespace Windows_vista
                 {
                     Usuario usuario = new Usuario();
 
-                    usuario.Id_usuario= (int)dgv_usuarios[0, dgv_usuarios.CurrentRow.Index].Value;
+                    usuario.Id_usuario = (int)dgv_usuarios[0, dgv_usuarios.CurrentRow.Index].Value;
                     usuario.Documento = (String)dgv_usuarios[1, dgv_usuarios.CurrentRow.Index].Value.ToString();
                     usuario.TipoDocumento = (String)dgv_usuarios[2, dgv_usuarios.CurrentRow.Index].Value.ToString();
                     usuario.Nombres = (String)dgv_usuarios[3, dgv_usuarios.CurrentRow.Index].Value.ToString();
@@ -118,7 +112,7 @@ namespace Windows_vista
                 );
                 ;
             }
-            
+
             dgv_usuarios.ClearSelection();
             dgv_usuarios.CurrentCell = null;
 
@@ -130,37 +124,38 @@ namespace Windows_vista
             usuario = blUsuario.ListarUsuariosID(documento);
             dgv_usuarios.Rows.Clear();
 
-                dgv_usuarios.Rows.Add(
+            dgv_usuarios.Rows.Add(
 
-                    usuario.Id_usuario,
-                    usuario.Documento,
-                    usuario.TipoDocumento,
-                    usuario.Nombres,
-                    usuario.Apellidos,
-                    usuario.Direccion,
-                    usuario.Celular,
-                    usuario.Telefono,
-                    usuario.CorreoElectronico,
-                    usuario.EstadoUsuario,
-                    usuario.EstadoClave,
-                    usuario.TipoUsuario
-                );
-                
+                usuario.Id_usuario,
+                usuario.Documento,
+                usuario.TipoDocumento,
+                usuario.Nombres,
+                usuario.Apellidos,
+                usuario.Direccion,
+                usuario.Celular,
+                usuario.Telefono,
+                usuario.CorreoElectronico,
+                usuario.EstadoUsuario,
+                usuario.EstadoClave,
+                usuario.TipoUsuario
+            );
+
             dgv_usuarios.ClearSelection();
             dgv_usuarios.CurrentCell = null;
         }
-    
+
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (Txt_busquedaCedula.Text == "") {
+            if (Txt_busquedaCedula.Text == "")
+            {
                 CargarDatos();
             }
             else
             {
-               CargarDatoFiltro(Txt_busquedaCedula.Text);
+                CargarDatoFiltro(Txt_busquedaCedula.Text);
             }
-               
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -175,7 +170,7 @@ namespace Windows_vista
 
                     if (response == System.Windows.Forms.DialogResult.Yes)
                     {
-                        bool flag = blUsuario.EliminarUsuario (id);
+                        bool flag = blUsuario.EliminarUsuario(id);
                         if (flag == true)
                         {
                             MessageBox.Show("Registro eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);

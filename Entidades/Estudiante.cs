@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -35,7 +31,7 @@ namespace Entidades
             grupo = new Grupo();
         }
 
-        public Estudiante(int id_estudiante,String documentoEstudiante,String tipoDocumento,String nombreEstudiante,String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion,String genero,String telefonoAcudiente,String celularAcudiante,String correoElectronicoAcudiente,String observacionesEstudiante,String usuarioCreacion,DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String EstadoEstudiante, Grupo grupo)
+        public Estudiante(int id_estudiante, String documentoEstudiante, String tipoDocumento, String nombreEstudiante, String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion, String genero, String telefonoAcudiente, String celularAcudiante, String correoElectronicoAcudiente, String observacionesEstudiante, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String EstadoEstudiante, Grupo grupo)
         {
             this._id_estudiante = id_estudiante;
             this._documentoEstudiante = documentoEstudiante;
@@ -120,7 +116,7 @@ namespace Entidades
             set => _telefonoAcudiente = value;
         }
 
-        
+
         public string CelularAcudiente
         {
             get => _celularAcudiente;
@@ -172,6 +168,6 @@ namespace Entidades
             get => _estadoEstudiante;
             set => _estadoEstudiante = value;
         }
-        
+
     }
 }

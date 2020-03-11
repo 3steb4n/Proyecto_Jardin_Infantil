@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Windows_vista
 {
@@ -20,7 +14,7 @@ namespace Windows_vista
             cargarDatos(estudiante);
             id_Estudiante = estudiante.Id_estudiante;
         }
-        
+
         int id_Estudiante;
         BLEstudiante blEstudiante = new BLEstudiante();
         BLGrupo blGrupo = new BLGrupo();
@@ -167,7 +161,7 @@ namespace Windows_vista
                 value = "F";
 
             }
-            else 
+            else
             {
                 value = "M";
             }
@@ -181,7 +175,7 @@ namespace Windows_vista
         {
             // formato a combobox tipo documento
 
-            
+
             // formato a combobox tipo usuario
 
             if (usuario.TipoUsuario == "Administrador")

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
-using Entidades;
 
 namespace Windows_vista
 {
@@ -21,10 +14,12 @@ namespace Windows_vista
             if (usuario.TipoUsuario == "A")
             {
                 label_rol.Text = "Administrador";
-            } else if (usuario.TipoUsuario == "D")
+            }
+            else if (usuario.TipoUsuario == "D")
             {
                 label_rol.Text = "Docente";
-            } else
+            }
+            else
             {
                 label_rol.Text = "Secretaria";
             }

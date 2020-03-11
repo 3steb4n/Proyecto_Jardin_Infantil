@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Windows_vista
 {
@@ -28,7 +22,7 @@ namespace Windows_vista
 
         public void CargarDatos(Grupo grupo)
         {
-             lista = blGrado.ListarGados();
+            lista = blGrado.ListarGados();
 
             for (int i = 0; i < lista.Count; i++)
             {
@@ -39,7 +33,7 @@ namespace Windows_vista
             Combo_estado_grupo.Items.Add("Activo").ToString();
             Combo_estado_grupo.Items.Add("Inactivo").ToString();
             Combo_estado_grupo.SelectedItem = grupo.EstadoGrupo;
-                
+
             Txt_nombre_grupo.Text = grupo.NombreGrupo;
             Txt_descripcion.Text = grupo.DescripcionGrupo;
             Combo_grado.SelectedItem = grupo.Grado.NombreGrado;
@@ -48,7 +42,7 @@ namespace Windows_vista
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
- 
+
             Grupo grupo = new Grupo();
             DateTime fechaActual = DateTime.Today;
             grupo.IdGrupo = id_grupo;
@@ -83,7 +77,7 @@ namespace Windows_vista
 
             for (int i = 0; i < lista.Count; i++)
             {
-                if(lista[i].NombreGrado == nombre)
+                if (lista[i].NombreGrado == nombre)
                 {
                     value = lista[i].IdGrado;
                 }

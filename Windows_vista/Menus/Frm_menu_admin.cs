@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
-using Entidades;
-using Windows_vista.Materia;
 using Windows_vista.Logros;
+using Windows_vista.Materia;
 
 namespace Windows_vista
 {
@@ -68,7 +61,7 @@ namespace Windows_vista
 
         private void Btn_logros_Click(object sender, EventArgs e)
         {
-            Frm_admin_logros  frm = new Frm_admin_logros();
+            Frm_admin_logros frm = new Frm_admin_logros();
             frm.Show();
             this.Close();
         }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Windows_vista
 {
@@ -92,7 +86,7 @@ namespace Windows_vista
                     grupo.EstadoGrupo = (String)dgv_grupos[3, dgv_grupos.CurrentRow.Index].Value.ToString();
                     grupo.Grado.NombreGrado = (String)dgv_grupos[4, dgv_grupos.CurrentRow.Index].Value.ToString();
                     grupo.Grado.IdGrado = int.Parse(dgv_grupos[5, dgv_grupos.CurrentRow.Index].Value.ToString());
-                    
+
                     Frm_modificar_grupo frm_modificar_grupo = new Frm_modificar_grupo(grupo);
                     frm_modificar_grupo.Show();
                     this.Close();
@@ -106,15 +100,15 @@ namespace Windows_vista
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (Txt_busquedaCedula.Text == "")
+            if (Txt_busqueda.Text == "")
             {
                 CargarDatos();
             }
             else
             {
-                CargarDatoFiltro(Txt_busquedaCedula.Text);
+                CargarDatoFiltro(Txt_busqueda.Text);
             }
-            
+
         }
 
         public void CargarDatoFiltro(String nombre)

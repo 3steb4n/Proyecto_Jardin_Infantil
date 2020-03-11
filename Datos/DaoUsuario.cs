@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using Entidades;
 
 namespace Datos
 {
@@ -20,13 +18,13 @@ namespace Datos
         {
             get
             {
-                 if (_cadenaConexion == null)
-                   {
+                if (_cadenaConexion == null)
+                {
 
-                       _cadenaConexion = ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
-                   }
+                    _cadenaConexion = ConfigurationManager.ConnectionStrings["Conex"].ConnectionString;
+                }
 
-                   return _cadenaConexion;
+                return _cadenaConexion;
             }
             set { _cadenaConexion = value; }
         }
@@ -39,7 +37,7 @@ namespace Datos
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
 
-                
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("ListarUsuarios", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -67,7 +65,7 @@ namespace Datos
                             usuario.EstadoClave = OrdenarEstadoClave((String)dr["Estado_Clave"]);
                             usuario.TipoUsuario = OrdenarTipoUsuario((String)dr["Tipo_Usuario"]);
 
-                        list.Add(usuario);
+                            list.Add(usuario);
                         }
                     }
                 }
@@ -75,7 +73,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al consultar mediante listaGeneral: "+e);
+                Console.WriteLine("Error al consultar mediante listaGeneral: " + e);
                 return list;
             }
         }
@@ -89,7 +87,7 @@ namespace Datos
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
 
-                
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("ListarUsuarioDocumento", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -101,7 +99,7 @@ namespace Datos
                         usuario = new Usuario();
                         usuario.Id_usuario = (int)dr["ID"];
                         usuario.Documento = (String)dr["Documento"];
-                        usuario.TipoDocumento= OrdenarTipoDocumento((String)dr["Tipo_Documento"]);
+                        usuario.TipoDocumento = OrdenarTipoDocumento((String)dr["Tipo_Documento"]);
                         usuario.Nombres = (String)dr["Nombres"];
                         usuario.Apellidos = (String)dr["Apellidos"];
                         usuario.Direccion = (String)dr["Direccion"];
@@ -123,7 +121,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al consultar mediante listaPorDocumento: "+e);
+                Console.WriteLine("Error al consultar mediante listaPorDocumento: " + e);
                 return usuario;
             }
         }
@@ -134,10 +132,10 @@ namespace Datos
             try
             {
 
-                using(SqlConnection con = new SqlConnection(CadenaConexion))
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
 
-                
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("registrarUsuario", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -163,7 +161,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al insertar usuario: +"+ e);
+                Console.WriteLine("Error al insertar usuario: +" + e);
                 return flag;
             }
         }
@@ -176,7 +174,7 @@ namespace Datos
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
                 {
 
-                
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("modificarUsuario", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -204,7 +202,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al modificar usuario: "+ e);
+                Console.WriteLine("Error al modificar usuario: " + e);
                 return flag;
             }
         }
@@ -226,7 +224,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al eliminar usuario: "+e);
+                Console.WriteLine("Error al eliminar usuario: " + e);
                 return flag;
             }
         }
@@ -245,10 +243,10 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al incriptar contraseña: "+e);
+                Console.WriteLine("Error al incriptar contraseña: " + e);
                 return null;
             }
-            
+
         }
 
         public Usuario IniciarSesion(String correo_electronico, String clave)
