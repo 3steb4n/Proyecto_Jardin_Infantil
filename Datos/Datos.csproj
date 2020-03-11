@@ -94,6 +94,7 @@
     <Compile Include="DaoEstudiante.cs" />
     <Compile Include="DaoGrado.cs" />
     <Compile Include="DaoGrupo.cs" />
+    <Compile Include="DaoLogro.cs" />
     <Compile Include="DaoMateria.cs" />
     <Compile Include="DaoPago.cs" />
     <Compile Include="DaoPeriodo.cs" />

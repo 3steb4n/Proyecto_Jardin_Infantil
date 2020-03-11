@@ -17,8 +17,10 @@ namespace Windows_vista
 
         int id_grupo;
         List<Grado> lista = null;
+        List<Usuario> lista_usuario = null;
         BLGrupo blGrupo = new BLGrupo();
         BLGrado blGrado = new BLGrado();
+        BLUsuario blUsuario = new BLUsuario();
 
         public void CargarDatos(Grupo grupo)
         {
@@ -34,9 +36,24 @@ namespace Windows_vista
             Combo_estado_grupo.Items.Add("Inactivo").ToString();
             Combo_estado_grupo.SelectedItem = grupo.EstadoGrupo;
 
+            lista_usuario = blUsuario.ListarIDyNombres();
+
+            for (int i = 0; i < lista_usuario.Count; i++)
+            {
+                combo_docente.Items.Add(lista_usuario[i].Nombres + " " + lista_usuario[i].Apellidos).ToString();
+            }
+
+            // se llenan valores fijos del estado
+            Combo_estado_grupo.Items.Add("Activo").ToString();
+            Combo_estado_grupo.Items.Add("Inactivo").ToString();
+            Combo_estado_grupo.SelectedItem = grupo.EstadoGrupo;
+
+
+
             Txt_nombre_grupo.Text = grupo.NombreGrupo;
             Txt_descripcion.Text = grupo.DescripcionGrupo;
             Combo_grado.SelectedItem = grupo.Grado.NombreGrado;
+            combo_docente.SelectedItem = grupo.usuario.Nombres + " " + grupo.usuario.Apellidos;
 
         }
 
@@ -52,6 +69,7 @@ namespace Windows_vista
             grupo.UsuarioModificacion = "1";
             grupo.FechaModificacion = fechaActual;
             grupo.Grado.IdGrado = IDPorNombre(Combo_grado.Text);
+            grupo.usuario.Id_usuario = IDPorUsuario(combo_docente.Text);
 
             bool flag = blGrupo.ModificarGrupo(grupo);
             if (flag)
@@ -80,6 +98,21 @@ namespace Windows_vista
                 if (lista[i].NombreGrado == nombre)
                 {
                     value = lista[i].IdGrado;
+                }
+            }
+
+            return value;
+        }
+
+        public int IDPorUsuario(String nombre)
+        {
+            int value = 0;
+
+            for (int i = 0; i < lista_usuario.Count; i++)
+            {
+                if (lista_usuario[i].Nombres + " " + lista_usuario[i].Apellidos == nombre)
+                {
+                    value = lista_usuario[i].Id_usuario;
                 }
             }
 

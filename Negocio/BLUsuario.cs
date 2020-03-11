@@ -27,6 +27,13 @@ namespace Negocio
             return daoUsuario.ListaPorDocumento(documento);
         }
 
+        public List<Usuario> ListarIDyNombres()
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+
+            return daoUsuario.ListarIDyNombres();
+        }
+
         public bool InsertarUsuario(Usuario usuario)
         {
             DaoUsuario daoUsuario = new DaoUsuario();

@@ -32,23 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_administracion_estudiantes));
-            this.button7 = new System.Windows.Forms.Button();
             this.Txt_busquedaCedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_estudiantes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelMenuLateral = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Btn_reportes = new System.Windows.Forms.Button();
-            this.Btn_logros = new System.Windows.Forms.Button();
-            this.Btn_materias = new System.Windows.Forms.Button();
-            this.Btn_usuarios = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.id_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,26 +55,24 @@
             this.Nombre_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ruta_foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PanelMenuLateral = new System.Windows.Forms.Panel();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_reportes = new System.Windows.Forms.Button();
+            this.Btn_logros = new System.Windows.Forms.Button();
+            this.Btn_materias = new System.Windows.Forms.Button();
+            this.Btn_usuarios = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.combo_grupo = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.BackgroundImage = global::Windows_vista.Properties.Resources.actualizar__1_;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(611, 56);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(27, 30);
-            this.button7.TabIndex = 49;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Txt_busquedaCedula
             // 
@@ -208,6 +195,108 @@
             this.dgv_estudiantes.Size = new System.Drawing.Size(881, 426);
             this.dgv_estudiantes.TabIndex = 43;
             this.dgv_estudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_estudiantes_CellContentClick);
+            // 
+            // id_estudiante
+            // 
+            this.id_estudiante.HeaderText = "";
+            this.id_estudiante.Name = "id_estudiante";
+            this.id_estudiante.ReadOnly = true;
+            // 
+            // Documento_estudiante
+            // 
+            this.Documento_estudiante.HeaderText = "Documento identificación";
+            this.Documento_estudiante.Name = "Documento_estudiante";
+            this.Documento_estudiante.ReadOnly = true;
+            // 
+            // Tipo_documento
+            // 
+            this.Tipo_documento.HeaderText = "Tipo de documento";
+            this.Tipo_documento.Name = "Tipo_documento";
+            this.Tipo_documento.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Fecha_nacimiento
+            // 
+            this.Fecha_nacimiento.HeaderText = "Fecha nacimiento";
+            this.Fecha_nacimiento.Name = "Fecha_nacimiento";
+            this.Fecha_nacimiento.ReadOnly = true;
+            // 
+            // Nombre_acudiente
+            // 
+            this.Nombre_acudiente.HeaderText = "Nombre acudiente";
+            this.Nombre_acudiente.Name = "Nombre_acudiente";
+            this.Nombre_acudiente.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccción";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Genero
+            // 
+            this.Genero.HeaderText = "Genero";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono Acudiente";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Celular
+            // 
+            this.Celular.HeaderText = "Celular acudiente";
+            this.Celular.Name = "Celular";
+            this.Celular.ReadOnly = true;
+            // 
+            // Correo_electronico
+            // 
+            this.Correo_electronico.HeaderText = "Correo Electrónico";
+            this.Correo_electronico.Name = "Correo_electronico";
+            this.Correo_electronico.ReadOnly = true;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado_Estudiante";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Nombre_Grupo
+            // 
+            this.Nombre_Grupo.HeaderText = "Grupo";
+            this.Nombre_Grupo.Name = "Nombre_Grupo";
+            this.Nombre_Grupo.ReadOnly = true;
+            // 
+            // idGrupo
+            // 
+            this.idGrupo.HeaderText = "idGrupo";
+            this.idGrupo.Name = "idGrupo";
+            this.idGrupo.ReadOnly = true;
+            // 
+            // ruta_foto
+            // 
+            this.ruta_foto.HeaderText = "ruta_foto";
+            this.ruta_foto.Name = "ruta_foto";
+            this.ruta_foto.ReadOnly = true;
             // 
             // label1
             // 
@@ -338,114 +427,49 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // id_estudiante
+            // label3
             // 
-            this.id_estudiante.HeaderText = "";
-            this.id_estudiante.Name = "id_estudiante";
-            this.id_estudiante.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(621, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 15);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Grupo:";
             // 
-            // Documento_estudiante
+            // combo_grupo
             // 
-            this.Documento_estudiante.HeaderText = "Documento identificación";
-            this.Documento_estudiante.Name = "Documento_estudiante";
-            this.Documento_estudiante.ReadOnly = true;
+            this.combo_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_grupo.FormattingEnabled = true;
+            this.combo_grupo.Location = new System.Drawing.Point(680, 58);
+            this.combo_grupo.Name = "combo_grupo";
+            this.combo_grupo.Size = new System.Drawing.Size(271, 28);
+            this.combo_grupo.TabIndex = 53;
             // 
-            // Tipo_documento
+            // button2
             // 
-            this.Tipo_documento.HeaderText = "Tipo de documento";
-            this.Tipo_documento.Name = "Tipo_documento";
-            this.Tipo_documento.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Fecha_nacimiento
-            // 
-            this.Fecha_nacimiento.HeaderText = "Fecha nacimiento";
-            this.Fecha_nacimiento.Name = "Fecha_nacimiento";
-            this.Fecha_nacimiento.ReadOnly = true;
-            // 
-            // Nombre_acudiente
-            // 
-            this.Nombre_acudiente.HeaderText = "Nombre acudiente";
-            this.Nombre_acudiente.Name = "Nombre_acudiente";
-            this.Nombre_acudiente.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccción";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // Genero
-            // 
-            this.Genero.HeaderText = "Genero";
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono Acudiente";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Celular
-            // 
-            this.Celular.HeaderText = "Celular acudiente";
-            this.Celular.Name = "Celular";
-            this.Celular.ReadOnly = true;
-            // 
-            // Correo_electronico
-            // 
-            this.Correo_electronico.HeaderText = "Correo Electrónico";
-            this.Correo_electronico.Name = "Correo_electronico";
-            this.Correo_electronico.ReadOnly = true;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado_Estudiante";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Nombre_Grupo
-            // 
-            this.Nombre_Grupo.HeaderText = "Grupo";
-            this.Nombre_Grupo.Name = "Nombre_Grupo";
-            this.Nombre_Grupo.ReadOnly = true;
-            // 
-            // idGrupo
-            // 
-            this.idGrupo.HeaderText = "idGrupo";
-            this.idGrupo.Name = "idGrupo";
-            this.idGrupo.ReadOnly = true;
-            // 
-            // ruta_foto
-            // 
-            this.ruta_foto.HeaderText = "ruta_foto";
-            this.ruta_foto.Name = "ruta_foto";
-            this.ruta_foto.ReadOnly = true;
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.BackgroundImage = global::Windows_vista.Properties.Resources.actualizar__1_;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(966, 58);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 30);
+            this.button2.TabIndex = 52;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Frm_administracion_estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1121, 567);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.combo_grupo);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Txt_busquedaCedula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
@@ -469,8 +493,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox Txt_busquedaCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
@@ -504,5 +526,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruta_foto;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox combo_grupo;
+        private System.Windows.Forms.Button button2;
     }
 }

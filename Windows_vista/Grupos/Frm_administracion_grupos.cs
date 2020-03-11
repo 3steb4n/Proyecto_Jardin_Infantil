@@ -32,7 +32,10 @@ namespace Windows_vista
                     lista[i].DescripcionGrupo,
                     lista[i].EstadoGrupo,
                     lista[i].Grado.NombreGrado,
-                    lista[i].Grado.IdGrado
+                    lista[i].Grado.IdGrado,
+                    lista[i].usuario.Id_usuario,
+                    lista[i].usuario.Nombres,
+                    lista[i].usuario.Apellidos
 
                 );
                 ;
@@ -86,6 +89,9 @@ namespace Windows_vista
                     grupo.EstadoGrupo = (String)dgv_grupos[3, dgv_grupos.CurrentRow.Index].Value.ToString();
                     grupo.Grado.NombreGrado = (String)dgv_grupos[4, dgv_grupos.CurrentRow.Index].Value.ToString();
                     grupo.Grado.IdGrado = int.Parse(dgv_grupos[5, dgv_grupos.CurrentRow.Index].Value.ToString());
+                    grupo.usuario.Id_usuario = int.Parse(dgv_grupos[6, dgv_grupos.CurrentRow.Index].Value.ToString());
+                    grupo.usuario.Nombres = (String)(dgv_grupos[7, dgv_grupos.CurrentRow.Index].Value.ToString());
+                    grupo.usuario.Apellidos = (String)(dgv_grupos[8, dgv_grupos.CurrentRow.Index].Value.ToString());
 
                     Frm_modificar_grupo frm_modificar_grupo = new Frm_modificar_grupo(grupo);
                     frm_modificar_grupo.Show();

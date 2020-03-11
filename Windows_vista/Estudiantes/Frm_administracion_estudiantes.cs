@@ -18,9 +18,12 @@ namespace Windows_vista
 
 
         List<Estudiante> lista = null;
+        List<Grupo> lista_grupo = null;
 
         BLEstudiante blestudiante = new BLEstudiante();
+        BLGrupo blgrupo = new BLGrupo();
         Estudiante estudiante;
+        Grupo grupo;
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
@@ -102,6 +105,14 @@ namespace Windows_vista
 
             dgv_estudiantes.ClearSelection();
             dgv_estudiantes.CurrentCell = null;
+
+            lista_grupo = blgrupo.ListarGruposNombreyID();
+            combo_grupo.DataSource = lista_grupo;
+            combo_grupo.DisplayMember = "NombreGrupo";
+            combo_grupo.ValueMember = "IdGrupo";
+
+            combo_grupo.SelectedItem = "Seleccione...";
+
         }
 
         private void dgv_estudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,44 +120,37 @@ namespace Windows_vista
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (Txt_busquedaCedula.Text == "")
-            {
-                CargarDatos();
-            }
-            else
-            {
-                CargarDatoFiltro(Txt_busquedaCedula.Text);
-            }
-        }
 
-        public void CargarDatoFiltro(String documento)
+        public void CargarDatoFiltro(String documento, int idGrupo)
         {
-            Estudiante estudiante = new Estudiante();
-            estudiante = blestudiante.ListarEstudiantePorDocumento(documento);
+            List<Estudiante> estudiante = new List<Estudiante>();
+            estudiante = blestudiante.ListarEstudiantePorDocumentoyGrupo(documento, idGrupo);
             dgv_estudiantes.Rows.Clear();
 
-            dgv_estudiantes.Rows.Add(
+            for (int i = 0; i < estudiante.Count; i++)
+            {
+                dgv_estudiantes.Rows.Add(
 
-                estudiante.Id_estudiante,
-                estudiante.DocumentoEstudiante,
-                estudiante.TipoDocumento,
-                estudiante.NombreEstudiante,
-                estudiante.ApellidoEstudiante,
-                estudiante.FechaNacimiento,
-                estudiante.NombreAcudiente,
-                estudiante.Direccion,
-                estudiante.Genero,
-                estudiante.TelefonoAcudiente,
-                estudiante.CelularAcudiente,
-                estudiante.CorreoElectronicoAcudiente,
-                estudiante.ObservacionesEstudiante,
-                estudiante.EstadoEstudiante,
-                estudiante.grupo.NombreGrupo,
-                estudiante.grupo.IdGrupo,
-                estudiante.Ruta_foto
-            );
+                    estudiante[i].Id_estudiante,
+                    estudiante[i].DocumentoEstudiante,
+                    estudiante[i].TipoDocumento,
+                    estudiante[i].NombreEstudiante,
+                    estudiante[i].ApellidoEstudiante,
+                    estudiante[i].FechaNacimiento,
+                    estudiante[i].NombreAcudiente,
+                    estudiante[i].Direccion,
+                    estudiante[i].Genero,
+                    estudiante[i].TelefonoAcudiente,
+                    estudiante[i].CelularAcudiente,
+                    estudiante[i].CorreoElectronicoAcudiente,
+                    estudiante[i].ObservacionesEstudiante,
+                    estudiante[i].EstadoEstudiante,
+                    estudiante[i].grupo.NombreGrupo,
+                    estudiante[i].grupo.IdGrupo,
+                    estudiante[i].Ruta_foto
+                );
+                ;
+            }
 
             dgv_estudiantes.ClearSelection();
             dgv_estudiantes.CurrentCell = null;
@@ -186,6 +190,33 @@ namespace Windows_vista
             {
                 MessageBox.Show("No existen registros para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Txt_busquedaCedula.Text == "" && combo_grupo.Text == "Seleccione...")
+            {
+                CargarDatos();
+            }
+            else
+            {
+                CargarDatoFiltro(Txt_busquedaCedula.Text, IDPorNombre(combo_grupo.Text));
+            }
+        }
+
+        public int IDPorNombre(String nombre)
+        {
+            int value = 0;
+
+            for (int i = 0; i < lista_grupo.Count; i++)
+            {
+                if (lista_grupo[i].NombreGrupo == nombre)
+                {
+                    value = lista_grupo[i].IdGrupo;
+                }
+            }
+
+            return value;
         }
     }
 

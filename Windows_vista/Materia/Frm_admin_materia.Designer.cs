@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_admin_materia));
-            this.button7 = new System.Windows.Forms.Button();
             this.Txt_busquedaNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -59,26 +58,12 @@
             this.Btn_usuarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_materias)).BeginInit();
             this.PanelMenuLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.BackgroundImage = global::Windows_vista.Properties.Resources.actualizar__1_;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(578, 86);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(27, 30);
-            this.button7.TabIndex = 49;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Txt_busquedaNombre
             // 
@@ -392,6 +377,21 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button7.BackgroundImage = global::Windows_vista.Properties.Resources.actualizar__1_;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(588, 86);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(27, 30);
+            this.button7.TabIndex = 50;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // Frm_admin_materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,8 +420,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox Txt_busquedaNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button6;
@@ -448,5 +446,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn idGrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreGrado;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Windows_vista.Materia
 {
@@ -19,7 +13,7 @@ namespace Windows_vista.Materia
             InitializeComponent();
             CargarDatos();
         }
-        
+
         List<Area> lista_area = null;
         List<Grado> lista_grado = null;
         BLArea blArea = new BLArea();
@@ -69,7 +63,6 @@ namespace Windows_vista.Materia
                 Materias materia = new Materias();
 
                 guardar(materia);
-
             }
         }
 
@@ -79,7 +72,7 @@ namespace Windows_vista.Materia
 
             materia.NombreMateria = Txt_materia.Text;
             materia.DescripcionMateria = Txt_descripcion.Text;
-            materia.UsuarioCreacion  = "1";
+            materia.UsuarioCreacion = "1";
             materia.FechaCreacion = fechaActual;
             materia.EstadoMateria = "A";
             materia.NumeroHorasMaterias = int.Parse(Txt_numeroHoras.Text);

@@ -36,6 +36,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,6 +53,21 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Usuarios";
+            Btn_usuarios.UseVisualStyleBackColor = false;
             // 
             // labe_nombre_usuario
             // 
@@ -102,11 +118,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 485);
+            this.panel4.Size = new System.Drawing.Size(238, 512);
             this.panel4.TabIndex = 12;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.Btn_cerrar);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
@@ -117,8 +134,23 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.Size = new System.Drawing.Size(238, 363);
             this.panel5.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 308);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(238, 44);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Cerrar sesión";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Btn_cerrar
             // 
@@ -126,29 +158,14 @@
             this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.gol__1_;
             this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_cerrar.Location = new System.Drawing.Point(0, 264);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
             this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.Text = "Logros";
             this.Btn_cerrar.UseVisualStyleBackColor = false;
-            // 
-            // Btn_usuarios
-            // 
-            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
-            Btn_usuarios.Name = "Btn_usuarios";
-            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
-            Btn_usuarios.TabIndex = 1;
-            Btn_usuarios.Text = "Usuarios";
-            Btn_usuarios.UseVisualStyleBackColor = false;
             // 
             // Btn_reportes
             // 
@@ -250,7 +267,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(898, 485);
+            this.ClientSize = new System.Drawing.Size(898, 512);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -286,5 +303,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

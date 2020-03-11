@@ -199,8 +199,14 @@
     <EmbeddedResource Include="grupos\Frm_modificar_grupo.resx">
       <DependentUpon>Frm_modificar_grupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="logros\Frm_admin_logros.resx">
+      <DependentUpon>Frm_admin_logros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="logros\Frm_crear_logro.resx">
       <DependentUpon>Frm_crear_logro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logros\Frm_modificar_logro.resx">
+      <DependentUpon>Frm_modificar_logro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="materia\Frm_admin_materia.resx">
       <DependentUpon>Frm_admin_materia.cs</DependentUpon>
@@ -269,6 +275,8 @@
     <None Include="resources\equipo %281%29.png" />
     <None Include="resources\cuaderno %281%29.png" />
     <None Include="resources\editar %281%29.png" />
+    <None Include="resources\gol.png" />
+    <None Include="resources\gol %281%29.png" />
     <Content Include="resources\noView.PNG" />
     <None Include="resources\tablero.png" />
     <None Include="resources\tablero %281%29.png" />

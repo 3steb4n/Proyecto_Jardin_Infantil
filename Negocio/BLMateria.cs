@@ -13,6 +13,13 @@ namespace Negocio
             return daoMateria.ListaGeneral();
         }
 
+        public List<Materias> ListarIdNombre()
+        {
+            DaoMateria daoMateria = new DaoMateria();
+            return daoMateria.ListarIdNombre();
+        }
+
+
         public Materias ListarMateriaPorNombre(String nombre)
         {
             DaoMateria daoMateria = new DaoMateria();

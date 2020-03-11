@@ -31,9 +31,9 @@
             System.Windows.Forms.Button Btn_usuarios;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu_secretaria));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label_rol = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labe_nombre_usuario = new System.Windows.Forms.Label();
-            this.label_rol = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Btn_cerrar = new System.Windows.Forms.Button();
@@ -53,6 +53,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Docentes";
+            Btn_usuarios.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label_rol);
@@ -60,6 +75,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 35);
             this.panel3.TabIndex = 8;
+            // 
+            // label_rol
+            // 
+            this.label_rol.AutoSize = true;
+            this.label_rol.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_rol.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_rol.Location = new System.Drawing.Point(49, 0);
+            this.label_rol.Name = "label_rol";
+            this.label_rol.Size = new System.Drawing.Size(122, 20);
+            this.label_rol.TabIndex = 4;
+            this.label_rol.Text = "input temporal";
             // 
             // panel2
             // 
@@ -80,17 +106,6 @@
             this.labe_nombre_usuario.Size = new System.Drawing.Size(137, 25);
             this.labe_nombre_usuario.TabIndex = 3;
             this.labe_nombre_usuario.Text = "input temporal";
-            // 
-            // label_rol
-            // 
-            this.label_rol.AutoSize = true;
-            this.label_rol.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label_rol.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_rol.Location = new System.Drawing.Point(49, 0);
-            this.label_rol.Name = "label_rol";
-            this.label_rol.Size = new System.Drawing.Size(122, 20);
-            this.label_rol.TabIndex = 4;
-            this.label_rol.Text = "input temporal";
             // 
             // panel4
             // 
@@ -133,21 +148,6 @@
             this.Btn_cerrar.Text = "Cerrar sesión";
             this.Btn_cerrar.UseVisualStyleBackColor = false;
             // 
-            // Btn_usuarios
-            // 
-            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
-            Btn_usuarios.Name = "Btn_usuarios";
-            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
-            Btn_usuarios.TabIndex = 1;
-            Btn_usuarios.Text = "Usuarios";
-            Btn_usuarios.UseVisualStyleBackColor = false;
-            // 
             // Btn_reportes
             // 
             this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
@@ -177,6 +177,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Estudiantes";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Btn_logros
             // 

@@ -126,6 +126,41 @@ namespace Datos
             }
         }
 
+        public List<Usuario> ListarIDyNombres()
+        {
+            List<Usuario> list = new List<Usuario>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarUsuariosIdNombre", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Usuario usuario = new Usuario();
+
+                            usuario.Id_usuario = (int)dr["ID"];
+                            usuario.Nombres = (String)dr["Nombres"];
+                            usuario.Apellidos = (String)dr["Apellidos"];
+
+                            list.Add(usuario);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListarIDyNombres: " + e);
+                return list;
+            }
+        }
+
         public bool InsertarUsuario(Usuario usuario)
         {
             bool flag = false;

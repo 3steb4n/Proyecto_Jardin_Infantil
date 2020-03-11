@@ -126,6 +126,62 @@ namespace Datos
             }
         }
 
+
+        public List<Estudiante> ListarPorDocumentoyGrupo(String documento, int idGrupo)
+        {
+
+            List<Estudiante> lista = new List<Estudiante>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarEstudiantePorDocumentoyGrupo", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Documento", documento);
+                    cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Estudiante estudiante = new Estudiante();
+
+                            estudiante.Id_estudiante = (int)dr["IdEstudiante"];
+                            estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
+                            estudiante.TipoDocumento = OrdenarTipoDocumento((String)dr["TipoDocumento"]);
+                            estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
+                            estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
+                            estudiante.FechaNacimiento = (DateTime)dr["FechaNacimiento"];
+                            estudiante.Ruta_foto = (String)dr["RutaFoto"];
+                            estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
+                            estudiante.Direccion = (String)dr["Direccion"];
+                            estudiante.Genero = OrdenarGenero((String)dr["GeneroEstudiante"]);
+                            estudiante.TelefonoAcudiente = (String)dr["Telefono"];
+                            estudiante.CelularAcudiente = (String)dr["Celular"];
+                            estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            estudiante.ObservacionesEstudiante = (String)dr["Observaciones"];
+                            estudiante.EstadoEstudiante = OrdenarEstadoEstudiante((String)dr["EstadoEstudiante"]);
+                            estudiante.grupo.NombreGrupo = (String)dr["NombreGrupo"];
+                            estudiante.grupo.IdGrupo = (int)dr["IdGrupo"];
+
+                            lista.Add(estudiante);
+                        }
+
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListarEstudiantePorDocumentoyGrupo: " + e);
+                return lista;
+            }
+        }
+
         public bool InsertarEstudiante(Estudiante estudiante)
         {
             bool flag = false;

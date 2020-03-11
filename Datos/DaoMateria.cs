@@ -68,6 +68,42 @@ namespace Datos
             }
         }
 
+
+        public List<Materias> ListarIdNombre()
+        {
+            List<Materias> list = new List<Materias>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarMateriaIdNombre", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Materias materia = new Materias();
+
+                            materia.IdMateria = (int)dr["IdMateria"];
+                            materia.NombreMateria = (String)dr["NomreMateria"];
+
+                            list.Add(materia);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListarIdNombre: " + e);
+                return list;
+            }
+        }
+
+
         public Materias ListaPorNombre(String nombre)
         {
 

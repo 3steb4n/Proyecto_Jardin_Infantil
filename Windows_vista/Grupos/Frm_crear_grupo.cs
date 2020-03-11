@@ -15,6 +15,8 @@ namespace Windows_vista
         }
 
         List<Grado> lista = null;
+        List<Usuario> lista_usuario = null;
+        BLUsuario blUsuario = new BLUsuario();
         BLGrupo blGrupo = new BLGrupo();
         BLGrado blGrado = new BLGrado();
         Grupo grupo;
@@ -60,9 +62,18 @@ namespace Windows_vista
             Combo_grado.Items.AddRange(item_gr);
             Combo_grado.SelectedIndex = 0;
 
-
-
-
+            // se llenan valores del selector docente
+            lista_usuario = blUsuario.ListarIDyNombres();
+            ComboboxItem item_dc1 = new ComboboxItem(); item_dc1.Text = "Seleccione..."; item_dc1.Value = "";
+            ComboboxItem itemdc;
+            Object[] items_dc = new Object[lista_usuario.Count];
+            for (int i = 0; i < lista_usuario.Count; i++)
+            {
+                items_dc[i] = itemdc = new ComboboxItem(); itemdc.Text = lista_usuario[i].Nombres + " " + lista_usuario[i].Apellidos; itemdc.Value = lista_usuario[i].Id_usuario;
+            }
+            combo_docente.Items.Add(item_dc1);
+            combo_docente.Items.AddRange(items_dc);
+            combo_docente.SelectedIndex = 0;
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -99,8 +110,14 @@ namespace Windows_vista
             }
             if (Combo_grado.Text == "Seleccione...")
             {
-                errorProvider.SetError(Combo_estado_grupo, "Seleccione grado");
-                Combo_estado_grupo.Focus();
+                errorProvider.SetError(Combo_grado, "Seleccione grado");
+                Combo_grado.Focus();
+                flag = false;
+            }
+            if (combo_docente.Text == "Seleccione...")
+            {
+                errorProvider.SetError(combo_docente, "Seleccione docente");
+                combo_docente.Focus();
                 flag = false;
             }
             return flag;
@@ -116,7 +133,7 @@ namespace Windows_vista
             grupo.FechaCreacion = fechaActual;
             grupo.EstadoGrupo = (Combo_estado_grupo.SelectedItem as ComboboxItem).Value.ToString(); ;
             grupo.Grado.IdGrado = int.Parse((Combo_grado.SelectedItem as ComboboxItem).Value.ToString());
-
+            grupo.usuario.Id_usuario = int.Parse((combo_docente.SelectedItem as ComboboxItem).Value.ToString());
 
             bool bandera = blGrupo.InsertarGrupo(grupo);
 

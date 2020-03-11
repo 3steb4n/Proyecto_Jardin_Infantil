@@ -45,6 +45,9 @@
             this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -161,7 +164,10 @@
             this.Descripcion_Grupo,
             this.Estado_grupo,
             this.Nombre_grado,
-            this.id_grado});
+            this.id_grado,
+            this.id_docente,
+            this.nombres_docente,
+            this.apellidos_docente});
             this.dgv_grupos.EnableHeadersVisualStyles = false;
             this.dgv_grupos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv_grupos.Location = new System.Drawing.Point(239, 119);
@@ -223,6 +229,24 @@
             this.id_grado.HeaderText = "id_grado";
             this.id_grado.Name = "id_grado";
             this.id_grado.ReadOnly = true;
+            // 
+            // id_docente
+            // 
+            this.id_docente.HeaderText = "id_docente";
+            this.id_docente.Name = "id_docente";
+            this.id_docente.ReadOnly = true;
+            // 
+            // nombres_docente
+            // 
+            this.nombres_docente.HeaderText = "Nombre docente";
+            this.nombres_docente.Name = "nombres_docente";
+            this.nombres_docente.ReadOnly = true;
+            // 
+            // apellidos_docente
+            // 
+            this.apellidos_docente.HeaderText = "Apellidos docente";
+            this.apellidos_docente.Name = "apellidos_docente";
+            this.apellidos_docente.ReadOnly = true;
             // 
             // label1
             // 
@@ -417,12 +441,15 @@
         private System.Windows.Forms.Button Btn_usuarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_grado;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_docente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres_docente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos_docente;
     }
 }

@@ -28,5 +28,10 @@ namespace Windows_vista
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

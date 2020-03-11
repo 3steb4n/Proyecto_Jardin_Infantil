@@ -13,13 +13,15 @@ namespace Entidades
         DateTime _fechaModificacion;
         String _estadoGrupo;
         Grado _grado;
+        Usuario _usuario;
 
         public Grupo()
         {
             _grado = new Grado();
+            _usuario = new Usuario();
         }
 
-        public Grupo(int idGrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, Grado grado)
+        public Grupo(int idGrupo, String nombreGrupo, String descripcionGrupo, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoGrupo, Grado grado, Usuario usuario)
         {
             this._idGrupo = idGrupo;
             this._nombreGrupo = nombreGrupo;
@@ -32,6 +34,7 @@ namespace Entidades
             this._fechaModificacion = fechaModificacion;
             this._estadoGrupo = estadoGrupo;
             this._grado = grado;
+            this._usuario = usuario;
         }
 
         public int IdGrupo
@@ -84,5 +87,10 @@ namespace Entidades
             set => _grado = value;
         }
 
+        public Usuario usuario
+        {
+            get => _usuario;
+            set => _usuario = value;
+        }
     }
 }

@@ -51,6 +51,9 @@ namespace Datos
                             grupo.EstadoGrupo = OrdenarEstado((String)dr["EstadoGrupo"]);
                             grupo.Grado.IdGrado = (int)dr["IdGrado"];
                             grupo.Grado.NombreGrado = (String)dr["NombreGrado"];
+                            grupo.usuario.Id_usuario = (int)dr["idUsuario"];
+                            grupo.usuario.Nombres = (String)dr["Nombres"];
+                            grupo.usuario.Apellidos = (String)dr["Apellidos"];
 
                             list.Add(grupo);
                         }
@@ -89,6 +92,9 @@ namespace Datos
                         grupo.EstadoGrupo = OrdenarEstado((String)dr["EstadoGrupo"]);
                         grupo.Grado.IdGrado = (int)dr["IdGrado"];
                         grupo.Grado.NombreGrado = (String)dr["NombreGrado"];
+                        grupo.usuario.Id_usuario = (int)dr["idUsuario"];
+                        grupo.usuario.Nombres = (String)dr["Nombres"];
+                        grupo.usuario.Apellidos = (String)dr["Apellidos"];
                     }
                 }
 
@@ -116,6 +122,12 @@ namespace Datos
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr != null & dr.HasRows)
                     {
+
+                        Grupo grupo1 = new Grupo();
+                        grupo1.IdGrupo = 0;
+                        grupo1.NombreGrupo = "Seleccione...";
+                        list.Add(grupo1);
+
                         while (dr.Read())
                         {
                             Grupo grupo = new Grupo();
@@ -154,6 +166,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@FechaCreacion", grupo.FechaCreacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
                     cmd.Parameters.AddWithValue("@IdGrado", grupo.Grado.IdGrado);
+                    cmd.Parameters.AddWithValue("@IdDocente", grupo.usuario.Id_usuario);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }
@@ -185,6 +198,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@FechaModificacion", grupo.FechaModificacion);
                     cmd.Parameters.AddWithValue("@EstadoGrupo", grupo.EstadoGrupo);
                     cmd.Parameters.AddWithValue("@IdGrado", grupo.Grado.IdGrado);
+                    cmd.Parameters.AddWithValue("@IdDocente", grupo.usuario.Id_usuario);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }

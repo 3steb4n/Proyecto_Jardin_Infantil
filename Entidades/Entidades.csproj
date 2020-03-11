@@ -47,6 +47,7 @@
     <Compile Include="Grupo.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Logro.cs" />
     <Compile Include="Materias.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Periodo.cs" />

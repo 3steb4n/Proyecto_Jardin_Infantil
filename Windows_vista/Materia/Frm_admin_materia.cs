@@ -52,19 +52,12 @@ namespace Windows_vista.Materia
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (Txt_busquedaNombre.Text == "")
-            {
-                CargarDatos();
-            }
-            else
-            {
-                CargarDatoFiltro(Txt_busquedaNombre.Text);
-            }
+
         }
 
         public void CargarDatoFiltro(String nombre)
         {
-            Entidades.Materias materias = new Entidades.Materias();
+            Materias materias = new Materias();
             materias = blMateria.ListarMateriaPorNombre(nombre);
             dgv_materias.Rows.Clear();
 
@@ -159,6 +152,18 @@ namespace Windows_vista.Materia
             else
             {
                 MessageBox.Show("Seleccione registro para modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            if (Txt_busquedaNombre.Text == "")
+            {
+                CargarDatos();
+            }
+            else
+            {
+                CargarDatoFiltro(Txt_busquedaNombre.Text);
             }
         }
     }
