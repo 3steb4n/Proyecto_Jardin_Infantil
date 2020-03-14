@@ -8,17 +8,19 @@ namespace Windows_vista.Logros
 {
     public partial class Frm_modificar_logro : Form
     {
-        public Frm_modificar_logro(Logro logro)
+        public Frm_modificar_logro(Logro logro,Usuario usuario)
         {
             InitializeComponent();
             cargarDatos(logro);
             id_logro = logro.IdLogro;
+            this.usuario = usuario;
         }
 
         int id_logro;
         List<Materias> lista_materia = null;
         BLMateria blMateria = new BLMateria();
         BLLogro blLogro = new BLLogro();
+        Usuario usuario;
 
         public void cargarDatos(Logro logro)
         {
@@ -43,7 +45,7 @@ namespace Windows_vista.Logros
 
         private void Frm_modificar_logro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_admin_logros frm_admin_logros = new Frm_admin_logros();
+            Frm_admin_logros frm_admin_logros = new Frm_admin_logros(usuario);
             frm_admin_logros.Show();
         }
 

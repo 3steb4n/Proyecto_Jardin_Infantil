@@ -8,10 +8,11 @@ namespace Windows_vista.Materia
 {
     public partial class Frm_crear_materia : Form
     {
-        public Frm_crear_materia()
+        public Frm_crear_materia(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
+            this.usuario = usuario;
         }
 
         List<Area> lista_area = null;
@@ -19,6 +20,7 @@ namespace Windows_vista.Materia
         BLArea blArea = new BLArea();
         BLGrado blGrado = new BLGrado();
         BLMateria blMateria = new BLMateria();
+        Usuario usuario;
 
         private void CargarDatos()
         {
@@ -133,6 +135,12 @@ namespace Windows_vista.Materia
                 flag = false;
             }
             return flag;
+        }
+
+        private void Frm_crear_materia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Frm_admin_materia frm_admin_materia = new Frm_admin_materia(usuario);
+            frm_admin_materia.Show();
         }
     }
 }

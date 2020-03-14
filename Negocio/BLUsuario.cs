@@ -20,11 +20,24 @@ namespace Negocio
             return daoUsuario.ListaGeneral();
         }
 
+        public List<Usuario> ListarDocentes()
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.ListarDocentes();
+        }
+
         public Usuario ListarUsuariosID(String documento)
         {
             DaoUsuario daoUsuario = new DaoUsuario();
 
             return daoUsuario.ListaPorDocumento(documento);
+        }
+
+        public Usuario ListarPorDocumentoProfesor(String documento)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+
+            return daoUsuario.ListaPorDocumentoProfesor(documento);
         }
 
         public List<Usuario> ListarIDyNombres()

@@ -3,18 +3,21 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Windows_vista.Logros;
+using Windows_vista.Materia;
 
 
 namespace Windows_vista
 {
     public partial class Frm_administracion_usuarios : Form
     {
-        public Frm_administracion_usuarios()
+        public Frm_administracion_usuarios(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
             dgv_usuarios.ClearSelection();
             dgv_usuarios.CurrentCell = null;
+            this.usuario = usuario;
         }
 
         List<Usuario> lista = null;
@@ -39,7 +42,7 @@ namespace Windows_vista
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_crear_usuario frm_crear_usuario = new Frm_crear_usuario();
+            Frm_crear_usuario frm_crear_usuario = new Frm_crear_usuario(usuario);
             frm_crear_usuario.Show();
         }
 
@@ -51,7 +54,7 @@ namespace Windows_vista
 
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
-            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios();
+            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios(usuario);
             frm_admin_usuarios.Show();
         }
 
@@ -76,7 +79,7 @@ namespace Windows_vista
                     usuario.EstadoClave = (String)dgv_usuarios[10, dgv_usuarios.CurrentRow.Index].Value.ToString();
                     usuario.TipoUsuario = (String)dgv_usuarios[11, dgv_usuarios.CurrentRow.Index].Value.ToString();
 
-                    Frm_modificar_usuario frm_admin_usuarios = new Frm_modificar_usuario(usuario);
+                    Frm_modificar_usuario frm_admin_usuarios = new Frm_modificar_usuario(usuario,usuario);
                     frm_admin_usuarios.Show();
                     this.Close();
                 }
@@ -144,7 +147,6 @@ namespace Windows_vista
             dgv_usuarios.CurrentCell = null;
         }
 
-
         private void button7_Click(object sender, EventArgs e)
         {
             if (Txt_busquedaCedula.Text == "")
@@ -202,6 +204,39 @@ namespace Windows_vista
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
+            frm_admin_grupos.Show();
+            this.Close();
+        }
+
+        private void Btn_materias_Click(object sender, EventArgs e)
+        {
+            Frm_admin_materia frm = new Frm_admin_materia(usuario);
+            frm.Show();
+            this.Close();
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_usuarios_Click_1(object sender, EventArgs e)
+        {
+            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios(usuario);
+            frm_admin_usuarios.Show();
+            this.Close();
+        }
+
+        private void Btn_cerrar_Click_1(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm = new Frm_inicio_sesion();
+            frm.Show();
+            this.Close();
         }
     }
 }

@@ -8,11 +8,12 @@ namespace Windows_vista
 {
     public partial class Frm_modificar_grupo : Form
     {
-        public Frm_modificar_grupo(Grupo grupo)
+        public Frm_modificar_grupo(Grupo grupo, Usuario usuario)
         {
             InitializeComponent();
             CargarDatos(grupo);
             id_grupo = grupo.IdGrupo;
+            this.usuario = usuario;
         }
 
         int id_grupo;
@@ -21,6 +22,7 @@ namespace Windows_vista
         BLGrupo blGrupo = new BLGrupo();
         BLGrado blGrado = new BLGrado();
         BLUsuario blUsuario = new BLUsuario();
+        Usuario usuario;
 
         public void CargarDatos(Grupo grupo)
         {
@@ -85,7 +87,7 @@ namespace Windows_vista
 
         private void Frm_modificar_grupo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos();
+            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
             frm_admin_grupos.Show();
         }
 

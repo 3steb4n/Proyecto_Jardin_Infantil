@@ -24,11 +24,14 @@ namespace Windows_vista
             {
                 label_rol.Text = "Secretaria";
             }
+            this.usuario = usuario;
         }
+
+        Usuario usuario;
 
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
-            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios();
+            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios(usuario);
             frm_admin_usuarios.Show();
             this.Close();
         }
@@ -38,30 +41,25 @@ namespace Windows_vista
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos();
-            frm_admin_grupos.Show();
-            this.Close();
-        }
+ 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
             this.Close();
         }
 
         private void Btn_materias_Click(object sender, EventArgs e)
         {
-            Frm_admin_materia frm = new Frm_admin_materia();
+            Frm_admin_materia frm = new Frm_admin_materia(usuario);
             frm.Show();
             this.Close();
         }
 
         private void Btn_logros_Click(object sender, EventArgs e)
         {
-            Frm_admin_logros frm = new Frm_admin_logros();
+            Frm_admin_logros frm = new Frm_admin_logros(usuario);
             frm.Show();
             this.Close();
         }
@@ -75,6 +73,17 @@ namespace Windows_vista
         {
             Frm_inicio_sesion frm = new Frm_inicio_sesion();
             frm.Show();
+            this.Close();
+        }
+
+        private void Frm_menu_admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private void BtnGrupos_Click(object sender, EventArgs e)
+        {
+            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
+            frm_admin_grupos.Show();
             this.Close();
         }
     }

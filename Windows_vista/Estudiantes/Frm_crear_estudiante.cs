@@ -8,15 +8,17 @@ namespace Windows_vista
 {
     public partial class Frm_crear_estudiante : Form
     {
-        public Frm_crear_estudiante()
+        public Frm_crear_estudiante(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
+            this.usuario = usuario;
         }
 
         BLEstudiante blEstudiante = new BLEstudiante();
         BLGrupo blGrupo = new BLGrupo();
         List<Grupo> lista = null;
+        Usuario usuario;
 
         private void CargarDatos()
         {
@@ -58,7 +60,7 @@ namespace Windows_vista
 
         private void Frm_crear_estudiante_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
         }
 

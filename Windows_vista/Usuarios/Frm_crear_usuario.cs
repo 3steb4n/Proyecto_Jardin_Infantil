@@ -7,14 +7,15 @@ namespace Windows_vista
 {
     public partial class Frm_crear_usuario : Form
     {
-        public Frm_crear_usuario()
+        public Frm_crear_usuario(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
+            this.usuarioGestion = usuario;
         }
 
         BLUsuario blUsuario = new BLUsuario();
-
+        Usuario usuarioGestion;
 
         private void CargarDatos()
         {
@@ -165,7 +166,7 @@ namespace Windows_vista
 
         private void Frm_Crear_Usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_usuarios admin_usuarios = new Frm_administracion_usuarios();
+            Frm_administracion_usuarios admin_usuarios = new Frm_administracion_usuarios(usuarioGestion);
             admin_usuarios.Show();
 
         }

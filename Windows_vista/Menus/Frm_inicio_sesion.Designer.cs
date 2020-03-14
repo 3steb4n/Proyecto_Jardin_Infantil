@@ -149,7 +149,7 @@
             this.Txt_clave.PasswordChar = '*';
             this.Txt_clave.Size = new System.Drawing.Size(284, 26);
             this.Txt_clave.TabIndex = 3;
-            this.Txt_clave.Text = "12345";
+            this.Txt_clave.Text = "846468";
             // 
             // Txt_usuario
             // 
@@ -160,7 +160,7 @@
             this.Txt_usuario.Name = "Txt_usuario";
             this.Txt_usuario.Size = new System.Drawing.Size(284, 26);
             this.Txt_usuario.TabIndex = 2;
-            this.Txt_usuario.Text = "admin";
+            this.Txt_usuario.Text = "falcao";
             // 
             // textUser
             // 
@@ -212,6 +212,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_inicio_sesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesión";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

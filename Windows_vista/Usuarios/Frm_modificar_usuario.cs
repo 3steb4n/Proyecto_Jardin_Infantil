@@ -7,17 +7,18 @@ namespace Windows_vista
 {
     public partial class Frm_modificar_usuario : Form
     {
-        public Frm_modificar_usuario(Usuario usuario)
+        public Frm_modificar_usuario(Usuario usuario, Usuario usuario_gestion)
         {
             InitializeComponent();
             cargarDatos(usuario);
             id_usuario = usuario.Id_usuario;
+            this.usuariogestion = usuario_gestion;
 
         }
 
         int id_usuario;
         BLUsuario blUsuario = new BLUsuario();
-        Usuario usuario;
+        Usuario usuariogestion;
 
         public void cargarDatos(Usuario usuario)
         {
@@ -179,7 +180,7 @@ namespace Windows_vista
 
         private void Frm_modificar_usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_usuarios admin_usuarios = new Frm_administracion_usuarios();
+            Frm_administracion_usuarios admin_usuarios = new Frm_administracion_usuarios(usuariogestion);
             admin_usuarios.Show();
         }
     }

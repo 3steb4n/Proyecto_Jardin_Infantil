@@ -8,11 +8,12 @@ namespace Windows_vista.Materia
 {
     public partial class Frm_modificar_materia : Form
     {
-        public Frm_modificar_materia(Materias materia)
+        public Frm_modificar_materia(Materias materia, Usuario usuario)
         {
             InitializeComponent();
             cargarDatos(materia);
             id_materia = materia.IdMateria;
+            this.usuario = usuario;
         }
 
         int id_materia;
@@ -21,7 +22,7 @@ namespace Windows_vista.Materia
         BLGrado blGrado = new BLGrado();
         List<Area> listaArea = null;
         List<Grado> listaGrado = null;
-        Materias materia;
+        Usuario usuario;
 
         public void cargarDatos(Materias materia)
         {
@@ -57,7 +58,7 @@ namespace Windows_vista.Materia
 
         private void Frm_modificar_materia_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_admin_materia frm_materia = new Frm_admin_materia();
+            Frm_admin_materia frm_materia = new Frm_admin_materia(usuario);
             frm_materia.Show();
         }
 

@@ -65,6 +65,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="docentes\Frm_admin_docentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="docentes\Frm_admin_docentes.Designer.cs">
+      <DependentUpon>Frm_admin_docentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="docentes\frm_crear_docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="docentes\frm_crear_docente.Designer.cs">
+      <DependentUpon>frm_crear_docente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="docentes\frm_modificar_docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="docentes\frm_modificar_docente.Designer.cs">
+      <DependentUpon>frm_modificar_docente.cs</DependentUpon>
+    </Compile>
     <Compile Include="estudiantes\Frm_administracion_estudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,24 @@
     </Compile>
     <Compile Include="materia\Frm_modificar_materia.Designer.cs">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\Frm_reporte_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\Frm_reporte_admin.Designer.cs">
+      <DependentUpon>Frm_reporte_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\frm_reporte_docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\frm_reporte_docente.Designer.cs">
+      <DependentUpon>frm_reporte_docente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\frm_reporte_secretaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\frm_reporte_secretaria.Designer.cs">
+      <DependentUpon>frm_reporte_secretaria.cs</DependentUpon>
     </Compile>
     <Compile Include="usuarios\Frm_administracion_usuarios.cs">
       <SubType>Form</SubType>
@@ -181,6 +217,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="docentes\Frm_admin_docentes.resx">
+      <DependentUpon>Frm_admin_docentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docentes\frm_crear_docente.resx">
+      <DependentUpon>frm_crear_docente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docentes\frm_modificar_docente.resx">
+      <DependentUpon>frm_modificar_docente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="estudiantes\Frm_administracion_estudiantes.resx">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +261,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="materia\Frm_modificar_materia.resx">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\Frm_reporte_admin.resx">
+      <DependentUpon>Frm_reporte_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\frm_reporte_docente.resx">
+      <DependentUpon>frm_reporte_docente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\frm_reporte_secretaria.resx">
+      <DependentUpon>frm_reporte_secretaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usuarios\Frm_administracion_usuarios.resx">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>
@@ -277,6 +331,7 @@
     <None Include="resources\editar %281%29.png" />
     <None Include="resources\gol.png" />
     <None Include="resources\gol %281%29.png" />
+    <None Include="resources\documento.png" />
     <Content Include="resources\noView.PNG" />
     <None Include="resources\tablero.png" />
     <None Include="resources\tablero %281%29.png" />

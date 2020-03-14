@@ -180,6 +180,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_crear_logro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear logro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_crear_logro_FormClosing);
             this.Load += new System.EventHandler(this.Frm_crear_logro_Load);

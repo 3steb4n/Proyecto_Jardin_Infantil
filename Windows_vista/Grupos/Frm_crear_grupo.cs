@@ -8,10 +8,11 @@ namespace Windows_vista
 {
     public partial class Frm_crear_grupo : Form
     {
-        public Frm_crear_grupo()
+        public Frm_crear_grupo(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
+            this.usuario = usuario;
         }
 
         List<Grado> lista = null;
@@ -19,9 +20,7 @@ namespace Windows_vista
         BLUsuario blUsuario = new BLUsuario();
         BLGrupo blGrupo = new BLGrupo();
         BLGrado blGrado = new BLGrado();
-        Grupo grupo;
-        Grado grado;
-        String tipo;
+        Usuario usuario;
 
         private void Combo_tipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -155,7 +154,7 @@ namespace Windows_vista
 
         private void Frm_crear_grupo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_grupos admin_grupos = new Frm_administracion_grupos();
+            Frm_administracion_grupos admin_grupos = new Frm_administracion_grupos(usuario);
             admin_grupos.Show();
         }
     }

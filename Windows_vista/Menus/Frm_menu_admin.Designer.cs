@@ -32,10 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu_admin));
             this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
-            this.Btn_logros = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnGrupos = new System.Windows.Forms.Button();
             this.Btn_materias = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_rol = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,10 +56,10 @@
             Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
             Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
             Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 219);
+            Btn_usuarios.Location = new System.Drawing.Point(0, 137);
             Btn_usuarios.Name = "Btn_usuarios";
             Btn_usuarios.Size = new System.Drawing.Size(238, 45);
             Btn_usuarios.TabIndex = 1;
@@ -74,10 +72,10 @@
             this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
             this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 264);
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 182);
             this.Btn_cerrar.Name = "Btn_cerrar";
             this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
             this.Btn_cerrar.TabIndex = 5;
@@ -90,10 +88,10 @@
             this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.Btn_reportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_reportes.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_reportes.Image = global::Windows_vista.Properties.Resources.tablero__1_;
             this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reportes.Location = new System.Drawing.Point(0, 174);
+            this.Btn_reportes.Location = new System.Drawing.Point(0, 92);
             this.Btn_reportes.Name = "Btn_reportes";
             this.Btn_reportes.Size = new System.Drawing.Size(238, 45);
             this.Btn_reportes.TabIndex = 4;
@@ -101,47 +99,31 @@
             this.Btn_reportes.UseVisualStyleBackColor = false;
             this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
-            // Btn_logros
+            // BtnGrupos
             // 
-            this.Btn_logros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_logros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_logros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_logros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_logros.Image = global::Windows_vista.Properties.Resources.editar__1_;
-            this.Btn_logros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_logros.Location = new System.Drawing.Point(0, 90);
-            this.Btn_logros.Name = "Btn_logros";
-            this.Btn_logros.Size = new System.Drawing.Size(238, 39);
-            this.Btn_logros.TabIndex = 3;
-            this.Btn_logros.Text = "Logros";
-            this.Btn_logros.UseVisualStyleBackColor = false;
-            this.Btn_logros.Click += new System.EventHandler(this.Btn_logros_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Grupos";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.BtnGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGrupos.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGrupos.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            this.BtnGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGrupos.Location = new System.Drawing.Point(0, 0);
+            this.BtnGrupos.Name = "BtnGrupos";
+            this.BtnGrupos.Size = new System.Drawing.Size(238, 47);
+            this.BtnGrupos.TabIndex = 6;
+            this.BtnGrupos.Text = "Grupos";
+            this.BtnGrupos.UseVisualStyleBackColor = false;
+            this.BtnGrupos.Click += new System.EventHandler(this.BtnGrupos_Click);
             // 
             // Btn_materias
             // 
             this.Btn_materias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.Btn_materias.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_materias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_materias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_materias.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_materias.Image = global::Windows_vista.Properties.Resources.cuaderno__1_;
             this.Btn_materias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_materias.Location = new System.Drawing.Point(0, 45);
+            this.Btn_materias.Location = new System.Drawing.Point(0, 47);
             this.Btn_materias.Name = "Btn_materias";
             this.Btn_materias.Size = new System.Drawing.Size(238, 45);
             this.Btn_materias.TabIndex = 2;
@@ -149,25 +131,10 @@
             this.Btn_materias.UseVisualStyleBackColor = false;
             this.Btn_materias.Click += new System.EventHandler(this.Btn_materias_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Windows_vista.Properties.Resources.equipo__1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Estudiantes";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label_rol);
+            this.panel3.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(761, 473);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 35);
@@ -187,6 +154,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.labe_nombre_usuario);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(540, 428);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 38);
@@ -240,10 +208,8 @@
             this.panel5.Controls.Add(this.Btn_cerrar);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.Btn_logros);
             this.panel5.Controls.Add(this.Btn_materias);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.BtnGrupos);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
@@ -262,7 +228,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu administrador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_menu_admin_FormClosing);
             this.Load += new System.EventHandler(this.Frm_menu_admin_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -279,14 +247,12 @@
         #endregion
         private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Button Btn_reportes;
-        private System.Windows.Forms.Button Btn_logros;
         private System.Windows.Forms.Button Btn_materias;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_rol;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labe_nombre_usuario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnGrupos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;

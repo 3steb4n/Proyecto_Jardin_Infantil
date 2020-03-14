@@ -8,15 +8,17 @@ namespace Windows_vista.Logros
 {
     public partial class Frm_crear_logro : Form
     {
-        public Frm_crear_logro()
+        public Frm_crear_logro(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
+            this.usuario = usuario;
         }
 
         List<Materias> lista_materia = null;
         BLLogro blLogro = new BLLogro();
         BLMateria blMateria = new BLMateria();
+        Usuario usuario;
 
         private void CargarDatos()
         {
@@ -105,7 +107,7 @@ namespace Windows_vista.Logros
 
         private void Frm_crear_logro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_admin_logros frm_admin_logros = new Frm_admin_logros();
+            Frm_admin_logros frm_admin_logros = new Frm_admin_logros(usuario);
             frm_admin_logros.Show();
         }
 

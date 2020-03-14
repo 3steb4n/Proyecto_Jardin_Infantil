@@ -126,6 +126,53 @@ namespace Datos
             }
         }
 
+        public Usuario ListaPorDocumentoProfesor(String documento)
+        {
+
+            Usuario usuario = new Usuario();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarUsuarioDocumentoProfesor", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Documento", documento);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        dr.Read();
+                        usuario = new Usuario();
+                        usuario.Id_usuario = (int)dr["ID"];
+                        usuario.Documento = (String)dr["Documento"];
+                        usuario.TipoDocumento = OrdenarTipoDocumento((String)dr["Tipo_Documento"]);
+                        usuario.Nombres = (String)dr["Nombres"];
+                        usuario.Apellidos = (String)dr["Apellidos"];
+                        usuario.Direccion = (String)dr["Direccion"];
+                        usuario.Celular = (String)dr["Celular"];
+                        usuario.Telefono = (String)dr["Telefono"];
+                        usuario.CorreoElectronico = (String)dr["Correo_Electronico"];
+                        usuario.UsuarioCreacion = (String)dr["Usuario_Creacion"];
+                        usuario.FechaCreacion = (DateTime)dr["Fecha_Creacion"];
+                        usuario.UsuarioModificacion = (String)dr["Usuario_Modificacion"];
+                        usuario.FechaModificacion = (DateTime)dr["Fecha_Modificacion"];
+                        usuario.EstadoUsuario = OrdenarEstadoUsuario((String)dr["Estado_Usuario"]);
+                        usuario.EstadoClave = OrdenarEstadoClave((String)dr["Estado_Clave"]);
+
+                    }
+                }
+
+                return usuario;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListaPorDocumentoProfesor: " + e);
+                return usuario;
+            }
+        }
+
         public List<Usuario> ListarIDyNombres()
         {
             List<Usuario> list = new List<Usuario>();
@@ -157,6 +204,53 @@ namespace Datos
             catch (Exception e)
             {
                 Console.WriteLine("Error al consultar mediante ListarIDyNombres: " + e);
+                return list;
+            }
+        }
+
+        public List<Usuario> ListarDocentes()
+        {
+            List<Usuario> list = new List<Usuario>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarDocentes", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Usuario usuario = new Usuario();
+
+                            usuario.Id_usuario = (int)dr["ID"];
+                            usuario.Documento = (String)dr["Documento"];
+                            usuario.TipoDocumento = OrdenarTipoDocumento((String)dr["Tipo_Documento"]);
+                            usuario.Nombres = (String)dr["Nombres"];
+                            usuario.Apellidos = (String)dr["Apellidos"];
+                            usuario.Direccion = (String)dr["Direccion"];
+                            usuario.Celular = (String)dr["Celular"];
+                            usuario.Telefono = (String)dr["Telefono"];
+                            usuario.CorreoElectronico = (String)dr["Correo_Electronico"];
+                            usuario.UsuarioCreacion = (String)dr["Usuario_Creacion"];
+                            usuario.FechaCreacion = (DateTime)dr["Fecha_Creacion"];
+                            usuario.UsuarioModificacion = (String)dr["Usuario_Modificacion"];
+                            usuario.FechaModificacion = (DateTime)dr["Fecha_Modificacion"];
+                            usuario.EstadoUsuario = OrdenarEstadoUsuario((String)dr["Estado_Usuario"]);
+                            usuario.EstadoClave = OrdenarEstadoClave((String)dr["Estado_Clave"]);
+
+                            list.Add(usuario);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListarDocentes: " + e);
                 return list;
             }
         }

@@ -408,6 +408,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(934, 48);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -429,6 +430,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_modificar_estudiante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Estudiante";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_modificar_estudiante_FormClosing);
             this.panel1.ResumeLayout(false);

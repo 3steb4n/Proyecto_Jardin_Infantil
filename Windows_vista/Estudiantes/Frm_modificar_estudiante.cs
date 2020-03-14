@@ -8,17 +8,19 @@ namespace Windows_vista
 {
     public partial class Frm_modificar_estudiante : Form
     {
-        public Frm_modificar_estudiante(Estudiante estudiante)
+        public Frm_modificar_estudiante(Estudiante estudiante,Usuario usuario)
         {
             InitializeComponent();
             cargarDatos(estudiante);
             id_Estudiante = estudiante.Id_estudiante;
+            this.usuario = usuario;
         }
 
         int id_Estudiante;
         BLEstudiante blEstudiante = new BLEstudiante();
         BLGrupo blGrupo = new BLGrupo();
         List<Grupo> lista = null;
+        Usuario usuario;
 
         public void cargarDatos(Estudiante estudiante)
         {
@@ -64,7 +66,7 @@ namespace Windows_vista
 
         private void Frm_modificar_estudiante_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes();
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
         }
 
@@ -215,5 +217,9 @@ namespace Windows_vista
 
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

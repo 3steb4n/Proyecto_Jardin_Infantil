@@ -8,16 +8,18 @@ namespace Windows_vista.Logros
 {
     public partial class Frm_admin_logros : Form
     {
-        public Frm_admin_logros()
+        public Frm_admin_logros(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
             dgv_logros.ClearSelection();
             dgv_logros.CurrentCell = null;
+            this.usuario = usuario;
         }
 
         List<Logro> lista = null;
         BLLogro blLogro = new BLLogro();
+        Usuario usuario;
 
         public void CargarDatos()
         {
@@ -117,7 +119,7 @@ namespace Windows_vista.Logros
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Frm_crear_logro frm_crear_logro = new Frm_crear_logro();
+            Frm_crear_logro frm_crear_logro = new Frm_crear_logro(usuario);
             frm_crear_logro.Show();
             this.Close();
         }
@@ -137,7 +139,7 @@ namespace Windows_vista.Logros
                     logro.Materia.IdMateria = (int)dgv_logros[4, dgv_logros.CurrentRow.Index].Value;
                     logro.Materia.NombreMateria = (String)dgv_logros[5, dgv_logros.CurrentRow.Index].Value;
 
-                    Frm_modificar_logro frm_modificar_logro = new Frm_modificar_logro(logro);
+                    Frm_modificar_logro frm_modificar_logro = new Frm_modificar_logro(logro,usuario);
                     frm_modificar_logro.Show();
                     this.Close();
                 }
@@ -146,6 +148,25 @@ namespace Windows_vista.Logros
             {
                 MessageBox.Show("Seleccione registro para modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Btn_logros_Click(object sender, EventArgs e)
+        {
+            Frm_admin_logros frm_admin_logros = new Frm_admin_logros(usuario);
+            frm_admin_logros.Show();
+            this.Close();
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm_inicio_sesion = new Frm_inicio_sesion();
+            frm_inicio_sesion.Show();
+            this.Close();
         }
     }
 }

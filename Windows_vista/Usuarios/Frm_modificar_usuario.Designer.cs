@@ -358,6 +358,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_modificar_usuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_modificar_usuario_FormClosing);
             this.Load += new System.EventHandler(this.Frm_modificar_usuario_Load);

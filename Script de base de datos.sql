@@ -37,6 +37,10 @@ INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, C
 			VALUES   ('846468','CC','pruebadocente2','pruebadocente2','pruebadocente2','454334543','54534543','pruebadocente2','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
 			VALUES   ('846468','CC','pruebadocente3','pruebadocente3','pruebadocente3','454334543','54534543','pruebadocente3','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
+			VALUES   ('8462312','CC','pruebadocente4','pruebadocente3','pruebadocente3','454334543','54534543','pruebadocente3','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
+			VALUES   ('846468','CC','radamel','falcao','pruebadocente3','454334543','54534543','falcao','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','S');
 
 select * from usuarios;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +71,34 @@ GO
 
 -- EXEC ListarUsuarios;
 -- select  * from usuarios;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- DROP PROCEDURE ListarDocentes
+
+CREATE PROCEDURE ListarDocentes
+AS
+SELECT         Id_Usuario [ID],
+	     Documento [Documento],
+	     Tipo_Documento [Tipo_Documento],
+		 Nombres [Nombres],
+		 Apellidos [Apellidos],
+		 Direccion [Direccion],
+		 Celular [Celular],
+		 Telefono [Telefono],
+		 Correo_Electronico [Correo_Electronico],
+		 Usuario_Clave [Usuario_Clave],
+	     Usuario_Creacion [Usuario_Creacion],
+		 Fecha_Creacion [Fecha_Creacion],
+		 Usuario_Modificacion [Usuario_Modificacion],
+		 Fecha_Modificacion [Fecha_Modificacion],
+		 Estado_Usuario [Estado_Usuario],
+		 Estado_Clave [Estado_Clave],
+		 Tipo_Usuario [Tipo_Usuario]
+
+FROM Usuarios where Estado_Usuario = 'A' and Tipo_Usuario='D';
+GO
+
+-- EXEC ListarUsuarios;
+-- select  * from usuarios;
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- DROP PROCEDURE ListarUsuarioDocumento
 -- EXEC ListarUsuarioDocumento '432';
@@ -92,7 +124,31 @@ SELECT  Id_Usuario [ID],
 
 FROM Usuarios where Documento = @Documento AND Estado_Usuario = 'A';;
 GO
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- DROP PROCEDURE ListarUsuarioDocumentoProfesor
+-- EXEC ListarUsuarioDocumento '432';
+CREATE PROCEDURE ListarUsuarioDocumentoProfesor
+@Documento varchar(50)
+AS
+SELECT  Id_Usuario [ID],
+	    Documento [Documento],
+	    Tipo_Documento [Tipo_Documento],
+		Nombres [Nombres],
+		Apellidos  [Apellidos],
+		Direccion [Direccion],
+		Celular [Celular],
+		Telefono [Telefono],
+		Correo_Electronico [Correo_Electronico],
+	    Usuario_Creacion [Usuario_Creacion],
+		Fecha_Creacion [Fecha_Creacion],
+		Usuario_Modificacion [Usuario_Modificacion],
+		Fecha_Modificacion [Fecha_Modificacion],
+		Estado_Usuario [Estado_Usuario],
+		Estado_Clave [Estado_Clave],
+		Tipo_Usuario [Tipo_Usuario]
 
+FROM Usuarios where Documento = @Documento AND Estado_Usuario = 'A' and Tipo_Usuario='D';
+GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE PROCEDURE ListarUsuariosIdNombre

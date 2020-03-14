@@ -3,17 +3,19 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Windows_vista.docentes;
 
 namespace Windows_vista
 {
     public partial class Frm_administracion_estudiantes : Form
     {
-        public Frm_administracion_estudiantes()
+        public Frm_administracion_estudiantes(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
             dgv_estudiantes.ClearSelection();
             dgv_estudiantes.CurrentCell = null;
+            this.usuario = usuario;
         }
 
 
@@ -22,12 +24,11 @@ namespace Windows_vista
 
         BLEstudiante blestudiante = new BLEstudiante();
         BLGrupo blgrupo = new BLGrupo();
-        Estudiante estudiante;
-        Grupo grupo;
+        Usuario usuario;
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Frm_crear_estudiante frm_crear_estudiante = new Frm_crear_estudiante();
+            Frm_crear_estudiante frm_crear_estudiante = new Frm_crear_estudiante(usuario);
             frm_crear_estudiante.Show();
             this.Close();
         }
@@ -58,7 +59,7 @@ namespace Windows_vista
                     estudiante.grupo.IdGrupo = (int)dgv_estudiantes[15, dgv_estudiantes.CurrentRow.Index].Value;
                     estudiante.Ruta_foto = (String)dgv_estudiantes[16, dgv_estudiantes.CurrentRow.Index].Value.ToString();
 
-                    Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante);
+                    Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante,usuario);
                     frm_admin_usuarios.Show();
                     this.Close();
                 }
@@ -217,6 +218,24 @@ namespace Windows_vista
             }
 
             return value;
+        }
+
+        private void Btn_estudiantes_Click(object sender, EventArgs e)
+        {
+            Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
+            frm_admin_estudiantes.Show();
+        }
+
+        private void Btn_usuarios_Click(object sender, EventArgs e)
+        {
+            Frm_admin_docentes frm_admin_docentes = new Frm_admin_docentes(usuario);
+            frm_admin_docentes.Show();
+        }
+
+        private void Btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm_inicio_sesion = new Frm_inicio_sesion();
+            frm_inicio_sesion.Show();
         }
     }
 

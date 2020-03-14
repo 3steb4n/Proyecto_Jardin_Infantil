@@ -443,6 +443,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_crear_estudiante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear estudiante";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_crear_estudiante_FormClosing);
             this.Load += new System.EventHandler(this.Frm_crear_estudiante_Load);

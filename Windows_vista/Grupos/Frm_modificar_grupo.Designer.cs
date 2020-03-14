@@ -224,6 +224,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_modificar_grupo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar grupo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_modificar_grupo_FormClosing);
             this.panel1.ResumeLayout(false);

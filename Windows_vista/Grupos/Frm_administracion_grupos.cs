@@ -3,19 +3,23 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Windows_vista.Logros;
+using Windows_vista.Materia;
 
 namespace Windows_vista
 {
     public partial class Frm_administracion_grupos : Form
     {
-        public Frm_administracion_grupos()
+        public Frm_administracion_grupos(Usuario usuario)
         {
             InitializeComponent();
             CargarDatos();
             dgv_grupos.ClearSelection();
             dgv_grupos.CurrentCell = null;
+            this.usuario = usuario;
         }
 
+        Usuario usuario;
         List<Grupo> lista = null;
         BLGrupo blgrupo = new BLGrupo();
 
@@ -69,7 +73,7 @@ namespace Windows_vista
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Frm_crear_grupo frm_crear_grupo = new Frm_crear_grupo();
+            Frm_crear_grupo frm_crear_grupo = new Frm_crear_grupo(usuario);
             frm_crear_grupo.Show();
             this.Close();
         }
@@ -93,7 +97,7 @@ namespace Windows_vista
                     grupo.usuario.Nombres = (String)(dgv_grupos[7, dgv_grupos.CurrentRow.Index].Value.ToString());
                     grupo.usuario.Apellidos = (String)(dgv_grupos[8, dgv_grupos.CurrentRow.Index].Value.ToString());
 
-                    Frm_modificar_grupo frm_modificar_grupo = new Frm_modificar_grupo(grupo);
+                    Frm_modificar_grupo frm_modificar_grupo = new Frm_modificar_grupo(grupo, usuario);
                     frm_modificar_grupo.Show();
                     this.Close();
                 }
@@ -171,6 +175,32 @@ namespace Windows_vista
             {
                 MessageBox.Show("No existen registros para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void BtnGrupos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_materias_Click(object sender, EventArgs e)
+        {
+            Frm_admin_materia frm = new Frm_admin_materia(usuario);
+            frm.Show();
+            this.Close();
+        }
+
+        private void Btn_usuarios_Click_1(object sender, EventArgs e)
+        {
+            Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios(usuario);
+            frm_admin_usuarios.Show();
+            this.Close();
+        }
+
+        private void Btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm = new Frm_inicio_sesion();
+            frm.Show();
+            this.Close();
         }
     }
 }

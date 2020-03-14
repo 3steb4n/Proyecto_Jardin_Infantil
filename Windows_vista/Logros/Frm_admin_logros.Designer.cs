@@ -47,22 +47,21 @@
             this.id_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.PanelMenuLateral = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_notas = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_logros = new System.Windows.Forms.Button();
-            this.Btn_materias = new System.Windows.Forms.Button();
-            this.Btn_usuarios = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_logros)).BeginInit();
-            this.PanelMenuLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -73,7 +72,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(605, 73);
+            this.button7.Location = new System.Drawing.Point(640, 53);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 49;
@@ -83,7 +82,7 @@
             // Txt_busqueda
             // 
             this.Txt_busqueda.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busqueda.Location = new System.Drawing.Point(333, 81);
+            this.Txt_busqueda.Location = new System.Drawing.Point(368, 61);
             this.Txt_busqueda.Name = "Txt_busqueda";
             this.Txt_busqueda.Size = new System.Drawing.Size(266, 22);
             this.Txt_busqueda.TabIndex = 48;
@@ -92,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(239, 83);
+            this.label2.Location = new System.Drawing.Point(274, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 15);
             this.label2.TabIndex = 47;
@@ -104,7 +103,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(749, 551);
+            this.button6.Location = new System.Drawing.Point(784, 548);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 32);
             this.button6.TabIndex = 46;
@@ -118,7 +117,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(875, 551);
+            this.button5.Location = new System.Drawing.Point(910, 548);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 32);
             this.button5.TabIndex = 45;
@@ -132,7 +131,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(1001, 551);
+            this.btn_guardar.Location = new System.Drawing.Point(1036, 548);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 44;
@@ -167,7 +166,7 @@
             this.Nombre_materia});
             this.dgv_logros.EnableHeadersVisualStyles = false;
             this.dgv_logros.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_logros.Location = new System.Drawing.Point(242, 119);
+            this.dgv_logros.Location = new System.Drawing.Point(277, 89);
             this.dgv_logros.Name = "dgv_logros";
             this.dgv_logros.ReadOnly = true;
             this.dgv_logros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -187,7 +186,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_logros.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_logros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_logros.Size = new System.Drawing.Size(881, 426);
+            this.dgv_logros.Size = new System.Drawing.Size(879, 434);
             this.dgv_logros.TabIndex = 43;
             // 
             // idLogro
@@ -229,156 +228,130 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 20);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(271, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 30);
+            this.label1.Size = new System.Drawing.Size(203, 32);
             this.label1.TabIndex = 42;
             this.label1.Text = "Gestión de logros";
             // 
-            // PanelMenuLateral
+            // errorProvider1
             // 
-            this.PanelMenuLateral.BackColor = System.Drawing.Color.Teal;
-            this.PanelMenuLateral.Controls.Add(this.button2);
-            this.PanelMenuLateral.Controls.Add(this.Btn_cerrar);
-            this.PanelMenuLateral.Controls.Add(this.button1);
-            this.PanelMenuLateral.Controls.Add(this.Btn_reportes);
-            this.PanelMenuLateral.Controls.Add(this.Btn_logros);
-            this.PanelMenuLateral.Controls.Add(this.Btn_materias);
-            this.PanelMenuLateral.Controls.Add(this.Btn_usuarios);
-            this.PanelMenuLateral.Controls.Add(this.panel1);
-            this.PanelMenuLateral.Location = new System.Drawing.Point(1, 0);
-            this.PanelMenuLateral.Name = "PanelMenuLateral";
-            this.PanelMenuLateral.Size = new System.Drawing.Size(216, 613);
-            this.PanelMenuLateral.TabIndex = 41;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // button2
+            // panel4
             // 
-            this.button2.BackColor = System.Drawing.Color.Gainsboro;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 374);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 45);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Grupos";
-            this.button2.UseVisualStyleBackColor = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(238, 606);
+            this.panel4.TabIndex = 50;
             // 
-            // Btn_cerrar
+            // panel5
             // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 329);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(216, 45);
-            this.Btn_cerrar.TabIndex = 7;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            this.panel5.Controls.Add(this.btn_cerrar);
+            this.panel5.Controls.Add(this.btn_notas);
+            this.panel5.Controls.Add(this.Btn_reportes);
+            this.panel5.Controls.Add(this.Btn_logros);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 141);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(238, 363);
+            this.panel5.TabIndex = 12;
             // 
-            // button1
+            // btn_cerrar
             // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Mi Perfil";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cerrar.Location = new System.Drawing.Point(0, 123);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.btn_cerrar.TabIndex = 10;
+            this.btn_cerrar.Text = "Cerrar sesión";
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // btn_notas
+            // 
+            this.btn_notas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btn_notas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_notas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_notas.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_notas.Image = global::Windows_vista.Properties.Resources.documento;
+            this.btn_notas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_notas.Location = new System.Drawing.Point(0, 84);
+            this.btn_notas.Name = "btn_notas";
+            this.btn_notas.Size = new System.Drawing.Size(238, 39);
+            this.btn_notas.TabIndex = 9;
+            this.btn_notas.Text = "Notas";
+            this.btn_notas.UseVisualStyleBackColor = false;
             // 
             // Btn_reportes
             // 
-            this.Btn_reportes.BackColor = System.Drawing.Color.Gainsboro;
+            this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_reportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_reportes.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_reportes.Image = global::Windows_vista.Properties.Resources.tablero__1_;
             this.Btn_reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_reportes.Location = new System.Drawing.Point(0, 284);
+            this.Btn_reportes.Location = new System.Drawing.Point(0, 39);
             this.Btn_reportes.Name = "Btn_reportes";
-            this.Btn_reportes.Size = new System.Drawing.Size(250, 45);
+            this.Btn_reportes.Size = new System.Drawing.Size(238, 45);
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_logros
             // 
-            this.Btn_logros.BackColor = System.Drawing.Color.Gainsboro;
+            this.Btn_logros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
             this.Btn_logros.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_logros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_logros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_logros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_logros.Image = global::Windows_vista.Properties.Resources.editar__1_;
             this.Btn_logros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_logros.Location = new System.Drawing.Point(0, 239);
+            this.Btn_logros.Location = new System.Drawing.Point(0, 0);
             this.Btn_logros.Name = "Btn_logros";
-            this.Btn_logros.Size = new System.Drawing.Size(216, 45);
+            this.Btn_logros.Size = new System.Drawing.Size(238, 39);
             this.Btn_logros.TabIndex = 3;
             this.Btn_logros.Text = "Logros";
             this.Btn_logros.UseVisualStyleBackColor = false;
-            // 
-            // Btn_materias
-            // 
-            this.Btn_materias.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_materias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_materias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_materias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_materias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_materias.Location = new System.Drawing.Point(0, 194);
-            this.Btn_materias.Name = "Btn_materias";
-            this.Btn_materias.Size = new System.Drawing.Size(216, 45);
-            this.Btn_materias.TabIndex = 2;
-            this.Btn_materias.Text = "Materias";
-            this.Btn_materias.UseVisualStyleBackColor = false;
-            // 
-            // Btn_usuarios
-            // 
-            this.Btn_usuarios.BackColor = System.Drawing.Color.Gainsboro;
-            this.Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_usuarios.Location = new System.Drawing.Point(0, 149);
-            this.Btn_usuarios.Name = "Btn_usuarios";
-            this.Btn_usuarios.Size = new System.Drawing.Size(216, 45);
-            this.Btn_usuarios.TabIndex = 1;
-            this.Btn_usuarios.Text = "Usuarios";
-            this.Btn_usuarios.UseVisualStyleBackColor = false;
+            this.Btn_logros.Click += new System.EventHandler(this.Btn_logros_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 149);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(238, 141);
+            this.panel1.TabIndex = 10;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pictureBox1.Image = global::Windows_vista.Properties.Resources.LOGO_EVOLUTION_KIDS_01___copia;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 116);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // Frm_admin_logros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 606);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1175, 606);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Txt_busqueda);
             this.Controls.Add(this.label2);
@@ -387,16 +360,17 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dgv_logros);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.PanelMenuLateral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_logros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de logros";
             this.Load += new System.EventHandler(this.Frm_admin_logros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_logros)).EndInit();
-            this.PanelMenuLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,16 +386,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_logros;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel PanelMenuLateral;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Btn_cerrar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Btn_reportes;
-        private System.Windows.Forms.Button Btn_logros;
-        private System.Windows.Forms.Button Btn_materias;
-        private System.Windows.Forms.Button Btn_usuarios;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLogro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_logro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_logro;
@@ -429,5 +393,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_materia;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.Button btn_notas;
+        private System.Windows.Forms.Button Btn_reportes;
+        private System.Windows.Forms.Button Btn_logros;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
