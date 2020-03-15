@@ -2,6 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Windows_vista
@@ -11,6 +12,7 @@ namespace Windows_vista
         public Frm_crear_estudiante(Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             CargarDatos();
             this.usuario = usuario;
         }
@@ -53,25 +55,15 @@ namespace Windows_vista
 
         }
 
-        private void Frm_crear_estudiante_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Frm_crear_estudiante_FormClosing(object sender, FormClosingEventArgs e)
         {
             Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Estudiante estudiante = new Estudiante();
 
@@ -115,91 +107,6 @@ namespace Windows_vista
 
         }
 
-        private void Combo_tipo_documento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool ValidarCampos()
-        {
-
-            bool flag = true;
-            if (Txt_numero_documento.Text == "")
-            {
-                errorProvider.SetError(Txt_numero_documento, "Introdusca numero de documento");
-                Txt_numero_documento.Focus();
-                flag = false;
-            }
-            if (Combo_tipo_documento.Text == "")
-            {
-                errorProvider.SetError(Combo_tipo_documento, "Seleccione...");
-                Combo_tipo_documento.Focus();
-                flag = false;
-            }
-            if (Txt_nombres.Text == "")
-            {
-                errorProvider.SetError(Txt_nombres, "Ingrese nombre");
-                Txt_nombres.Focus();
-                flag = false;
-            }
-            if (Txt_apellidos.Text == "")
-            {
-                errorProvider.SetError(Txt_apellidos, "Ingrese apellido");
-                Txt_apellidos.Focus();
-                flag = false;
-            }
-            if (combo_genero.Text == "")
-            {
-                errorProvider.SetError(Txt_nombres, "Seleccione genero");
-                combo_genero.Focus();
-                flag = false;
-            }
-            if (Txt_direccion.Text == "")
-            {
-                errorProvider.SetError(Txt_direccion, "Ingrese dirección");
-                Txt_direccion.Focus();
-                flag = false;
-            }
-            if (Txt_correo_electronico.Text == "")
-            {
-                errorProvider.SetError(Txt_correo_electronico, "Ingrese el correo electrónico");
-                Txt_correo_electronico.Focus();
-                flag = false;
-            }
-            if (Txt_telefono.Text == "")
-            {
-                errorProvider.SetError(Txt_telefono, "Ingrese el telefono acudiente");
-                Txt_telefono.Focus();
-                flag = false;
-            }
-            if (Txt_celular.Text == "")
-            {
-                errorProvider.SetError(Txt_celular, "Ingrese el celular acudiente");
-                Txt_celular.Focus();
-                flag = false;
-            }
-            if (Txt_nombre_acudiente.Text == "")
-            {
-                errorProvider.SetError(Txt_nombre_acudiente, "Ingrese el nombre del acudiente");
-                Txt_nombre_acudiente.Focus();
-                flag = false;
-            }
-            if (Txt_observaciones.Text == "")
-            {
-                errorProvider.SetError(Txt_observaciones, "Ingrese las observaciones");
-                Txt_observaciones.Focus();
-                flag = false;
-            }
-            if (Txt_foto.Text == "")
-            {
-                errorProvider.SetError(Txt_foto, "Seleccione la foto");
-                Txt_observaciones.Focus();
-                flag = false;
-            }
-            return flag;
-        }
-
-
         public int IDPorNombre(String nombre)
         {
             int value = 0;
@@ -215,24 +122,229 @@ namespace Windows_vista
             return value;
         }
 
-        private void combo_genero_SelectedIndexChanged(object sender, EventArgs e)
+        private void Txt_numero_documento_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (Txt_numero_documento.Text == "" || Txt_numero_documento.Text == "0")
+            {
+                e.Cancel = true;
+                errorNum.SetError(Txt_numero_documento, "Introdusca numero de documento");
+                Txt_nombres.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_numero_documento.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorNum.SetError(Txt_numero_documento, "Solo numeros");
+                Txt_numero_documento.Focus();
+            }
+            else
+            {
+                errorNum.Clear();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Combo_tipo_documento_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (Combo_tipo_documento.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorTipoDocumento.SetError(Combo_tipo_documento, "Seleccione el tipo de documento");
+                Combo_tipo_documento.Focus();
+            }
+            else
+            {
+                errorTipoDocumento.Clear();
+            }
         }
 
-        private void Txt_foto_TextChanged(object sender, EventArgs e)
+        private void Txt_nombres_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            if (Txt_nombres.Text == "")
+            {
+                e.Cancel = true;
+                errorNombres.SetError(Txt_nombres, "Ingrese nombre");
+                Txt_nombres.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_nombres.Text, "^[a-zA-Z ]*$"))
+            {
+                e.Cancel = true;
+                errorNombres.SetError(Txt_nombres, "Solo letras");
+                Txt_nombres.Focus();
+            }
+            else
+            {
+                errorNombres.Clear();
+            }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void Txt_apellidos_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (Txt_apellidos.Text == "")
+            {
+                e.Cancel = true;
+                errorApellidos.SetError(Txt_apellidos, "Ingrese apellido");
+                Txt_apellidos.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_apellidos.Text, "^[a-zA-Z ]*$"))
+            {
+                e.Cancel = true;
+                errorApellidos.SetError(Txt_apellidos, "Solo letras");
+                Txt_apellidos.Focus();
+            }
+            else
+            {
+                errorApellidos.Clear();
+            }
+        }
 
+        private void combo_genero_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_genero.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorTipoDocumento.SetError(combo_genero, "Seleccione el genero del estudiante");
+                combo_genero.Focus();
+            }
+            else
+            {
+                errorTipoDocumento.Clear();
+            }
+        }
+
+        private void Txt_direccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_direccion.Text == "")
+            {
+                e.Cancel = true;
+                errorDireccion.SetError(Txt_direccion, "Ingrese la dirección");
+                Txt_direccion.Focus();
+            }
+            else
+            {
+                errorDireccion.Clear();
+            }
+        }
+
+        private void Txt_correo_electronico_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_correo_electronico.Text == "")
+            {
+                e.Cancel = true;
+                errorCorreoElectronico.SetError(Txt_correo_electronico, "Ingrese el correo electrónico");
+                Txt_correo_electronico.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_correo_electronico.Text, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"))
+            {
+                e.Cancel = true;
+                errorCorreoElectronico.SetError(Txt_correo_electronico, "Dirección de correo electrónico no valida");
+                Txt_correo_electronico.Focus();
+            }
+            else
+            {
+                errorCorreoElectronico.Clear();
+            }
+        }
+
+        private void Txt_telefono_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_telefono.Text == "" || Txt_telefono.Text == "0")
+            {
+                e.Cancel = true;
+                errorTelefono.SetError(Txt_telefono, "Ingrese el numero de telefono");
+                Txt_telefono.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_telefono.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorTelefono.SetError(Txt_telefono, "Solo numeros");
+                Txt_telefono.Focus();
+            }
+            else
+            {
+                errorTelefono.Clear();
+            }
+        }
+
+        private void Txt_celular_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_celular.Text == "" || Txt_celular.Text == "0")
+            {
+                e.Cancel = true;
+                errorCelular.SetError(Txt_celular, "Ingrese el numero de celular");
+                Txt_celular.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_celular.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorCelular.SetError(Txt_celular, "Solo numeros");
+                Txt_celular.Focus();
+            }
+            else
+            {
+                errorCelular.Clear();
+            }
+        }
+
+        private void Txt_foto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_foto.Text == "")
+            {
+                e.Cancel = true;
+                errorGrupo.SetError(Txt_foto, "Seleccione la foto");
+                Txt_foto.Focus();
+            }
+            else
+            {
+                errorGrupo.Clear();
+            }
+        }
+
+        private void Txt_observaciones_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_observaciones.Text == "")
+            {
+                e.Cancel = true;
+                errorObservaciones.SetError(Txt_observaciones, "Ingrese las observaciones");
+                Txt_observaciones.Focus();
+            }
+            else
+            {
+                errorObservaciones.Clear();
+            }
+        }
+
+        private void combo_grupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_grupo.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorGrupo.SetError(combo_grupo, "Seleccione el grupo del estudiante");
+                combo_grupo.Focus();
+            }
+            else
+            {
+                errorGrupo.Clear();
+            }
+        }
+
+        private void Txt_nombre_acudiente_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_nombre_acudiente.Text == "")
+            {
+                e.Cancel = true;
+                errorNombreAcudiente.SetError(Txt_nombre_acudiente, "Ingrese nombre");
+                Txt_nombre_acudiente.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_nombre_acudiente.Text, "^[a-zA-Z ]*$"))
+            {
+                e.Cancel = true;
+                errorNombreAcudiente.SetError(Txt_nombre_acudiente, "Solo letras");
+                Txt_nombre_acudiente.Focus();
+            }
+            else
+            {
+                errorNombreAcudiente.Clear();
+            }
         }
     }
+    
 }

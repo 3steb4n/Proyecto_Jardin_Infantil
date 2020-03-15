@@ -53,10 +53,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNum = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTipo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNombres = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorApellidos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDireccion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCorreoElectronico = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCelular = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTelefono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTipoUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorApellidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDireccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCorreoElectronico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,7 +103,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 507);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // Combo_tipo_usuario
             // 
@@ -99,6 +114,7 @@
             this.Combo_tipo_usuario.Name = "Combo_tipo_usuario";
             this.Combo_tipo_usuario.Size = new System.Drawing.Size(300, 28);
             this.Combo_tipo_usuario.TabIndex = 28;
+            this.Combo_tipo_usuario.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_tipo_usuario_Validating);
             // 
             // btn_guardar
             // 
@@ -123,6 +139,7 @@
             this.Combo_tipo_documento.Name = "Combo_tipo_documento";
             this.Combo_tipo_documento.Size = new System.Drawing.Size(271, 28);
             this.Combo_tipo_documento.TabIndex = 21;
+            this.Combo_tipo_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_tipo_documento_Validating);
             // 
             // Txt_nombres
             // 
@@ -132,6 +149,7 @@
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(301, 27);
             this.Txt_nombres.TabIndex = 20;
+            this.Txt_nombres.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombres_Validating);
             // 
             // Txt_apellidos
             // 
@@ -141,6 +159,7 @@
             this.Txt_apellidos.Name = "Txt_apellidos";
             this.Txt_apellidos.Size = new System.Drawing.Size(271, 27);
             this.Txt_apellidos.TabIndex = 19;
+            this.Txt_apellidos.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_apellidos_Validating);
             // 
             // Txt_direccion
             // 
@@ -150,6 +169,7 @@
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(301, 27);
             this.Txt_direccion.TabIndex = 18;
+            this.Txt_direccion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_direccion_Validating);
             // 
             // Txt_celular
             // 
@@ -159,6 +179,7 @@
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(301, 27);
             this.Txt_celular.TabIndex = 17;
+            this.Txt_celular.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_celular_Validating);
             // 
             // Txt_telefono
             // 
@@ -168,6 +189,7 @@
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(271, 27);
             this.Txt_telefono.TabIndex = 16;
+            this.Txt_telefono.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_telefono_Validating);
             // 
             // Txt_correo_electronico
             // 
@@ -177,6 +199,7 @@
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
             this.Txt_correo_electronico.TabIndex = 15;
+            this.Txt_correo_electronico.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_correo_electronico_Validating);
             // 
             // Txt_numero_documento
             // 
@@ -186,6 +209,7 @@
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(301, 27);
             this.Txt_numero_documento.TabIndex = 14;
+            this.Txt_numero_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_numero_documento_Validating);
             // 
             // label12
             // 
@@ -213,10 +237,9 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(38, 216);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 20);
+            this.label10.Size = new System.Drawing.Size(92, 20);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Dirección";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.label10.Text = "Dirección (*)";
             // 
             // label9
             // 
@@ -244,9 +267,9 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(382, 279);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.Size = new System.Drawing.Size(88, 20);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Telefono";
+            this.label7.Text = "Telefono (*)";
             // 
             // label6
             // 
@@ -267,7 +290,6 @@
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tipo usuario (*)";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -309,11 +331,59 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Registrar usuario";
             // 
-            // errorProvider
+            // errorNum
             // 
-            this.errorProvider.BlinkRate = 0;
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
+            this.errorNum.BlinkRate = 0;
+            this.errorNum.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNum.ContainerControl = this;
+            // 
+            // errorTipo
+            // 
+            this.errorTipo.BlinkRate = 0;
+            this.errorTipo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorTipo.ContainerControl = this;
+            // 
+            // errorNombres
+            // 
+            this.errorNombres.BlinkRate = 0;
+            this.errorNombres.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNombres.ContainerControl = this;
+            // 
+            // errorApellidos
+            // 
+            this.errorApellidos.BlinkRate = 0;
+            this.errorApellidos.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorApellidos.ContainerControl = this;
+            // 
+            // errorDireccion
+            // 
+            this.errorDireccion.BlinkRate = 0;
+            this.errorDireccion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDireccion.ContainerControl = this;
+            // 
+            // errorCorreoElectronico
+            // 
+            this.errorCorreoElectronico.BlinkRate = 0;
+            this.errorCorreoElectronico.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorCorreoElectronico.ContainerControl = this;
+            // 
+            // errorCelular
+            // 
+            this.errorCelular.BlinkRate = 0;
+            this.errorCelular.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorCelular.ContainerControl = this;
+            // 
+            // errorTelefono
+            // 
+            this.errorTelefono.BlinkRate = 0;
+            this.errorTelefono.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorTelefono.ContainerControl = this;
+            // 
+            // errorTipoUsuario
+            // 
+            this.errorTipoUsuario.BlinkRate = 0;
+            this.errorTipoUsuario.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorTipoUsuario.ContainerControl = this;
             // 
             // Frm_crear_usuario
             // 
@@ -332,7 +402,15 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorApellidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDireccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCorreoElectronico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,6 +440,14 @@
         private System.Windows.Forms.TextBox Txt_numero_documento;
         private System.Windows.Forms.ComboBox Combo_tipo_usuario;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorNum;
+        private System.Windows.Forms.ErrorProvider errorTipo;
+        private System.Windows.Forms.ErrorProvider errorNombres;
+        private System.Windows.Forms.ErrorProvider errorApellidos;
+        private System.Windows.Forms.ErrorProvider errorDireccion;
+        private System.Windows.Forms.ErrorProvider errorCorreoElectronico;
+        private System.Windows.Forms.ErrorProvider errorCelular;
+        private System.Windows.Forms.ErrorProvider errorTelefono;
+        private System.Windows.Forms.ErrorProvider errorTipoUsuario;
     }
 }

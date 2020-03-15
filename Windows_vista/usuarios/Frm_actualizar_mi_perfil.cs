@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -17,6 +18,7 @@ namespace Windows_vista.usuarios
         public Frm_actualizar_mi_perfil(Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.usuario = blUsuario.ListaPorDocumento(usuario.Documento);
             cargarDatos(this.usuario);
         }
@@ -55,13 +57,6 @@ namespace Windows_vista.usuarios
             Console.WriteLine(usuario.TipoUsuario);
         }
 
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
@@ -77,16 +72,181 @@ namespace Windows_vista.usuarios
             usuario.UsuarioModificacion = this.usuario.Id_usuario.ToString();
             usuario.FechaModificacion = fechaActual;
 
-
-            bool flag = blUsuario.ModificarUsuarioPropio(usuario);
-            if (flag)
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show("Usuario modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+
+                bool flag = blUsuario.ModificarUsuarioPropio(usuario);
+                if (flag)
+                {
+                    MessageBox.Show("Usuario modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Txt_numero_documento_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_numero_documento.Text == "" || Txt_numero_documento.Text == "0")
+            {
+                e.Cancel = true;
+                errorNumero.SetError(Txt_numero_documento, "Introdusca numero de documento");
+                Txt_nombres.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_numero_documento.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorNumero.SetError(Txt_numero_documento, "Solo numeros");
+                Txt_numero_documento.Focus();
             }
             else
             {
-                MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorNumero.Clear();
+            }
+        }
+
+        private void Combo_tipo_documento_Validating(object sender, CancelEventArgs e)
+        {
+            if (Combo_tipo_documento.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorTipoDocumento.SetError(Combo_tipo_documento, "Seleccione el tipo de documento");
+                Combo_tipo_documento.Focus();
+            }
+            else
+            {
+                errorTipoDocumento.Clear();
+            }
+        }
+
+        private void Txt_nombres_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_nombres.Text == "")
+            {
+                e.Cancel = true;
+                errorNombres.SetError(Txt_nombres, "Ingrese nombre");
+                Txt_nombres.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_nombres.Text, "^[a-zA-Z ]*$"))
+            {
+                e.Cancel = true;
+                errorNombres.SetError(Txt_nombres, "Solo letras");
+                Txt_nombres.Focus();
+            }
+            else
+            {
+                errorNombres.Clear();
+            }
+        }
+
+        private void Txt_apellidos_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_apellidos.Text == "")
+            {
+                e.Cancel = true;
+                errorApellidos.SetError(Txt_apellidos, "Ingrese apellido");
+                Txt_apellidos.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_apellidos.Text, "^[a-zA-Z ]*$"))
+            {
+                e.Cancel = true;
+                errorApellidos.SetError(Txt_apellidos, "Solo letras");
+                Txt_apellidos.Focus();
+            }
+            else
+            {
+                errorApellidos.Clear();
+            }
+        }
+
+        private void Txt_direccion_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_direccion.Text == "")
+            {
+                e.Cancel = true;
+                errorDireccion.SetError(Txt_direccion, "Ingrese la dirección");
+                Txt_direccion.Focus();
+            }
+            else
+            {
+                errorDireccion.Clear();
+            }
+        }
+
+        private void Txt_correo_electronico_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_correo_electronico.Text == "")
+            {
+                e.Cancel = true;
+                errorCorreoElectronico.SetError(Txt_correo_electronico, "Ingrese el correo electrónico");
+                Txt_correo_electronico.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_correo_electronico.Text, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"))
+            {
+                e.Cancel = true;
+                errorCorreoElectronico.SetError(Txt_correo_electronico, "Dirección de correo electrónico no valida");
+                Txt_correo_electronico.Focus();
+            }
+            else
+            {
+                errorCorreoElectronico.Clear();
+            }
+        }
+
+        private void Txt_celular_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_celular.Text == "" || Txt_celular.Text == "0")
+            {
+                e.Cancel = true;
+                errorCelular.SetError(Txt_celular, "Ingrese el numero de celular");
+                Txt_celular.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_celular.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorCelular.SetError(Txt_celular, "Solo numeros");
+                Txt_celular.Focus();
+            }
+            else
+            {
+                errorCelular.Clear();
+            }
+        }
+
+        private void Txt_telefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (Txt_telefono.Text == "" || Txt_telefono.Text == "0")
+            {
+                e.Cancel = true;
+                errorTelefono.SetError(Txt_telefono, "Ingrese el numero de telefono");
+                Txt_telefono.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_telefono.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorTelefono.SetError(Txt_telefono, "Solo numeros");
+                Txt_telefono.Focus();
+            }
+            else
+            {
+                errorTelefono.Clear();
+            }
+        }
+
+        private void Combo_tipo_usuario_Validating(object sender, CancelEventArgs e)
+        {
+            if (Combo_tipo_usuario.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorTipoUsuario.SetError(Combo_tipo_usuario, "Seleccione el tipo de usuario");
+                Combo_tipo_usuario.Focus();
+            }
+            else
+            {
+                errorTipoUsuario.Clear();
             }
         }
     }
