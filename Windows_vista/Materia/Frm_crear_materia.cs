@@ -62,13 +62,13 @@ namespace Windows_vista.Materia
         {
             if (ValidarCampos())
             {
-                Materias materia = new Materias();
+                Materiaa materia = new Materiaa();
 
                 guardar(materia);
             }
         }
 
-        private void guardar(Materias materia)
+        private void guardar(Materiaa materia)
         {
             DateTime fechaActual = DateTime.Today;
 

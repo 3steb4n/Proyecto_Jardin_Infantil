@@ -203,6 +203,22 @@ CREATE PROCEDURE modificarUsuario
   UPDATE Usuarios SET Documento=@Documento, Tipo_Documento=@Tipo_Documento, Nombres=@Nombres, Apellidos=@Apellidos, Direccion=@Direccion, Celular=@Celular, Telefono=@Telefono, Correo_Electronico=@Correo_Electronico, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Estado_Usuario=@Estado_Usuario, Estado_Clave=@Estado_Clave, Tipo_Usuario=@Tipo_Usuario where Id_Usuario=@ID;
 GO
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE modificarUsuarioPropio
+
+CREATE PROCEDURE modificarUsuarioPropio
+   @ID int,
+   @Nombres varchar(50),
+   @Apellidos varchar(50),
+   @Direccion varchar(50),
+   @Celular varchar(30),
+   @Telefono varchar(30),
+   @Correo_Electronico varchar(100),
+   @UsuarioModificacion varchar(30),
+   @FechaModificacion datetime
+   AS
+  UPDATE Usuarios SET  Nombres=@Nombres, Apellidos=@Apellidos, Direccion=@Direccion, Celular=@Celular, Telefono=@Telefono, Correo_Electronico=@Correo_Electronico, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion  where Id_Usuario=@ID;
+GO
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE eliminarUsuario
 CREATE PROCEDURE eliminarUsuario
    @ID int
@@ -218,6 +234,7 @@ CREATE PROCEDURE IniciarSesion
 @Usuario_Clave varchar (100)
 AS
 SELECT  Id_Usuario [ID],
+	    Documento [Documento],
 		Nombres [Nombres],
 		Apellidos  [Apellidos],
 		Estado_Usuario [Estado_Usuario],

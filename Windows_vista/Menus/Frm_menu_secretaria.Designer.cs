@@ -208,8 +208,6 @@
             this.Name = "Frm_menu_secretaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu secretaria";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_menu_secretaria_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_menu_secretaria_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

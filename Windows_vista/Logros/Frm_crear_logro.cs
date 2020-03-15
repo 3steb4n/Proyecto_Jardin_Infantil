@@ -15,7 +15,7 @@ namespace Windows_vista.Logros
             this.usuario = usuario;
         }
 
-        List<Materias> lista_materia = null;
+        List<Materiaa> lista_materia = null;
         BLLogro blLogro = new BLLogro();
         BLMateria blMateria = new BLMateria();
         Usuario usuario;

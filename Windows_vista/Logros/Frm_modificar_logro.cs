@@ -17,7 +17,7 @@ namespace Windows_vista.Logros
         }
 
         int id_logro;
-        List<Materias> lista_materia = null;
+        List<Materiaa> lista_materia = null;
         BLMateria blMateria = new BLMateria();
         BLLogro blLogro = new BLLogro();
         Usuario usuario;

@@ -42,16 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area.cs" />
+    <Compile Include="Bloque.cs" />
     <Compile Include="ConceptoPago.cs" />
     <Compile Include="Grado.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="Estudiante.cs" />
+    <Compile Include="Horario.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Logro.cs" />
-    <Compile Include="Materias.cs" />
+    <Compile Include="Materiaa.cs" />
     <Compile Include="Pagos.cs" />
     <Compile Include="Periodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salon.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

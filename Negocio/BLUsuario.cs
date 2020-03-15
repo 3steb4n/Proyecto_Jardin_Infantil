@@ -26,7 +26,7 @@ namespace Negocio
             return daoUsuario.ListarDocentes();
         }
 
-        public Usuario ListarUsuariosID(String documento)
+        public Usuario ListaPorDocumento(String documento)
         {
             DaoUsuario daoUsuario = new DaoUsuario();
 
@@ -57,6 +57,12 @@ namespace Negocio
         {
             DaoUsuario daoUsuario = new DaoUsuario();
             return daoUsuario.ModificarUsuario(usuario);
+        }
+
+        public bool ModificarUsuarioPropio(Usuario usuario)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.ModificarUsuarioPropio(usuario);
         }
 
         public bool EliminarUsuario(int id)

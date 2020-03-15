@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.Button Btn_usuarios;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu_admin));
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.BtnGrupos = new System.Windows.Forms.Button();
             this.Btn_materias = new System.Windows.Forms.Button();
@@ -42,6 +41,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,22 +68,6 @@
             Btn_usuarios.UseVisualStyleBackColor = false;
             Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
             // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 182);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
-            // 
             // Btn_reportes
             // 
             this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
@@ -97,7 +82,6 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
-            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // BtnGrupos
             // 
@@ -205,7 +189,8 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.Btn_cerrar);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
             this.panel5.Controls.Add(this.Btn_materias);
@@ -215,6 +200,37 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 367);
             this.panel5.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 229);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(238, 44);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Cerrar sesión";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 47);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Horarios";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Frm_menu_admin
             // 
@@ -230,8 +246,6 @@
             this.Name = "Frm_menu_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu administrador";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_menu_admin_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_menu_admin_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -245,7 +259,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Button Btn_reportes;
         private System.Windows.Forms.Button Btn_materias;
         private System.Windows.Forms.Panel panel3;
@@ -257,5 +270,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

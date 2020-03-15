@@ -8,7 +8,7 @@ namespace Windows_vista.Materia
 {
     public partial class Frm_modificar_materia : Form
     {
-        public Frm_modificar_materia(Materias materia, Usuario usuario)
+        public Frm_modificar_materia(Materiaa materia, Usuario usuario)
         {
             InitializeComponent();
             cargarDatos(materia);
@@ -24,7 +24,7 @@ namespace Windows_vista.Materia
         List<Grado> listaGrado = null;
         Usuario usuario;
 
-        public void cargarDatos(Materias materia)
+        public void cargarDatos(Materiaa materia)
         {
             // se llena el selector de area
             listaArea = blArea.ListarAreas();
@@ -64,7 +64,7 @@ namespace Windows_vista.Materia
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Materias materia = new Materias();
+            Materiaa materia = new Materiaa();
             DateTime fechaActual = DateTime.Today;
 
             materia.IdMateria = id_materia;

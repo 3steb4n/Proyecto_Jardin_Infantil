@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using Windows_vista.Logros;
 using Windows_vista.Materia;
+using Windows_vista.usuarios;
 
 namespace Windows_vista
 {
@@ -25,23 +26,30 @@ namespace Windows_vista
                 label_rol.Text = "Secretaria";
             }
             this.usuario = usuario;
+            ValidarContrasena(usuario.EstadoClave);
         }
 
         Usuario usuario;
 
+        public void ValidarContrasena(String estado)
+        {
+            if (estado == "S")
+            {
+                DialogResult response = MessageBox.Show("Usted no ha actualizado su contraseña, ¿ Desea cambiarla ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (response == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Frm_actualizar_mi_perfil frm_mi_perfil = new Frm_actualizar_mi_perfil(usuario);
+                    frm_mi_perfil.Show();
+                }
+            }
+        }
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
             Frm_administracion_usuarios frm_admin_usuarios = new Frm_administracion_usuarios(usuario);
             frm_admin_usuarios.Show();
             this.Close();
         }
-
-        private void Frm_menu_admin_Load(object sender, EventArgs e)
-        {
-
-        }
-
- 
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -64,27 +72,19 @@ namespace Windows_vista
             this.Close();
         }
 
-        private void Btn_reportes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_cerrar_Click(object sender, EventArgs e)
-        {
-            Frm_inicio_sesion frm = new Frm_inicio_sesion();
-            frm.Show();
-            this.Close();
-        }
-
-        private void Frm_menu_admin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
         private void BtnGrupos_Click(object sender, EventArgs e)
         {
             Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
             frm_admin_grupos.Show();
             this.Close();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Frm_inicio_sesion frm = new Frm_inicio_sesion();
+            frm.Show();
+            this.Close();
+        }
+
     }
 }

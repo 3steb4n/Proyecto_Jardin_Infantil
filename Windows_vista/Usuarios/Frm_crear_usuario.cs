@@ -154,16 +154,6 @@ namespace Windows_vista
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Frm_Crear_Usuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Frm_Crear_Usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             Frm_administracion_usuarios admin_usuarios = new Frm_administracion_usuarios(usuarioGestion);

@@ -336,6 +336,42 @@ namespace Datos
             }
         }
 
+        public bool ModificarUsuarioPropio(Usuario usuario)
+        {
+            bool flag = false;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("modificarUsuarioPropio", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+
+                    cmd.Parameters.AddWithValue("@ID", usuario.Id_usuario);
+                    cmd.Parameters.AddWithValue("@Nombres", usuario.Nombres);
+                    cmd.Parameters.AddWithValue("@Apellidos", usuario.Apellidos);
+                    cmd.Parameters.AddWithValue("@Direccion", usuario.Direccion);
+                    cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                    cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                    cmd.Parameters.AddWithValue("@Correo_Electronico", usuario.CorreoElectronico);
+                    cmd.Parameters.AddWithValue("@UsuarioModificacion", usuario.UsuarioModificacion);
+                    cmd.Parameters.AddWithValue("@FechaModificacion", usuario.FechaModificacion);
+
+                    flag = cmd.ExecuteNonQuery() != 0;
+
+                }
+                return flag;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al modificar usuario: " + e);
+                return flag;
+            }
+        }
+
         public bool EliminarUsuario(int id)
         {
             bool flag = false;
@@ -397,6 +433,7 @@ namespace Datos
                         dr.Read();
                         usuario = new Usuario();
                         usuario.Id_usuario = (int)dr["ID"];
+                        usuario.Documento = (String)dr["Documento"];
                         usuario.Nombres = (String)dr["Nombres"];
                         usuario.Apellidos = (String)dr["Apellidos"];
                         usuario.EstadoUsuario = (String)dr["Estado_Usuario"];

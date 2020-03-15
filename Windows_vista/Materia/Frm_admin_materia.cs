@@ -45,7 +45,7 @@ namespace Windows_vista.Materia
             dgv_materias.CurrentCell = null;
         }
 
-        List<Materias> lista = null;
+        List<Materiaa> lista = null;
         BLMateria blMateria = new BLMateria();
 
         public void Frm_admin_materia_Load(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Windows_vista.Materia
 
         public void CargarDatoFiltro(String nombre)
         {
-            Materias materias = new Materias();
+            Materiaa materias = new Materiaa();
             materias = blMateria.ListarMateriaPorNombre(nombre);
             dgv_materias.Rows.Clear();
 
@@ -135,7 +135,7 @@ namespace Windows_vista.Materia
             {
                 if (dgv_materias.RowCount > 0)
                 {
-                    Materias materia = new Materias();
+                    Materiaa materia = new Materiaa();
 
                     materia.IdMateria = (int)dgv_materias[0, dgv_materias.CurrentRow.Index].Value;
                     materia.NombreMateria = (String)dgv_materias[1, dgv_materias.CurrentRow.Index].Value.ToString();

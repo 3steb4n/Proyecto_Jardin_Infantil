@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Windows_vista.Logros;
+using Windows_vista.usuarios;
 
 namespace Windows_vista
 {
@@ -25,28 +26,25 @@ namespace Windows_vista
                 label_rol.Text = "Secretaria";
             }
             this.usuario = usuario;
+            ValidarContrasena(usuario.EstadoClave);
         }
 
         Usuario usuario;
 
-        private void label2_Click(object sender, EventArgs e)
+        public void ValidarContrasena(String estado)
         {
+            if (estado == "S")
+            {
+                DialogResult response = MessageBox.Show("Usted no ha actualizado su contraseña, ¿ Desea cambiarla ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (response == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Frm_actualizar_mi_perfil frm_mi_perfil = new Frm_actualizar_mi_perfil(usuario);
+                    frm_mi_perfil.Show();
+                }
+            }
         }
 
-        private void Frm_menu_docente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labe_nombre_usuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Frm_menu_docente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -62,9 +60,5 @@ namespace Windows_vista
             this.Close();
         }
 
-        private void btn_notas_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

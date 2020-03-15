@@ -16,9 +16,9 @@ namespace Entidades
         String _usuarioModificacion;
         DateTime _fechaModificacion;
         String _estadoLogro;
-        Materias _materia;
+        Materiaa _materia;
 
-        public Logro(int idLogro, String nombreLogro, String descripcionLogro, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoLogro, Materias materia)
+        public Logro(int idLogro, String nombreLogro, String descripcionLogro, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String estadoLogro, Materiaa materia)
         {
             this._idLogro = idLogro;
             this._nombreLogro = nombreLogro;
@@ -33,7 +33,7 @@ namespace Entidades
 
         public Logro()
         {
-            _materia = new Materias();
+            _materia = new Materiaa();
         }
 
         public int IdLogro
@@ -84,7 +84,7 @@ namespace Entidades
             set => _estadoLogro = value;
         }
 
-        public Materias Materia
+        public Materiaa Materia
         {
             get => _materia;
             set => _materia = value;

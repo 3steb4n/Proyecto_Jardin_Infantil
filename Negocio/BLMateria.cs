@@ -7,33 +7,33 @@ namespace Negocio
 {
     public class BLMateria
     {
-        public List<Materias> ListarMateria()
+        public List<Materiaa> ListarMateria()
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.ListaGeneral();
         }
 
-        public List<Materias> ListarIdNombre()
+        public List<Materiaa> ListarIdNombre()
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.ListarIdNombre();
         }
 
 
-        public Materias ListarMateriaPorNombre(String nombre)
+        public Materiaa ListarMateriaPorNombre(String nombre)
         {
             DaoMateria daoMateria = new DaoMateria();
 
             return daoMateria.ListaPorNombre(nombre);
         }
 
-        public bool InsertarMateria(Materias materia)
+        public bool InsertarMateria(Materiaa materia)
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.InsertarMateria(materia);
         }
 
-        public bool ModificarMateria(Materias materia)
+        public bool ModificarMateria(Materiaa materia)
         {
             DaoMateria daoMateria = new DaoMateria();
             return daoMateria.ModificarMateria(materia);

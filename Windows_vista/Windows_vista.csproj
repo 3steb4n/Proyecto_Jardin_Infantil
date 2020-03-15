@@ -89,6 +89,12 @@
     <Compile Include="estudiantes\Frm_administracion_estudiantes.Designer.cs">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="horarios\Frm_admin_horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="horarios\Frm_admin_horarios.Designer.cs">
+      <DependentUpon>Frm_admin_horarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="grupos\Frm_administracion_grupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,12 @@
     </Compile>
     <Compile Include="reportes\frm_reporte_secretaria.Designer.cs">
       <DependentUpon>frm_reporte_secretaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios\Frm_actualizar_mi_perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usuarios\Frm_actualizar_mi_perfil.Designer.cs">
+      <DependentUpon>Frm_actualizar_mi_perfil.cs</DependentUpon>
     </Compile>
     <Compile Include="usuarios\Frm_administracion_usuarios.cs">
       <SubType>Form</SubType>
@@ -235,6 +247,9 @@
     <EmbeddedResource Include="estudiantes\Frm_modificar_estudiante.resx">
       <DependentUpon>Frm_modificar_estudiante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="horarios\Frm_admin_horarios.resx">
+      <DependentUpon>Frm_admin_horarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="grupos\Frm_administracion_grupos.resx">
       <DependentUpon>Frm_administracion_grupos.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\frm_reporte_secretaria.resx">
       <DependentUpon>frm_reporte_secretaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usuarios\Frm_actualizar_mi_perfil.resx">
+      <DependentUpon>Frm_actualizar_mi_perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usuarios\Frm_administracion_usuarios.resx">
       <DependentUpon>Frm_administracion_usuarios.cs</DependentUpon>

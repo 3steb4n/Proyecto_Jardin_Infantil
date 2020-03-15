@@ -124,7 +124,7 @@ namespace Windows_vista
         public void CargarDatoFiltro(String documento)
         {
             Usuario usuario = new Usuario();
-            usuario = blUsuario.ListarUsuariosID(documento);
+            usuario = blUsuario.ListaPorDocumento(documento);
             dgv_usuarios.Rows.Clear();
 
             dgv_usuarios.Rows.Add(

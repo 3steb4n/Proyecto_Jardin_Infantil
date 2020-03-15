@@ -60,7 +60,6 @@
             this.labe_nombre_usuario.Size = new System.Drawing.Size(142, 25);
             this.labe_nombre_usuario.TabIndex = 3;
             this.labe_nombre_usuario.Text = "imput temporal";
-            this.labe_nombre_usuario.Click += new System.EventHandler(this.labe_nombre_usuario_Click);
             // 
             // panel2
             // 
@@ -80,7 +79,6 @@
             this.label_rol.Size = new System.Drawing.Size(122, 20);
             this.label_rol.TabIndex = 4;
             this.label_rol.Text = "input temporal";
-            this.label_rol.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel3
             // 
@@ -143,7 +141,6 @@
             this.btn_notas.TabIndex = 9;
             this.btn_notas.Text = "Notas";
             this.btn_notas.UseVisualStyleBackColor = false;
-            this.btn_notas.Click += new System.EventHandler(this.btn_notas_Click);
             // 
             // Btn_reportes
             // 
@@ -210,8 +207,6 @@
             this.Name = "Frm_menu_docente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu docente";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_menu_docente_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_menu_docente_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

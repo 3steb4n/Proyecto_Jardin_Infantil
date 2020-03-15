@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Windows_vista.docentes;
+using Windows_vista.usuarios;
 
 namespace Windows_vista
 {
@@ -25,24 +26,31 @@ namespace Windows_vista
             }
 
             this.usuario = usuario;
+            ValidarContrasena(usuario.EstadoClave);
+        }
+
+        public void ValidarContrasena(String estado)
+        {
+            if (estado == "S")
+            {
+                DialogResult response = MessageBox.Show("Usted no ha actualizado su contraseña, ¿ Desea cambiarla ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (response == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Frm_actualizar_mi_perfil frm_mi_perfil = new Frm_actualizar_mi_perfil(usuario);
+                    frm_mi_perfil.Show();
+                }
+            }
         }
 
         Usuario usuario;
 
-        private void Frm_menu_secretaria_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
             this.Close();
-        }
-
-        private void Frm_menu_secretaria_FormClosing(object sender, FormClosingEventArgs e)
-        {
         }
 
         private void Btn_usuarios_Click(object sender, EventArgs e)

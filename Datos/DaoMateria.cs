@@ -27,9 +27,9 @@ namespace Datos
             set { _cadenaConexion = value; }
         }
 
-        public List<Materias> ListaGeneral()
+        public List<Materiaa> ListaGeneral()
         {
-            List<Materias> list = new List<Materias>();
+            List<Materiaa> list = new List<Materiaa>();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -43,7 +43,7 @@ namespace Datos
                     {
                         while (dr.Read())
                         {
-                            Materias materia = new Materias();
+                            Materiaa materia = new Materiaa();
 
                             materia.IdMateria = (int)dr["IdMateria"];
                             materia.NombreMateria = (String)dr["NomreMateria"];
@@ -69,9 +69,9 @@ namespace Datos
         }
 
 
-        public List<Materias> ListarIdNombre()
+        public List<Materiaa> ListarIdNombre()
         {
-            List<Materias> list = new List<Materias>();
+            List<Materiaa> list = new List<Materiaa>();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -85,7 +85,7 @@ namespace Datos
                     {
                         while (dr.Read())
                         {
-                            Materias materia = new Materias();
+                            Materiaa materia = new Materiaa();
 
                             materia.IdMateria = (int)dr["IdMateria"];
                             materia.NombreMateria = (String)dr["NomreMateria"];
@@ -104,10 +104,10 @@ namespace Datos
         }
 
 
-        public Materias ListaPorNombre(String nombre)
+        public Materiaa ListaPorNombre(String nombre)
         {
 
-            Materias materia = new Materias();
+            Materiaa materia = new Materiaa();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -122,7 +122,7 @@ namespace Datos
                     if (dr != null & dr.HasRows)
                     {
                         dr.Read();
-                        materia = new Materias();
+                        materia = new Materiaa();
 
                         materia.IdMateria = (int)dr["IdMateria"];
                         materia.NombreMateria = (String)dr["NombreMateria"];
@@ -146,7 +146,7 @@ namespace Datos
             }
         }
 
-        public bool InsertarMateria(Materias materia)
+        public bool InsertarMateria(Materiaa materia)
         {
             bool flag = false;
             try
@@ -180,7 +180,7 @@ namespace Datos
             }
         }
 
-        public bool ModificarMateria(Materias materia)
+        public bool ModificarMateria(Materiaa materia)
         {
             bool flag = false;
             try
