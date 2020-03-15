@@ -10,8 +10,3 @@ C:\Users\garra\Documents\proyecto\jardin\Entidades\bin\Debug\Entidades.dll
 C:\Users\garra\Documents\proyecto\jardin\Entidades\bin\Debug\Entidades.pdb
 C:\Users\garra\Documents\proyecto\jardin\Entidades\obj\Debug\Entidades.dll
 C:\Users\garra\Documents\proyecto\jardin\Entidades\obj\Debug\Entidades.pdb
-C:\Users\garra\Documents\test\jardin\Entidades\bin\Debug\Entidades.dll
-C:\Users\garra\Documents\test\jardin\Entidades\bin\Debug\Entidades.pdb
-C:\Users\garra\Documents\test\jardin\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
-C:\Users\garra\Documents\test\jardin\Entidades\obj\Debug\Entidades.dll
-C:\Users\garra\Documents\test\jardin\Entidades\obj\Debug\Entidades.pdb

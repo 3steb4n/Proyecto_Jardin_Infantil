@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_actualizar_mi_perfil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
@@ -52,8 +53,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,6 +130,7 @@
             // 
             this.Txt_nombres.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombres.Location = new System.Drawing.Point(41, 178);
+            this.Txt_nombres.MaxLength = 30;
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(301, 27);
             this.Txt_nombres.TabIndex = 20;
@@ -135,6 +139,7 @@
             // 
             this.Txt_apellidos.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_apellidos.Location = new System.Drawing.Point(385, 178);
+            this.Txt_apellidos.MaxLength = 30;
             this.Txt_apellidos.Name = "Txt_apellidos";
             this.Txt_apellidos.Size = new System.Drawing.Size(271, 27);
             this.Txt_apellidos.TabIndex = 19;
@@ -143,6 +148,7 @@
             // 
             this.Txt_direccion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_direccion.Location = new System.Drawing.Point(41, 240);
+            this.Txt_direccion.MaxLength = 30;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(301, 27);
             this.Txt_direccion.TabIndex = 18;
@@ -151,6 +157,7 @@
             // 
             this.Txt_celular.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_celular.Location = new System.Drawing.Point(41, 303);
+            this.Txt_celular.MaxLength = 15;
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(301, 27);
             this.Txt_celular.TabIndex = 17;
@@ -159,6 +166,7 @@
             // 
             this.Txt_telefono.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_telefono.Location = new System.Drawing.Point(385, 305);
+            this.Txt_telefono.MaxLength = 15;
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(271, 27);
             this.Txt_telefono.TabIndex = 16;
@@ -167,6 +175,7 @@
             // 
             this.Txt_correo_electronico.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_correo_electronico.Location = new System.Drawing.Point(385, 240);
+            this.Txt_correo_electronico.MaxLength = 100;
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
             this.Txt_correo_electronico.TabIndex = 15;
@@ -176,6 +185,7 @@
             this.Txt_numero_documento.Enabled = false;
             this.Txt_numero_documento.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_numero_documento.Location = new System.Drawing.Point(41, 118);
+            this.Txt_numero_documento.MaxLength = 20;
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(301, 27);
             this.Txt_numero_documento.TabIndex = 14;
@@ -300,6 +310,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mis datos";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 0;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // Frm_actualizar_mi_perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +332,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +362,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Combo_tipo_usuario;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

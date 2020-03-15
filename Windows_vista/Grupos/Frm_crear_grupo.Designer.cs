@@ -145,6 +145,7 @@
             // 
             this.Txt_nombre_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombre_grupo.Location = new System.Drawing.Point(41, 128);
+            this.Txt_nombre_grupo.MaxLength = 30;
             this.Txt_nombre_grupo.Name = "Txt_nombre_grupo";
             this.Txt_nombre_grupo.Size = new System.Drawing.Size(275, 27);
             this.Txt_nombre_grupo.TabIndex = 20;
@@ -153,6 +154,7 @@
             // 
             this.Txt_descripciongrupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_descripciongrupo.Location = new System.Drawing.Point(41, 205);
+            this.Txt_descripciongrupo.MaxLength = 300;
             this.Txt_descripciongrupo.Multiline = true;
             this.Txt_descripciongrupo.Name = "Txt_descripciongrupo";
             this.Txt_descripciongrupo.Size = new System.Drawing.Size(610, 89);

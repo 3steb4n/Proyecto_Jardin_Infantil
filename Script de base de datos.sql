@@ -11,13 +11,13 @@ GO
 
 create table Usuarios (
     Id_Usuario int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Documento varchar(50) NOT NULL,
-    Tipo_Documento varchar(50) NOT NULL CHECK (Tipo_Documento IN('CC', 'TI', 'P', 'DNI', 'CE')),
-    Nombres varchar(50) NOT NULL,
-    Apellidos varchar(50) NOT NULL,
-    Direccion varchar(50) NOT NULL,
-    Celular varchar(30) NOT NULL,
-    Telefono varchar(30) NOT NULL,
+    Documento varchar(20) NOT NULL,
+    Tipo_Documento varchar(2) NOT NULL CHECK (Tipo_Documento IN('CC', 'TI', 'P', 'DNI', 'CE')),
+    Nombres varchar(30) NOT NULL,
+    Apellidos varchar(30) NOT NULL,
+    Direccion varchar(30) NOT NULL,
+    Celular varchar(15) NOT NULL,
+    Telefono varchar(10) NOT NULL,
     Correo_Electronico varchar(100) NOT NULL,
     Usuario_Clave varchar(100) NOT NULL,
     Usuario_Creacion varchar(30),
@@ -103,7 +103,7 @@ GO
 -- DROP PROCEDURE ListarUsuarioDocumento
 -- EXEC ListarUsuarioDocumento '432';
 CREATE PROCEDURE ListarUsuarioDocumento
-@Documento varchar(50)
+@Documento varchar(20)
 AS
 SELECT  Id_Usuario [ID],
 	    Documento [Documento],
@@ -128,7 +128,7 @@ GO
 -- DROP PROCEDURE ListarUsuarioDocumentoProfesor
 -- EXEC ListarUsuarioDocumento '432';
 CREATE PROCEDURE ListarUsuarioDocumentoProfesor
-@Documento varchar(50)
+@Documento varchar(20)
 AS
 SELECT  Id_Usuario [ID],
 	    Documento [Documento],
@@ -163,13 +163,13 @@ EXEC ListarUsuariosIdNombre
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarUsuario
 CREATE PROCEDURE registrarUsuario
-   @Documento varchar(50),
-   @Tipo_Documento varchar(50),
-   @Nombres varchar(50),
-   @Apellidos varchar(50),
-   @Direccion varchar(50),
-   @Celular varchar(30),
-   @Telefono varchar(30),
+   @Documento varchar(20),
+   @Tipo_Documento varchar(2),
+   @Nombres varchar(30),
+   @Apellidos varchar(30),
+   @Direccion varchar(30),
+   @Celular varchar(15),
+   @Telefono varchar(15),
    @Correo_Electronico varchar(100),
    @UsuarioClave varchar(100),
    @UsuarioCreacion varchar(30),
@@ -186,13 +186,13 @@ GO
 
 CREATE PROCEDURE modificarUsuario
    @ID int,
-   @Documento varchar(50),
-   @Tipo_Documento varchar(50),
-   @Nombres varchar(50),
-   @Apellidos varchar(50),
-   @Direccion varchar(50),
-   @Celular varchar(30),
-   @Telefono varchar(30),
+   @Documento varchar(20),
+   @Tipo_Documento varchar(2),
+   @Nombres varchar(30),
+   @Apellidos varchar(30),
+   @Direccion varchar(30),
+   @Celular varchar(15),
+   @Telefono varchar(15),
    @Correo_Electronico varchar(100),
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime,
@@ -207,11 +207,11 @@ GO
 
 CREATE PROCEDURE modificarUsuarioPropio
    @ID int,
-   @Nombres varchar(50),
-   @Apellidos varchar(50),
-   @Direccion varchar(50),
-   @Celular varchar(30),
-   @Telefono varchar(30),
+   @Nombres varchar(30),
+   @Apellidos varchar(30),
+   @Direccion varchar(30),
+   @Celular varchar(15),
+   @Telefono varchar(15),
    @Correo_Electronico varchar(100),
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime
@@ -230,7 +230,7 @@ GO
 --DROP PROCEDURE IniciarSesion
 
 CREATE PROCEDURE IniciarSesion
-@Correo_Electronico varchar(50),
+@Correo_Electronico varchar(100),
 @Usuario_Clave varchar (100)
 AS
 SELECT  Id_Usuario [ID],
@@ -247,8 +247,8 @@ GO
 -- drop table Grados;
 create table Grados(
     Id_Grado int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Grado varchar(20) NOT NULL,
-    Descripcion_Grado text,
+    Nombre_Grado varchar(30) NOT NULL,
+    Descripcion_Grado varchar(300),
     Usuario_Creacion varchar(30),
     Fecha_creacion datetime,
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
@@ -282,8 +282,8 @@ EXEC ListarGrados;
 -- drop table Grupos;
 create table Grupos(
     id_grupo int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    nombre_grupo varchar(50) NOT NULL,
-    descripcion_grupo text,
+    nombre_grupo varchar(30) NOT NULL,
+    descripcion_grupo varchar(100),
     usuario_creacion varchar(30),
     fecha_creacion datetime,
     usuario_modificacion varchar(30) NULL DEFAULT '',
@@ -323,7 +323,7 @@ GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarGrupoPorNombre
 CREATE PROCEDURE ListarGrupoPorNombre
-@nombre_grupo varchar(50)
+@nombre_grupo varchar(30)
 AS
 SELECT  g.id_grupo [IdGrupo],
 		g.nombre_grupo [NombreGrupo],
@@ -356,12 +356,12 @@ EXEC ListarGruposNombreyID;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarGrupo
 CREATE PROCEDURE registrarGrupo
-   @NombreGrupo varchar(50),
-   @DescripcionGrupo varchar(50),
-   @UsuarioCreacion varchar(50),
-   @FechaCreacion varchar(50),
-   @EstadoGrupo varchar(30),
-   @IdGrado varchar(100),
+   @NombreGrupo varchar(30),
+   @DescripcionGrupo varchar(100),
+   @UsuarioCreacion varchar(30),
+   @FechaCreacion varchar(15),
+   @EstadoGrupo varchar(2),
+   @IdGrado int,
    @IdDocente int
    AS
    insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,estado_grupo,id_grado,id_docente)
@@ -373,9 +373,9 @@ GO
 -- DROP PROCEDURE modificarGrupo
 CREATE PROCEDURE modificarGrupo
    @id_grupo int,
-   @NombreGrupo varchar(50),
-   @DescripcionGrupo varchar(50),
-   @UsuarioModificacion varchar(50),
+   @NombreGrupo varchar(30),
+   @DescripcionGrupo varchar(30),
+   @UsuarioModificacion varchar(30),
    @FechaModificacion varchar(30),
    @EstadoGrupo varchar(30),
    @IdGrado varchar(100),
@@ -398,17 +398,17 @@ GO
 -- drop table Estudiantes
 create table Estudiantes(
     ID_estudiante int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Documento_Estudiante varchar(40) NOT NULL,
-    Tipo_Documento varchar(20) NOT NULL CHECK (Tipo_Documento IN('RC', 'TI', 'DNI')),
+    Documento_Estudiante varchar(20) NOT NULL,
+    Tipo_Documento varchar(2) NOT NULL CHECK (Tipo_Documento IN('RC', 'TI', 'DNI')),
     Nombre_Estudiante varchar(30) NOT NULL,
     Apellido_Estudiante varchar(30) NOT NULL,
     Fecha_Nacimiento date NOT NULL,
     Ruta_foto varchar(100) NULL DEFAULT '',
-    Acudiente_Nombre varchar(50) NOT NULL,
-    Direccion varchar(50) NOT NULL,
-    Genero_Estudiante varchar(20) NOT NULL CHECK(Genero_Estudiante IN ('M', 'F')),
-    Telefono varchar(10),
-    Celular varchar(20),
+    Acudiente_Nombre varchar(30) NOT NULL,
+    Direccion varchar(30) NOT NULL,
+    Genero_Estudiante varchar(2) NOT NULL CHECK(Genero_Estudiante IN ('M', 'F')),
+    Telefono varchar(15),
+    Celular varchar(15),
     Correo_Electronico varchar(100),
     Observaciones text NOT NULL,
     Usuario_Creacion varchar(30),
@@ -454,7 +454,7 @@ EXEC ListarEstudiantes
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantePorDocumento
 CREATE PROCEDURE ListarEstudiantePorDocumento
-@Documento varchar(40)
+@Documento varchar(20)
 AS
 SELECT   e.ID_estudiante [IdEstudiante],
 	     e.Documento_Estudiante [DocumentoEstudiante],
@@ -480,7 +480,7 @@ EXEC ListarEstudiantePorDocumento '8548964684'
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantePorDocumentoyGrupo
 CREATE PROCEDURE ListarEstudiantePorDocumentoyGrupo
-@Documento varchar(40),
+@Documento varchar(20),
 @idGrupo int
 AS
 SELECT   e.ID_estudiante [IdEstudiante],
@@ -511,19 +511,19 @@ EXEC ListarEstudiantePorDocumentoyGrupo '',1;
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarEstudiante
 CREATE PROCEDURE registrarEstudiante
-   @DocumentoEstudiante varchar(40),
-   @TipoDocumento varchar(20),
+   @DocumentoEstudiante varchar(20),
+   @TipoDocumento varchar(2),
    @NombreEstudiante varchar(30),
    @ApellidoEstudiante varchar(30),
    @FechaNacimiento date,
    @RutaFoto varchar(100),
-   @AcudienteNombre varchar(50),
-   @Direccion varchar(50),
-   @GeneroEstudiante varchar(20),
-   @Telefono varchar(10),
-   @Celular varchar(20),
+   @AcudienteNombre varchar(30),
+   @Direccion varchar(30),
+   @GeneroEstudiante varchar(30),
+   @Telefono varchar(15),
+   @Celular varchar(15),
    @CorreoElectronico varchar(100),
-   @Observaciones text,
+   @Observaciones varchar(30),
    @UsuarioCreacion varchar(30),
    @FechaCreacion datetime,
    @EstadoEstudiante varchar(2),
@@ -536,19 +536,19 @@ GO
 --DROP PROCEDURE modificarEstudiante
 CREATE PROCEDURE modificarEstudiante
    @IDEstudiante int,
-   @DocumentoEstudiante varchar(40),
-   @TipoDocumento varchar(20),
+   @DocumentoEstudiante varchar(20),
+   @TipoDocumento varchar(2),
    @NombreEstudiante varchar(30),
    @ApellidoEstudiante varchar(30),
    @FechaNacimiento date,
    @RutaFoto varchar(100),
-   @AcudienteNombre varchar(50),
-   @Direccion varchar(50),
-   @GeneroEstudiante varchar(20),
-   @Telefono varchar(10),
-   @Celular varchar(20),
+   @AcudienteNombre varchar(30),
+   @Direccion varchar(30),
+   @GeneroEstudiante varchar(2),
+   @Telefono varchar(15),
+   @Celular varchar(15),
    @CorreoElectronico varchar(100),
-   @Observaciones text,
+   @Observaciones varchar(30),
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime,
    @IdGrupo int
@@ -569,8 +569,8 @@ GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Periodos (
     Id_periodo int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Periodo varchar(20) NOT NULL,
-    Descripcion_Periodo text,
+    Nombre_Periodo varchar(30) NOT NULL,
+    Descripcion_Periodo varchar(300),
     Usuario_Cracion varchar(30),
     Fecha_Creacion datetime,
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
@@ -589,7 +589,7 @@ EXEC ListarPeriodos;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Areas(
     Id_Area int IDENTITY(1,1) NOT Null PRIMARY KEY,
-    Nombre varchar(50) NOT NULL,
+    Nombre varchar(30) NOT NULL,
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
@@ -701,7 +701,7 @@ GO
 CREATE PROCEDURE modificarMateria
    @IdMateria int,
    @NombreMateria varchar(30),
-   @DescripcionMateria text,
+   @DescripcionMateria varchar(300),
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime,
    @NumeroHoras int,
@@ -731,8 +731,8 @@ ALTER TABLE Materias_Area ADD FOREIGN KEY (Id_Area) REFERENCES Areas(Id_Area);
 -- drop table Logros
 create table Logros(
     Id_Logro int IDENTITY(1,1) NOT NULL,
-    Nombre_Logro varchar(50) NOT NULL,
-    Descripcion_Logro text,
+    Nombre_Logro varchar(30) NOT NULL,
+    Descripcion_Logro varchar(300),
     Usuario_Creacion varchar(30),
     Fecha_Creacion  datetime NOT NULL, 
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
@@ -764,7 +764,7 @@ EXEC ListarLogros
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarLogrosNombre
 CREATE PROCEDURE ListarLogrosNombre
-@NombreLogro varchar (50)
+@NombreLogro varchar (30)
 AS
 SELECT   l.Id_Logro [IdLogro],
 	     l.Nombre_Logro [NombreLogro],
@@ -781,7 +781,7 @@ EXEC ListarLogrosNombre 'logro prueba 1'
 --DROP PROCEDURE registrarLogro
 CREATE PROCEDURE registrarLogro
    @NombreLogro varchar(30),
-   @DescripcionLogro text,
+   @DescripcionLogro varchar(300),
    @UsuarioCreacion varchar(30),
    @FechaCreacion datetime,
    @EstadoLogro varchar(2),
@@ -795,7 +795,7 @@ GO
 CREATE PROCEDURE modificarLogro
    @IdLogro int,
    @NombreLogro varchar(30),
-   @DescripcionLogro text,
+   @DescripcionLogro varchar(300),
    @UsuarioModificacion varchar(30),
    @FechaModificacion datetime,
    @EstadoLogro varchar(2),
@@ -825,8 +825,8 @@ create table Salones(
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Concepto_Pago(
     Id_Concepto int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Nombre_Concepto varchar(50) NOT NULL,
-    Descripcion_Concepto text,
+    Nombre_Concepto varchar(30) NOT NULL,
+    Descripcion_Concepto varchar(300),
     Valor_Concepto decimal (18,2),
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
@@ -837,7 +837,7 @@ create table Concepto_Pago(
 create table Pagos(
     Id_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Valor_Monto decimal(18,2),
-    Descripcion_Pago text,
+    Descripcion_Pago varchar(300),
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
     Id_Concepto_Pago int,
@@ -849,7 +849,7 @@ ALTER TABLE Pagos ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estu
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Abono_Pago(
     Id_Abono_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Tipo_Abono varchar(20) NOT NULL CHECK(Tipo_Abono IN('P', 'C')),
+    Tipo_Abono varchar(2) NOT NULL CHECK(Tipo_Abono IN('P', 'C')),
     Valor_Abonado decimal(18,2) NOT NULL,
     Descripcion_Abono varchar(100),
     Usuario_Creacion varchar(30),
@@ -950,7 +950,7 @@ ALTER TABLE Promedios_Generales ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estud
 
 
 
-
+/*
 
 
 create table CARGAS_ACADEMICAS(
@@ -1093,3 +1093,4 @@ SELECT   Id_Usuario [ID],
 FROM Usuarios where Estado_Usuario = 'A';
 GO
 
+*/

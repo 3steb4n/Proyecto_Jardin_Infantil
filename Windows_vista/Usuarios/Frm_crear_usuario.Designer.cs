@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 530);
+            this.panel1.Size = new System.Drawing.Size(755, 507);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -128,6 +128,7 @@
             // 
             this.Txt_nombres.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombres.Location = new System.Drawing.Point(41, 178);
+            this.Txt_nombres.MaxLength = 30;
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(301, 27);
             this.Txt_nombres.TabIndex = 20;
@@ -136,6 +137,7 @@
             // 
             this.Txt_apellidos.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_apellidos.Location = new System.Drawing.Point(385, 178);
+            this.Txt_apellidos.MaxLength = 30;
             this.Txt_apellidos.Name = "Txt_apellidos";
             this.Txt_apellidos.Size = new System.Drawing.Size(271, 27);
             this.Txt_apellidos.TabIndex = 19;
@@ -144,6 +146,7 @@
             // 
             this.Txt_direccion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_direccion.Location = new System.Drawing.Point(41, 240);
+            this.Txt_direccion.MaxLength = 30;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(301, 27);
             this.Txt_direccion.TabIndex = 18;
@@ -152,6 +155,7 @@
             // 
             this.Txt_celular.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_celular.Location = new System.Drawing.Point(41, 303);
+            this.Txt_celular.MaxLength = 15;
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(301, 27);
             this.Txt_celular.TabIndex = 17;
@@ -160,6 +164,7 @@
             // 
             this.Txt_telefono.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_telefono.Location = new System.Drawing.Point(385, 305);
+            this.Txt_telefono.MaxLength = 15;
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(271, 27);
             this.Txt_telefono.TabIndex = 16;
@@ -168,6 +173,7 @@
             // 
             this.Txt_correo_electronico.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_correo_electronico.Location = new System.Drawing.Point(385, 240);
+            this.Txt_correo_electronico.MaxLength = 100;
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
             this.Txt_correo_electronico.TabIndex = 15;
@@ -176,6 +182,7 @@
             // 
             this.Txt_numero_documento.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_numero_documento.Location = new System.Drawing.Point(41, 118);
+            this.Txt_numero_documento.MaxLength = 20;
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(301, 27);
             this.Txt_numero_documento.TabIndex = 14;
@@ -313,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(777, 549);
+            this.ClientSize = new System.Drawing.Size(771, 526);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

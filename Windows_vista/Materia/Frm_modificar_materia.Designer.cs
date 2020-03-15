@@ -120,6 +120,7 @@
             // 
             this.Txt_descripcion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_descripcion.Location = new System.Drawing.Point(41, 181);
+            this.Txt_descripcion.MaxLength = 300;
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(605, 74);
@@ -129,6 +130,7 @@
             // 
             this.Txt_horas.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_horas.Location = new System.Drawing.Point(420, 118);
+            this.Txt_horas.MaxLength = 1;
             this.Txt_horas.Name = "Txt_horas";
             this.Txt_horas.Size = new System.Drawing.Size(226, 27);
             this.Txt_horas.TabIndex = 19;
@@ -137,6 +139,7 @@
             // 
             this.TxtMateria.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMateria.Location = new System.Drawing.Point(41, 118);
+            this.TxtMateria.MaxLength = 30;
             this.TxtMateria.Name = "TxtMateria";
             this.TxtMateria.Size = new System.Drawing.Size(359, 27);
             this.TxtMateria.TabIndex = 14;

@@ -158,6 +158,7 @@
             // Txt_observaciones
             // 
             this.Txt_observaciones.Location = new System.Drawing.Point(41, 391);
+            this.Txt_observaciones.MaxLength = 300;
             this.Txt_observaciones.Multiline = true;
             this.Txt_observaciones.Name = "Txt_observaciones";
             this.Txt_observaciones.Size = new System.Drawing.Size(860, 117);
@@ -198,6 +199,7 @@
             // 
             this.Txt_nombre_acudiente.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombre_acudiente.Location = new System.Drawing.Point(385, 315);
+            this.Txt_nombre_acudiente.MaxLength = 30;
             this.Txt_nombre_acudiente.Name = "Txt_nombre_acudiente";
             this.Txt_nombre_acudiente.Size = new System.Drawing.Size(271, 27);
             this.Txt_nombre_acudiente.TabIndex = 35;
@@ -258,6 +260,7 @@
             // 
             this.Txt_nombres.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombres.Location = new System.Drawing.Point(41, 183);
+            this.Txt_nombres.MaxLength = 30;
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(301, 27);
             this.Txt_nombres.TabIndex = 20;
@@ -274,6 +277,7 @@
             // 
             this.Txt_direccion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_direccion.Location = new System.Drawing.Point(41, 248);
+            this.Txt_direccion.MaxLength = 30;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(301, 27);
             this.Txt_direccion.TabIndex = 18;
@@ -282,6 +286,7 @@
             // 
             this.Txt_celular.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_celular.Location = new System.Drawing.Point(42, 315);
+            this.Txt_celular.MaxLength = 15;
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(301, 27);
             this.Txt_celular.TabIndex = 17;
@@ -290,6 +295,7 @@
             // 
             this.Txt_telefono.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_telefono.Location = new System.Drawing.Point(687, 248);
+            this.Txt_telefono.MaxLength = 15;
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(214, 27);
             this.Txt_telefono.TabIndex = 16;
@@ -298,6 +304,7 @@
             // 
             this.Txt_correo_electronico.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_correo_electronico.Location = new System.Drawing.Point(385, 248);
+            this.Txt_correo_electronico.MaxLength = 100;
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
             this.Txt_correo_electronico.TabIndex = 15;
@@ -306,6 +313,7 @@
             // 
             this.Txt_numero_documento.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_numero_documento.Location = new System.Drawing.Point(41, 118);
+            this.Txt_numero_documento.MaxLength = 20;
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(301, 27);
             this.Txt_numero_documento.TabIndex = 14;

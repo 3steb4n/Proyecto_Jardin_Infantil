@@ -101,6 +101,7 @@
             // 
             this.Txt_descripcion.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_descripcion.Location = new System.Drawing.Point(41, 181);
+            this.Txt_descripcion.MaxLength = 300;
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(605, 74);
@@ -110,6 +111,7 @@
             // 
             this.Txt_nombre.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombre.Location = new System.Drawing.Point(41, 118);
+            this.Txt_nombre.MaxLength = 30;
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(605, 27);
             this.Txt_nombre.TabIndex = 14;
