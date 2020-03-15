@@ -116,7 +116,7 @@
             this.Combo_estado_clave.Location = new System.Drawing.Point(33, 374);
             this.Combo_estado_clave.Name = "Combo_estado_clave";
             this.Combo_estado_clave.Size = new System.Drawing.Size(286, 28);
-            this.Combo_estado_clave.TabIndex = 32;
+            this.Combo_estado_clave.TabIndex = 9;
             this.Combo_estado_clave.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_estado_clave_Validating);
             // 
             // label13
@@ -138,7 +138,7 @@
             this.Combo_estado_usuario.Location = new System.Drawing.Point(355, 374);
             this.Combo_estado_usuario.Name = "Combo_estado_usuario";
             this.Combo_estado_usuario.Size = new System.Drawing.Size(271, 28);
-            this.Combo_estado_usuario.TabIndex = 30;
+            this.Combo_estado_usuario.TabIndex = 10;
             this.Combo_estado_usuario.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_estado_usuario_Validating);
             // 
             // label5
@@ -160,7 +160,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(278, 430);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
-            this.btn_guardar.TabIndex = 27;
+            this.btn_guardar.TabIndex = 11;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -173,7 +173,7 @@
             this.Combo_tipo_documento.Location = new System.Drawing.Point(355, 118);
             this.Combo_tipo_documento.Name = "Combo_tipo_documento";
             this.Combo_tipo_documento.Size = new System.Drawing.Size(271, 28);
-            this.Combo_tipo_documento.TabIndex = 21;
+            this.Combo_tipo_documento.TabIndex = 2;
             this.Combo_tipo_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_tipo_documento_Validating);
             // 
             // Txt_nombres
@@ -183,7 +183,7 @@
             this.Txt_nombres.MaxLength = 30;
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(287, 27);
-            this.Txt_nombres.TabIndex = 20;
+            this.Txt_nombres.TabIndex = 3;
             this.Txt_nombres.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombres_Validating);
             // 
             // Txt_apellidos
@@ -193,7 +193,7 @@
             this.Txt_apellidos.MaxLength = 30;
             this.Txt_apellidos.Name = "Txt_apellidos";
             this.Txt_apellidos.Size = new System.Drawing.Size(271, 27);
-            this.Txt_apellidos.TabIndex = 19;
+            this.Txt_apellidos.TabIndex = 4;
             this.Txt_apellidos.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_apellidos_Validating);
             // 
             // Txt_direccion
@@ -203,7 +203,7 @@
             this.Txt_direccion.MaxLength = 30;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(287, 27);
-            this.Txt_direccion.TabIndex = 18;
+            this.Txt_direccion.TabIndex = 5;
             this.Txt_direccion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_direccion_Validating);
             // 
             // Txt_celular
@@ -213,7 +213,7 @@
             this.Txt_celular.MaxLength = 15;
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(287, 27);
-            this.Txt_celular.TabIndex = 17;
+            this.Txt_celular.TabIndex = 7;
             this.Txt_celular.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_celular_Validating);
             // 
             // Txt_telefono
@@ -223,7 +223,7 @@
             this.Txt_telefono.MaxLength = 15;
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(271, 27);
-            this.Txt_telefono.TabIndex = 16;
+            this.Txt_telefono.TabIndex = 8;
             this.Txt_telefono.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_telefono_Validating);
             // 
             // Txt_correo_electronico
@@ -233,7 +233,7 @@
             this.Txt_correo_electronico.MaxLength = 100;
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
-            this.Txt_correo_electronico.TabIndex = 15;
+            this.Txt_correo_electronico.TabIndex = 6;
             this.Txt_correo_electronico.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_correo_electronico_Validating);
             // 
             // Txt_numero_documento
@@ -243,7 +243,7 @@
             this.Txt_numero_documento.MaxLength = 20;
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(287, 27);
-            this.Txt_numero_documento.TabIndex = 14;
+            this.Txt_numero_documento.TabIndex = 1;
             this.Txt_numero_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_numero_documento_Validating);
             // 
             // label12

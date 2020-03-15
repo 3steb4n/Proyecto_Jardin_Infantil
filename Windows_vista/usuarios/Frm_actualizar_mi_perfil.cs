@@ -59,21 +59,21 @@ namespace Windows_vista.usuarios
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            DateTime fechaActual = DateTime.Today;
-
-            usuario.Id_usuario = this.usuario.Id_usuario;
-            usuario.Nombres = Txt_nombres.Text;
-            usuario.Apellidos = Txt_apellidos.Text;
-            usuario.Direccion = Txt_direccion.Text;
-            usuario.CorreoElectronico = Txt_correo_electronico.Text;
-            usuario.Celular = Txt_celular.Text;
-            usuario.Telefono = Txt_telefono.Text;
-            usuario.UsuarioModificacion = this.usuario.Id_usuario.ToString();
-            usuario.FechaModificacion = fechaActual;
 
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
+                Usuario usuario = new Usuario();
+                DateTime fechaActual = DateTime.Today;
+
+                usuario.Id_usuario = this.usuario.Id_usuario;
+                usuario.Nombres = Txt_nombres.Text;
+                usuario.Apellidos = Txt_apellidos.Text;
+                usuario.Direccion = Txt_direccion.Text;
+                usuario.CorreoElectronico = Txt_correo_electronico.Text;
+                usuario.Celular = Txt_celular.Text;
+                usuario.Telefono = Txt_telefono.Text;
+                usuario.UsuarioModificacion = this.usuario.Id_usuario.ToString();
+                usuario.FechaModificacion = fechaActual;
 
                 bool flag = blUsuario.ModificarUsuarioPropio(usuario);
                 if (flag)

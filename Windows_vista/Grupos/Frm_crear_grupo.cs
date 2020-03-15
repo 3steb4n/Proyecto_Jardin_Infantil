@@ -11,6 +11,7 @@ namespace Windows_vista
         public Frm_crear_grupo(Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             CargarDatos();
             this.usuario = usuario;
         }
@@ -21,16 +22,6 @@ namespace Windows_vista
         BLGrupo blGrupo = new BLGrupo();
         BLGrado blGrado = new BLGrado();
         Usuario usuario;
-
-        private void Combo_tipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Frm_crear_grupo_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void CargarDatos()
         {
@@ -77,49 +68,13 @@ namespace Windows_vista
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Grupo grupo = new Grupo();
 
                 guardar(grupo);
 
             }
-        }
-
-        private bool ValidarCampos()
-        {
-            bool flag = true;
-            if (Txt_nombre_grupo.Text == "")
-            {
-                errorProvider.SetError(Txt_nombre_grupo, "Ingrese nombre del grupo");
-                Txt_nombre_grupo.Focus();
-                flag = false;
-            }
-            if (Txt_descripciongrupo.Text == "")
-            {
-                errorProvider.SetError(Txt_descripciongrupo, "Ingrese descripción del grupo");
-                Txt_descripciongrupo.Focus();
-                flag = false;
-            }
-            if (Combo_estado_grupo.Text == "Seleccione...")
-            {
-                errorProvider.SetError(Combo_estado_grupo, "Seleccione estado");
-                Combo_estado_grupo.Focus();
-                flag = false;
-            }
-            if (Combo_grado.Text == "Seleccione...")
-            {
-                errorProvider.SetError(Combo_grado, "Seleccione grado");
-                Combo_grado.Focus();
-                flag = false;
-            }
-            if (combo_docente.Text == "Seleccione...")
-            {
-                errorProvider.SetError(combo_docente, "Seleccione docente");
-                combo_docente.Focus();
-                flag = false;
-            }
-            return flag;
         }
 
         private void guardar(Grupo grupo)
@@ -147,15 +102,81 @@ namespace Windows_vista
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Frm_crear_grupo_FormClosing(object sender, FormClosingEventArgs e)
         {
             Frm_administracion_grupos admin_grupos = new Frm_administracion_grupos(usuario);
             admin_grupos.Show();
         }
+
+        private void Txt_nombre_grupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_nombre_grupo.Text == "")
+            {
+                e.Cancel = true;
+                errorNombre.SetError(Txt_nombre_grupo, "Ingrese nombre del grupo");
+                Txt_nombre_grupo.Focus();
+            }
+            else
+            {
+                errorNombre.Clear();
+            }
+        }
+
+        private void Txt_descripciongrupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_descripciongrupo.Text == "")
+            {
+                e.Cancel = true;
+                errorDescripcion.SetError(Txt_descripciongrupo, "Ingrese la descripción del grupo");
+                Txt_descripciongrupo.Focus();
+            }
+            else
+            {
+                errorDescripcion.Clear();
+            }
+        }
+
+        private void combo_docente_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_docente.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorDocente.SetError(combo_docente, "Seleccione docente");
+                combo_docente.Focus();
+            }
+            else
+            {
+                errorDocente.Clear();
+            }
+        }
+
+        private void Combo_estado_grupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Combo_estado_grupo.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorEstadoGrupo.SetError(Combo_estado_grupo, "Seleccione estado del grupo");
+                Combo_estado_grupo.Focus();
+            }
+            else
+            {
+                errorEstadoGrupo.Clear();
+            }
+        }
+
+        private void Combo_grado_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Combo_grado.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorGrado.SetError(Combo_grado, "Seleccione el grado");
+                Combo_grado.Focus();
+            }
+            else
+            {
+                errorGrado.Clear();
+            }
+        }
+
     }
 }

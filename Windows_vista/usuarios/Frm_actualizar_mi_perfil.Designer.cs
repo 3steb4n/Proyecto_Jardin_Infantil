@@ -31,6 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_actualizar_mi_perfil));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.Combo_tipo_documento = new System.Windows.Forms.ComboBox();
@@ -62,16 +71,8 @@
             this.errorCelular = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTelefono = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTipoUsuario = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoDocumento)).BeginInit();
@@ -82,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,6 +117,98 @@
             this.panel1.Size = new System.Drawing.Size(737, 632);
             this.panel1.TabIndex = 1;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(39, 403);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(141, 20);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Cambiar contraseña";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.checkBox1.Location = new System.Drawing.Point(186, 409);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Location = new System.Drawing.Point(43, 429);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(636, 134);
+            this.panel3.TabIndex = 35;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(177, 96);
+            this.textBox3.MaxLength = 30;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(438, 27);
+            this.textBox3.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(177, 14);
+            this.textBox1.MaxLength = 30;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(438, 27);
+            this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(177, 54);
+            this.textBox2.MaxLength = 30;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(438, 27);
+            this.textBox2.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 20);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Contraseña actual:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(23, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 20);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Contraseña actual:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(23, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(130, 20);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Contraseña actual:";
+            // 
             // Combo_tipo_usuario
             // 
             this.Combo_tipo_usuario.BackColor = System.Drawing.SystemColors.Window;
@@ -127,7 +219,7 @@
             this.Combo_tipo_usuario.Location = new System.Drawing.Point(43, 363);
             this.Combo_tipo_usuario.Name = "Combo_tipo_usuario";
             this.Combo_tipo_usuario.Size = new System.Drawing.Size(300, 28);
-            this.Combo_tipo_usuario.TabIndex = 28;
+            this.Combo_tipo_usuario.TabIndex = 9;
             this.Combo_tipo_usuario.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_tipo_usuario_Validating);
             // 
             // btn_guardar
@@ -139,7 +231,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(315, 594);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
-            this.btn_guardar.TabIndex = 27;
+            this.btn_guardar.TabIndex = 14;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -153,7 +245,7 @@
             this.Combo_tipo_documento.Location = new System.Drawing.Point(386, 107);
             this.Combo_tipo_documento.Name = "Combo_tipo_documento";
             this.Combo_tipo_documento.Size = new System.Drawing.Size(271, 28);
-            this.Combo_tipo_documento.TabIndex = 21;
+            this.Combo_tipo_documento.TabIndex = 2;
             this.Combo_tipo_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_tipo_documento_Validating);
             // 
             // Txt_nombres
@@ -163,7 +255,7 @@
             this.Txt_nombres.MaxLength = 30;
             this.Txt_nombres.Name = "Txt_nombres";
             this.Txt_nombres.Size = new System.Drawing.Size(301, 27);
-            this.Txt_nombres.TabIndex = 20;
+            this.Txt_nombres.TabIndex = 3;
             this.Txt_nombres.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombres_Validating);
             // 
             // Txt_apellidos
@@ -173,7 +265,7 @@
             this.Txt_apellidos.MaxLength = 30;
             this.Txt_apellidos.Name = "Txt_apellidos";
             this.Txt_apellidos.Size = new System.Drawing.Size(271, 27);
-            this.Txt_apellidos.TabIndex = 19;
+            this.Txt_apellidos.TabIndex = 4;
             this.Txt_apellidos.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_apellidos_Validating);
             // 
             // Txt_direccion
@@ -183,7 +275,7 @@
             this.Txt_direccion.MaxLength = 30;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(301, 27);
-            this.Txt_direccion.TabIndex = 18;
+            this.Txt_direccion.TabIndex = 5;
             this.Txt_direccion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_direccion_Validating);
             // 
             // Txt_celular
@@ -193,7 +285,7 @@
             this.Txt_celular.MaxLength = 15;
             this.Txt_celular.Name = "Txt_celular";
             this.Txt_celular.Size = new System.Drawing.Size(301, 27);
-            this.Txt_celular.TabIndex = 17;
+            this.Txt_celular.TabIndex = 7;
             this.Txt_celular.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_celular_Validating);
             // 
             // Txt_telefono
@@ -203,7 +295,7 @@
             this.Txt_telefono.MaxLength = 15;
             this.Txt_telefono.Name = "Txt_telefono";
             this.Txt_telefono.Size = new System.Drawing.Size(271, 27);
-            this.Txt_telefono.TabIndex = 16;
+            this.Txt_telefono.TabIndex = 8;
             this.Txt_telefono.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_telefono_Validating);
             // 
             // Txt_correo_electronico
@@ -213,7 +305,7 @@
             this.Txt_correo_electronico.MaxLength = 100;
             this.Txt_correo_electronico.Name = "Txt_correo_electronico";
             this.Txt_correo_electronico.Size = new System.Drawing.Size(271, 27);
-            this.Txt_correo_electronico.TabIndex = 15;
+            this.Txt_correo_electronico.TabIndex = 6;
             this.Txt_correo_electronico.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_correo_electronico_Validating);
             // 
             // Txt_numero_documento
@@ -224,7 +316,7 @@
             this.Txt_numero_documento.MaxLength = 20;
             this.Txt_numero_documento.Name = "Txt_numero_documento";
             this.Txt_numero_documento.Size = new System.Drawing.Size(301, 27);
-            this.Txt_numero_documento.TabIndex = 14;
+            this.Txt_numero_documento.TabIndex = 1;
             this.Txt_numero_documento.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_numero_documento_Validating);
             // 
             // label12
@@ -399,99 +491,6 @@
             this.errorTipoUsuario.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorTipoUsuario.ContainerControl = this;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(43, 429);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(636, 134);
-            this.panel3.TabIndex = 35;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(177, 96);
-            this.textBox3.MaxLength = 30;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(438, 27);
-            this.textBox3.TabIndex = 41;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(177, 54);
-            this.textBox2.MaxLength = 30;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(438, 27);
-            this.textBox2.TabIndex = 40;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 14);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(438, 27);
-            this.textBox1.TabIndex = 39;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 57);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 20);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Contraseña actual:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(23, 96);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 20);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Contraseña actual:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Contraseña actual:";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkBox1.Location = new System.Drawing.Point(186, 409);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 37;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(39, 403);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(141, 20);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Cambiar contraseña";
-            // 
             // Frm_actualizar_mi_perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,6 +505,8 @@
             this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumero)).EndInit();
@@ -517,8 +518,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

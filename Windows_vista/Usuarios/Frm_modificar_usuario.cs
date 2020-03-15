@@ -66,27 +66,28 @@ namespace Windows_vista
         }
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            DateTime fechaActual = DateTime.Today;
-
-            usuario.Id_usuario = id_usuario;
-            usuario.Documento = Txt_numero_documento.Text;
-            usuario.TipoDocumento = Combo_tipo_documento.Text;
-            usuario.Nombres = Txt_nombres.Text;
-            usuario.Apellidos = Txt_apellidos.Text;
-            usuario.Direccion = Txt_direccion.Text;
-            usuario.CorreoElectronico = Txt_correo_electronico.Text;
-            usuario.Celular = Txt_celular.Text;
-            usuario.Telefono = Txt_telefono.Text;
-            usuario.UsuarioModificacion = "1";
-            usuario.FechaModificacion = fechaActual;
-            usuario.EstadoUsuario = Combo_estado_usuario.Text;
-            usuario.EstadoClave = Combo_estado_clave.Text;
-            usuario.TipoUsuario = Combo_tipo_usuario.Text;
-            usuario = Ordenar(usuario);
 
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
+                Usuario usuario = new Usuario();
+                DateTime fechaActual = DateTime.Today;
+
+                usuario.Id_usuario = id_usuario;
+                usuario.Documento = Txt_numero_documento.Text;
+                usuario.TipoDocumento = Combo_tipo_documento.Text;
+                usuario.Nombres = Txt_nombres.Text;
+                usuario.Apellidos = Txt_apellidos.Text;
+                usuario.Direccion = Txt_direccion.Text;
+                usuario.CorreoElectronico = Txt_correo_electronico.Text;
+                usuario.Celular = Txt_celular.Text;
+                usuario.Telefono = Txt_telefono.Text;
+                usuario.UsuarioModificacion = "1";
+                usuario.FechaModificacion = fechaActual;
+                usuario.EstadoUsuario = Combo_estado_usuario.Text;
+                usuario.EstadoClave = Combo_estado_clave.Text;
+                usuario.TipoUsuario = Combo_tipo_usuario.Text;
+                usuario = Ordenar(usuario);
+
                 bool flag = blUsuario.ModificarUsuario(usuario);
                 if (flag)
                 {

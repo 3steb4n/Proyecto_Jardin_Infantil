@@ -48,7 +48,7 @@ namespace Datos
                             materia.IdMateria = (int)dr["IdMateria"];
                             materia.NombreMateria = (String)dr["NomreMateria"];
                             materia.DescripcionMateria = (String)dr["DescripcionMateria"];
-                            materia.EstadoMateria = (String)dr["EstadoMateria"];
+                            materia.EstadoMateria = OrdenarEstado((String)dr["EstadoMateria"]);
                             materia.NumeroHorasMaterias = (int)dr["NumeroHoras"];
                             materia.Area.IdArea = (int)dr["IdArea"];
                             materia.Area.NombreArea = (String)dr["NombreArea"];
@@ -127,7 +127,7 @@ namespace Datos
                         materia.IdMateria = (int)dr["IdMateria"];
                         materia.NombreMateria = (String)dr["NombreMateria"];
                         materia.DescripcionMateria = (String)dr["DescripcionMateria"];
-                        materia.EstadoMateria = (String)dr["EstadoMateria"];
+                        materia.EstadoMateria = OrdenarEstado((String)dr["EstadoMateria"]);
                         materia.NumeroHorasMaterias = (int)dr["NumeroHoras"];
                         materia.Area.IdArea = (int)dr["IdArea"];
                         materia.Area.NombreArea = (String)dr["NombreArea"];
@@ -233,6 +233,21 @@ namespace Datos
                 Console.WriteLine("Error al eliminar materia: " + e);
                 return flag;
             }
+        }
+
+        public String OrdenarEstado(String tipo)
+        {
+            String valor = "";
+            if (tipo == "A")
+            {
+                valor = "Activo";
+            }
+            else
+            {
+                valor = "Inactivo";
+            }
+
+            return valor;
         }
     }
 }

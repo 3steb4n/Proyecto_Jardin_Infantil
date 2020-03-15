@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_modificar_grupo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.combo_docente = new System.Windows.Forms.ComboBox();
@@ -44,8 +45,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDocente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorEstadoGrupo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorGrado = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorEstadoGrupo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 441);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // combo_docente
             // 
@@ -79,7 +89,8 @@
             this.combo_docente.Location = new System.Drawing.Point(390, 128);
             this.combo_docente.Name = "combo_docente";
             this.combo_docente.Size = new System.Drawing.Size(249, 28);
-            this.combo_docente.TabIndex = 36;
+            this.combo_docente.TabIndex = 2;
+            this.combo_docente.Validating += new System.ComponentModel.CancelEventHandler(this.combo_docente_Validating);
             // 
             // label3
             // 
@@ -100,7 +111,8 @@
             this.Combo_estado_grupo.Location = new System.Drawing.Point(42, 328);
             this.Combo_estado_grupo.Name = "Combo_estado_grupo";
             this.Combo_estado_grupo.Size = new System.Drawing.Size(249, 28);
-            this.Combo_estado_grupo.TabIndex = 34;
+            this.Combo_estado_grupo.TabIndex = 4;
+            this.Combo_estado_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_estado_grupo_Validating);
             // 
             // Combo_grado
             // 
@@ -111,7 +123,8 @@
             this.Combo_grado.Location = new System.Drawing.Point(390, 328);
             this.Combo_grado.Name = "Combo_grado";
             this.Combo_grado.Size = new System.Drawing.Size(249, 28);
-            this.Combo_grado.TabIndex = 32;
+            this.Combo_grado.TabIndex = 5;
+            this.Combo_grado.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_grado_Validating);
             // 
             // label5
             // 
@@ -132,7 +145,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(308, 384);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
-            this.btn_guardar.TabIndex = 27;
+            this.btn_guardar.TabIndex = 6;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -144,7 +157,8 @@
             this.Txt_nombre_grupo.MaxLength = 30;
             this.Txt_nombre_grupo.Name = "Txt_nombre_grupo";
             this.Txt_nombre_grupo.Size = new System.Drawing.Size(282, 27);
-            this.Txt_nombre_grupo.TabIndex = 20;
+            this.Txt_nombre_grupo.TabIndex = 1;
+            this.Txt_nombre_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombre_grupo_Validating);
             // 
             // Txt_descripcion
             // 
@@ -154,7 +168,8 @@
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(610, 89);
-            this.Txt_descripcion.TabIndex = 18;
+            this.Txt_descripcion.TabIndex = 3;
+            this.Txt_descripcion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_descripcion_Validating);
             // 
             // label12
             // 
@@ -216,6 +231,36 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Modificar grupo";
             // 
+            // errorNombre
+            // 
+            this.errorNombre.BlinkRate = 0;
+            this.errorNombre.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNombre.ContainerControl = this;
+            // 
+            // errorDocente
+            // 
+            this.errorDocente.BlinkRate = 0;
+            this.errorDocente.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDocente.ContainerControl = this;
+            // 
+            // errorDescripcion
+            // 
+            this.errorDescripcion.BlinkRate = 0;
+            this.errorDescripcion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDescripcion.ContainerControl = this;
+            // 
+            // errorEstadoGrupo
+            // 
+            this.errorEstadoGrupo.BlinkRate = 0;
+            this.errorEstadoGrupo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorEstadoGrupo.ContainerControl = this;
+            // 
+            // errorGrado
+            // 
+            this.errorGrado.BlinkRate = 0;
+            this.errorGrado.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorGrado.ContainerControl = this;
+            // 
             // Frm_modificar_grupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +278,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorEstadoGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +304,10 @@
         private System.Windows.Forms.ComboBox Combo_estado_grupo;
         private System.Windows.Forms.ComboBox combo_docente;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorNombre;
+        private System.Windows.Forms.ErrorProvider errorDocente;
+        private System.Windows.Forms.ErrorProvider errorDescripcion;
+        private System.Windows.Forms.ErrorProvider errorEstadoGrupo;
+        private System.Windows.Forms.ErrorProvider errorGrado;
     }
 }

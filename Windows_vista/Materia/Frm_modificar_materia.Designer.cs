@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_modificar_materia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.combo_grado = new System.Windows.Forms.ComboBox();
@@ -44,8 +45,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorMateria = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNumHoras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorArea = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorGrado = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMateria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNumHoras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,9 +77,8 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 429);
+            this.panel1.Size = new System.Drawing.Size(755, 414);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // combo_grado
             // 
@@ -79,7 +89,8 @@
             this.combo_grado.Location = new System.Drawing.Point(345, 292);
             this.combo_grado.Name = "combo_grado";
             this.combo_grado.Size = new System.Drawing.Size(301, 28);
-            this.combo_grado.TabIndex = 30;
+            this.combo_grado.TabIndex = 5;
+            this.combo_grado.Validating += new System.ComponentModel.CancelEventHandler(this.combo_grado_Validating);
             // 
             // label5
             // 
@@ -100,7 +111,8 @@
             this.Combo_area.Location = new System.Drawing.Point(42, 292);
             this.Combo_area.Name = "Combo_area";
             this.Combo_area.Size = new System.Drawing.Size(276, 28);
-            this.Combo_area.TabIndex = 28;
+            this.Combo_area.TabIndex = 4;
+            this.Combo_area.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_area_Validating);
             // 
             // btn_guardar
             // 
@@ -108,7 +120,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(322, 383);
+            this.btn_guardar.Location = new System.Drawing.Point(322, 373);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 27;
@@ -124,7 +136,8 @@
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(605, 74);
-            this.Txt_descripcion.TabIndex = 20;
+            this.Txt_descripcion.TabIndex = 3;
+            this.Txt_descripcion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_descripcion_Validating);
             // 
             // Txt_horas
             // 
@@ -133,7 +146,8 @@
             this.Txt_horas.MaxLength = 1;
             this.Txt_horas.Name = "Txt_horas";
             this.Txt_horas.Size = new System.Drawing.Size(226, 27);
-            this.Txt_horas.TabIndex = 19;
+            this.Txt_horas.TabIndex = 2;
+            this.Txt_horas.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_horas_Validating);
             // 
             // TxtMateria
             // 
@@ -142,7 +156,8 @@
             this.TxtMateria.MaxLength = 30;
             this.TxtMateria.Name = "TxtMateria";
             this.TxtMateria.Size = new System.Drawing.Size(359, 27);
-            this.TxtMateria.TabIndex = 14;
+            this.TxtMateria.TabIndex = 1;
+            this.TxtMateria.Validating += new System.ComponentModel.CancelEventHandler(this.TxtMateria_Validating);
             // 
             // label12
             // 
@@ -214,12 +229,42 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Modificar materia";
             // 
+            // errorMateria
+            // 
+            this.errorMateria.BlinkRate = 0;
+            this.errorMateria.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorMateria.ContainerControl = this;
+            // 
+            // errorNumHoras
+            // 
+            this.errorNumHoras.BlinkRate = 0;
+            this.errorNumHoras.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNumHoras.ContainerControl = this;
+            // 
+            // errorDescripcion
+            // 
+            this.errorDescripcion.BlinkRate = 0;
+            this.errorDescripcion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDescripcion.ContainerControl = this;
+            // 
+            // errorArea
+            // 
+            this.errorArea.BlinkRate = 0;
+            this.errorArea.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorArea.ContainerControl = this;
+            // 
+            // errorGrado
+            // 
+            this.errorGrado.BlinkRate = 0;
+            this.errorGrado.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorGrado.ContainerControl = this;
+            // 
             // Frm_modificar_materia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(773, 448);
+            this.ClientSize = new System.Drawing.Size(773, 433);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_modificar_materia";
@@ -230,6 +275,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMateria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNumHoras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +301,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorMateria;
+        private System.Windows.Forms.ErrorProvider errorNumHoras;
+        private System.Windows.Forms.ErrorProvider errorDescripcion;
+        private System.Windows.Forms.ErrorProvider errorArea;
+        private System.Windows.Forms.ErrorProvider errorGrado;
     }
 }

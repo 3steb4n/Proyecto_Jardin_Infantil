@@ -2,6 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Windows_vista.Materia
@@ -11,6 +12,7 @@ namespace Windows_vista.Materia
         public Frm_crear_materia(Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             CargarDatos();
             this.usuario = usuario;
         }
@@ -60,7 +62,7 @@ namespace Windows_vista.Materia
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Materiaa materia = new Materiaa();
 
@@ -94,53 +96,86 @@ namespace Windows_vista.Materia
             }
         }
 
-        private bool ValidarCampos()
-        {
-
-            bool flag = true;
-            if (Txt_materia.Text == "")
-            {
-                errorProvider.SetError(Txt_materia, "Introdusca el nombre de la materia");
-                Txt_materia.Focus();
-                flag = false;
-            }
-            if (Txt_numeroHoras.Text == "")
-            {
-                errorProvider.SetError(Txt_numeroHoras, "Introduca el numero de horas");
-                Txt_numeroHoras.Focus();
-                flag = false;
-            }
-            if (Txt_descripcion.Text == "")
-            {
-                errorProvider.SetError(Txt_descripcion, "Ingrese la descripción");
-                Txt_descripcion.Focus();
-                flag = false;
-            }
-            if (Txt_numeroHoras.Text == "")
-            {
-                errorProvider.SetError(Txt_numeroHoras, "Ingrese apellido");
-                Txt_numeroHoras.Focus();
-                flag = false;
-            }
-            if (Combo_area.Text == "")
-            {
-                errorProvider.SetError(Combo_area, "Seleccione la area");
-                Combo_area.Focus();
-                flag = false;
-            }
-            if (combo_grado.Text == "")
-            {
-                errorProvider.SetError(combo_grado, "Seleccione el grado");
-                combo_grado.Focus();
-                flag = false;
-            }
-            return flag;
-        }
-
         private void Frm_crear_materia_FormClosing(object sender, FormClosingEventArgs e)
         {
             Frm_admin_materia frm_admin_materia = new Frm_admin_materia(usuario);
             frm_admin_materia.Show();
+        }
+
+        private void Txt_materia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_materia.Text == "")
+            {
+                e.Cancel = true;
+                errorMateria.SetError(Txt_materia, "Ingrese nombre de materia");
+                Txt_materia.Focus();
+            }
+            else
+            {
+                errorMateria.Clear();
+            }
+        }
+
+        private void Txt_numeroHoras_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_numeroHoras.Text == "" || Txt_numeroHoras.Text == "0")
+            {
+                e.Cancel = true;
+                errorNumHoras.SetError(Txt_numeroHoras, "Ingrese el numero de horas");
+                Txt_numeroHoras.Focus();
+            }
+            else if (!Regex.IsMatch(Txt_numeroHoras.Text, @"[0-9]{1,9}(\.[0-9]{0,2})?$"))
+            {
+                e.Cancel = true;
+                errorNumHoras.SetError(Txt_numeroHoras, "Solo numeros");
+                Txt_numeroHoras.Focus();
+            }
+            else
+            {
+                errorNumHoras.Clear();
+            }
+        }
+
+        private void Txt_descripcion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_descripcion.Text == "")
+            {
+                e.Cancel = true;
+                errorDescripcion.SetError(Txt_descripcion, "Ingrese la descripción");
+                Txt_descripcion.Focus();
+            }
+            else
+            {
+                errorDescripcion.Clear();
+            }
+        }
+
+        private void Combo_area_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Combo_area.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorArea.SetError(Combo_area, "Seleccione el area de la materia");
+                Combo_area.Focus();
+            }
+            else
+            {
+                errorArea.Clear();
+            }
+        }
+
+        private void combo_grado_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_grado.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorGrado.SetError(combo_grado, "Seleccione el grado de la materia");
+                combo_grado.Focus();
+            }
+            else
+            {
+                errorGrado.Clear();
+            }
         }
     }
 }

@@ -74,29 +74,30 @@ namespace Windows_vista
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Estudiante estudiante = new Estudiante();
-            DateTime fechaActual = DateTime.Today;
-
-            estudiante.Id_estudiante = id_Estudiante;
-            estudiante.DocumentoEstudiante = Txt_numero_documento.Text;
-            estudiante.TipoDocumento = OrdenarTipoDocumento(Combo_tipo_documento.Text);
-            estudiante.FechaNacimiento = date_fecha.Value;
-            estudiante.NombreEstudiante = Txt_nombres.Text;
-            estudiante.ApellidoEstudiante = Txt_apellidos.Text;
-            estudiante.Genero = OrdenarGenero(combo_genero.Text);
-            estudiante.Direccion = Txt_direccion.Text;
-            estudiante.CorreoElectronicoAcudiente = Txt_correo_electronico.Text;
-            estudiante.TelefonoAcudiente = Txt_telefono.Text;
-            estudiante.CelularAcudiente = Txt_celular.Text;
-            estudiante.NombreAcudiente = Txt_nombre_acudiente.Text;
-            estudiante.Ruta_foto = Txt_direccion.Text;
-            estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
-            estudiante.UsuarioModificacion = "1";
-            estudiante.FechaModificacion = fechaActual;
-            estudiante.grupo.IdGrupo = IDPorNombre(combo_grupo.Text);
-
+            
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
+                Estudiante estudiante = new Estudiante();
+                DateTime fechaActual = DateTime.Today;
+
+                estudiante.Id_estudiante = id_Estudiante;
+                estudiante.DocumentoEstudiante = Txt_numero_documento.Text;
+                estudiante.TipoDocumento = OrdenarTipoDocumento(Combo_tipo_documento.Text);
+                estudiante.FechaNacimiento = date_fecha.Value;
+                estudiante.NombreEstudiante = Txt_nombres.Text;
+                estudiante.ApellidoEstudiante = Txt_apellidos.Text;
+                estudiante.Genero = OrdenarGenero(combo_genero.Text);
+                estudiante.Direccion = Txt_direccion.Text;
+                estudiante.CorreoElectronicoAcudiente = Txt_correo_electronico.Text;
+                estudiante.TelefonoAcudiente = Txt_telefono.Text;
+                estudiante.CelularAcudiente = Txt_celular.Text;
+                estudiante.NombreAcudiente = Txt_nombre_acudiente.Text;
+                estudiante.Ruta_foto = Txt_direccion.Text;
+                estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
+                estudiante.UsuarioModificacion = "1";
+                estudiante.FechaModificacion = fechaActual;
+                estudiante.grupo.IdGrupo = IDPorNombre(combo_grupo.Text);
+
                 bool flag = blEstudiante.ModificarEstudiante(estudiante);
                 if (flag)
                 {

@@ -11,6 +11,7 @@ namespace Windows_vista.Logros
         public Frm_modificar_logro(Logro logro,Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             cargarDatos(logro);
             id_logro = logro.IdLogro;
             this.usuario = usuario;
@@ -37,12 +38,6 @@ namespace Windows_vista.Logros
             Txt_descripcion.Text = logro.DescripcionLogro;
             
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Frm_modificar_logro_FormClosing(object sender, FormClosingEventArgs e)
         {
             Frm_admin_logros frm_admin_logros = new Frm_admin_logros(usuario);
@@ -51,26 +46,29 @@ namespace Windows_vista.Logros
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Logro logro = new Logro();
-            DateTime fechaActual = DateTime.Today;
 
-            logro.IdLogro = id_logro;
-            logro.NombreLogro = Txt_nombre.Text;
-            logro.DescripcionLogro = Txt_descripcion.Text;
-            logro.UsuarioModificacion = "1";
-            logro.FechaModificacion = fechaActual;
-            logro.Materia.IdMateria = IDPorNombre(combo_materia.Text);
-
-
-            bool flag = blLogro.ModificarLogro(logro);
-            if (flag)
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show("Logro modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logro logro = new Logro();
+                DateTime fechaActual = DateTime.Today;
+
+                logro.IdLogro = id_logro;
+                logro.NombreLogro = Txt_nombre.Text;
+                logro.DescripcionLogro = Txt_descripcion.Text;
+                logro.UsuarioModificacion = "1";
+                logro.FechaModificacion = fechaActual;
+                logro.Materia.IdMateria = IDPorNombre(combo_materia.Text);
+
+                bool flag = blLogro.ModificarLogro(logro);
+                if (flag)
+                {
+                    MessageBox.Show("Logro modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -87,6 +85,48 @@ namespace Windows_vista.Logros
             }
 
             return value;
+        }
+
+        private void Txt_nombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_nombre.Text == "")
+            {
+                e.Cancel = true;
+                errorNombre.SetError(Txt_nombre, "Ingrese el nombre del logro");
+                Txt_nombre.Focus();
+            }
+            else
+            {
+                errorNombre.Clear();
+            }
+        }
+
+        private void Txt_descripcion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_descripcion.Text == "")
+            {
+                e.Cancel = true;
+                errorDescripcion.SetError(Txt_descripcion, "Ingrese la descripción del logro");
+                Txt_descripcion.Focus();
+            }
+            else
+            {
+                errorDescripcion.Clear();
+            }
+        }
+
+        private void combo_materia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_materia.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorMateria.SetError(combo_materia, "Ingrese el nombre del logro");
+                combo_materia.Focus();
+            }
+            else
+            {
+                errorMateria.Clear();
+            }
         }
     }
 }

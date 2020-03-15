@@ -45,10 +45,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDocente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorEstadoGrupo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorGrado = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorEstadoGrupo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,7 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 448);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -92,7 +99,8 @@
             this.combo_docente.Location = new System.Drawing.Point(353, 128);
             this.combo_docente.Name = "combo_docente";
             this.combo_docente.Size = new System.Drawing.Size(298, 28);
-            this.combo_docente.TabIndex = 31;
+            this.combo_docente.TabIndex = 2;
+            this.combo_docente.Validating += new System.ComponentModel.CancelEventHandler(this.combo_docente_Validating);
             // 
             // Combo_grado
             // 
@@ -103,7 +111,8 @@
             this.Combo_grado.Location = new System.Drawing.Point(353, 330);
             this.Combo_grado.Name = "Combo_grado";
             this.Combo_grado.Size = new System.Drawing.Size(298, 28);
-            this.Combo_grado.TabIndex = 30;
+            this.Combo_grado.TabIndex = 5;
+            this.Combo_grado.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_grado_Validating);
             // 
             // label5
             // 
@@ -124,8 +133,8 @@
             this.Combo_estado_grupo.Location = new System.Drawing.Point(40, 330);
             this.Combo_estado_grupo.Name = "Combo_estado_grupo";
             this.Combo_estado_grupo.Size = new System.Drawing.Size(276, 28);
-            this.Combo_estado_grupo.TabIndex = 28;
-            this.Combo_estado_grupo.SelectedIndexChanged += new System.EventHandler(this.Combo_tipo_usuario_SelectedIndexChanged);
+            this.Combo_estado_grupo.TabIndex = 4;
+            this.Combo_estado_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.Combo_estado_grupo_Validating);
             // 
             // btn_guardar
             // 
@@ -136,7 +145,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(266, 394);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
-            this.btn_guardar.TabIndex = 27;
+            this.btn_guardar.TabIndex = 6;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -148,7 +157,8 @@
             this.Txt_nombre_grupo.MaxLength = 30;
             this.Txt_nombre_grupo.Name = "Txt_nombre_grupo";
             this.Txt_nombre_grupo.Size = new System.Drawing.Size(275, 27);
-            this.Txt_nombre_grupo.TabIndex = 20;
+            this.Txt_nombre_grupo.TabIndex = 1;
+            this.Txt_nombre_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombre_grupo_Validating);
             // 
             // Txt_descripciongrupo
             // 
@@ -158,7 +168,8 @@
             this.Txt_descripciongrupo.Multiline = true;
             this.Txt_descripciongrupo.Name = "Txt_descripciongrupo";
             this.Txt_descripciongrupo.Size = new System.Drawing.Size(610, 89);
-            this.Txt_descripciongrupo.TabIndex = 18;
+            this.Txt_descripciongrupo.TabIndex = 3;
+            this.Txt_descripciongrupo.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_descripciongrupo_Validating);
             // 
             // label12
             // 
@@ -220,11 +231,35 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Registrar grupo";
             // 
-            // errorProvider
+            // errorNombre
             // 
-            this.errorProvider.BlinkRate = 0;
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
+            this.errorNombre.BlinkRate = 0;
+            this.errorNombre.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNombre.ContainerControl = this;
+            // 
+            // errorDocente
+            // 
+            this.errorDocente.BlinkRate = 0;
+            this.errorDocente.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDocente.ContainerControl = this;
+            // 
+            // errorDescripcion
+            // 
+            this.errorDescripcion.BlinkRate = 0;
+            this.errorDescripcion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDescripcion.ContainerControl = this;
+            // 
+            // errorEstadoGrupo
+            // 
+            this.errorEstadoGrupo.BlinkRate = 0;
+            this.errorEstadoGrupo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorEstadoGrupo.ContainerControl = this;
+            // 
+            // errorGrado
+            // 
+            this.errorGrado.BlinkRate = 0;
+            this.errorGrado.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorGrado.ContainerControl = this;
             // 
             // Frm_crear_grupo
             // 
@@ -239,12 +274,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar grupo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_crear_grupo_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_crear_grupo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorEstadoGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorGrado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,10 +300,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Txt_descripciongrupo;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorNombre;
         private System.Windows.Forms.ComboBox Combo_grado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox combo_docente;
+        private System.Windows.Forms.ErrorProvider errorDocente;
+        private System.Windows.Forms.ErrorProvider errorDescripcion;
+        private System.Windows.Forms.ErrorProvider errorEstadoGrupo;
+        private System.Windows.Forms.ErrorProvider errorGrado;
     }
 }

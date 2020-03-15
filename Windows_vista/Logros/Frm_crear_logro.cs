@@ -11,6 +11,7 @@ namespace Windows_vista.Logros
         public Frm_crear_logro(Usuario usuario)
         {
             InitializeComponent();
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             CargarDatos();
             this.usuario = usuario;
         }
@@ -37,48 +38,15 @@ namespace Windows_vista.Logros
 
         }
 
-
-
-        private void Frm_crear_logro_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void btn_guardar_Click(object sender, System.EventArgs e)
         {
-            if (ValidarCampos())
+            if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Logro logro = new Logro();
 
                 guardar(logro);
 
             }
-        }
-
-        private bool ValidarCampos()
-        {
-
-            bool flag = true;
-            if (Txt_nombre.Text == "")
-            {
-                errorProvider.SetError(Txt_nombre, "Ingrese el nombre");
-                Txt_nombre.Focus();
-                flag = false;
-            }
-            if (Txt_descripcion.Text == "")
-            {
-                errorProvider.SetError(Txt_descripcion, "Ingrese la descripción");
-                Txt_descripcion.Focus();
-                flag = false;
-            }
-            if (combo_materia.Text == "")
-            {
-                errorProvider.SetError(combo_materia, "Seleccione...");
-                combo_materia.Focus();
-                flag = false;
-            }
-      
-            return flag;
         }
 
         private void guardar(Logro logro)
@@ -111,9 +79,46 @@ namespace Windows_vista.Logros
             frm_admin_logros.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Txt_nombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (Txt_nombre.Text == "")
+            {
+                e.Cancel = true;
+                errorNombre.SetError(Txt_nombre, "Ingrese el nombre del logro");
+                Txt_nombre.Focus();
+            }
+            else
+            {
+                errorNombre.Clear();
+            }
+        }
 
+        private void Txt_descripcion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Txt_descripcion.Text == "")
+            {
+                e.Cancel = true;
+                errorDescripcion.SetError(Txt_descripcion, "Ingrese la descripción del logro");
+                Txt_descripcion.Focus();
+            }
+            else
+            {
+                errorDescripcion.Clear();
+            }
+        }
+
+        private void combo_materia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (combo_materia.Text == "Seleccione...")
+            {
+                e.Cancel = true;
+                errorMateria.SetError(combo_materia, "Seleccione la materia");
+                combo_materia.Focus();
+            }
+            else
+            {
+                errorMateria.Clear();
+            }
         }
     }
 }

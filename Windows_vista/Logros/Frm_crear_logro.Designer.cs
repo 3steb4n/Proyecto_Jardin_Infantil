@@ -41,10 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorMateria = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMateria)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +67,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 396);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // combo_materia
             // 
@@ -74,7 +77,8 @@
             this.combo_materia.Location = new System.Drawing.Point(41, 294);
             this.combo_materia.Name = "combo_materia";
             this.combo_materia.Size = new System.Drawing.Size(605, 28);
-            this.combo_materia.TabIndex = 30;
+            this.combo_materia.TabIndex = 3;
+            this.combo_materia.Validating += new System.ComponentModel.CancelEventHandler(this.combo_materia_Validating);
             // 
             // label5
             // 
@@ -95,7 +99,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(306, 344);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
-            this.btn_guardar.TabIndex = 27;
+            this.btn_guardar.TabIndex = 4;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -108,7 +112,8 @@
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
             this.Txt_descripcion.Size = new System.Drawing.Size(605, 74);
-            this.Txt_descripcion.TabIndex = 20;
+            this.Txt_descripcion.TabIndex = 2;
+            this.Txt_descripcion.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_descripcion_Validating);
             // 
             // Txt_nombre
             // 
@@ -117,7 +122,8 @@
             this.Txt_nombre.MaxLength = 30;
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(605, 27);
-            this.Txt_nombre.TabIndex = 14;
+            this.Txt_nombre.TabIndex = 1;
+            this.Txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombre_Validating);
             // 
             // label12
             // 
@@ -169,9 +175,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Registrar logro";
             // 
-            // errorProvider
+            // errorNombre
             // 
-            this.errorProvider.ContainerControl = this;
+            this.errorNombre.BlinkRate = 0;
+            this.errorNombre.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorNombre.ContainerControl = this;
+            // 
+            // errorDescripcion
+            // 
+            this.errorDescripcion.BlinkRate = 0;
+            this.errorDescripcion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorDescripcion.ContainerControl = this;
+            // 
+            // errorMateria
+            // 
+            this.errorMateria.BlinkRate = 0;
+            this.errorMateria.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorMateria.ContainerControl = this;
             // 
             // Frm_crear_logro
             // 
@@ -185,12 +205,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear logro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_crear_logro_FormClosing);
-            this.Load += new System.EventHandler(this.Frm_crear_logro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMateria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,6 +229,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorNombre;
+        private System.Windows.Forms.ErrorProvider errorDescripcion;
+        private System.Windows.Forms.ErrorProvider errorMateria;
     }
 }
