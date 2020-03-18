@@ -32,12 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_actualizar_mi_perfil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.check_contrasena = new System.Windows.Forms.CheckBox();
+            this.panel_contrasena = new System.Windows.Forms.Panel();
+            this.txt_repitir_pass = new System.Windows.Forms.TextBox();
+            this.txt_pass_nueva = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.Combo_tipo_usuario = new System.Windows.Forms.ComboBox();
@@ -71,8 +69,10 @@
             this.errorCelular = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTelefono = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTipoUsuario = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPasswd = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorConfirmarPasswd = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_contrasena.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoDocumento)).BeginInit();
@@ -83,14 +83,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPasswd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorConfirmarPasswd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.check_contrasena);
+            this.panel1.Controls.Add(this.panel_contrasena);
             this.panel1.Controls.Add(this.Combo_tipo_usuario);
             this.panel1.Controls.Add(this.btn_guardar);
             this.panel1.Controls.Add(this.Combo_tipo_documento);
@@ -114,7 +116,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(737, 632);
+            this.panel1.Size = new System.Drawing.Size(737, 609);
             this.panel1.TabIndex = 1;
             // 
             // label15
@@ -127,87 +129,74 @@
             this.label15.TabIndex = 38;
             this.label15.Text = "Cambiar contraseña";
             // 
-            // checkBox1
+            // check_contrasena
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.checkBox1.Location = new System.Drawing.Point(186, 409);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.check_contrasena.AutoSize = true;
+            this.check_contrasena.Checked = true;
+            this.check_contrasena.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_contrasena.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_contrasena.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.check_contrasena.Location = new System.Drawing.Point(186, 409);
+            this.check_contrasena.Name = "check_contrasena";
+            this.check_contrasena.Size = new System.Drawing.Size(15, 14);
+            this.check_contrasena.TabIndex = 10;
+            this.check_contrasena.UseVisualStyleBackColor = true;
+            this.check_contrasena.CheckedChanged += new System.EventHandler(this.check_contrasena_CheckedChanged);
             // 
-            // panel3
+            // panel_contrasena
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Location = new System.Drawing.Point(43, 429);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(636, 134);
-            this.panel3.TabIndex = 35;
+            this.panel_contrasena.BackColor = System.Drawing.Color.LightGray;
+            this.panel_contrasena.Controls.Add(this.txt_repitir_pass);
+            this.panel_contrasena.Controls.Add(this.txt_pass_nueva);
+            this.panel_contrasena.Controls.Add(this.label13);
+            this.panel_contrasena.Controls.Add(this.label14);
+            this.panel_contrasena.Enabled = false;
+            this.panel_contrasena.Location = new System.Drawing.Point(43, 429);
+            this.panel_contrasena.Name = "panel_contrasena";
+            this.panel_contrasena.Size = new System.Drawing.Size(636, 114);
+            this.panel_contrasena.TabIndex = 35;
             // 
-            // textBox3
+            // txt_repitir_pass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(177, 96);
-            this.textBox3.MaxLength = 30;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(438, 27);
-            this.textBox3.TabIndex = 13;
+            this.txt_repitir_pass.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_repitir_pass.Location = new System.Drawing.Point(176, 72);
+            this.txt_repitir_pass.MaxLength = 20;
+            this.txt_repitir_pass.Name = "txt_repitir_pass";
+            this.txt_repitir_pass.PasswordChar = '*';
+            this.txt_repitir_pass.Size = new System.Drawing.Size(438, 27);
+            this.txt_repitir_pass.TabIndex = 13;
+            this.txt_repitir_pass.Validating += new System.ComponentModel.CancelEventHandler(this.txt_repitir_pass_Validating);
             // 
-            // textBox1
+            // txt_pass_nueva
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 14);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(438, 27);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(177, 54);
-            this.textBox2.MaxLength = 30;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(438, 27);
-            this.textBox2.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Contraseña actual:";
+            this.txt_pass_nueva.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass_nueva.Location = new System.Drawing.Point(176, 30);
+            this.txt_pass_nueva.MaxLength = 20;
+            this.txt_pass_nueva.Name = "txt_pass_nueva";
+            this.txt_pass_nueva.PasswordChar = '*';
+            this.txt_pass_nueva.Size = new System.Drawing.Size(438, 27);
+            this.txt_pass_nueva.TabIndex = 12;
+            this.txt_pass_nueva.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pass_nueva_Validating);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(23, 96);
+            this.label13.Location = new System.Drawing.Point(22, 72);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 20);
+            this.label13.Size = new System.Drawing.Size(131, 20);
             this.label13.TabIndex = 37;
-            this.label13.Text = "Contraseña actual:";
+            this.label13.Text = "Repita contraseña:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 57);
+            this.label14.Location = new System.Drawing.Point(22, 33);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 20);
+            this.label14.Size = new System.Drawing.Size(129, 20);
             this.label14.TabIndex = 38;
-            this.label14.Text = "Contraseña actual:";
+            this.label14.Text = "Contraseña nueva:";
             // 
             // Combo_tipo_usuario
             // 
@@ -228,7 +217,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(315, 594);
+            this.btn_guardar.Location = new System.Drawing.Point(310, 558);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 14;
@@ -493,12 +482,24 @@
             this.errorTipoUsuario.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorTipoUsuario.ContainerControl = this;
             // 
+            // errorPasswd
+            // 
+            this.errorPasswd.BlinkRate = 0;
+            this.errorPasswd.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorPasswd.ContainerControl = this;
+            // 
+            // errorConfirmarPasswd
+            // 
+            this.errorConfirmarPasswd.BlinkRate = 0;
+            this.errorConfirmarPasswd.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorConfirmarPasswd.ContainerControl = this;
+            // 
             // Frm_actualizar_mi_perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(754, 650);
+            this.ClientSize = new System.Drawing.Size(754, 626);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -508,8 +509,8 @@
             this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_contrasena.ResumeLayout(false);
+            this.panel_contrasena.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorNumero)).EndInit();
@@ -521,6 +522,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCelular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPasswd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorConfirmarPasswd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,14 +562,14 @@
         private System.Windows.Forms.ErrorProvider errorCelular;
         private System.Windows.Forms.ErrorProvider errorTelefono;
         private System.Windows.Forms.ErrorProvider errorTipoUsuario;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel_contrasena;
+        private System.Windows.Forms.TextBox txt_repitir_pass;
+        private System.Windows.Forms.TextBox txt_pass_nueva;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox check_contrasena;
+        private System.Windows.Forms.ErrorProvider errorPasswd;
+        private System.Windows.Forms.ErrorProvider errorConfirmarPasswd;
     }
 }

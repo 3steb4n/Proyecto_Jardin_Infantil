@@ -49,6 +49,15 @@ namespace Windows_vista.usuarios
             Combo_tipo_usuario.SelectedItem = usuario.TipoUsuario;
 
             Console.WriteLine(usuario.TipoUsuario);
+
+            if (check_contrasena.Checked)
+            {
+                panel_contrasena.Enabled = true;
+            }
+            else
+            {
+                panel_contrasena.Enabled = false;
+            }
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -69,15 +78,40 @@ namespace Windows_vista.usuarios
                 usuario.UsuarioModificacion = this.usuario.Id_usuario.ToString();
                 usuario.FechaModificacion = fechaActual;
 
-                bool flag = blUsuario.ModificarUsuarioPropio(usuario);
-                if (flag)
+
+                if (txt_pass_nueva.Text == txt_repitir_pass.Text)
                 {
-                    MessageBox.Show("Usuario modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    usuario.Clave = txt_pass_nueva.Text;
+                    if (!check_contrasena.Checked)
+                    {
+                        bool flag = blUsuario.ModificarUsuarioPropio(usuario);
+                        if (flag)
+                        {
+                            MessageBox.Show("Usuario modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        bool flag = blUsuario.ModificarUsuarioContrasena(usuario);
+                        if (flag)
+                        {
+                            MessageBox.Show("Usuario modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La contraseña y su confirmación no son iguales", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -241,6 +275,50 @@ namespace Windows_vista.usuarios
             else
             {
                 errorTipoUsuario.Clear();
+            }
+        }
+
+        private void check_contrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_contrasena.Checked)
+            {
+                panel_contrasena.Enabled = true;
+            }
+            else
+            {
+                panel_contrasena.Enabled = false;
+                errorPasswd.Clear();
+                errorConfirmarPasswd.Clear();
+
+
+            }
+        }
+
+        private void txt_pass_nueva_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_pass_nueva.Text == "")
+            {
+                e.Cancel = true;
+                errorPasswd.SetError(txt_pass_nueva, "Ingrese la nueva contraseña");
+                txt_pass_nueva.Focus();
+            }
+            else
+            {
+                errorPasswd.Clear();
+            }
+        }
+
+        private void txt_repitir_pass_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_repitir_pass.Text == "")
+            {
+                e.Cancel = true;
+                errorConfirmarPasswd.SetError(txt_repitir_pass, "Ingrese la confirmación de la contraseña");
+                txt_repitir_pass.Focus();
+            }
+            else
+            {
+                errorConfirmarPasswd.Clear();
             }
         }
     }

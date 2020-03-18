@@ -65,6 +65,12 @@ namespace Negocio
             return daoUsuario.ModificarUsuarioPropio(usuario);
         }
 
+        public bool ModificarUsuarioContrasena(Usuario usuario)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.ModificarUsuarioContrasena(usuario);
+        }
+
         public bool EliminarUsuario(int id)
         {
             DaoUsuario daoUsuario = new DaoUsuario();

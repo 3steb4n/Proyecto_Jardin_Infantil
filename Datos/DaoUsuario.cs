@@ -372,6 +372,43 @@ namespace Datos
             }
         }
 
+        public bool ModificarUsuarioContrasena(Usuario usuario)
+        {
+            bool flag = false;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("modificarUsuarioPropioPasswd", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ID", usuario.Id_usuario);
+                    cmd.Parameters.AddWithValue("@Nombres", usuario.Nombres);
+                    cmd.Parameters.AddWithValue("@Apellidos", usuario.Apellidos);
+                    cmd.Parameters.AddWithValue("@Direccion", usuario.Direccion);
+                    cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                    cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                    cmd.Parameters.AddWithValue("@Correo_Electronico", usuario.CorreoElectronico);
+                    cmd.Parameters.AddWithValue("@UsuarioModificacion", usuario.UsuarioModificacion);
+                    cmd.Parameters.AddWithValue("@FechaModificacion", usuario.FechaModificacion);
+                    cmd.Parameters.AddWithValue("@Passwd", IncriptarContraseña(usuario.Clave));
+                    cmd.Parameters.AddWithValue("@EstadoClave", "C");
+
+                    flag = cmd.ExecuteNonQuery() != 0;
+
+                }
+                return flag;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error en el metodo ModificarUsuarioContrasena: " + e);
+                return flag;
+            }
+        }
+
+
         public bool EliminarUsuario(int id)
         {
             bool flag = false;
