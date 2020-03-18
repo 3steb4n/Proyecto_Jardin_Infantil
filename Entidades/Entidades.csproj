@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbonoPago.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="Bloque.cs" />
     <Compile Include="ConceptoPago.cs" />
@@ -51,7 +52,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="Logro.cs" />
     <Compile Include="Materiaa.cs" />
-    <Compile Include="Pagos.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Periodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salon.cs" />

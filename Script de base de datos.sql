@@ -30,17 +30,17 @@ create table Usuarios (
 );
 
 INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('846468','CC','dawwdadw','wadwawa','dwadwwddaw','454334543','54534543','awdawdwadwad','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','A');
+			VALUES   ('6576524','CC','Diego Alejandro','Astaiza','KR NORTE 32','3133717955','6941089','dastaizabo@uninpahu.edu.co','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','A');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('846468','CC','pruebadocente1','pruebadocente1','pruebadocente1','454334543','54534543','pruebadocente1','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			VALUES   ('99074524','CC','Manuel Perez','Gonzales','CALLE 432 # SUR','3054785944','3647877','pedro@hotmail.com','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','D');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('846468','CC','pruebadocente2','pruebadocente2','pruebadocente2','454334543','54534543','pruebadocente2','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			VALUES   ('85472412','CC','Daniel','Alzate','CR 32 # 32 SUR','3114785566','6984521','daniel.alzate@hotmail.com','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','D');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('846468','CC','pruebadocente3','pruebadocente3','pruebadocente3','454334543','54534543','pruebadocente3','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			VALUES   ('100032','CC','Sofia ','Gomez','KR 213 # SUR 54','3148596544','9647820','sofia@hotmail.com','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','S');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('8462312','CC','pruebadocente4','pruebadocente3','pruebadocente3','454334543','54534543','pruebadocente3','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','D');
+			VALUES   ('867987','CC','Paola','Gomez','AV 38 NORTE # 32','3021485966','74859666','paola@hotmail.com','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','D');
 			INSERT INTO Usuarios (Documento,Tipo_Documento, Nombres, Apellidos, Direccion, Celular, Telefono, Correo_Electronico, Usuario_Clave, Usuario_Creacion,  Fecha_Creacion,Usuario_Modificacion, Fecha_Modificacion,Estado_Usuario,Estado_Clave,Tipo_Usuario) 
-			VALUES   ('846468','CC','radamel','falcao','pruebadocente3','454334543','54534543','falcao','+sjKDRWdiZGNbP6FCPluEbW3OKY=','1','2020-03-07 00:00:00.000','','','A','S','S');
+			VALUES   ('3453433','CC','Radamel','Falcao','AV 48 SUR','31337485966','6347485','rada@hotmail.com','DVOZUIQnznlVbNpxkYAgwejRW1M=','1','2020-03-07 00:00:00.000','','','A','S','S');
 
 select * from usuarios;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -150,8 +150,8 @@ SELECT  Id_Usuario [ID],
 FROM Usuarios where Documento = @Documento AND Estado_Usuario = 'A' and Tipo_Usuario='D';
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE ListarUsuariosIdNombre
+-- drop procedure ListarDocentesIdNombre
+CREATE PROCEDURE ListarDocentesIdNombre
 AS
 SELECT   Id_Usuario [ID],
 		 Nombres [Nombres],
@@ -159,7 +159,8 @@ SELECT   Id_Usuario [ID],
 		 
 FROM Usuarios where Estado_Usuario = 'A' and Tipo_Usuario='D';
 GO
-EXEC ListarUsuariosIdNombre
+EXEC ListarDocentesIdNombre
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarUsuario
 CREATE PROCEDURE registrarUsuario
@@ -259,7 +260,6 @@ create table Grados(
 insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Parbulos','Competencia para ninos de 1 y 2 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('PreKinder','Competencia para ninos de 2 y 3 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ninos de 3 y 4 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
-insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Kinder','Competencia para ninos de 3 y 4 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Transacicion','Competencia para ninos de 4 y 5 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 insert into Grados (Nombre_Grado,Descripcion_Grado,Usuario_Creacion,Fecha_creacion,Usuario_Modificacion,Fecha_Modificacion,Estado) values ('Primero','Competencia para ninos de 4 y 5 anos','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');
 select * from Grados;
@@ -296,8 +296,8 @@ create table Grupos(
 ALTER TABLE Grupos ADD FOREIGN KEY (id_grado) REFERENCES Grados(Id_Grado);
 ALTER TABLE Grupos ADD FOREIGN KEY (id_docente) REFERENCES Usuarios(Id_Usuario);
 
-insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado,id_docente) values ('PK001','Primer curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3','2');
-insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado,id_docente) values ('PK002','Seg curso de 20 estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3','2');
+insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado,id_docente) values ('PK001','Primer curso de estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3','2');
+insert into Grupos (nombre_grupo,descripcion_grupo,usuario_creacion,fecha_creacion,usuario_modificacion,fecha_modificacion,estado_grupo,id_grado,id_docente) values ('PK002','Segundo curso de estudiantes del  grado prekinder de la sede principal','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','3','2');
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 select * from Grupos
 -- DROP PROCEDURE  ListarGrupos
@@ -341,6 +341,8 @@ SELECT  g.id_grupo [IdGrupo],
 		FROM Grupos g  INNER JOIN Grados gr ON g.id_grado = gr.Id_Grado  INNER JOIN Usuarios us ON g.id_docente = us.Id_Usuario where g.nombre_grupo=@nombre_grupo and g.estado_grupo = 'A';
 GO
 EXEC ListarGrupoPorNombre 'PK001'
+select * from Grupos;
+select * from Usuarios;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- select * from Grupos
 -- DROP PROCEDURE  ListarGruposNombreyID
@@ -359,7 +361,7 @@ CREATE PROCEDURE registrarGrupo
    @NombreGrupo varchar(30),
    @DescripcionGrupo varchar(100),
    @UsuarioCreacion varchar(30),
-   @FechaCreacion varchar(15),
+   @FechaCreacion datetime,
    @EstadoGrupo varchar(2),
    @IdGrado int,
    @IdDocente int
@@ -376,7 +378,7 @@ CREATE PROCEDURE modificarGrupo
    @NombreGrupo varchar(30),
    @DescripcionGrupo varchar(30),
    @UsuarioModificacion varchar(30),
-   @FechaModificacion varchar(30),
+   @FechaModificacion datetime,
    @EstadoGrupo varchar(30),
    @IdGrado varchar(100),
    @IdDocente int
@@ -422,9 +424,20 @@ create table Estudiantes(
 ALTER TABLE Estudiantes ADD FOREIGN KEY (ID_grupo) REFERENCES Grupos(id_grupo);
 
 INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-			VALUES   ('8548964684','RC','Manuel ','Castillo','2020-03-07 00:00:00.000','','Ivan Duque','KR 32 Norte','M','6941023','313371823','padre@misena.edu.co','estudiante 1 mi pez','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','1');  
-			INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-			VALUES   ('54435435','RC','Manuela ','Castilla','2020-03-07 00:00:00.000','','Ivan Duque','KR 32 Norte','M','6941023','313371823','padre@misena.edu.co','estudiante 2 mi pez','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');  
+VALUES   ('6578465','RC','Valery Sofia ','Perez Casitllo','2003-03-26 13:00:00.000','','Piedad Borja Rivas','KR 24 A # 32 A SUR 32','F','6941023','3057485965','piedad_borja@hotmail.com','Observaciones sobre el primer estudiante','1','2020-03-07 12:00:00.000','1','2020-03-07 12:00:00.000','A','1');  
+
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+VALUES   ('106468','TI','Manuel Esteban ','Carvajal Carvajal','2008-12-30 14:00:00.000','','Ever Gomez Perez','CALLE 32 Norte','M','9685741','3214578965','ever_gomez@hotmail.com','Observaciones sobre el segundo estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');   
+
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+VALUES   ('10008548','RC','Daniel Gustavo ','Gomez','2013-04-06 12:32:00.000','','Carlos Armani Rodriguez','KR 56 SUR','M','6945896','3157489654','carlos_armani@hotmail.com','Observaciones sobre el cuarto estudiante','1','2020-03-07 01:40:00.000','1','2020-03-07 01:40:00.000','A','2');  
+
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+VALUES   ('85744566','RC','Esteban  ','Gomez','2010-02-11 04:32:00.000','','Manuel Perez Ordoñez','KR 43 NORTE ','M','3747852','3114785964','manuel_perez@hotmail.com','Observaciones sobre el quinto estudiante','1','2020-03-07 12:45:00.000','1','2020-03-07 00:00:00.000','A','1');  
+
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
+VALUES   ('6699547','RC','Pedro Franco ','Armani','2004-02-01 15:30:00.000','','Gustavo Alzate','AV 32 # 312 SUR','M','9475965','313371823','gustavo_alzate@hotmail.com','Observaciones sobre el sexto estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');  
+
 select * from Estudiantes;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantes
@@ -476,7 +489,8 @@ SELECT   e.ID_estudiante [IdEstudiante],
 
 FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A' AND Documento_Estudiante=@Documento;
 GO
-EXEC ListarEstudiantePorDocumento '8548964684'
+
+EXEC ListarEstudiantePorDocumento '106468'
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantePorDocumentoyGrupo
 CREATE PROCEDURE ListarEstudiantePorDocumentoyGrupo
@@ -507,7 +521,17 @@ GO
 EXEC ListarEstudiantePorDocumentoyGrupo '',1;
 -- select * from Estudiantes;
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarEstudiantesIdNombre
+CREATE PROCEDURE ListarEstudiantesIdNombre
+AS
+SELECT   ID_estudiante [ID],
+		 Nombre_Estudiante [Nombres],
+		 Apellido_Estudiante [Apellidos]
+		 
+FROM Estudiantes where Estado_Estudiante = 'A';
+GO
+EXEC ListarEstudiantesIdNombre
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE registrarEstudiante
 CREATE PROCEDURE registrarEstudiante
@@ -597,9 +621,9 @@ create table Areas(
     Estado varchar(2) NOT NULL CHECK(Estado IN('A', 'I'))
 );
 
-insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Tecnologica','1','2020-03-07 00:00:00.000','A');
-insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Ciencias','1','2020-03-07 00:00:00.000','A');
-insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Sociales','1','2020-03-07 00:00:00.000','A');
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Area tecnologica','1','2020-03-07 00:00:00.000','A');
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Area de la ciencia','1','2020-03-07 00:00:00.000','A');
+insert into Areas (Nombre,Usuario_Creacion,Fecha_Creacion,Estado) VALUES ('Area de sociologia','1','2020-03-07 00:00:00.000','A');
 -- select * from Areas;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE  ListarAreas
@@ -803,7 +827,6 @@ CREATE PROCEDURE modificarLogro
    AS
   UPDATE Logros set Nombre_Logro=@NombreLogro, Descripcion_Logro=@DescripcionLogro, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Estado_Logro=@EstadoLogro, Id_materia=@Id_Materia where Id_Logro=@IdLogro
 GO
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE eliminarLogro
 CREATE PROCEDURE eliminarLogro
@@ -823,20 +846,39 @@ create table Salones(
     Estado varchar (2) NOT NULL CHECK(Estado IN('A', 'I'))
 );
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-create table Concepto_Pago(
+-- drop table Concepto_Pago
+create table Concepto_Pago (
     Id_Concepto int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Nombre_Concepto varchar(30) NOT NULL,
     Descripcion_Concepto varchar(300),
-    Valor_Concepto decimal (18,2),
+    Valor_Concepto int,
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
-    Usuario_Modificacion varchar(30),
-    Fecha_Modificacion datetime
+    Usuario_Modificacion varchar(30) NULL DEFAULT '',
+    Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000'
 );
+ 
+ insert into Concepto_Pago (Nombre_Concepto, Descripcion_Concepto, Valor_Concepto, Usuario_Creacion, Fecha_Creacion) VALUES ('Matricula','Descripción de la matreicula de pago',150000,'1','2020-03-07 00:00:00.000');
+ insert into Concepto_Pago (Nombre_Concepto, Descripcion_Concepto, Valor_Concepto, Usuario_Creacion, Fecha_Creacion) VALUES ('Pension','Descripción de la pension de pago',110000,'1','2020-03-07 00:00:00.000');
+ insert into Concepto_Pago (Nombre_Concepto, Descripcion_Concepto, Valor_Concepto, Usuario_Creacion, Fecha_Creacion) VALUES ('Registro','Descripción de la pension de pago',140000,'1','2020-03-07 00:00:00.000');
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- select * from Concepto_Pago
+-- DROP PROCEDURE  Listar_Concepto_Pago
+CREATE PROCEDURE Listar_Concepto_Pago
+AS
+SELECT  Id_Concepto [IdConcepto],
+		Nombre_Concepto [NombreConcepto],
+		Valor_Concepto [ValorConcepto]
+		
+		FROM Concepto_Pago;
+GO
+
+EXEC Listar_Concepto_Pago;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop table Pagos
 create table Pagos(
     Id_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    Valor_Monto decimal(18,2),
+    Valor_Monto int,
     Descripcion_Pago varchar(300),
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
@@ -846,11 +888,81 @@ create table Pagos(
 
 ALTER TABLE Pagos ADD FOREIGN KEY (Id_Concepto_Pago) REFERENCES Concepto_Pago(Id_Concepto);
 ALTER TABLE Pagos ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estudiante);
+
+select * from Pagos;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure registrarPago
+CREATE PROCEDURE registrarPago
+   @ValorMonto int,
+   @DescripcionPago varchar(300),
+   @UsuarioCreacion varchar(30),
+   @FechaCreacion datetime,
+   @IdConceptoPago varchar(2),
+   @IdEstudiante int
+   AS
+   INSERT INTO Pagos (Valor_Monto, Descripcion_Pago, Usuario_Creacion, Fecha_Creacion, Id_Concepto_Pago, Id_Estudiante) 
+			VALUES   (@ValorMonto, @DescripcionPago, @UsuarioCreacion, @FechaCreacion, @IdConceptoPago, @IdEstudiante);  
+GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarPago
+CREATE PROCEDURE ListarPago
+AS
+SELECT   p.Id_Pago [idPago],
+		 p.Valor_Monto [ValorMonto],
+	     p.Descripcion_Pago [DescripcionPago],
+	     u.Id_Usuario [UsuarioCreacion],
+		 u.Nombres[Nombres],
+		 u.Apellidos[Apellidos],
+		 p.Fecha_Creacion [FechaCreacion],
+		 c.Id_Concepto [IdConcepto],
+		 c.Nombre_Concepto [NombreConcepto],
+		 e.ID_estudiante [IDEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Acudiente_Nombre [AcudienteNombre],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Telefono [telefono],
+		 e.Celular [celular],
+		 e.Direccion [direccion]
+
+FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Estudiantes e ON e.ID_estudiante = p.Id_Estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion;
+GO
+
+EXEC ListarPago
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarPagoFiltro
+CREATE PROCEDURE ListarPagoFiltro
+@documentoEstudiante varchar(20),
+@nombreConcepto varchar(30)
+AS
+SELECT   p.Id_Pago [idPago],
+		 p.Valor_Monto [ValorMonto],
+	     p.Descripcion_Pago [DescripcionPago],
+	     u.Id_Usuario [UsuarioCreacion],
+		 u.Nombres[Nombres],
+		 u.Apellidos[Apellidos],
+		 p.Fecha_Creacion [FechaCreacion],
+		 c.Id_Concepto [IdConcepto],
+		 c.Nombre_Concepto [NombreConcepto],
+		 e.ID_estudiante [IDEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Acudiente_Nombre [AcudienteNombre],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Telefono [telefono],
+		 e.Celular [celular],
+		 e.Direccion [direccion]
+
+FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Estudiantes e ON e.ID_estudiante = p.Id_Estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion where e.Documento_Estudiante LIKE '%'+@documentoEstudiante+'%' and c.Nombre_Concepto LIKE '%'+@nombreConcepto+'%' ;
+GO
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- LIKE '%'+@Documento+'%'   and c.Nombre_Concepto = @nombreConcepto
+-- drop table Abono_Pago 
 create table Abono_Pago(
     Id_Abono_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Tipo_Abono varchar(2) NOT NULL CHECK(Tipo_Abono IN('P', 'C')),
-    Valor_Abonado decimal(18,2) NOT NULL,
+    Valor_Abonado int NOT NULL,
     Descripcion_Abono varchar(100),
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime NOT NULL,
@@ -858,6 +970,49 @@ create table Abono_Pago(
 );
 
 ALTER TABLE Abono_Pago ADD FOREIGN KEY (Id_Pago_Registrado) REFERENCES Pagos(Id_Pago); 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarAbonoPago
+CREATE PROCEDURE ListarAbonoPago
+@Id_Pago int
+AS
+SELECT   a.Id_Abono_Pago [IdAbonoPago],
+		 a.Tipo_Abono [TipoAbono],
+	     a.Valor_Abonado [ValorAbonado],
+	     a.Descripcion_Abono [DescripcionAbono],
+		 a.Fecha_Creacion [fechaCreacion],
+		 p.Id_Pago [idPago],
+		 p.Descripcion_Pago [descripcionPago],
+		 u.Id_Usuario [idUsuario],
+		 u.Nombres [Nombres],
+		 u.Apellidos [Apellidos]
+
+FROM Abono_Pago a INNER JOIN Pagos p ON  p.Id_Pago = a.Id_Pago_Registrado INNER JOIN Usuarios u ON u.Id_Usuario = a.Usuario_Creacion where a.Id_Pago_Registrado = @Id_Pago; 
+GO
+select * from Abono_Pago;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure ListarDineroAbonado
+CREATE PROCEDURE ListarDineroAbonado
+@Id_Pago int
+AS
+SELECT   SUM(Valor_Abonado) [ValorAbonado]
+
+FROM Abono_Pago  where Id_Pago_Registrado = @Id_Pago; 
+GO
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- drop procedure registrarAbonoPago
+CREATE PROCEDURE registrarAbonoPago
+   @Tipo_Abono varchar(2),
+   @Valor_Abonado int,
+   @Descripcion_Abono varchar(100),
+   @Usuario_Creacion varchar(30),
+   @Fecha_Creacion datetime,
+   @Id_Pago_Registrado int
+   AS
+   INSERT INTO Abono_Pago (Tipo_Abono, Valor_Abonado, Descripcion_Abono, Usuario_Creacion, Fecha_Creacion, Id_Pago_Registrado) 
+			VALUES   (@Tipo_Abono, @Valor_Abonado, @Descripcion_Abono, @Usuario_Creacion, @Fecha_Creacion, @Id_Pago_Registrado);  
+GO
+
+select * from Abono_Pago;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 create table Notas(
     Id_Nota int IDENTITY (1,1) NOT NULL PRIMARY KEY,
@@ -885,212 +1040,3 @@ create table Promedios_Generales(
 
 ALTER TABLE Promedios_Generales ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estudiante);
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-create table CARGAS_ACADEMICAS(
-    ID_CARGA int IDENTITY(1,1) NOT NULL,
-    USUARIO_CREACION varchar(30),
-    FECHA_CREACION datetime,
-    DIA_SEMANA date NOT NULL,
-    BLOQUE varchar(10) NOT NULL CHECK(BLOQUE IN('7:00 AM - 8:00 AM', '8:00 AM - 9:00 AM', '9:00 AM - 10:00 AM', 
-    '11:00 AM - 12:00 PM', '12:00 PM - 1:00 PM', '1:00 PM - 2:00 PM', '2:00 PM - 3:00 PM')),
-    ID_GRUPO int,
-    ID_MATERIA int,
-    ID_SALON int,
-    ID_USUARIO int
-);
-
-ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_GRUPO) REFERENCES GRUPOS_GRADOS_ESCOLARES(ID_GRUPO);
-ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_MATERIA) REFERENCES MATERIAS_ACADEMICAS(ID_MATERIA);
-ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_SALON) REFERENCES SALONES_ACADEMICOS(ID_SALON);
-ALTER TABLE CARGAS_ACADEMICAS ADD FOREIGN KEY (ID_USUARIO) REFERENCES USUARIOS(ID_USUARIO);
-
-
-
-
-
-create table CONCEPTOS_PAGOS(
-    ID_CONCEPTO_PAGOS int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    NOMBRE_CONCEPTO_PAGO varchar(50) NOT NULL,
-    DESCRIPCION_CONCEPTO text,
-    VALOR_CONCEPTO_PAGO decimal (18,2),
-    USUARIO_CREACION varchar(30),
-    FECHA_CREACION datetime,
-    USUARIO_MODIFICACION varchar(30),
-    FECHA_MODIFICACION datetime
-);
-
-create table PAGOS_REGISTRADOS(
-    ID_PAGO_REGISTRADO int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    VALOR_MONTO decimal(18,2),
-    DESCRIPCION_PAGO text,
-    USUARIO_CREACION varchar(30),
-    FECHA_CREACION datetime,
-    ID_CONCEPTO_PAGOS int,
-    ID_ESTUDIANTE int
-);
-
-ALTER TABLE PAGOS_REGISTRADOS ADD FOREIGN KEY (ID_CONCEPTO_PAGOS) REFERENCES CONCEPTOS_PAGOS(ID_CONCEPTO_PAGOS);
-ALTER TABLE PAGOS_REGISTRADOS ADD FOREIGN KEY (ID_ESTUDIANTE) REFERENCES ESTUDIANTES(ID_ESTUDIANTE);
-
-create table ABONOS_PAGOS(
-    ID_ABONO_REGISTRADO int IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    TIPO_ABONO varchar(20) NOT NULL CHECK(TIPO_ABONO IN('Parcial', 'Completo')),
-    VALOR_ABONADO decimal(18,2) NOT NULL,
-    DESCRIPCION_ABONO text,
-    USUARIO_CREACION varchar(30),
-    FECHA_CREACION datetime NOT NULL,
-    ID_PAGO_REGISTRADO int,
-);
-
-ALTER TABLE ABONOS_PAGOS ADD FOREIGN KEY (ID_PAGO_REGISTRADO) REFERENCES PAGOS_REGISTRADOS(ID_PAGO_REGISTRADO); 
- 
- 
- 
- 
- 
-use JardinInfantil
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-DROP PROCEDURE IF EXISTS verificarUsuario;
-GO
-CREATE PROCEDURE ValidarUsuario
-   @Usuario varchar(30),
-   @Clave varchar(100)
-   AS
-   SELECT
-		 ISNULL (Tipo_Usuario,'') [Tipo_Usuario],
-		 ISNULL (Nombre_Usuario,'') [Nombre_Usuario]
-   FROM Usuarios WHERE Usuario_Login=@Usuario  AND Clave=@Clave;
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
- DROP PROCEDURE IF EXISTS inhabilitarUsuario;
- GO
-
-CREATE PROCEDURE inhabilitarUsuario
-   @documentoUsuario varchar(30)
-   AS
-   UPDATE USUARIOS
-   SET ESTADO_USUARIO='INHABILITADO' 
-   WHERE DOCUMENTO_USUARIO=@documentoUsuario
-GO
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-use JardinInfantil registrarUsuario
-DROP PROCEDURE IF EXISTS registrarUsuario;
-GO
-
-CREATE PROCEDURE registrarUsuario
-   @DocumentoUsuario varchar(20),
-   @TipoDocumento varchar(30),
-   @NombreUsuario varchar(30),
-   @ApellidoUsuario varchar(30),
-   @DireccionUsuario varchar(50),
-   @NumeroCelular varchar(20),
-   @Telefono varchar(10),
-   @Email varchar(100),
-   @UsuarioLogin varchar(20),
-   @UsuarioClave varchar(100),
-   @UsuarioCreacion varchar(30),
-   @FechaCreacion datetime,
-   @EstadoUsuario varchar(20),
-   @TipoUsuario varchar(20)
-   AS
-   INSERT INTO USUARIOS ("DOCUMENTO_USUARIO","TIPO_DOCUMENTO","NOMBRE_USUARIO","APELLIDO_USUARIO","DIRECCION"
-   ,"NUMERO_CELULAR","TELEFONO","CORREO_ELECTRONICO","USUARIO_LOGIN","USUARIO_CLAVE","USUARIO_CREACION","FECHA_CREACION",
-   "ESTADO_USUARIO", "TIPO_USUARIO") VALUES
-   (@DocumentoUsuario, @TipoDocumento, @NombreUsuario, @ApellidoUsuario, @DireccionUsuario, @NumeroCelular, 
-   @Telefono, @Email, @UsuarioLogin, @UsuarioClave, @UsuarioCreacion, @FechaCreacion, @EstadoUsuario, @TipoUsuario);
-GO
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE ListarUsuarios
-AS
-SELECT   Id_Usuario [ID],
-	     Documento [Documento],
-	     Tipo_Documento [Tipo_Documento],
-		 Nombres [Nombres],
-		 Apellidos [Apellidos],
-		 Direccion [Direccion],
-		 Celular [Celular],
-		 Telefono [Telefono],
-		 Correo_Electronico [Correo_Electronico],
-		 Usuario_Clave [Usuario_Clave],
-	     Usuario_Creacion [Usuario_Creacion],
-		 Fecha_Creacion [Fecha_Creacion],
-		 Usuario_Modificacion [Usuario_Modificacion],
-		 Fecha_Modificacion [Fecha_Modificacion],
-		 Estado_Usuario [Estado_Usuario],
-		 Estado_Clave [Estado_Clave],
-		 Tipo_Usuario [Tipo_Usuario]
-
-FROM Usuarios where Estado_Usuario = 'A';
-GO
-
-*/

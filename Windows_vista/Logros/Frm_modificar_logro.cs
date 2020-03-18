@@ -8,7 +8,7 @@ namespace Windows_vista.Logros
 {
     public partial class Frm_modificar_logro : Form
     {
-        public Frm_modificar_logro(Logro logro,Usuario usuario)
+        public Frm_modificar_logro(Logro logro, Usuario usuario)
         {
             InitializeComponent();
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
@@ -36,7 +36,7 @@ namespace Windows_vista.Logros
             combo_materia.SelectedItem = logro.Materia.NombreMateria;
             Txt_nombre.Text = logro.NombreLogro;
             Txt_descripcion.Text = logro.DescripcionLogro;
-            
+
         }
         private void Frm_modificar_logro_FormClosing(object sender, FormClosingEventArgs e)
         {

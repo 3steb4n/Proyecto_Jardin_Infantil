@@ -60,9 +60,6 @@ namespace Windows_vista
                     Label_Error.Text = "Usuario inexistente en el sistema";
                 }
             }
-
-
-
         }
 
         private void viewPass_Click(object sender, EventArgs e)
@@ -83,9 +80,5 @@ namespace Windows_vista
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

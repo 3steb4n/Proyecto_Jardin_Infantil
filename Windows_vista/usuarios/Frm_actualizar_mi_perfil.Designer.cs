@@ -447,6 +447,8 @@
             // 
             // errorTipoDocumento
             // 
+            this.errorTipoDocumento.BlinkRate = 0;
+            this.errorTipoDocumento.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorTipoDocumento.ContainerControl = this;
             // 
             // errorNombres
@@ -498,6 +500,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(754, 650);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_actualizar_mi_perfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

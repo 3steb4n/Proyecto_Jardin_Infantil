@@ -32,9 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_admin_docentes));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +46,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +57,9 @@
             this.Correo_Electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Btn_pagos = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -90,35 +92,21 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 696);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 13;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.Btn_cerrar);
+            this.panel5.Controls.Add(this.Btn_pagos);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
             this.panel5.Controls.Add(this.Btn_estudiantes);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 135);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
             // 
             // Btn_reportes
             // 
@@ -300,23 +288,13 @@
             this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.Size = new System.Drawing.Size(931, 504);
             this.dgv_usuarios.TabIndex = 33;
-            this.dgv_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_usuarios_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 32);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Gestión de docentes";
             // 
             // id
             // 
             this.id.HeaderText = "";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // Documento
             // 
@@ -378,11 +356,52 @@
             this.Estado_clave.Name = "Estado_clave";
             this.Estado_clave.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(234, 32);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Gestión de docentes";
+            // 
+            // Btn_pagos
+            // 
+            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
+            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
+            this.Btn_pagos.Name = "Btn_pagos";
+            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
+            this.Btn_pagos.TabIndex = 9;
+            this.Btn_pagos.Text = "Pagos";
+            this.Btn_pagos.UseVisualStyleBackColor = false;
+            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.Btn_cerrar.TabIndex = 10;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            // 
             // Frm_admin_docentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 696);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Txt_busquedaCedula);
             this.Controls.Add(this.label2);
@@ -392,10 +411,11 @@
             this.Controls.Add(this.dgv_usuarios);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_docentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de docentes";
-            this.Load += new System.EventHandler(this.Frm_admin_docentes_Load);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -410,7 +430,6 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button Btn_cerrar;
         private System.Windows.Forms.Button Btn_reportes;
         private System.Windows.Forms.Button Btn_estudiantes;
         private System.Windows.Forms.Panel panel1;
@@ -434,5 +453,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo_Electronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_clave;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_pagos;
     }
 }

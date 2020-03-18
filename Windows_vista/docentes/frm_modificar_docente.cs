@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Windows_vista.docentes
 {
@@ -68,14 +62,9 @@ namespace Windows_vista.docentes
             Console.WriteLine(usuario.TipoUsuario);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            
+
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Usuario usuario = new Usuario();
@@ -109,7 +98,7 @@ namespace Windows_vista.docentes
                 }
             }
 
-            
+
         }
 
         public Usuario Ordenar(Usuario usuario)

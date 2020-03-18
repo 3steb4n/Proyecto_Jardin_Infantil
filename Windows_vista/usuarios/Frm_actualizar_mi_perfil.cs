@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.ComponentModel;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Windows_vista.usuarios
 {
@@ -41,7 +35,7 @@ namespace Windows_vista.usuarios
             Combo_tipo_usuario.Items.Add("Administrador").ToString();
             Combo_tipo_usuario.Items.Add("Secretaria").ToString();
             Combo_tipo_usuario.Items.Add("Docente").ToString();
-            
+
             // se llenan los valores en los campos
 
             Txt_numero_documento.Text = usuario.Documento;

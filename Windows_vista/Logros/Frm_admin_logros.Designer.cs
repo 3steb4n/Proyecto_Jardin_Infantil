@@ -40,12 +40,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_logros = new System.Windows.Forms.DataGridView();
-            this.idLogro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -56,6 +50,12 @@
             this.Btn_logros = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.idLogro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_logro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_logros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -72,7 +72,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(640, 53);
+            this.button7.Location = new System.Drawing.Point(647, 73);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 49;
@@ -82,7 +82,7 @@
             // Txt_busqueda
             // 
             this.Txt_busqueda.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busqueda.Location = new System.Drawing.Point(368, 61);
+            this.Txt_busqueda.Location = new System.Drawing.Point(375, 81);
             this.Txt_busqueda.Name = "Txt_busqueda";
             this.Txt_busqueda.Size = new System.Drawing.Size(266, 22);
             this.Txt_busqueda.TabIndex = 48;
@@ -91,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(274, 63);
+            this.label2.Location = new System.Drawing.Point(281, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 15);
             this.label2.TabIndex = 47;
@@ -103,7 +103,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(784, 548);
+            this.button6.Location = new System.Drawing.Point(859, 629);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 32);
             this.button6.TabIndex = 46;
@@ -117,7 +117,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(910, 548);
+            this.button5.Location = new System.Drawing.Point(985, 629);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 32);
             this.button5.TabIndex = 45;
@@ -131,7 +131,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(1036, 548);
+            this.btn_guardar.Location = new System.Drawing.Point(1111, 629);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 44;
@@ -143,6 +143,7 @@
             // 
             this.dgv_logros.AllowUserToAddRows = false;
             this.dgv_logros.AllowUserToDeleteRows = false;
+            this.dgv_logros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_logros.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_logros.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv_logros.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -166,7 +167,7 @@
             this.Nombre_materia});
             this.dgv_logros.EnableHeadersVisualStyles = false;
             this.dgv_logros.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_logros.Location = new System.Drawing.Point(277, 89);
+            this.dgv_logros.Location = new System.Drawing.Point(284, 109);
             this.dgv_logros.Name = "dgv_logros";
             this.dgv_logros.ReadOnly = true;
             this.dgv_logros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -186,50 +187,14 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_logros.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_logros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_logros.Size = new System.Drawing.Size(879, 434);
+            this.dgv_logros.Size = new System.Drawing.Size(947, 500);
             this.dgv_logros.TabIndex = 43;
-            // 
-            // idLogro
-            // 
-            this.idLogro.HeaderText = "";
-            this.idLogro.Name = "idLogro";
-            this.idLogro.ReadOnly = true;
-            // 
-            // Nombre_logro
-            // 
-            this.Nombre_logro.HeaderText = "Logro";
-            this.Nombre_logro.Name = "Nombre_logro";
-            this.Nombre_logro.ReadOnly = true;
-            // 
-            // Descripcion_logro
-            // 
-            this.Descripcion_logro.HeaderText = "Descripción";
-            this.Descripcion_logro.Name = "Descripcion_logro";
-            this.Descripcion_logro.ReadOnly = true;
-            // 
-            // estado_logro
-            // 
-            this.estado_logro.HeaderText = "Estado";
-            this.estado_logro.Name = "estado_logro";
-            this.estado_logro.ReadOnly = true;
-            // 
-            // id_materia
-            // 
-            this.id_materia.HeaderText = "id_materia";
-            this.id_materia.Name = "id_materia";
-            this.id_materia.ReadOnly = true;
-            // 
-            // Nombre_materia
-            // 
-            this.Nombre_materia.HeaderText = "Materia";
-            this.Nombre_materia.Name = "Nombre_materia";
-            this.Nombre_materia.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 12);
+            this.label1.Location = new System.Drawing.Point(278, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 32);
             this.label1.TabIndex = 42;
@@ -247,7 +212,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 606);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 50;
             // 
             // panel5
@@ -259,7 +224,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 363);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
             // 
             // btn_cerrar
@@ -307,7 +272,6 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
-            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_logros
             // 
@@ -345,12 +309,50 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // idLogro
+            // 
+            this.idLogro.HeaderText = "";
+            this.idLogro.Name = "idLogro";
+            this.idLogro.ReadOnly = true;
+            this.idLogro.Visible = false;
+            // 
+            // Nombre_logro
+            // 
+            this.Nombre_logro.HeaderText = "Logro";
+            this.Nombre_logro.Name = "Nombre_logro";
+            this.Nombre_logro.ReadOnly = true;
+            // 
+            // Descripcion_logro
+            // 
+            this.Descripcion_logro.HeaderText = "Descripción";
+            this.Descripcion_logro.Name = "Descripcion_logro";
+            this.Descripcion_logro.ReadOnly = true;
+            // 
+            // estado_logro
+            // 
+            this.estado_logro.HeaderText = "Estado";
+            this.estado_logro.Name = "estado_logro";
+            this.estado_logro.ReadOnly = true;
+            // 
+            // id_materia
+            // 
+            this.id_materia.HeaderText = "id_materia";
+            this.id_materia.Name = "id_materia";
+            this.id_materia.ReadOnly = true;
+            this.id_materia.Visible = false;
+            // 
+            // Nombre_materia
+            // 
+            this.Nombre_materia.HeaderText = "Materia";
+            this.Nombre_materia.Name = "Nombre_materia";
+            this.Nombre_materia.ReadOnly = true;
+            // 
             // Frm_admin_logros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1175, 606);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Txt_busqueda);
@@ -360,11 +362,11 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dgv_logros);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_logros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de logros";
-            this.Load += new System.EventHandler(this.Frm_admin_logros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_logros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -386,12 +388,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_logros;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLogro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_logro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_logro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_logro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_materia;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -401,5 +397,11 @@
         private System.Windows.Forms.Button Btn_logros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLogro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_logro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_logro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_logro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_materia;
     }
 }

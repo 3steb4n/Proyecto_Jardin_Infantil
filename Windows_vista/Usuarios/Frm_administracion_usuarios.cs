@@ -3,7 +3,6 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Windows_vista.Logros;
 using Windows_vista.Materia;
 
 
@@ -23,21 +22,6 @@ namespace Windows_vista
         List<Usuario> lista = null;
         BLUsuario blUsuario = new BLUsuario();
         Usuario usuario;
-
-        private void Frm_administracion_usuarios_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_docentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
@@ -79,7 +63,7 @@ namespace Windows_vista
                     usuario.EstadoClave = (String)dgv_usuarios[10, dgv_usuarios.CurrentRow.Index].Value.ToString();
                     usuario.TipoUsuario = (String)dgv_usuarios[11, dgv_usuarios.CurrentRow.Index].Value.ToString();
 
-                    Frm_modificar_usuario frm_admin_usuarios = new Frm_modificar_usuario(usuario,usuario);
+                    Frm_modificar_usuario frm_admin_usuarios = new Frm_modificar_usuario(usuario, usuario);
                     frm_admin_usuarios.Show();
                     this.Close();
                 }
@@ -95,25 +79,27 @@ namespace Windows_vista
         {
             lista = blUsuario.ListarUsuarios();
             dgv_usuarios.Rows.Clear();
-            for (int i = 0; i < lista.Count; i++)
+            if (lista[0].Id_usuario != 0)
             {
-                dgv_usuarios.Rows.Add(
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    dgv_usuarios.Rows.Add(
 
-                    lista[i].Id_usuario,
-                    lista[i].Documento,
-                    lista[i].TipoDocumento,
-                    lista[i].Nombres,
-                    lista[i].Apellidos,
-                    lista[i].Direccion,
-                    lista[i].Celular,
-                    lista[i].Telefono,
-                    lista[i].CorreoElectronico,
-                    lista[i].EstadoUsuario,
-                    lista[i].EstadoClave,
-                    lista[i].TipoUsuario
+                        lista[i].Id_usuario,
+                        lista[i].Documento,
+                        lista[i].TipoDocumento,
+                        lista[i].Nombres,
+                        lista[i].Apellidos,
+                        lista[i].Direccion,
+                        lista[i].Celular,
+                        lista[i].Telefono,
+                        lista[i].CorreoElectronico,
+                        lista[i].EstadoUsuario,
+                        lista[i].EstadoClave,
+                        lista[i].TipoUsuario
 
-                );
-                ;
+                    );
+                }
             }
 
             dgv_usuarios.ClearSelection();
@@ -126,22 +112,24 @@ namespace Windows_vista
             Usuario usuario = new Usuario();
             usuario = blUsuario.ListaPorDocumento(documento);
             dgv_usuarios.Rows.Clear();
+            if (usuario.Id_usuario != 0)
+            {
+                dgv_usuarios.Rows.Add(
 
-            dgv_usuarios.Rows.Add(
-
-                usuario.Id_usuario,
-                usuario.Documento,
-                usuario.TipoDocumento,
-                usuario.Nombres,
-                usuario.Apellidos,
-                usuario.Direccion,
-                usuario.Celular,
-                usuario.Telefono,
-                usuario.CorreoElectronico,
-                usuario.EstadoUsuario,
-                usuario.EstadoClave,
-                usuario.TipoUsuario
-            );
+                    usuario.Id_usuario,
+                    usuario.Documento,
+                    usuario.TipoDocumento,
+                    usuario.Nombres,
+                    usuario.Apellidos,
+                    usuario.Direccion,
+                    usuario.Celular,
+                    usuario.Telefono,
+                    usuario.CorreoElectronico,
+                    usuario.EstadoUsuario,
+                    usuario.EstadoClave,
+                    usuario.TipoUsuario
+                );
+            }
 
             dgv_usuarios.ClearSelection();
             dgv_usuarios.CurrentCell = null;
@@ -196,16 +184,6 @@ namespace Windows_vista
             }
         }
 
-        private void Txt_busquedaCedula_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
@@ -218,11 +196,6 @@ namespace Windows_vista
             Frm_admin_materia frm = new Frm_admin_materia(usuario);
             frm.Show();
             this.Close();
-        }
-
-        private void Btn_reportes_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Btn_usuarios_Click_1(object sender, EventArgs e)

@@ -7,7 +7,7 @@ namespace Entidades
         int _idConcepto;
         String _nombreConcepto;
         String _descripcionConcepto;
-        decimal _valorConcepto;
+        int _valorConcepto;
         String _usuarioCreacion;
         DateTime _fechaCreacion;
         String _usuarioModificacion;
@@ -18,7 +18,7 @@ namespace Entidades
 
         }
 
-        public ConceptoPago(int idConcepto, String nombreConcepto, String descripcionConcepto, decimal valorConcepto, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion)
+        public ConceptoPago(int idConcepto, String nombreConcepto, String descripcionConcepto, int valorConcepto, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion)
         {
             this._idConcepto = idConcepto;
             this._nombreConcepto = nombreConcepto;
@@ -48,7 +48,7 @@ namespace Entidades
             set => _descripcionConcepto = value;
         }
 
-        public decimal ValorConcepto
+        public int ValorConcepto
         {
             get => _valorConcepto;
             set => _valorConcepto = value;

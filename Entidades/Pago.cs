@@ -2,22 +2,26 @@
 
 namespace Entidades
 {
-    public class Pagos
+    public class Pago
     {
         int _idPago;
-        decimal _valorMonto;
+        int _valorMonto;
         String _descripcionPago;
         String _usuarioCreacion;
         DateTime _fechaCreacion;
         ConceptoPago _conceptoPago;
+        Usuario _usuario;
         Estudiante _estudiante;
 
-        public Pagos()
+        public Pago()
         {
+            _conceptoPago = new ConceptoPago();
+            _usuario = new Usuario();
+            _estudiante = new Estudiante();
 
         }
 
-        public Pagos(int idPago, decimal valorMonto, String descripcionPago, String usuarioCreacion, DateTime fechaCreacion, ConceptoPago conceptoPago, Estudiante estudiante)
+        public Pago(int idPago, int valorMonto, String descripcionPago, String usuarioCreacion, DateTime fechaCreacion, ConceptoPago conceptoPago, Usuario usuario, Estudiante estudiante)
         {
             this._idPago = idPago;
             this._valorMonto = valorMonto;
@@ -25,6 +29,7 @@ namespace Entidades
             this._usuarioCreacion = usuarioCreacion;
             this._fechaCreacion = fechaCreacion;
             this._conceptoPago = conceptoPago;
+            this._usuario = usuario;
             this._estudiante = estudiante;
         }
 
@@ -33,7 +38,7 @@ namespace Entidades
             get => _idPago;
             set => _idPago = value;
         }
-        public decimal ValorMonto
+        public int ValorMonto
         {
             get => _valorMonto;
             set => _valorMonto = value;
@@ -59,6 +64,12 @@ namespace Entidades
         {
             get => _conceptoPago;
             set => _conceptoPago = value;
+        }
+
+        public Usuario Usuario
+        {
+            get => _usuario;
+            set => _usuario = value;
         }
 
         public Estudiante Estudiante

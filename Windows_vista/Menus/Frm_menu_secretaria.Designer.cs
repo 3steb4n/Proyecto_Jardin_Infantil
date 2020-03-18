@@ -36,7 +36,8 @@
             this.labe_nombre_usuario = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_pagos = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +70,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label_rol);
-            this.panel3.Location = new System.Drawing.Point(711, 457);
+            this.panel3.Location = new System.Drawing.Point(1059, 621);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 35);
             this.panel3.TabIndex = 8;
@@ -88,7 +89,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.labe_nombre_usuario);
-            this.panel2.Location = new System.Drawing.Point(500, 413);
+            this.panel2.Location = new System.Drawing.Point(848, 577);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 38);
             this.panel2.TabIndex = 7;
@@ -113,36 +114,53 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 498);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 12;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.Btn_cerrar);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.Btn_pagos);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
             this.panel5.Controls.Add(this.Btn_estudiantes);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
             // 
-            // Btn_cerrar
+            // button1
             // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 135);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 179);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 44);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Cerrar sesión";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_pagos
+            // 
+            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
+            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
+            this.Btn_pagos.Name = "Btn_pagos";
+            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
+            this.Btn_pagos.TabIndex = 5;
+            this.Btn_pagos.Text = "Pagos";
+            this.Btn_pagos.UseVisualStyleBackColor = false;
+            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
             // 
             // Btn_reportes
             // 
@@ -199,10 +217,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 498);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_secretaria";
@@ -227,10 +246,11 @@
         private System.Windows.Forms.Label label_rol;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_pagos;
         private System.Windows.Forms.Button Btn_reportes;
         private System.Windows.Forms.Button Btn_estudiantes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

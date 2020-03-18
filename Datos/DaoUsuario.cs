@@ -182,7 +182,7 @@ namespace Datos
                 {
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("ListarUsuariosIdNombre", con);
+                    SqlCommand cmd = new SqlCommand("ListarDocentesIdNombre", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr != null & dr.HasRows)

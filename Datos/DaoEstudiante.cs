@@ -76,10 +76,10 @@ namespace Datos
             }
         }
 
-        public Estudiante ListaPorDocumento(String documento)
+        public List<Estudiante> ListaPorDocumento(String documento)
         {
 
-            Estudiante estudiante = new Estudiante();
+            List<Estudiante> lista = new List<Estudiante>();
             try
             {
                 using (SqlConnection con = new SqlConnection(CadenaConexion))
@@ -94,7 +94,7 @@ namespace Datos
                     if (dr != null & dr.HasRows)
                     {
                         dr.Read();
-                        estudiante = new Estudiante();
+                        Estudiante estudiante = new Estudiante();
 
                         estudiante.Id_estudiante = (int)dr["IdEstudiante"];
                         estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
@@ -114,15 +114,17 @@ namespace Datos
                         estudiante.grupo.NombreGrupo = (String)dr["NombreGrupo"];
                         estudiante.grupo.IdGrupo = (int)dr["IdGrupo"];
 
+                        lista.Add(estudiante);
+
                     }
                 }
 
-                return estudiante;
+                return lista;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error al consultar mediante listaPorDocumento: " + e);
-                return estudiante;
+                return lista;
             }
         }
 
@@ -179,6 +181,40 @@ namespace Datos
             {
                 Console.WriteLine("Error al consultar mediante ListarEstudiantePorDocumentoyGrupo: " + e);
                 return lista;
+            }
+        }
+
+        public List<Estudiante> ListaIDyNombre()
+        {
+            List<Estudiante> list = new List<Estudiante>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarEstudiantesIdNombre", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Estudiante estudiante = new Estudiante();
+                            estudiante.Id_estudiante = (int)dr["ID"];
+                            estudiante.NombreEstudiante = (String)dr["Nombres"];
+                            estudiante.ApellidoEstudiante = (String)dr["Apellidos"];
+
+                            list.Add(estudiante);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante ListaIDyNombre: " + e);
+                return list;
             }
         }
 

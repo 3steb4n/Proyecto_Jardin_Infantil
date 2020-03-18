@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Windows_vista.docentes;
+using Windows_vista.pagos;
 
 namespace Windows_vista
 {
@@ -59,7 +60,7 @@ namespace Windows_vista
                     estudiante.grupo.IdGrupo = (int)dgv_estudiantes[15, dgv_estudiantes.CurrentRow.Index].Value;
                     estudiante.Ruta_foto = (String)dgv_estudiantes[16, dgv_estudiantes.CurrentRow.Index].Value.ToString();
 
-                    Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante,usuario);
+                    Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante, usuario);
                     frm_admin_usuarios.Show();
                     this.Close();
                 }
@@ -70,38 +71,35 @@ namespace Windows_vista
             }
         }
 
-        private void Frm_administracion_estudiantes_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void CargarDatos()
         {
             lista = blestudiante.ListarEstudiante();
             dgv_estudiantes.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
-                dgv_estudiantes.Rows.Add(
+                if (lista[0].Id_estudiante != 0)
+                {
+                    dgv_estudiantes.Rows.Add(
 
-                    lista[i].Id_estudiante,
-                    lista[i].DocumentoEstudiante,
-                    lista[i].TipoDocumento,
-                    lista[i].NombreEstudiante,
-                    lista[i].ApellidoEstudiante,
-                    lista[i].FechaNacimiento,
-                    lista[i].NombreAcudiente,
-                    lista[i].Direccion,
-                    lista[i].Genero,
-                    lista[i].TelefonoAcudiente,
-                    lista[i].CelularAcudiente,
-                    lista[i].CorreoElectronicoAcudiente,
-                    lista[i].ObservacionesEstudiante,
-                    lista[i].EstadoEstudiante,
-                    lista[i].grupo.NombreGrupo,
-                    lista[i].grupo.IdGrupo,
-                    lista[i].Ruta_foto
-                );
-                ;
+                        lista[i].Id_estudiante,
+                        lista[i].DocumentoEstudiante,
+                        lista[i].TipoDocumento,
+                        lista[i].NombreEstudiante,
+                        lista[i].ApellidoEstudiante,
+                        lista[i].FechaNacimiento,
+                        lista[i].NombreAcudiente,
+                        lista[i].Direccion,
+                        lista[i].Genero,
+                        lista[i].TelefonoAcudiente,
+                        lista[i].CelularAcudiente,
+                        lista[i].CorreoElectronicoAcudiente,
+                        lista[i].ObservacionesEstudiante,
+                        lista[i].EstadoEstudiante,
+                        lista[i].grupo.NombreGrupo,
+                        lista[i].grupo.IdGrupo,
+                        lista[i].Ruta_foto
+                    );
+                }
             }
 
             dgv_estudiantes.ClearSelection();
@@ -116,13 +114,7 @@ namespace Windows_vista
 
         }
 
-        private void dgv_estudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        public void CargarDatoFiltro(String documento, int idGrupo)
+        public void CargarDatoFiltroDocumentoGrupo(String documento, int idGrupo)
         {
             List<Estudiante> estudiante = new List<Estudiante>();
             estudiante = blestudiante.ListarEstudiantePorDocumentoyGrupo(documento, idGrupo);
@@ -130,32 +122,72 @@ namespace Windows_vista
 
             for (int i = 0; i < estudiante.Count; i++)
             {
-                dgv_estudiantes.Rows.Add(
+                if (estudiante[0].Id_estudiante != 0)
+                {
+                    dgv_estudiantes.Rows.Add(
 
-                    estudiante[i].Id_estudiante,
-                    estudiante[i].DocumentoEstudiante,
-                    estudiante[i].TipoDocumento,
-                    estudiante[i].NombreEstudiante,
-                    estudiante[i].ApellidoEstudiante,
-                    estudiante[i].FechaNacimiento,
-                    estudiante[i].NombreAcudiente,
-                    estudiante[i].Direccion,
-                    estudiante[i].Genero,
-                    estudiante[i].TelefonoAcudiente,
-                    estudiante[i].CelularAcudiente,
-                    estudiante[i].CorreoElectronicoAcudiente,
-                    estudiante[i].ObservacionesEstudiante,
-                    estudiante[i].EstadoEstudiante,
-                    estudiante[i].grupo.NombreGrupo,
-                    estudiante[i].grupo.IdGrupo,
-                    estudiante[i].Ruta_foto
-                );
-                ;
+                        estudiante[i].Id_estudiante,
+                        estudiante[i].DocumentoEstudiante,
+                        estudiante[i].TipoDocumento,
+                        estudiante[i].NombreEstudiante,
+                        estudiante[i].ApellidoEstudiante,
+                        estudiante[i].FechaNacimiento,
+                        estudiante[i].NombreAcudiente,
+                        estudiante[i].Direccion,
+                        estudiante[i].Genero,
+                        estudiante[i].TelefonoAcudiente,
+                        estudiante[i].CelularAcudiente,
+                        estudiante[i].CorreoElectronicoAcudiente,
+                        estudiante[i].ObservacionesEstudiante,
+                        estudiante[i].EstadoEstudiante,
+                        estudiante[i].grupo.NombreGrupo,
+                        estudiante[i].grupo.IdGrupo,
+                        estudiante[i].Ruta_foto
+                    );
+                }
             }
 
             dgv_estudiantes.ClearSelection();
             dgv_estudiantes.CurrentCell = null;
         }
+
+        public void CargarDatoFiltroDocumento(String documento)
+        {
+            List<Estudiante> estudiante = new List<Estudiante>();
+            estudiante = blestudiante.ListarEstudiantePorDocumento(documento);
+            dgv_estudiantes.Rows.Clear();
+
+            for (int i = 0; i < estudiante.Count; i++)
+            {
+                if (estudiante[0].Id_estudiante != 0)
+                {
+                    dgv_estudiantes.Rows.Add(
+
+                        estudiante[i].Id_estudiante,
+                        estudiante[i].DocumentoEstudiante,
+                        estudiante[i].TipoDocumento,
+                        estudiante[i].NombreEstudiante,
+                        estudiante[i].ApellidoEstudiante,
+                        estudiante[i].FechaNacimiento,
+                        estudiante[i].NombreAcudiente,
+                        estudiante[i].Direccion,
+                        estudiante[i].Genero,
+                        estudiante[i].TelefonoAcudiente,
+                        estudiante[i].CelularAcudiente,
+                        estudiante[i].CorreoElectronicoAcudiente,
+                        estudiante[i].ObservacionesEstudiante,
+                        estudiante[i].EstadoEstudiante,
+                        estudiante[i].grupo.NombreGrupo,
+                        estudiante[i].grupo.IdGrupo,
+                        estudiante[i].Ruta_foto
+                    );
+                }
+            }
+
+            dgv_estudiantes.ClearSelection();
+            dgv_estudiantes.CurrentCell = null;
+        }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -199,10 +231,16 @@ namespace Windows_vista
             {
                 CargarDatos();
             }
+            else if (Txt_busquedaCedula.Text != "" && combo_grupo.Text == "Seleccione...")
+            {
+                CargarDatoFiltroDocumento(Txt_busquedaCedula.Text);
+            }
             else
             {
-                CargarDatoFiltro(Txt_busquedaCedula.Text, IDPorNombre(combo_grupo.Text));
+                CargarDatoFiltroDocumentoGrupo(Txt_busquedaCedula.Text, IDPorNombre(combo_grupo.Text));
             }
+
+
         }
 
         public int IDPorNombre(String nombre)
@@ -224,18 +262,28 @@ namespace Windows_vista
         {
             Frm_administracion_estudiantes frm_admin_estudiantes = new Frm_administracion_estudiantes(usuario);
             frm_admin_estudiantes.Show();
+            this.Close();
         }
 
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
             Frm_admin_docentes frm_admin_docentes = new Frm_admin_docentes(usuario);
             frm_admin_docentes.Show();
+            this.Close();
         }
 
         private void Btn_cerrar_Click(object sender, EventArgs e)
         {
             Frm_inicio_sesion frm_inicio_sesion = new Frm_inicio_sesion();
             frm_inicio_sesion.Show();
+            this.Close();
+        }
+
+        private void Btn_pagos_Click(object sender, EventArgs e)
+        {
+            Frm_admin_pagos frm_admin_pagos = new Frm_admin_pagos(usuario);
+            frm_admin_pagos.Show();
+            this.Close();
         }
     }
 

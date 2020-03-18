@@ -9,7 +9,7 @@ namespace Windows_vista
 {
     public partial class Frm_modificar_estudiante : Form
     {
-        public Frm_modificar_estudiante(Estudiante estudiante,Usuario usuario)
+        public Frm_modificar_estudiante(Estudiante estudiante, Usuario usuario)
         {
             InitializeComponent();
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
@@ -74,7 +74,7 @@ namespace Windows_vista
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            
+
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
                 Estudiante estudiante = new Estudiante();
@@ -92,7 +92,7 @@ namespace Windows_vista
                 estudiante.TelefonoAcudiente = Txt_telefono.Text;
                 estudiante.CelularAcudiente = Txt_celular.Text;
                 estudiante.NombreAcudiente = Txt_nombre_acudiente.Text;
-                estudiante.Ruta_foto = Txt_direccion.Text;
+                estudiante.Ruta_foto = Txt_foto.Text;
                 estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
                 estudiante.UsuarioModificacion = "1";
                 estudiante.FechaModificacion = fechaActual;

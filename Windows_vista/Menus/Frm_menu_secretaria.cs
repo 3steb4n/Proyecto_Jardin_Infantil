@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Windows_vista.docentes;
+using Windows_vista.pagos;
 using Windows_vista.usuarios;
 
 namespace Windows_vista
@@ -60,10 +61,17 @@ namespace Windows_vista
             this.Close();
         }
 
-        private void Btn_cerrar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Frm_inicio_sesion frm_inicio_sesion = new Frm_inicio_sesion();
             frm_inicio_sesion.Show();
+            this.Close();
+        }
+
+        private void Btn_pagos_Click(object sender, EventArgs e)
+        {
+            Frm_admin_pagos frm_admin_pagos = new Frm_admin_pagos(usuario);
+            frm_admin_pagos.Show();
             this.Close();
         }
     }

@@ -58,7 +58,7 @@ namespace Windows_vista.Logros
             logro.UsuarioCreacion = "1";
             logro.FechaCreacion = fechaActual;
             logro.Materia.IdMateria = int.Parse((combo_materia.SelectedItem as ComboboxItem).Value.ToString());
-            
+
 
             bool bandera = blLogro.InsertarLogro(logro);
 

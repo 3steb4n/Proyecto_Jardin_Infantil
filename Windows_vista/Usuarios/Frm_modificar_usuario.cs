@@ -282,7 +282,7 @@ namespace Windows_vista
 
         private void Txt_celular_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Txt_celular.Text == "" || Txt_celular.Text == "0" ) 
+            if (Txt_celular.Text == "" || Txt_celular.Text == "0")
             {
                 e.Cancel = true;
                 errorCelular.SetError(Txt_celular, "Ingrese el numero de celular");

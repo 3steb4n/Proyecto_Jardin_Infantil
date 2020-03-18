@@ -40,15 +40,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_grupos = new System.Windows.Forms.DataGridView();
-            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,6 +49,15 @@
             this.BtnGrupos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).BeginInit();
             this.panel4.SuspendLayout();
@@ -90,7 +90,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(616, 43);
+            this.button7.Location = new System.Drawing.Point(617, 62);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(27, 30);
             this.button7.TabIndex = 40;
@@ -100,7 +100,7 @@
             // Txt_busqueda
             // 
             this.Txt_busqueda.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busqueda.Location = new System.Drawing.Point(344, 50);
+            this.Txt_busqueda.Location = new System.Drawing.Point(345, 69);
             this.Txt_busqueda.Name = "Txt_busqueda";
             this.Txt_busqueda.Size = new System.Drawing.Size(266, 22);
             this.Txt_busqueda.TabIndex = 39;
@@ -109,7 +109,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(265, 53);
+            this.label2.Location = new System.Drawing.Point(266, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 15);
             this.label2.TabIndex = 38;
@@ -121,7 +121,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(812, 544);
+            this.button6.Location = new System.Drawing.Point(813, 603);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 32);
             this.button6.TabIndex = 37;
@@ -135,7 +135,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(952, 544);
+            this.button5.Location = new System.Drawing.Point(953, 603);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 32);
             this.button5.TabIndex = 36;
@@ -149,7 +149,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(1090, 544);
+            this.btn_guardar.Location = new System.Drawing.Point(1091, 603);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 35;
@@ -161,6 +161,7 @@
             // 
             this.dgv_grupos.AllowUserToAddRows = false;
             this.dgv_grupos.AllowUserToDeleteRows = false;
+            this.dgv_grupos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_grupos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_grupos.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv_grupos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -187,7 +188,7 @@
             this.apellidos_docente});
             this.dgv_grupos.EnableHeadersVisualStyles = false;
             this.dgv_grupos.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_grupos.Location = new System.Drawing.Point(268, 78);
+            this.dgv_grupos.Location = new System.Drawing.Point(269, 120);
             this.dgv_grupos.Name = "dgv_grupos";
             this.dgv_grupos.ReadOnly = true;
             this.dgv_grupos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -207,69 +208,14 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_grupos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_grupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_grupos.Size = new System.Drawing.Size(942, 450);
+            this.dgv_grupos.Size = new System.Drawing.Size(942, 477);
             this.dgv_grupos.TabIndex = 34;
-            this.dgv_grupos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_grupos_CellContentClick);
-            // 
-            // id_grupo
-            // 
-            this.id_grupo.HeaderText = "";
-            this.id_grupo.Name = "id_grupo";
-            this.id_grupo.ReadOnly = true;
-            // 
-            // Nombre_grupo
-            // 
-            this.Nombre_grupo.HeaderText = "Grupo";
-            this.Nombre_grupo.Name = "Nombre_grupo";
-            this.Nombre_grupo.ReadOnly = true;
-            // 
-            // Descripcion_Grupo
-            // 
-            this.Descripcion_Grupo.HeaderText = "Descripción";
-            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
-            this.Descripcion_Grupo.ReadOnly = true;
-            // 
-            // Estado_grupo
-            // 
-            this.Estado_grupo.HeaderText = "Estado grupo";
-            this.Estado_grupo.Name = "Estado_grupo";
-            this.Estado_grupo.ReadOnly = true;
-            // 
-            // Nombre_grado
-            // 
-            this.Nombre_grado.HeaderText = "Grado";
-            this.Nombre_grado.Name = "Nombre_grado";
-            this.Nombre_grado.ReadOnly = true;
-            // 
-            // id_grado
-            // 
-            this.id_grado.HeaderText = "id_grado";
-            this.id_grado.Name = "id_grado";
-            this.id_grado.ReadOnly = true;
-            // 
-            // id_docente
-            // 
-            this.id_docente.HeaderText = "id_docente";
-            this.id_docente.Name = "id_docente";
-            this.id_docente.ReadOnly = true;
-            // 
-            // nombres_docente
-            // 
-            this.nombres_docente.HeaderText = "Nombre docente";
-            this.nombres_docente.Name = "nombres_docente";
-            this.nombres_docente.ReadOnly = true;
-            // 
-            // apellidos_docente
-            // 
-            this.apellidos_docente.HeaderText = "Apellidos docente";
-            this.apellidos_docente.Name = "apellidos_docente";
-            this.apellidos_docente.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 12);
+            this.label1.Location = new System.Drawing.Point(263, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 32);
             this.label1.TabIndex = 33;
@@ -283,7 +229,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 600);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 41;
             // 
             // panel5
@@ -296,7 +242,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 518);
+            this.panel5.Size = new System.Drawing.Size(238, 529);
             this.panel5.TabIndex = 12;
             // 
             // Btn_cerrar
@@ -382,11 +328,68 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // id_grupo
+            // 
+            this.id_grupo.HeaderText = "";
+            this.id_grupo.Name = "id_grupo";
+            this.id_grupo.ReadOnly = true;
+            this.id_grupo.Visible = false;
+            // 
+            // Nombre_grupo
+            // 
+            this.Nombre_grupo.HeaderText = "Grupo";
+            this.Nombre_grupo.Name = "Nombre_grupo";
+            this.Nombre_grupo.ReadOnly = true;
+            // 
+            // Descripcion_Grupo
+            // 
+            this.Descripcion_Grupo.HeaderText = "Descripción";
+            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
+            this.Descripcion_Grupo.ReadOnly = true;
+            // 
+            // Estado_grupo
+            // 
+            this.Estado_grupo.HeaderText = "Estado grupo";
+            this.Estado_grupo.Name = "Estado_grupo";
+            this.Estado_grupo.ReadOnly = true;
+            // 
+            // Nombre_grado
+            // 
+            this.Nombre_grado.HeaderText = "Grado";
+            this.Nombre_grado.Name = "Nombre_grado";
+            this.Nombre_grado.ReadOnly = true;
+            // 
+            // id_grado
+            // 
+            this.id_grado.HeaderText = "id_grado";
+            this.id_grado.Name = "id_grado";
+            this.id_grado.ReadOnly = true;
+            this.id_grado.Visible = false;
+            // 
+            // id_docente
+            // 
+            this.id_docente.HeaderText = "id_docente";
+            this.id_docente.Name = "id_docente";
+            this.id_docente.ReadOnly = true;
+            this.id_docente.Visible = false;
+            // 
+            // nombres_docente
+            // 
+            this.nombres_docente.HeaderText = "Nombre docente";
+            this.nombres_docente.Name = "nombres_docente";
+            this.nombres_docente.ReadOnly = true;
+            // 
+            // apellidos_docente
+            // 
+            this.apellidos_docente.HeaderText = "Apellidos docente";
+            this.apellidos_docente.Name = "apellidos_docente";
+            this.apellidos_docente.ReadOnly = true;
+            // 
             // Frm_administracion_grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 600);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Txt_busqueda);
@@ -396,12 +399,12 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dgv_grupos);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_administracion_grupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de grupos";
-            this.Load += new System.EventHandler(this.Frm_administracion_grupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -422,6 +425,14 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_grupos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_reportes;
+        private System.Windows.Forms.Button Btn_materias;
+        private System.Windows.Forms.Button BtnGrupos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_Grupo;
@@ -431,13 +442,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_docente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres_docente;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos_docente;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button Btn_cerrar;
-        private System.Windows.Forms.Button Btn_reportes;
-        private System.Windows.Forms.Button Btn_materias;
-        private System.Windows.Forms.Button BtnGrupos;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

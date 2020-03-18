@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_inicio_sesion));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Label_Error = new System.Windows.Forms.Label();
-            this.PanelError = new System.Windows.Forms.Label();
             this.viewPass = new System.Windows.Forms.PictureBox();
             this.Panel_bienvenida = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.Label_Error);
-            this.panel1.Controls.Add(this.PanelError);
             this.panel1.Controls.Add(this.viewPass);
             this.panel1.Controls.Add(this.Panel_bienvenida);
             this.panel1.Controls.Add(this.Btn_Ingresar);
@@ -65,26 +63,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(394, 404);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Label_Error
             // 
             this.Label_Error.AutoSize = true;
-            this.Label_Error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Error.Location = new System.Drawing.Point(121, 352);
+            this.Label_Error.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Error.Location = new System.Drawing.Point(109, 348);
             this.Label_Error.Name = "Label_Error";
-            this.Label_Error.Size = new System.Drawing.Size(0, 15);
+            this.Label_Error.Size = new System.Drawing.Size(0, 17);
             this.Label_Error.TabIndex = 8;
-            // 
-            // PanelError
-            // 
-            this.PanelError.AutoSize = true;
-            this.PanelError.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelError.ForeColor = System.Drawing.Color.Red;
-            this.PanelError.Location = new System.Drawing.Point(103, 335);
-            this.PanelError.Name = "PanelError";
-            this.PanelError.Size = new System.Drawing.Size(0, 15);
-            this.PanelError.TabIndex = 7;
             // 
             // viewPass
             // 
@@ -149,7 +136,6 @@
             this.Txt_clave.PasswordChar = '*';
             this.Txt_clave.Size = new System.Drawing.Size(284, 26);
             this.Txt_clave.TabIndex = 3;
-            this.Txt_clave.Text = "846468";
             // 
             // Txt_usuario
             // 
@@ -160,7 +146,6 @@
             this.Txt_usuario.Name = "Txt_usuario";
             this.Txt_usuario.Size = new System.Drawing.Size(284, 26);
             this.Txt_usuario.TabIndex = 2;
-            this.Txt_usuario.Text = "falcao";
             // 
             // textUser
             // 
@@ -209,6 +194,7 @@
             this.ClientSize = new System.Drawing.Size(804, 406);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_inicio_sesion";
@@ -228,7 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label PanelError;
         private System.Windows.Forms.PictureBox viewPass;
         private System.Windows.Forms.Panel Panel_bienvenida;
         private System.Windows.Forms.Label label1;

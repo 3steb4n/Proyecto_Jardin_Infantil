@@ -137,6 +137,30 @@
     <Compile Include="materia\Frm_modificar_materia.Designer.cs">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
     </Compile>
+    <Compile Include="pagos\Frm_abonar_pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagos\Frm_abonar_pago.Designer.cs">
+      <DependentUpon>Frm_abonar_pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pagos\Frm_admin_pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagos\Frm_admin_pagos.Designer.cs">
+      <DependentUpon>Frm_admin_pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pagos\Frm_crear_pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagos\Frm_crear_pago.Designer.cs">
+      <DependentUpon>Frm_crear_pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pagos\Frm_pago_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pagos\Frm_pago_detalle.Designer.cs">
+      <DependentUpon>Frm_pago_detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="reportes\Frm_reporte_admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +301,18 @@
     <EmbeddedResource Include="materia\Frm_modificar_materia.resx">
       <DependentUpon>Frm_modificar_materia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pagos\Frm_abonar_pago.resx">
+      <DependentUpon>Frm_abonar_pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagos\Frm_admin_pagos.resx">
+      <DependentUpon>Frm_admin_pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagos\Frm_crear_pago.resx">
+      <DependentUpon>Frm_crear_pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagos\Frm_pago_detalle.resx">
+      <DependentUpon>Frm_pago_detalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportes\Frm_reporte_admin.resx">
       <DependentUpon>Frm_reporte_admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +389,7 @@
     <Content Include="resources\noView.PNG" />
     <None Include="resources\tablero.png" />
     <None Include="resources\tablero %281%29.png" />
+    <None Include="resources\pagar.png" />
     <Content Include="resources\view.PNG" />
     <None Include="resources\usuario %282%29.png" />
     <None Include="resources\group-2-512.png" />

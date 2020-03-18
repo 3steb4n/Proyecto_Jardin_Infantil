@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_admin_horarios));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,6 +49,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_estudiantes = new System.Windows.Forms.DataGridView();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bloque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,12 +63,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bloque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -69,6 +70,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 137);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Usuarios";
+            Btn_usuarios.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -124,21 +140,6 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Horarios";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Btn_usuarios
-            // 
-            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 137);
-            Btn_usuarios.Name = "Btn_usuarios";
-            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
-            Btn_usuarios.TabIndex = 1;
-            Btn_usuarios.Text = "Usuarios";
-            Btn_usuarios.UseVisualStyleBackColor = false;
             // 
             // Btn_reportes
             // 
@@ -330,6 +331,42 @@
             this.dgv_estudiantes.Size = new System.Drawing.Size(872, 426);
             this.dgv_estudiantes.TabIndex = 56;
             // 
+            // Dia
+            // 
+            this.Dia.HeaderText = "Dia";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // Bloque
+            // 
+            this.Bloque.HeaderText = "Bloque";
+            this.Bloque.Name = "Bloque";
+            this.Bloque.ReadOnly = true;
+            // 
+            // Salon
+            // 
+            this.Salon.HeaderText = "Salon";
+            this.Salon.Name = "Salon";
+            this.Salon.ReadOnly = true;
+            // 
+            // Materia
+            // 
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            // 
+            // Grupo
+            // 
+            this.Grupo.HeaderText = "Grupo";
+            this.Grupo.Name = "Grupo";
+            this.Grupo.ReadOnly = true;
+            // 
+            // Docente
+            // 
+            this.Docente.HeaderText = "Docente";
+            this.Docente.Name = "Docente";
+            this.Docente.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -413,42 +450,6 @@
             this.label5.TabIndex = 71;
             this.label5.Text = "Bloque :";
             // 
-            // Dia
-            // 
-            this.Dia.HeaderText = "Dia";
-            this.Dia.Name = "Dia";
-            this.Dia.ReadOnly = true;
-            // 
-            // Bloque
-            // 
-            this.Bloque.HeaderText = "Bloque";
-            this.Bloque.Name = "Bloque";
-            this.Bloque.ReadOnly = true;
-            // 
-            // Salon
-            // 
-            this.Salon.HeaderText = "Salon";
-            this.Salon.Name = "Salon";
-            this.Salon.ReadOnly = true;
-            // 
-            // Materia
-            // 
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
-            // 
-            // Grupo
-            // 
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.ReadOnly = true;
-            // 
-            // Docente
-            // 
-            this.Docente.HeaderText = "Docente";
-            this.Docente.Name = "Docente";
-            this.Docente.ReadOnly = true;
-            // 
             // Frm_admin_horarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,7 +471,10 @@
             this.Controls.Add(this.dgv_estudiantes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_admin_horarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de horarios";
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

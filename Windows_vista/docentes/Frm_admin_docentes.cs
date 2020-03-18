@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using Windows_vista.pagos;
 
 namespace Windows_vista.docentes
 {
@@ -31,24 +26,28 @@ namespace Windows_vista.docentes
         {
             lista = blUsuario.ListarDocentes();
             dgv_usuarios.Rows.Clear();
-            for (int i = 0; i < lista.Count; i++)
+
+            if (lista[0].Id_usuario != 0)
             {
-                dgv_usuarios.Rows.Add(
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    dgv_usuarios.Rows.Add(
 
-                    lista[i].Id_usuario,
-                    lista[i].Documento,
-                    lista[i].TipoDocumento,
-                    lista[i].Nombres,
-                    lista[i].Apellidos,
-                    lista[i].Direccion,
-                    lista[i].Celular,
-                    lista[i].Telefono,
-                    lista[i].CorreoElectronico,
-                    lista[i].EstadoUsuario,
-                    lista[i].EstadoClave
+                        lista[i].Id_usuario,
+                        lista[i].Documento,
+                        lista[i].TipoDocumento,
+                        lista[i].Nombres,
+                        lista[i].Apellidos,
+                        lista[i].Direccion,
+                        lista[i].Celular,
+                        lista[i].Telefono,
+                        lista[i].CorreoElectronico,
+                        lista[i].EstadoUsuario,
+                        lista[i].EstadoClave
 
-                );
-                ;
+                    );
+                    ;
+                }
             }
 
             dgv_usuarios.ClearSelection();
@@ -61,22 +60,23 @@ namespace Windows_vista.docentes
             Usuario usuario = new Usuario();
             usuario = blUsuario.ListarPorDocumentoProfesor(documento);
             dgv_usuarios.Rows.Clear();
+            if (usuario.Id_usuario != 0)
+            {
+                dgv_usuarios.Rows.Add(
 
-            dgv_usuarios.Rows.Add(
-
-                usuario.Id_usuario,
-                usuario.Documento,
-                usuario.TipoDocumento,
-                usuario.Nombres,
-                usuario.Apellidos,
-                usuario.Direccion,
-                usuario.Celular,
-                usuario.Telefono,
-                usuario.CorreoElectronico,
-                usuario.EstadoUsuario,
-                usuario.EstadoClave
-            );
-
+                    usuario.Id_usuario,
+                    usuario.Documento,
+                    usuario.TipoDocumento,
+                    usuario.Nombres,
+                    usuario.Apellidos,
+                    usuario.Direccion,
+                    usuario.Celular,
+                    usuario.Telefono,
+                    usuario.CorreoElectronico,
+                    usuario.EstadoUsuario,
+                    usuario.EstadoClave
+                );
+            }
             dgv_usuarios.ClearSelection();
             dgv_usuarios.CurrentCell = null;
         }
@@ -126,21 +126,11 @@ namespace Windows_vista.docentes
             }
         }
 
-        private void Frm_admin_docentes_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
             Frm_admin_docentes frm_admin_docentes = new Frm_admin_docentes(usuarioGestion);
             frm_admin_docentes.Show();
             this.Close();
-        }
-
-        private void dgv_usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -189,6 +179,20 @@ namespace Windows_vista.docentes
             {
                 MessageBox.Show("No existen registros para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Frm_inicio_sesion frm_inicio = new Frm_inicio_sesion();
+            frm_inicio.Show();
+        }
+
+        private void Btn_pagos_Click(object sender, EventArgs e)
+        {
+            Frm_admin_pagos frm_admin_pagos = new Frm_admin_pagos(usuarioGestion);
+            frm_admin_pagos.Show();
+            this.Close();
         }
     }
 }

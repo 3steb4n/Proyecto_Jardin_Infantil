@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidades
+﻿namespace Entidades
 {
     public class Horario
     {
@@ -21,7 +15,7 @@ namespace Entidades
 
         }
 
-        public Horario (int idHorario, Salon salon, Bloque bloque, Grupo grupo, Materiaa materia, Usuario usuario)
+        public Horario(int idHorario, Salon salon, Bloque bloque, Grupo grupo, Materiaa materia, Usuario usuario)
         {
             this._idHorario = idHorario;
             this._salon = salon;

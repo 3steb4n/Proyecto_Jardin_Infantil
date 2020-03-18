@@ -3,7 +3,6 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Windows_vista.Logros;
 using Windows_vista.Materia;
 
 namespace Windows_vista
@@ -29,45 +28,25 @@ namespace Windows_vista
             dgv_grupos.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
-                dgv_grupos.Rows.Add(
+                if (lista[0].IdGrupo != 0)
+                {
+                    dgv_grupos.Rows.Add(
 
-                    lista[i].IdGrupo,
-                    lista[i].NombreGrupo,
-                    lista[i].DescripcionGrupo,
-                    lista[i].EstadoGrupo,
-                    lista[i].Grado.NombreGrado,
-                    lista[i].Grado.IdGrado,
-                    lista[i].usuario.Id_usuario,
-                    lista[i].usuario.Nombres,
-                    lista[i].usuario.Apellidos
-
-                );
-                ;
+                        lista[i].IdGrupo,
+                        lista[i].NombreGrupo,
+                        lista[i].DescripcionGrupo,
+                        lista[i].EstadoGrupo,
+                        lista[i].Grado.NombreGrado,
+                        lista[i].Grado.IdGrado,
+                        lista[i].usuario.Id_usuario,
+                        lista[i].usuario.Nombres,
+                        lista[i].usuario.Apellidos
+                    );
+                    ;
+                }
             }
-
             dgv_grupos.ClearSelection();
             dgv_grupos.CurrentCell = null;
-
-        }
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_grupos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Frm_administracion_grupos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_usuarios_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -127,15 +106,21 @@ namespace Windows_vista
             grupo = blgrupo.ListarGrupoPorNombre(nombre);
             dgv_grupos.Rows.Clear();
 
-            dgv_grupos.Rows.Add(
+            if (grupo.IdGrupo != 0)
+            {
+                dgv_grupos.Rows.Add(
 
-                grupo.IdGrupo,
-                grupo.NombreGrupo,
-                grupo.DescripcionGrupo,
-                grupo.EstadoGrupo,
-                grupo.Grado.NombreGrado,
-                grupo.Grado.IdGrado
-            );
+                    grupo.IdGrupo,
+                    grupo.NombreGrupo,
+                    grupo.DescripcionGrupo,
+                    grupo.EstadoGrupo,
+                    grupo.Grado.NombreGrado,
+                    grupo.Grado.IdGrado,
+                    grupo.usuario.Id_usuario,
+                    grupo.usuario.Nombres,
+                    grupo.usuario.Apellidos
+                );
+            }
 
             dgv_grupos.ClearSelection();
             dgv_grupos.CurrentCell = null;
@@ -179,7 +164,9 @@ namespace Windows_vista
 
         private void BtnGrupos_Click(object sender, EventArgs e)
         {
-
+            Frm_administracion_grupos frm_admin_grupos = new Frm_administracion_grupos(usuario);
+            frm_admin_grupos.Show();
+            this.Close();
         }
 
         private void Btn_materias_Click(object sender, EventArgs e)
@@ -202,5 +189,6 @@ namespace Windows_vista
             frm.Show();
             this.Close();
         }
+
     }
 }

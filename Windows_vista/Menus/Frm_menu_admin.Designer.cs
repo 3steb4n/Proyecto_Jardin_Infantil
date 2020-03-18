@@ -42,7 +42,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,7 +118,7 @@
             // 
             this.panel3.Controls.Add(this.label_rol);
             this.panel3.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(761, 473);
+            this.panel3.Location = new System.Drawing.Point(1069, 628);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 35);
             this.panel3.TabIndex = 8;
@@ -139,7 +138,7 @@
             // 
             this.panel2.Controls.Add(this.labe_nombre_usuario);
             this.panel2.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(540, 428);
+            this.panel2.Location = new System.Drawing.Point(848, 583);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 38);
             this.panel2.TabIndex = 7;
@@ -184,13 +183,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 507);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 11;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
             this.panel5.Controls.Add(this.Btn_materias);
@@ -198,7 +196,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
             // 
             // button2
@@ -209,7 +207,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::Windows_vista.Properties.Resources.flecha;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 229);
+            this.button2.Location = new System.Drawing.Point(0, 182);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(238, 44);
             this.button2.TabIndex = 8;
@@ -217,30 +215,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 47);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Horarios";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Frm_menu_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(944, 507);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_admin";
@@ -271,6 +255,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

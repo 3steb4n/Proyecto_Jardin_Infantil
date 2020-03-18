@@ -94,12 +94,12 @@
             this.label1.Size = new System.Drawing.Size(225, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Gestión de usuarios";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgv_usuarios
             // 
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
+            this.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_usuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_usuarios.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -151,13 +151,13 @@
             this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.Size = new System.Drawing.Size(931, 504);
             this.dgv_usuarios.TabIndex = 25;
-            this.dgv_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_docentes_CellContentClick);
             // 
             // id
             // 
             this.id.HeaderText = "";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // Documento
             // 
@@ -284,7 +284,6 @@
             this.Txt_busquedaCedula.Name = "Txt_busquedaCedula";
             this.Txt_busquedaCedula.Size = new System.Drawing.Size(266, 22);
             this.Txt_busquedaCedula.TabIndex = 30;
-            this.Txt_busquedaCedula.TextChanged += new System.EventHandler(this.Txt_busquedaCedula_TextChanged);
             // 
             // button7
             // 
@@ -355,7 +354,6 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
-            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_materias
             // 
@@ -424,12 +422,12 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dgv_usuarios);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_administracion_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de usuarios";
-            this.Load += new System.EventHandler(this.Frm_administracion_usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -449,6 +447,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txt_busquedaCedula;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_reportes;
+        private System.Windows.Forms.Button Btn_materias;
+        private System.Windows.Forms.Button BtnGrupos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Documento;
@@ -461,13 +467,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_usuario;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button Btn_cerrar;
-        private System.Windows.Forms.Button Btn_reportes;
-        private System.Windows.Forms.Button Btn_materias;
-        private System.Windows.Forms.Button BtnGrupos;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

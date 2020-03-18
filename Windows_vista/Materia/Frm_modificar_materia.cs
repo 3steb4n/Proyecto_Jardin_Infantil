@@ -60,7 +60,7 @@ namespace Windows_vista.Materia
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            
+
             if (this.ValidateChildren(ValidationConstraints.Enabled))
             {
 
@@ -87,9 +87,9 @@ namespace Windows_vista.Materia
                 {
                     MessageBox.Show("Error en el sistema", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
-            
+
         }
 
         public int IDPorArea(String nombre)

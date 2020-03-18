@@ -23,22 +23,24 @@ namespace Windows_vista.Materia
         {
             lista = blMateria.ListarMateria();
             dgv_materias.Rows.Clear();
-            for (int i = 0; i < lista.Count; i++)
+            if (lista[0].IdMateria != 0)
             {
-                dgv_materias.Rows.Add(
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    dgv_materias.Rows.Add(
 
-                    lista[i].IdMateria,
-                    lista[i].NombreMateria,
-                    lista[i].DescripcionMateria,
-                    lista[i].EstadoMateria,
-                    lista[i].NumeroHorasMaterias,
-                    lista[i].Area.IdArea,
-                    lista[i].Area.NombreArea,
-                    lista[i].Grado.IdGrado,
-                    lista[i].Grado.NombreGrado
+                        lista[i].IdMateria,
+                        lista[i].NombreMateria,
+                        lista[i].DescripcionMateria,
+                        lista[i].EstadoMateria,
+                        lista[i].NumeroHorasMaterias,
+                        lista[i].Area.IdArea,
+                        lista[i].Area.NombreArea,
+                        lista[i].Grado.IdGrado,
+                        lista[i].Grado.NombreGrado
 
-                );
-                ;
+                    );
+                }
             }
 
             dgv_materias.ClearSelection();
@@ -48,42 +50,30 @@ namespace Windows_vista.Materia
         List<Materiaa> lista = null;
         BLMateria blMateria = new BLMateria();
 
-        public void Frm_admin_materia_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void CargarDatoFiltro(String nombre)
         {
             Materiaa materias = new Materiaa();
             materias = blMateria.ListarMateriaPorNombre(nombre);
             dgv_materias.Rows.Clear();
 
-            dgv_materias.Rows.Add(
+            if (materias.IdMateria != 0)
+            {
+                dgv_materias.Rows.Add(
 
-                    materias.IdMateria,
-                    materias.NombreMateria,
-                    materias.DescripcionMateria,
-                    materias.EstadoMateria,
-                    materias.NumeroHorasMaterias,
-                    materias.Area.IdArea,
-                    materias.Area.NombreArea,
-                    materias.Grado.IdGrado,
-                    materias.Grado.NombreGrado
+                        materias.IdMateria,
+                        materias.NombreMateria,
+                        materias.DescripcionMateria,
+                        materias.EstadoMateria,
+                        materias.NumeroHorasMaterias,
+                        materias.Area.IdArea,
+                        materias.Area.NombreArea,
+                        materias.Grado.IdGrado,
+                        materias.Grado.NombreGrado
 
-            );
+                );
+            }
             dgv_materias.ClearSelection();
             dgv_materias.CurrentCell = null;
-        }
-
-        private void dgv_materias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)

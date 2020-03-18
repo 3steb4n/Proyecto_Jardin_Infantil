@@ -25,28 +25,25 @@ namespace Windows_vista.Logros
         {
             lista = blLogro.ListarLogros();
             dgv_logros.Rows.Clear();
-            for (int i = 0; i < lista.Count; i++)
+            if (lista[0].IdLogro != 0)
             {
-                dgv_logros.Rows.Add(
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    dgv_logros.Rows.Add(
 
-                    lista[i].IdLogro,
-                    lista[i].NombreLogro,
-                    lista[i].DescripcionLogro,
-                    lista[i].EstadoLogro,
-                    lista[i].Materia.IdMateria,
-                    lista[i].Materia.NombreMateria
-
-                );
-                ;
+                        lista[i].IdLogro,
+                        lista[i].NombreLogro,
+                        lista[i].DescripcionLogro,
+                        lista[i].EstadoLogro,
+                        lista[i].Materia.IdMateria,
+                        lista[i].Materia.NombreMateria
+                    );
+                    ;
+                }
             }
 
             dgv_logros.ClearSelection();
             dgv_logros.CurrentCell = null;
-
-        }
-
-        private void Frm_admin_logros_Load(object sender, System.EventArgs e)
-        {
 
         }
 
@@ -68,16 +65,19 @@ namespace Windows_vista.Logros
             logro = blLogro.ListarLogroPorNombre(nombre);
             dgv_logros.Rows.Clear();
 
-            dgv_logros.Rows.Add(
+            if (logro.IdLogro != 0)
+            {
+                dgv_logros.Rows.Add(
 
-                    logro.IdLogro,
-                    logro.NombreLogro,
-                    logro.DescripcionLogro,
-                    logro.EstadoLogro,
-                    logro.Materia.IdMateria,
-                    logro.Materia.NombreMateria
+                        logro.IdLogro,
+                        logro.NombreLogro,
+                        logro.DescripcionLogro,
+                        logro.EstadoLogro,
+                        logro.Materia.IdMateria,
+                        logro.Materia.NombreMateria
 
-            );
+                );
+            }
             dgv_logros.ClearSelection();
             dgv_logros.CurrentCell = null;
         }
@@ -139,7 +139,7 @@ namespace Windows_vista.Logros
                     logro.Materia.IdMateria = (int)dgv_logros[4, dgv_logros.CurrentRow.Index].Value;
                     logro.Materia.NombreMateria = (String)dgv_logros[5, dgv_logros.CurrentRow.Index].Value;
 
-                    Frm_modificar_logro frm_modificar_logro = new Frm_modificar_logro(logro,usuario);
+                    Frm_modificar_logro frm_modificar_logro = new Frm_modificar_logro(logro, usuario);
                     frm_modificar_logro.Show();
                     this.Close();
                 }
@@ -155,11 +155,6 @@ namespace Windows_vista.Logros
             Frm_admin_logros frm_admin_logros = new Frm_admin_logros(usuario);
             frm_admin_logros.Show();
             this.Close();
-        }
-
-        private void Btn_reportes_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)

@@ -64,7 +64,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.labe_nombre_usuario);
-            this.panel2.Location = new System.Drawing.Point(494, 394);
+            this.panel2.Location = new System.Drawing.Point(848, 582);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 38);
             this.panel2.TabIndex = 5;
@@ -83,7 +83,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label_rol);
-            this.panel3.Location = new System.Drawing.Point(705, 438);
+            this.panel3.Location = new System.Drawing.Point(1059, 626);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(171, 35);
             this.panel3.TabIndex = 6;
@@ -96,7 +96,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 512);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 12;
             // 
             // panel5
@@ -108,7 +108,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 363);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
             // 
             // btn_cerrar
@@ -198,10 +198,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(898, 512);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_menu_docente";

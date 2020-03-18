@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button Btn_usuarios;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Button Btn_usuarios;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_administracion_estudiantes));
             this.Txt_busquedaCedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,11 +62,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Btn_pagos = new System.Windows.Forms.Button();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.panel4.SuspendLayout();
@@ -75,10 +76,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // Btn_usuarios
+            // 
+            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
+            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Btn_usuarios.Location = new System.Drawing.Point(0, 90);
+            Btn_usuarios.Name = "Btn_usuarios";
+            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
+            Btn_usuarios.TabIndex = 1;
+            Btn_usuarios.Text = "Docentes";
+            Btn_usuarios.UseVisualStyleBackColor = false;
+            Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
+            // 
             // Txt_busquedaCedula
             // 
             this.Txt_busquedaCedula.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_busquedaCedula.Location = new System.Drawing.Point(409, 63);
+            this.Txt_busquedaCedula.Location = new System.Drawing.Point(409, 73);
             this.Txt_busquedaCedula.Name = "Txt_busquedaCedula";
             this.Txt_busquedaCedula.Size = new System.Drawing.Size(266, 22);
             this.Txt_busquedaCedula.TabIndex = 48;
@@ -87,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(295, 65);
+            this.label2.Location = new System.Drawing.Point(295, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 15);
             this.label2.TabIndex = 47;
@@ -99,7 +116,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(798, 523);
+            this.button6.Location = new System.Drawing.Point(809, 615);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(120, 32);
             this.button6.TabIndex = 46;
@@ -113,7 +130,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(924, 523);
+            this.button5.Location = new System.Drawing.Point(935, 615);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 32);
             this.button5.TabIndex = 45;
@@ -127,7 +144,7 @@
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(1050, 523);
+            this.btn_guardar.Location = new System.Drawing.Point(1061, 615);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(120, 32);
             this.btn_guardar.TabIndex = 44;
@@ -139,6 +156,7 @@
             // 
             this.dgv_estudiantes.AllowUserToAddRows = false;
             this.dgv_estudiantes.AllowUserToDeleteRows = false;
+            this.dgv_estudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_estudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_estudiantes.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv_estudiantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -173,7 +191,7 @@
             this.ruta_foto});
             this.dgv_estudiantes.EnableHeadersVisualStyles = false;
             this.dgv_estudiantes.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_estudiantes.Location = new System.Drawing.Point(298, 91);
+            this.dgv_estudiantes.Location = new System.Drawing.Point(300, 104);
             this.dgv_estudiantes.Name = "dgv_estudiantes";
             this.dgv_estudiantes.ReadOnly = true;
             this.dgv_estudiantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -193,119 +211,137 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_estudiantes.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_estudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_estudiantes.Size = new System.Drawing.Size(881, 426);
+            this.dgv_estudiantes.Size = new System.Drawing.Size(881, 505);
             this.dgv_estudiantes.TabIndex = 43;
-            this.dgv_estudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_estudiantes_CellContentClick);
             // 
             // id_estudiante
             // 
             this.id_estudiante.HeaderText = "";
             this.id_estudiante.Name = "id_estudiante";
             this.id_estudiante.ReadOnly = true;
+            this.id_estudiante.Visible = false;
+            this.id_estudiante.Width = 19;
             // 
             // Documento_estudiante
             // 
             this.Documento_estudiante.HeaderText = "Documento identificación";
             this.Documento_estudiante.Name = "Documento_estudiante";
             this.Documento_estudiante.ReadOnly = true;
+            this.Documento_estudiante.Width = 152;
             // 
             // Tipo_documento
             // 
             this.Tipo_documento.HeaderText = "Tipo de documento";
             this.Tipo_documento.Name = "Tipo_documento";
             this.Tipo_documento.ReadOnly = true;
+            this.Tipo_documento.Width = 124;
             // 
             // Nombres
             // 
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 74;
             // 
             // Apellidos
             // 
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 74;
             // 
             // Fecha_nacimiento
             // 
             this.Fecha_nacimiento.HeaderText = "Fecha nacimiento";
             this.Fecha_nacimiento.Name = "Fecha_nacimiento";
             this.Fecha_nacimiento.ReadOnly = true;
+            this.Fecha_nacimiento.Width = 116;
             // 
             // Nombre_acudiente
             // 
             this.Nombre_acudiente.HeaderText = "Nombre acudiente";
             this.Nombre_acudiente.Name = "Nombre_acudiente";
             this.Nombre_acudiente.ReadOnly = true;
+            this.Nombre_acudiente.Width = 119;
             // 
             // Direccion
             // 
             this.Direccion.HeaderText = "Direccción";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
+            this.Direccion.Width = 83;
             // 
             // Genero
             // 
             this.Genero.HeaderText = "Genero";
             this.Genero.Name = "Genero";
             this.Genero.ReadOnly = true;
+            this.Genero.Width = 67;
             // 
             // Telefono
             // 
             this.Telefono.HeaderText = "Telefono Acudiente";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 125;
             // 
             // Celular
             // 
             this.Celular.HeaderText = "Celular acudiente";
             this.Celular.Name = "Celular";
             this.Celular.ReadOnly = true;
+            this.Celular.Width = 114;
             // 
             // Correo_electronico
             // 
             this.Correo_electronico.HeaderText = "Correo Electrónico";
             this.Correo_electronico.Name = "Correo_electronico";
             this.Correo_electronico.ReadOnly = true;
+            this.Correo_electronico.Width = 119;
             // 
             // Observaciones
             // 
             this.Observaciones.HeaderText = "Observaciones";
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.ReadOnly = true;
+            this.Observaciones.Width = 103;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado_Estudiante";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.Width = 121;
             // 
             // Nombre_Grupo
             // 
             this.Nombre_Grupo.HeaderText = "Grupo";
             this.Nombre_Grupo.Name = "Nombre_Grupo";
             this.Nombre_Grupo.ReadOnly = true;
+            this.Nombre_Grupo.Width = 61;
             // 
             // idGrupo
             // 
             this.idGrupo.HeaderText = "idGrupo";
             this.idGrupo.Name = "idGrupo";
             this.idGrupo.ReadOnly = true;
+            this.idGrupo.Visible = false;
+            this.idGrupo.Width = 69;
             // 
             // ruta_foto
             // 
             this.ruta_foto.HeaderText = "ruta_foto";
             this.ruta_foto.Name = "ruta_foto";
             this.ruta_foto.ReadOnly = true;
+            this.ruta_foto.Width = 74;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(295, 12);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(294, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 30);
+            this.label1.Size = new System.Drawing.Size(259, 32);
             this.label1.TabIndex = 42;
             this.label1.Text = "Gestión de estudiantes";
             // 
@@ -313,7 +349,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(691, 66);
+            this.label3.Location = new System.Drawing.Point(691, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 54;
@@ -324,7 +360,7 @@
             this.combo_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_grupo.FormattingEnabled = true;
-            this.combo_grupo.Location = new System.Drawing.Point(750, 58);
+            this.combo_grupo.Location = new System.Drawing.Point(750, 68);
             this.combo_grupo.Name = "combo_grupo";
             this.combo_grupo.Size = new System.Drawing.Size(271, 28);
             this.combo_grupo.TabIndex = 53;
@@ -337,7 +373,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1036, 58);
+            this.button2.Location = new System.Drawing.Point(1036, 68);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 30);
             this.button2.TabIndex = 52;
@@ -352,52 +388,21 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 567);
+            this.panel4.Size = new System.Drawing.Size(238, 673);
             this.panel4.TabIndex = 55;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.Btn_cerrar);
+            this.panel5.Controls.Add(this.Btn_pagos);
             this.panel5.Controls.Add(Btn_usuarios);
             this.panel5.Controls.Add(this.Btn_reportes);
             this.panel5.Controls.Add(this.Btn_estudiantes);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 141);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 367);
+            this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 135);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 5;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
-            this.Btn_cerrar.Click += new System.EventHandler(this.Btn_cerrar_Click);
-            // 
-            // Btn_usuarios
-            // 
-            Btn_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            Btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            Btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Btn_usuarios.Image = global::Windows_vista.Properties.Resources.grupo__1_;
-            Btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            Btn_usuarios.Location = new System.Drawing.Point(0, 90);
-            Btn_usuarios.Name = "Btn_usuarios";
-            Btn_usuarios.Size = new System.Drawing.Size(238, 45);
-            Btn_usuarios.TabIndex = 1;
-            Btn_usuarios.Text = "Docentes";
-            Btn_usuarios.UseVisualStyleBackColor = false;
-            Btn_usuarios.Click += new System.EventHandler(this.Btn_usuarios_Click);
             // 
             // Btn_reportes
             // 
@@ -450,11 +455,42 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // Btn_pagos
+            // 
+            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
+            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
+            this.Btn_pagos.Name = "Btn_pagos";
+            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
+            this.Btn_pagos.TabIndex = 8;
+            this.Btn_pagos.Text = "Pagos";
+            this.Btn_pagos.UseVisualStyleBackColor = false;
+            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.Btn_cerrar.TabIndex = 9;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            // 
             // Frm_administracion_estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 567);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.combo_grupo);
@@ -466,12 +502,12 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.dgv_estudiantes);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_administracion_estudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de estudiantes";
-            this.Load += new System.EventHandler(this.Frm_administracion_estudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -490,6 +526,15 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_estudiantes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox combo_grupo;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button Btn_reportes;
+        private System.Windows.Forms.Button Btn_estudiantes;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_documento;
@@ -507,15 +552,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruta_foto;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox combo_grupo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button Btn_cerrar;
-        private System.Windows.Forms.Button Btn_reportes;
-        private System.Windows.Forms.Button Btn_estudiantes;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Btn_pagos;
     }
 }
