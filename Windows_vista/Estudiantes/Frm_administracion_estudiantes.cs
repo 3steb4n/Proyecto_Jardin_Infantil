@@ -285,6 +285,21 @@ namespace Windows_vista
             frm_admin_pagos.Show();
             this.Close();
         }
+
+        private void dgv_estudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void combo_grupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_busquedaCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

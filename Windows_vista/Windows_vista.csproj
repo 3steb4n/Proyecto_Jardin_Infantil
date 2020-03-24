@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -160,6 +167,12 @@
     </Compile>
     <Compile Include="pagos\Frm_pago_detalle.Designer.cs">
       <DependentUpon>Frm_pago_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\Frm_Listado_Estudiantes_vs_Grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\Frm_Listado_Estudiantes_vs_Grupos.Designer.cs">
+      <DependentUpon>Frm_Listado_Estudiantes_vs_Grupos.cs</DependentUpon>
     </Compile>
     <Compile Include="reportes\Frm_reporte_admin.cs">
       <SubType>Form</SubType>
@@ -312,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pagos\Frm_pago_detalle.resx">
       <DependentUpon>Frm_pago_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\Frm_Listado_Estudiantes_vs_Grupos.resx">
+      <DependentUpon>Frm_Listado_Estudiantes_vs_Grupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\Frm_reporte_admin.resx">
       <DependentUpon>Frm_reporte_admin.cs</DependentUpon>

@@ -187,5 +187,10 @@ namespace Windows_vista.Materia
             frm.Show();
             this.Close();
         }
+
+        private void dgv_materias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

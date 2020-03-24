@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Windows_vista.docentes;
 using Windows_vista.pagos;
 using Windows_vista.usuarios;
+using Windows_vista.reportes;
 
 namespace Windows_vista
 {
@@ -72,6 +73,13 @@ namespace Windows_vista
         {
             Frm_admin_pagos frm_admin_pagos = new Frm_admin_pagos(usuario);
             frm_admin_pagos.Show();
+            this.Close();
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+            frm_reporte_secretaria frm = new frm_reporte_secretaria(usuario);
+            frm.Show();
             this.Close();
         }
     }

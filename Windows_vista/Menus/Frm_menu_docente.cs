@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using Windows_vista.Logros;
 using Windows_vista.usuarios;
+using Windows_vista.reportes;
 
 namespace Windows_vista
 {
@@ -60,5 +61,9 @@ namespace Windows_vista
             this.Close();
         }
 
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

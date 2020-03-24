@@ -81,6 +81,7 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // BtnGrupos
             // 
@@ -142,6 +143,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(392, 38);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labe_nombre_usuario
             // 
@@ -154,6 +156,7 @@
             this.labe_nombre_usuario.Size = new System.Drawing.Size(142, 25);
             this.labe_nombre_usuario.TabIndex = 3;
             this.labe_nombre_usuario.Text = "imput temporal";
+            this.labe_nombre_usuario.Click += new System.EventHandler(this.labe_nombre_usuario_Click);
             // 
             // panel1
             // 
@@ -161,7 +164,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 141);
+            this.panel1.Size = new System.Drawing.Size(238, 135);
             this.panel1.TabIndex = 10;
             // 
             // pictureBox1
@@ -194,7 +197,7 @@
             this.panel5.Controls.Add(this.Btn_materias);
             this.panel5.Controls.Add(this.BtnGrupos);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 141);
+            this.panel5.Location = new System.Drawing.Point(0, 135);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
@@ -230,6 +233,7 @@
             this.Name = "Frm_menu_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu administrador";
+            this.Load += new System.EventHandler(this.Frm_menu_admin_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

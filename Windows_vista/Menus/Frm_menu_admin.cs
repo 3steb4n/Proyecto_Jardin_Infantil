@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Windows_vista.Logros;
 using Windows_vista.Materia;
 using Windows_vista.usuarios;
+using Windows_vista.reportes;
 
 namespace Windows_vista
 {
@@ -86,5 +87,26 @@ namespace Windows_vista
             this.Close();
         }
 
+        private void Frm_menu_admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labe_nombre_usuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+            Frm_reporte_admin frm = new Frm_reporte_admin(usuario);
+            frm.Show();
+            this.Close();
+        }
     }
 }

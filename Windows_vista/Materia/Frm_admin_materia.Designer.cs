@@ -39,6 +39,15 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_materias = new System.Windows.Forms.DataGridView();
+            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horas_Maximas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,15 +58,6 @@
             this.BtnGrupos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Horas_Maximas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreGrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_materias)).BeginInit();
             this.panel4.SuspendLayout();
@@ -195,6 +195,64 @@
             this.dgv_materias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_materias.Size = new System.Drawing.Size(933, 470);
             this.dgv_materias.TabIndex = 43;
+            this.dgv_materias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_materias_CellContentClick);
+            // 
+            // idMateria
+            // 
+            this.idMateria.HeaderText = "";
+            this.idMateria.Name = "idMateria";
+            this.idMateria.ReadOnly = true;
+            this.idMateria.Visible = false;
+            // 
+            // Nombre_materia
+            // 
+            this.Nombre_materia.HeaderText = "Materia";
+            this.Nombre_materia.Name = "Nombre_materia";
+            this.Nombre_materia.ReadOnly = true;
+            // 
+            // Descripcion_materia
+            // 
+            this.Descripcion_materia.HeaderText = "Descripción";
+            this.Descripcion_materia.Name = "Descripcion_materia";
+            this.Descripcion_materia.ReadOnly = true;
+            // 
+            // EstadoMateria
+            // 
+            this.EstadoMateria.HeaderText = "Estado";
+            this.EstadoMateria.Name = "EstadoMateria";
+            this.EstadoMateria.ReadOnly = true;
+            // 
+            // Horas_Maximas
+            // 
+            this.Horas_Maximas.HeaderText = "Horas maximas";
+            this.Horas_Maximas.Name = "Horas_Maximas";
+            this.Horas_Maximas.ReadOnly = true;
+            // 
+            // idArea
+            // 
+            this.idArea.HeaderText = "idArea";
+            this.idArea.Name = "idArea";
+            this.idArea.ReadOnly = true;
+            this.idArea.Visible = false;
+            // 
+            // NombreArea
+            // 
+            this.NombreArea.HeaderText = "Area";
+            this.NombreArea.Name = "NombreArea";
+            this.NombreArea.ReadOnly = true;
+            // 
+            // idGrado
+            // 
+            this.idGrado.HeaderText = "idGrado";
+            this.idGrado.Name = "idGrado";
+            this.idGrado.ReadOnly = true;
+            this.idGrado.Visible = false;
+            // 
+            // NombreGrado
+            // 
+            this.NombreGrado.HeaderText = "Grado";
+            this.NombreGrado.Name = "NombreGrado";
+            this.NombreGrado.ReadOnly = true;
             // 
             // label1
             // 
@@ -327,63 +385,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // idMateria
-            // 
-            this.idMateria.HeaderText = "";
-            this.idMateria.Name = "idMateria";
-            this.idMateria.ReadOnly = true;
-            this.idMateria.Visible = false;
-            // 
-            // Nombre_materia
-            // 
-            this.Nombre_materia.HeaderText = "Materia";
-            this.Nombre_materia.Name = "Nombre_materia";
-            this.Nombre_materia.ReadOnly = true;
-            // 
-            // Descripcion_materia
-            // 
-            this.Descripcion_materia.HeaderText = "Descripción";
-            this.Descripcion_materia.Name = "Descripcion_materia";
-            this.Descripcion_materia.ReadOnly = true;
-            // 
-            // EstadoMateria
-            // 
-            this.EstadoMateria.HeaderText = "Estado";
-            this.EstadoMateria.Name = "EstadoMateria";
-            this.EstadoMateria.ReadOnly = true;
-            // 
-            // Horas_Maximas
-            // 
-            this.Horas_Maximas.HeaderText = "Horas maximas";
-            this.Horas_Maximas.Name = "Horas_Maximas";
-            this.Horas_Maximas.ReadOnly = true;
-            // 
-            // idArea
-            // 
-            this.idArea.HeaderText = "idArea";
-            this.idArea.Name = "idArea";
-            this.idArea.ReadOnly = true;
-            this.idArea.Visible = false;
-            // 
-            // NombreArea
-            // 
-            this.NombreArea.HeaderText = "Area";
-            this.NombreArea.Name = "NombreArea";
-            this.NombreArea.ReadOnly = true;
-            // 
-            // idGrado
-            // 
-            this.idGrado.HeaderText = "idGrado";
-            this.idGrado.Name = "idGrado";
-            this.idGrado.ReadOnly = true;
-            this.idGrado.Visible = false;
-            // 
-            // NombreGrado
-            // 
-            this.NombreGrado.HeaderText = "Grado";
-            this.NombreGrado.Name = "NombreGrado";
-            this.NombreGrado.ReadOnly = true;
             // 
             // Frm_admin_materia
             // 

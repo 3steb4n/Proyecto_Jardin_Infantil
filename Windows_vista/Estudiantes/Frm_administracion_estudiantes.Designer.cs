@@ -62,12 +62,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Btn_pagos = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Btn_pagos = new System.Windows.Forms.Button();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.panel4.SuspendLayout();
@@ -99,6 +99,7 @@
             this.Txt_busquedaCedula.Name = "Txt_busquedaCedula";
             this.Txt_busquedaCedula.Size = new System.Drawing.Size(266, 22);
             this.Txt_busquedaCedula.TabIndex = 48;
+            this.Txt_busquedaCedula.TextChanged += new System.EventHandler(this.Txt_busquedaCedula_TextChanged);
             // 
             // label2
             // 
@@ -191,7 +192,7 @@
             this.ruta_foto});
             this.dgv_estudiantes.EnableHeadersVisualStyles = false;
             this.dgv_estudiantes.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgv_estudiantes.Location = new System.Drawing.Point(300, 104);
+            this.dgv_estudiantes.Location = new System.Drawing.Point(298, 104);
             this.dgv_estudiantes.Name = "dgv_estudiantes";
             this.dgv_estudiantes.ReadOnly = true;
             this.dgv_estudiantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -213,6 +214,7 @@
             this.dgv_estudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_estudiantes.Size = new System.Drawing.Size(881, 505);
             this.dgv_estudiantes.TabIndex = 43;
+            this.dgv_estudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_estudiantes_CellContentClick);
             // 
             // id_estudiante
             // 
@@ -364,6 +366,7 @@
             this.combo_grupo.Name = "combo_grupo";
             this.combo_grupo.Size = new System.Drawing.Size(271, 28);
             this.combo_grupo.TabIndex = 53;
+            this.combo_grupo.SelectedIndexChanged += new System.EventHandler(this.combo_grupo_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -403,6 +406,37 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
+            // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.Btn_cerrar.TabIndex = 9;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            // 
+            // Btn_pagos
+            // 
+            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
+            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
+            this.Btn_pagos.Name = "Btn_pagos";
+            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
+            this.Btn_pagos.TabIndex = 8;
+            this.Btn_pagos.Text = "Pagos";
+            this.Btn_pagos.UseVisualStyleBackColor = false;
+            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
             // 
             // Btn_reportes
             // 
@@ -454,37 +488,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // Btn_pagos
-            // 
-            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
-            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
-            this.Btn_pagos.Name = "Btn_pagos";
-            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
-            this.Btn_pagos.TabIndex = 8;
-            this.Btn_pagos.Text = "Pagos";
-            this.Btn_pagos.UseVisualStyleBackColor = false;
-            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 9;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
             // 
             // Frm_administracion_estudiantes
             // 

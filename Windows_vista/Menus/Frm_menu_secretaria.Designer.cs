@@ -176,6 +176,7 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_estudiantes
             // 
