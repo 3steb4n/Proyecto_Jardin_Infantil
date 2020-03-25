@@ -220,6 +220,23 @@ CREATE PROCEDURE modificarUsuarioPropio
   UPDATE Usuarios SET  Nombres=@Nombres, Apellidos=@Apellidos, Direccion=@Direccion, Celular=@Celular, Telefono=@Telefono, Correo_Electronico=@Correo_Electronico, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion  where Id_Usuario=@ID;
 GO
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--DROP PROCEDURE modificarUsuarioPropioPasswd
+CREATE PROCEDURE modificarUsuarioPropioPasswd
+   @ID int,
+   @Nombres varchar(30),
+   @Apellidos varchar(30),
+   @Direccion varchar(30),
+   @Celular varchar(15),
+   @Telefono varchar(15),
+   @Correo_Electronico varchar(100),
+   @UsuarioModificacion varchar(30),
+   @FechaModificacion datetime,
+   @Passwd varchar(100),
+   @EstadoClave varchar(2)
+   AS
+  UPDATE Usuarios SET  Nombres=@Nombres, Apellidos=@Apellidos, Direccion=@Direccion, Celular=@Celular, Telefono=@Telefono, Correo_Electronico=@Correo_Electronico, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, Usuario_Clave = @Passwd, Estado_Clave = @EstadoClave  where Id_Usuario=@ID;
+GO
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE eliminarUsuario
 CREATE PROCEDURE eliminarUsuario
    @ID int
