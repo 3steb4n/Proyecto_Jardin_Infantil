@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Listado_Estudiantes_vs_Grupos));
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_ListarEstudiantePorGrupo = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.combo_grupo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.id_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +47,20 @@
             this.Estado_Estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ruta_Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.combo_grupo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEstudiantesGrupos = new System.Windows.Forms.Button();
+            this.btnReporteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListarEstudiantePorGrupo)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,11 +68,12 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(41, 82);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.75F);
+            this.label1.Location = new System.Drawing.Point(302, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 1, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(2);
-            this.label1.Size = new System.Drawing.Size(178, 19);
+            this.label1.Size = new System.Drawing.Size(376, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Listado De Estudiantes Por Grupos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,60 +99,11 @@
             this.Estado_Estudiante,
             this.Grupo,
             this.Ruta_Foto});
-            this.dgv_ListarEstudiantePorGrupo.Location = new System.Drawing.Point(39, 108);
+            this.dgv_ListarEstudiantePorGrupo.Location = new System.Drawing.Point(302, 131);
             this.dgv_ListarEstudiantePorGrupo.Name = "dgv_ListarEstudiantePorGrupo";
-            this.dgv_ListarEstudiantePorGrupo.Size = new System.Drawing.Size(1020, 275);
+            this.dgv_ListarEstudiantePorGrupo.Size = new System.Drawing.Size(938, 530);
             this.dgv_ListarEstudiantePorGrupo.TabIndex = 1;
             this.dgv_ListarEstudiantePorGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(521, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Exportar Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // combo_grupo
-            // 
-            this.combo_grupo.FormattingEnabled = true;
-            this.combo_grupo.Location = new System.Drawing.Point(542, 84);
-            this.combo_grupo.Name = "combo_grupo";
-            this.combo_grupo.Size = new System.Drawing.Size(112, 21);
-            this.combo_grupo.TabIndex = 3;
-            this.combo_grupo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(500, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Grupo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Location = new System.Drawing.Point(41, 35);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(75, 23);
-            this.btnReportes.TabIndex = 5;
-            this.btnReportes.Text = "Volver";
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Windows_vista.Properties.Resources.actualizar__1_;
-            this.button2.Location = new System.Drawing.Point(660, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 30);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // id_estudiante
             // 
@@ -227,22 +188,145 @@
             this.Ruta_Foto.HeaderText = "Ruta Foto";
             this.Ruta_Foto.Name = "Ruta_Foto";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            this.button1.Location = new System.Drawing.Point(928, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 28);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Exportar Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // combo_grupo
+            // 
+            this.combo_grupo.FormattingEnabled = true;
+            this.combo_grupo.Location = new System.Drawing.Point(949, 99);
+            this.combo_grupo.Name = "combo_grupo";
+            this.combo_grupo.Size = new System.Drawing.Size(112, 21);
+            this.combo_grupo.TabIndex = 3;
+            this.combo_grupo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(881, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Grupo";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btnReportes.Font = new System.Drawing.Font("Segoe UI Symbol", 12F);
+            this.btnReportes.Image = global::Windows_vista.Properties.Resources.Atras;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 244);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(238, 44);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "Volver";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Windows_vista.Properties.Resources.actualizar__1_;
+            this.button2.Location = new System.Drawing.Point(1072, 93);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 30);
+            this.button2.TabIndex = 6;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(238, 152);
+            this.panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel2.Controls.Add(this.btnReporteXML);
+            this.panel2.Controls.Add(this.btnEstudiantesGrupos);
+            this.panel2.Controls.Add(this.btnReportes);
+            this.panel2.Location = new System.Drawing.Point(1, 151);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(238, 522);
+            this.panel2.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox1.Image = global::Windows_vista.Properties.Resources.LOGO_EVOLUTION_KIDS_01___copia;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 125);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnEstudiantesGrupos
+            // 
+            this.btnEstudiantesGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btnEstudiantesGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstudiantesGrupos.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            this.btnEstudiantesGrupos.Image = global::Windows_vista.Properties.Resources.ListarE;
+            this.btnEstudiantesGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstudiantesGrupos.Location = new System.Drawing.Point(0, 0);
+            this.btnEstudiantesGrupos.Name = "btnEstudiantesGrupos";
+            this.btnEstudiantesGrupos.Size = new System.Drawing.Size(238, 44);
+            this.btnEstudiantesGrupos.TabIndex = 6;
+            this.btnEstudiantesGrupos.Text = "Lista Estudiante Por Grupo";
+            this.btnEstudiantesGrupos.UseVisualStyleBackColor = false;
+            this.btnEstudiantesGrupos.Click += new System.EventHandler(this.btnEstudiantesGrupos_Click);
+            // 
+            // btnReporteXML
+            // 
+            this.btnReporteXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btnReporteXML.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporteXML.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            this.btnReporteXML.Image = global::Windows_vista.Properties.Resources.ListarE;
+            this.btnReporteXML.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteXML.Location = new System.Drawing.Point(0, 44);
+            this.btnReporteXML.Name = "btnReporteXML";
+            this.btnReporteXML.Size = new System.Drawing.Size(238, 47);
+            this.btnReporteXML.TabIndex = 7;
+            this.btnReporteXML.Text = "Reporte XML";
+            this.btnReporteXML.UseVisualStyleBackColor = false;
+            this.btnReporteXML.Click += new System.EventHandler(this.btnReporteXML_Click);
+            // 
             // Frm_Listado_Estudiantes_vs_Grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 411);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1252, 673);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.combo_grupo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_ListarEstudiantePorGrupo);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Listado_Estudiantes_vs_Grupos";
             this.Text = "Frm_Listado_Estudiantes_vs_Grupos";
             this.Load += new System.EventHandler(this.Frm_Listado_Estudiantes_vs_Grupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListarEstudiantePorGrupo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +357,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ruta_Foto;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnEstudiantesGrupos;
+        private System.Windows.Forms.Button btnReporteXML;
     }
 }

@@ -28,65 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnEstudiantesGrupos;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reporte_admin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Volver = new System.Windows.Forms.Button();
             this.btnReporteXML = new System.Windows.Forms.Button();
-            this.btnEstudiantesGrupos = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labe_nombre_usuario = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_rol = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            btnEstudiantesGrupos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel1.Controls.Add(this.btn_Volver);
             this.panel1.Controls.Add(this.btnReporteXML);
-            this.panel1.Controls.Add(this.btnEstudiantesGrupos);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Controls.Add(btnEstudiantesGrupos);
+            this.panel1.Location = new System.Drawing.Point(0, 149);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(199, 456);
+            this.panel1.Size = new System.Drawing.Size(238, 526);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btn_Volver
             // 
-            this.btn_Volver.Location = new System.Drawing.Point(-3, 282);
+            this.btn_Volver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btn_Volver.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F);
+            this.btn_Volver.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Volver.Image = global::Windows_vista.Properties.Resources.Atras;
+            this.btn_Volver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Volver.Location = new System.Drawing.Point(3, 263);
             this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(199, 38);
+            this.btn_Volver.Size = new System.Drawing.Size(238, 47);
             this.btn_Volver.TabIndex = 2;
             this.btn_Volver.Text = "Volver";
-            this.btn_Volver.UseVisualStyleBackColor = true;
+            this.btn_Volver.UseVisualStyleBackColor = false;
             this.btn_Volver.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnReporteXML
             // 
-            this.btnReporteXML.Location = new System.Drawing.Point(0, 152);
+            this.btnReporteXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.btnReporteXML.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporteXML.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F);
+            this.btnReporteXML.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReporteXML.Image = global::Windows_vista.Properties.Resources.ListarE;
+            this.btnReporteXML.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteXML.Location = new System.Drawing.Point(0, 47);
             this.btnReporteXML.Name = "btnReporteXML";
-            this.btnReporteXML.Size = new System.Drawing.Size(199, 39);
+            this.btnReporteXML.Size = new System.Drawing.Size(238, 47);
             this.btnReporteXML.TabIndex = 1;
             this.btnReporteXML.Text = "Reporte XML";
-            this.btnReporteXML.UseVisualStyleBackColor = true;
+            this.btnReporteXML.UseVisualStyleBackColor = false;
             // 
             // btnEstudiantesGrupos
             // 
-            this.btnEstudiantesGrupos.Location = new System.Drawing.Point(0, 111);
-            this.btnEstudiantesGrupos.Name = "btnEstudiantesGrupos";
-            this.btnEstudiantesGrupos.Size = new System.Drawing.Size(199, 47);
-            this.btnEstudiantesGrupos.TabIndex = 0;
-            this.btnEstudiantesGrupos.Text = "Lista Estudiantes Por Grupos";
-            this.btnEstudiantesGrupos.UseVisualStyleBackColor = true;
-            this.btnEstudiantesGrupos.Click += new System.EventHandler(this.btnEstudiantesGrupos_Click);
+            btnEstudiantesGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            btnEstudiantesGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            btnEstudiantesGrupos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            btnEstudiantesGrupos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnEstudiantesGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnEstudiantesGrupos.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            btnEstudiantesGrupos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            btnEstudiantesGrupos.Image = global::Windows_vista.Properties.Resources.ListarE;
+            btnEstudiantesGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnEstudiantesGrupos.Location = new System.Drawing.Point(0, 0);
+            btnEstudiantesGrupos.Name = "btnEstudiantesGrupos";
+            btnEstudiantesGrupos.Size = new System.Drawing.Size(238, 47);
+            btnEstudiantesGrupos.TabIndex = 6;
+            btnEstudiantesGrupos.Text = "Lista Estudiantes Por Grupos";
+            btnEstudiantesGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnEstudiantesGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btnEstudiantesGrupos.UseVisualStyleBackColor = false;
+            btnEstudiantesGrupos.Click += new System.EventHandler(this.btnEstudiantesGrupos_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.labe_nombre_usuario);
-            this.panel2.Location = new System.Drawing.Point(530, 372);
+            this.panel2.Location = new System.Drawing.Point(980, 565);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 40);
             this.panel2.TabIndex = 1;
@@ -106,7 +133,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label_rol);
-            this.panel3.Location = new System.Drawing.Point(616, 411);
+            this.panel3.Location = new System.Drawing.Point(1066, 611);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 27);
             this.panel3.TabIndex = 2;
@@ -121,11 +148,32 @@
             this.label_rol.TabIndex = 0;
             this.label_rol.Text = "input temporal";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Location = new System.Drawing.Point(0, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(238, 151);
+            this.panel4.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.pictureBox1.Image = global::Windows_vista.Properties.Resources.LOGO_EVOLUTION_KIDS_01___copia;
+            this.pictureBox1.Location = new System.Drawing.Point(47, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Frm_reporte_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1252, 673);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -140,6 +188,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,11 +198,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReporteXML;
-        private System.Windows.Forms.Button btnEstudiantesGrupos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labe_nombre_usuario;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_rol;
         private System.Windows.Forms.Button btn_Volver;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

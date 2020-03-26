@@ -182,5 +182,3 @@ D:\Trabajos U\jardid\jardin\Windows_vista\obj\Debug\Windows_vista.reportes.Frm_L
 D:\Trabajos U\jardid\jardin\Windows_vista\bin\Debug\DocumentFormat.OpenXml.dll
 D:\Trabajos U\jardid\jardin\Windows_vista\bin\Debug\SpreadsheetLight.dll
 D:\Trabajos U\jardid\jardin\Windows_vista\bin\Debug\SpreadsheetLight.xml
-D:\Trabajos U\jardid\jardin\Windows_vista\bin\Debug\Negocio.dll.config
-D:\Trabajos U\jardid\jardin\Windows_vista\bin\Debug\Datos.dll.config

@@ -83,6 +83,16 @@ namespace Windows_vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Atras {
+            get {
+                object obj = ResourceManager.GetObject("Atras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap cuaderno {
             get {
                 object obj = ResourceManager.GetObject("cuaderno", resourceCulture);
@@ -223,6 +233,26 @@ namespace Windows_vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Imagenxml {
+            get {
+                object obj = ResourceManager.GetObject("Imagenxml", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Imagenxml1 {
+            get {
+                object obj = ResourceManager.GetObject("Imagenxml1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap iniciar_sesion {
             get {
                 object obj = ResourceManager.GetObject("iniciar-sesion", resourceCulture);
@@ -236,6 +266,26 @@ namespace Windows_vista.Properties {
         public static System.Drawing.Bitmap iniciar_sesion__2_ {
             get {
                 object obj = ResourceManager.GetObject("iniciar-sesion (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Listar {
+            get {
+                object obj = ResourceManager.GetObject("Listar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ListarE {
+            get {
+                object obj = ResourceManager.GetObject("ListarE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

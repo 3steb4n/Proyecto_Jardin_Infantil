@@ -222,5 +222,17 @@ namespace Windows_vista.reportes
         {
 
         }
+
+        private void btnEstudiantesGrupos_Click(object sender, EventArgs e)
+        {
+            Frm_Listado_Estudiantes_vs_Grupos frm = new Frm_Listado_Estudiantes_vs_Grupos(usuario);
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnReporteXML_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

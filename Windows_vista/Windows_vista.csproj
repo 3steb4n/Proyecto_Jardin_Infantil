@@ -402,6 +402,11 @@
     <None Include="resources\gol.png" />
     <None Include="resources\gol %281%29.png" />
     <None Include="resources\documento.png" />
+    <None Include="resources\Listar.png" />
+    <None Include="resources\ListarE.png" />
+    <None Include="resources\Imagenxml.png" />
+    <None Include="resources\Imagenxml1.png" />
+    <None Include="resources\Atras.png" />
     <Content Include="resources\noView.PNG" />
     <None Include="resources\tablero.png" />
     <None Include="resources\tablero %281%29.png" />
