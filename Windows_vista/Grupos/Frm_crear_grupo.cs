@@ -110,7 +110,7 @@ namespace Windows_vista
 
         private void Txt_nombre_grupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Txt_nombre_grupo.Text == "")
+            if (Txt_nombre_grupo.Text.Trim() == "")
             {
                 e.Cancel = true;
                 errorNombre.SetError(Txt_nombre_grupo, "Ingrese nombre del grupo");
@@ -124,7 +124,7 @@ namespace Windows_vista
 
         private void Txt_descripciongrupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Txt_descripciongrupo.Text == "")
+            if (Txt_descripciongrupo.Text.Trim() == "")
             {
                 e.Cancel = true;
                 errorDescripcion.SetError(Txt_descripciongrupo, "Ingrese la descripción del grupo");
@@ -178,5 +178,9 @@ namespace Windows_vista
             }
         }
 
+        private void Txt_nombre_grupo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -158,6 +158,7 @@
             this.Txt_nombre_grupo.Name = "Txt_nombre_grupo";
             this.Txt_nombre_grupo.Size = new System.Drawing.Size(275, 27);
             this.Txt_nombre_grupo.TabIndex = 1;
+            this.Txt_nombre_grupo.TextChanged += new System.EventHandler(this.Txt_nombre_grupo_TextChanged);
             this.Txt_nombre_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_nombre_grupo_Validating);
             // 
             // Txt_descripciongrupo
