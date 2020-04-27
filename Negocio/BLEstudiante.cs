@@ -21,12 +21,6 @@ namespace Negocio
             return daoEstudiante.ListaPorDocumento(documento);
         }
 
-        public List<Estudiante> ListarEstudiantePorDocumentoyGrupo(String documento, int idGrupo)
-        {
-            DaoEstudiante daoEstudiante = new DaoEstudiante();
-
-            return daoEstudiante.ListarPorDocumentoyGrupo(documento, idGrupo);
-        }
 
         public List<Estudiante> ListarEstudiantesIdNombre()
         {

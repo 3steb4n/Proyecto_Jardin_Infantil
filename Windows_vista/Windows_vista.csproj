@@ -97,6 +97,18 @@
     <Compile Include="estudiantes\Frm_administracion_estudiantes.Designer.cs">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="estudiantes\Frm_administracion__matriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="estudiantes\Frm_administracion__matriculas.Designer.cs">
+      <DependentUpon>Frm_administracion__matriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="estudiantes\Frm_crear_matricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="estudiantes\Frm_crear_matricula.Designer.cs">
+      <DependentUpon>Frm_crear_matricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="horarios\Frm_admin_horarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,8 +291,14 @@
     <EmbeddedResource Include="estudiantes\Frm_administracion_estudiantes.resx">
       <DependentUpon>Frm_administracion_estudiantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="estudiantes\Frm_administracion__matriculas.resx">
+      <DependentUpon>Frm_administracion__matriculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="estudiantes\Frm_crear_estudiante.resx">
       <DependentUpon>Frm_crear_estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="estudiantes\Frm_crear_matricula.resx">
+      <DependentUpon>Frm_crear_matricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="estudiantes\Frm_modificar_estudiante.resx">
       <DependentUpon>Frm_modificar_estudiante.cs</DependentUpon>

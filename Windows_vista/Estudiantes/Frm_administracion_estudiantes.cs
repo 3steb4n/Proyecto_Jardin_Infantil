@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Windows_vista.docentes;
 using Windows_vista.pagos;
+using Windows_vista.estudiantes;
 
 namespace Windows_vista
 {
@@ -21,10 +22,8 @@ namespace Windows_vista
 
 
         List<Estudiante> lista = null;
-        List<Grupo> lista_grupo = null;
 
         BLEstudiante blestudiante = new BLEstudiante();
-        BLGrupo blgrupo = new BLGrupo();
         Usuario usuario;
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -56,9 +55,7 @@ namespace Windows_vista
                     estudiante.CorreoElectronicoAcudiente = (String)dgv_estudiantes[11, dgv_estudiantes.CurrentRow.Index].Value.ToString();
                     estudiante.ObservacionesEstudiante = (String)dgv_estudiantes[12, dgv_estudiantes.CurrentRow.Index].Value.ToString();
                     estudiante.EstadoEstudiante = (String)dgv_estudiantes[13, dgv_estudiantes.CurrentRow.Index].Value.ToString();
-                    estudiante.grupo.NombreGrupo = (String)dgv_estudiantes[14, dgv_estudiantes.CurrentRow.Index].Value.ToString();
-                    estudiante.grupo.IdGrupo = (int)dgv_estudiantes[15, dgv_estudiantes.CurrentRow.Index].Value;
-                    estudiante.Ruta_foto = (String)dgv_estudiantes[16, dgv_estudiantes.CurrentRow.Index].Value.ToString();
+                    estudiante.Ruta_foto = (String)dgv_estudiantes[14, dgv_estudiantes.CurrentRow.Index].Value.ToString();
 
                     Frm_modificar_estudiante frm_admin_usuarios = new Frm_modificar_estudiante(estudiante, usuario);
                     frm_admin_usuarios.Show();
@@ -95,62 +92,14 @@ namespace Windows_vista
                         lista[i].CorreoElectronicoAcudiente,
                         lista[i].ObservacionesEstudiante,
                         lista[i].EstadoEstudiante,
-                        lista[i].grupo.NombreGrupo,
-                        lista[i].grupo.IdGrupo,
                         lista[i].Ruta_foto
                     );
                 }
             }
 
-            dgv_estudiantes.ClearSelection();
-            dgv_estudiantes.CurrentCell = null;
-
-            lista_grupo = blgrupo.ListarGruposNombreyID();
-            combo_grupo.DataSource = lista_grupo;
-            combo_grupo.DisplayMember = "NombreGrupo";
-            combo_grupo.ValueMember = "IdGrupo";
-
-            combo_grupo.SelectedItem = "Seleccione...";
-
         }
 
-        public void CargarDatoFiltroDocumentoGrupo(String documento, int idGrupo)
-        {
-            List<Estudiante> estudiante = new List<Estudiante>();
-            estudiante = blestudiante.ListarEstudiantePorDocumentoyGrupo(documento, idGrupo);
-            dgv_estudiantes.Rows.Clear();
-
-            for (int i = 0; i < estudiante.Count; i++)
-            {
-                if (estudiante[0].Id_estudiante != 0)
-                {
-                    dgv_estudiantes.Rows.Add(
-
-                        estudiante[i].Id_estudiante,
-                        estudiante[i].DocumentoEstudiante,
-                        estudiante[i].TipoDocumento,
-                        estudiante[i].NombreEstudiante,
-                        estudiante[i].ApellidoEstudiante,
-                        estudiante[i].FechaNacimiento,
-                        estudiante[i].NombreAcudiente,
-                        estudiante[i].Direccion,
-                        estudiante[i].Genero,
-                        estudiante[i].TelefonoAcudiente,
-                        estudiante[i].CelularAcudiente,
-                        estudiante[i].CorreoElectronicoAcudiente,
-                        estudiante[i].ObservacionesEstudiante,
-                        estudiante[i].EstadoEstudiante,
-                        estudiante[i].grupo.NombreGrupo,
-                        estudiante[i].grupo.IdGrupo,
-                        estudiante[i].Ruta_foto
-                    );
-                }
-            }
-
-            dgv_estudiantes.ClearSelection();
-            dgv_estudiantes.CurrentCell = null;
-        }
-
+        
         public void CargarDatoFiltroDocumento(String documento)
         {
             List<Estudiante> estudiante = new List<Estudiante>();
@@ -177,8 +126,6 @@ namespace Windows_vista
                         estudiante[i].CorreoElectronicoAcudiente,
                         estudiante[i].ObservacionesEstudiante,
                         estudiante[i].EstadoEstudiante,
-                        estudiante[i].grupo.NombreGrupo,
-                        estudiante[i].grupo.IdGrupo,
                         estudiante[i].Ruta_foto
                     );
                 }
@@ -227,35 +174,15 @@ namespace Windows_vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Txt_busquedaCedula.Text == "" && combo_grupo.Text == "Seleccione...")
+            if (Txt_busquedaCedula.Text == "" )
             {
                 CargarDatos();
             }
-            else if (Txt_busquedaCedula.Text != "" && combo_grupo.Text == "Seleccione...")
+            else if(Txt_busquedaCedula.Text != "" )
             {
                 CargarDatoFiltroDocumento(Txt_busquedaCedula.Text);
             }
-            else
-            {
-                CargarDatoFiltroDocumentoGrupo(Txt_busquedaCedula.Text, IDPorNombre(combo_grupo.Text));
-            }
 
-
-        }
-
-        public int IDPorNombre(String nombre)
-        {
-            int value = 0;
-
-            for (int i = 0; i < lista_grupo.Count; i++)
-            {
-                if (lista_grupo[i].NombreGrupo == nombre)
-                {
-                    value = lista_grupo[i].IdGrupo;
-                }
-            }
-
-            return value;
         }
 
         private void Btn_estudiantes_Click(object sender, EventArgs e)
@@ -297,6 +224,18 @@ namespace Windows_vista
         }
 
         private void Txt_busquedaCedula_TextChanged(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_administracion__matriculas frm_admin_matricula = new Frm_administracion__matriculas();
+            frm_admin_matricula.Show();
+        
+        }
+
+        private void Frm_administracion_estudiantes_Load(object sender, EventArgs e)
         {
 
         }

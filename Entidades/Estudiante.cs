@@ -23,15 +23,14 @@ namespace Entidades
         String _usuarioModificacion;
         DateTime _fechaModificacion;
         String _estadoEstudiante;
-        Grupo _grupo;
-
+        
 
         public Estudiante()
         {
-            grupo = new Grupo();
+            
         }
 
-        public Estudiante(int id_estudiante, String documentoEstudiante, String tipoDocumento, String nombreEstudiante, String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion, String genero, String telefonoAcudiente, String celularAcudiante, String correoElectronicoAcudiente, String observacionesEstudiante, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String EstadoEstudiante, Grupo grupo)
+        public Estudiante(int id_estudiante, String documentoEstudiante, String tipoDocumento, String nombreEstudiante, String apellidoEstudiante, DateTime fechaNacimiento, String ruta_foto, String nombreAcudiente, String direccion, String genero, String telefonoAcudiente, String celularAcudiante, String correoElectronicoAcudiente, String observacionesEstudiante, String usuarioCreacion, DateTime fechaCreacion, String usuarioModificacion, DateTime fechaModificacion, String EstadoEstudiante)
         {
             this._id_estudiante = id_estudiante;
             this._documentoEstudiante = documentoEstudiante;
@@ -52,7 +51,6 @@ namespace Entidades
             this._usuarioModificacion = usuarioModificacion;
             this._fechaModificacion = fechaModificacion;
             this._estadoEstudiante = EstadoEstudiante;
-            this._grupo = grupo;
         }
 
         public int Id_estudiante
@@ -155,12 +153,6 @@ namespace Entidades
         {
             get => _fechaModificacion;
             set => _fechaModificacion = value;
-        }
-
-        public Grupo grupo
-        {
-            get => _grupo;
-            set => _grupo = value;
         }
 
         public string EstadoEstudiante

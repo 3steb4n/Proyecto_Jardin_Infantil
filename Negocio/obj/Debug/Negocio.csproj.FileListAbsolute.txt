@@ -42,3 +42,17 @@ D:\Trabajos U\jardid\jardin\Negocio\bin\Debug\EntityFramework.dll
 D:\Trabajos U\jardid\jardin\Negocio\bin\Debug\EntityFramework.SqlServer.dll
 D:\Trabajos U\jardid\jardin\Negocio\bin\Debug\EntityFramework.xml
 D:\Trabajos U\jardid\jardin\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Negocio.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Negocio.pdb
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Datos.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Entidades.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\EntityFramework.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Datos.pdb
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\Entidades.pdb
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\EntityFramework.xml
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\obj\Debug\Negocio.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Negocio\obj\Debug\Negocio.pdb

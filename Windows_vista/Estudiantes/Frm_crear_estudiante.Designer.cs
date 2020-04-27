@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_crear_estudiante));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.combo_grupo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.Txt_observaciones = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.combo_genero = new System.Windows.Forms.ComboBox();
@@ -95,8 +93,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.combo_grupo);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Txt_observaciones);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.combo_genero);
@@ -131,27 +127,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(967, 598);
             this.panel1.TabIndex = 1;
-            // 
-            // combo_grupo
-            // 
-            this.combo_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combo_grupo.FormattingEnabled = true;
-            this.combo_grupo.Location = new System.Drawing.Point(42, 511);
-            this.combo_grupo.Name = "combo_grupo";
-            this.combo_grupo.Size = new System.Drawing.Size(301, 28);
-            this.combo_grupo.TabIndex = 14;
-            this.combo_grupo.Validating += new System.ComponentModel.CancelEventHandler(this.combo_grupo_Validating);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 488);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Grupo (*)";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Txt_observaciones
             // 
@@ -606,8 +582,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorNum;
-        private System.Windows.Forms.ComboBox combo_grupo;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorTipoDocumento;
         private System.Windows.Forms.ErrorProvider errorNombres;
         private System.Windows.Forms.ErrorProvider errorApellidos;

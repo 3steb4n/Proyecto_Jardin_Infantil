@@ -53,12 +53,10 @@
             this.Correo_electronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ruta_foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.combo_grupo = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -68,6 +66,7 @@
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Matriculas = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).BeginInit();
             this.panel4.SuspendLayout();
@@ -187,9 +186,9 @@
             this.Correo_electronico,
             this.Observaciones,
             this.Estado,
-            this.Nombre_Grupo,
-            this.idGrupo,
-            this.ruta_foto});
+            this.ruta_foto,
+            this.NombreGrupo,
+            this.IdGrupo});
             this.dgv_estudiantes.EnableHeadersVisualStyles = false;
             this.dgv_estudiantes.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgv_estudiantes.Location = new System.Drawing.Point(298, 104);
@@ -315,27 +314,28 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 121;
             // 
-            // Nombre_Grupo
-            // 
-            this.Nombre_Grupo.HeaderText = "Grupo";
-            this.Nombre_Grupo.Name = "Nombre_Grupo";
-            this.Nombre_Grupo.ReadOnly = true;
-            this.Nombre_Grupo.Width = 61;
-            // 
-            // idGrupo
-            // 
-            this.idGrupo.HeaderText = "idGrupo";
-            this.idGrupo.Name = "idGrupo";
-            this.idGrupo.ReadOnly = true;
-            this.idGrupo.Visible = false;
-            this.idGrupo.Width = 69;
-            // 
             // ruta_foto
             // 
             this.ruta_foto.HeaderText = "ruta_foto";
             this.ruta_foto.Name = "ruta_foto";
             this.ruta_foto.ReadOnly = true;
             this.ruta_foto.Width = 74;
+            // 
+            // NombreGrupo
+            // 
+            this.NombreGrupo.HeaderText = "Grupo";
+            this.NombreGrupo.Name = "NombreGrupo";
+            this.NombreGrupo.ReadOnly = true;
+            this.NombreGrupo.Visible = false;
+            this.NombreGrupo.Width = 61;
+            // 
+            // IdGrupo
+            // 
+            this.IdGrupo.HeaderText = "";
+            this.IdGrupo.Name = "IdGrupo";
+            this.IdGrupo.ReadOnly = true;
+            this.IdGrupo.Visible = false;
+            this.IdGrupo.Width = 19;
             // 
             // label1
             // 
@@ -347,27 +347,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Gestión de estudiantes";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(691, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Grupo:";
-            // 
-            // combo_grupo
-            // 
-            this.combo_grupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_grupo.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combo_grupo.FormattingEnabled = true;
-            this.combo_grupo.Location = new System.Drawing.Point(750, 68);
-            this.combo_grupo.Name = "combo_grupo";
-            this.combo_grupo.Size = new System.Drawing.Size(271, 28);
-            this.combo_grupo.TabIndex = 53;
-            this.combo_grupo.SelectedIndexChanged += new System.EventHandler(this.combo_grupo_SelectedIndexChanged);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -376,7 +355,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1036, 68);
+            this.button2.Location = new System.Drawing.Point(712, 68);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 30);
             this.button2.TabIndex = 52;
@@ -489,14 +468,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // Matriculas
+            // 
+            this.Matriculas.BackColor = System.Drawing.Color.Teal;
+            this.Matriculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Matriculas.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Matriculas.ForeColor = System.Drawing.Color.White;
+            this.Matriculas.Location = new System.Drawing.Point(683, 615);
+            this.Matriculas.Name = "Matriculas";
+            this.Matriculas.Size = new System.Drawing.Size(120, 32);
+            this.Matriculas.TabIndex = 56;
+            this.Matriculas.Text = "Matriculados";
+            this.Matriculas.UseVisualStyleBackColor = false;
+            this.Matriculas.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_administracion_estudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 673);
+            this.Controls.Add(this.Matriculas);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.combo_grupo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Txt_busquedaCedula);
             this.Controls.Add(this.label2);
@@ -511,6 +503,7 @@
             this.Name = "Frm_administracion_estudiantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de estudiantes";
+            this.Load += new System.EventHandler(this.Frm_administracion_estudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estudiantes)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -529,8 +522,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_estudiantes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox combo_grupo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -538,6 +529,8 @@
         private System.Windows.Forms.Button Btn_estudiantes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Btn_cerrar;
+        private System.Windows.Forms.Button Btn_pagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_documento;
@@ -552,10 +545,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo_electronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Grupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruta_foto;
-        private System.Windows.Forms.Button Btn_cerrar;
-        private System.Windows.Forms.Button Btn_pagos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreGrupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdGrupo;
+        private System.Windows.Forms.Button Matriculas;
     }
 }

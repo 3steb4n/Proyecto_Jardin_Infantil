@@ -19,3 +19,8 @@ D:\Trabajos U\jardid\jardin\Entidades\bin\Debug\Entidades.pdb
 D:\Trabajos U\jardid\jardin\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 D:\Trabajos U\jardid\jardin\Entidades\obj\Debug\Entidades.dll
 D:\Trabajos U\jardid\jardin\Entidades\obj\Debug\Entidades.pdb
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Entidades\bin\Debug\Entidades.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Entidades\bin\Debug\Entidades.pdb
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Entidades\obj\Debug\Entidades.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Entidades\obj\Debug\Entidades.pdb

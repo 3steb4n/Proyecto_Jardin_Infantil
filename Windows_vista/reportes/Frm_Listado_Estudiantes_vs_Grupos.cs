@@ -24,40 +24,40 @@ namespace Windows_vista.reportes
             this.usuario = usuario;
         }
 
-        List<Estudiante> lista = null;
+        List<Matricula> lista = null;
         List<Grupo> lista_grupo = null;
-
-        BLEstudiante blestudiante = new BLEstudiante();
+        BLMatricula blmatricula = new BLMatricula();
         BLGrupo blgrupo = new BLGrupo();
+
         Usuario usuario;
 
         public void CargarDatos()
         {
-            lista = blestudiante.ListarEstudiante();
+            lista = blmatricula.ListarMatricula();
             dgv_ListarEstudiantePorGrupo.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
-                if (lista[0].Id_estudiante != 0)
+                if (lista[0].estudiante.Id_estudiante != 0)
                 {
                     dgv_ListarEstudiantePorGrupo.Rows.Add(
 
-                        lista[i].Id_estudiante,
-                        lista[i].DocumentoEstudiante,
-                        lista[i].TipoDocumento,
-                        lista[i].NombreEstudiante,
-                        lista[i].ApellidoEstudiante,
-                        lista[i].FechaNacimiento,
-                        lista[i].NombreAcudiente,
-                        lista[i].Direccion,
-                        lista[i].Genero,
-                        lista[i].TelefonoAcudiente,
-                        lista[i].CelularAcudiente,
-                        lista[i].CorreoElectronicoAcudiente,
-                        lista[i].ObservacionesEstudiante,
-                        lista[i].EstadoEstudiante,
+                        lista[i].estudiante.Id_estudiante,
+                        lista[i].estudiante.DocumentoEstudiante,
+                        lista[i].estudiante.TipoDocumento,
+                        lista[i].estudiante.NombreEstudiante,
+                        lista[i].estudiante.ApellidoEstudiante,
+                        lista[i].estudiante.FechaNacimiento,
+                        lista[i].estudiante.NombreAcudiente,
+                        lista[i].estudiante.Direccion,
+                        lista[i].estudiante.Genero,
+                        lista[i].estudiante.TelefonoAcudiente,
+                        lista[i].estudiante.CelularAcudiente,
+                        lista[i].estudiante.CorreoElectronicoAcudiente,
+                        lista[i].estudiante.ObservacionesEstudiante,
+                        lista[i].estudiante.EstadoEstudiante,
                         lista[i].grupo.NombreGrupo,
                         lista[i].grupo.IdGrupo,
-                        lista[i].Ruta_foto
+                        lista[i].estudiante.Ruta_foto
                     );
                 }
             }
@@ -76,33 +76,33 @@ namespace Windows_vista.reportes
 
         public void CargarDatoFiltroDocumentoGrupo(String documento, int idGrupo)
         {
-            List<Estudiante> estudiante = new List<Estudiante>();
-            estudiante = blestudiante.ListarEstudiantePorDocumentoyGrupo(documento, idGrupo);
+            List<Matricula> matricula = new List<Matricula>();
+            matricula = blmatricula.ListarMatriculasPorDocumentoyGrupo(documento, idGrupo);
             dgv_ListarEstudiantePorGrupo.Rows.Clear();
 
-            for (int i = 0; i < estudiante.Count; i++)
+            for (int i = 0; i < matricula.Count; i++)
             {
-                if (estudiante[0].Id_estudiante != 0)
+                if (matricula[0].estudiante.Id_estudiante != 0)
                 {
                     dgv_ListarEstudiantePorGrupo.Rows.Add(
 
-                        estudiante[i].Id_estudiante,
-                        estudiante[i].DocumentoEstudiante,
-                        estudiante[i].TipoDocumento,
-                        estudiante[i].NombreEstudiante,
-                        estudiante[i].ApellidoEstudiante,
-                        estudiante[i].FechaNacimiento,
-                        estudiante[i].NombreAcudiente,
-                        estudiante[i].Direccion,
-                        estudiante[i].Genero,
-                        estudiante[i].TelefonoAcudiente,
-                        estudiante[i].CelularAcudiente,
-                        estudiante[i].CorreoElectronicoAcudiente,
-                        estudiante[i].ObservacionesEstudiante,
-                        estudiante[i].EstadoEstudiante,
-                        estudiante[i].grupo.NombreGrupo,
-                        estudiante[i].grupo.IdGrupo,
-                        estudiante[i].Ruta_foto
+                        matricula[i].estudiante.Id_estudiante,
+                        matricula[i].estudiante.DocumentoEstudiante,
+                        matricula[i].estudiante.TipoDocumento,
+                        matricula[i].estudiante.NombreEstudiante,
+                        matricula[i].estudiante.ApellidoEstudiante,
+                        matricula[i].estudiante.FechaNacimiento,
+                        matricula[i].estudiante.NombreAcudiente,
+                        matricula[i].estudiante.Direccion,
+                        matricula[i].estudiante.Genero,
+                        matricula[i].estudiante.TelefonoAcudiente,
+                        matricula[i].estudiante.CelularAcudiente,
+                        matricula[i].estudiante.CorreoElectronicoAcudiente,
+                        matricula[i].estudiante.ObservacionesEstudiante,
+                        matricula[i].estudiante.EstadoEstudiante,
+                        matricula[i].grupo.NombreGrupo,
+                        matricula[i].grupo.IdGrupo,
+                        matricula[i].estudiante.Ruta_foto
                     );
                 }
             }
@@ -151,13 +151,13 @@ namespace Windows_vista.reportes
             }
             else {
 
-                SLDocument sl = new SLDocument();
+                SLDocument sl = new SLDocument() ;
                 SLStyle style = new SLStyle();
                 style.Font.FontSize = 12;
                 style.Font.Bold = true;
 
-                List<Estudiante> estudiante = new List<Estudiante>();
-                estudiante = blestudiante.ListarEstudiantePorDocumentoyGrupo("", IDPorNombre(combo_grupo.Text));
+                List<Matricula> matricula = new List<Matricula>();
+                matricula = blmatricula.ListarMatriculasPorDocumentoyGrupo("", IDPorNombre(combo_grupo.Text));
 
                 int iC = 1;
                 foreach (DataGridViewColumn column in dgv_ListarEstudiantePorGrupo.Columns)
@@ -168,24 +168,24 @@ namespace Windows_vista.reportes
                 }
 
                 int iR = 2;
-                foreach (var row in estudiante)
+                foreach (var row in matricula)
                 {
-                    sl.SetCellValue(iR, 2, row.DocumentoEstudiante.ToString());
-                    sl.SetCellValue(iR, 3, row.TipoDocumento.ToString());
-                    sl.SetCellValue(iR, 4, row.NombreEstudiante.ToString());
-                    sl.SetCellValue(iR, 5, row.ApellidoEstudiante.ToString());
-                    sl.SetCellValue(iR, 6, row.FechaNacimiento.ToString());
-                    sl.SetCellValue(iR, 7, row.NombreAcudiente.ToString());
-                    sl.SetCellValue(iR, 8, row.Direccion.ToString());
-                    sl.SetCellValue(iR, 9, row.Genero.ToString());
-                    sl.SetCellValue(iR, 10, row.TelefonoAcudiente.ToString());
-                    sl.SetCellValue(iR, 11, row.CelularAcudiente.ToString());
-                    sl.SetCellValue(iR, 12, row.CorreoElectronicoAcudiente.ToString());
-                    sl.SetCellValue(iR, 13, row.ObservacionesEstudiante.ToString());
-                    sl.SetCellValue(iR, 14, row.EstadoEstudiante.ToString());
+                    sl.SetCellValue(iR, 2, row.estudiante.DocumentoEstudiante.ToString());
+                    sl.SetCellValue(iR, 3, row.estudiante.TipoDocumento.ToString());
+                    sl.SetCellValue(iR, 4, row.estudiante.NombreEstudiante.ToString());
+                    sl.SetCellValue(iR, 5, row.estudiante.ApellidoEstudiante.ToString());
+                    sl.SetCellValue(iR, 6, row.estudiante.FechaNacimiento.ToString());
+                    sl.SetCellValue(iR, 7, row.estudiante.NombreAcudiente.ToString());
+                    sl.SetCellValue(iR, 8, row.estudiante.Direccion.ToString());
+                    sl.SetCellValue(iR, 9, row.estudiante.Genero.ToString());
+                    sl.SetCellValue(iR, 10, row.estudiante.TelefonoAcudiente.ToString());
+                    sl.SetCellValue(iR, 11, row.estudiante.CelularAcudiente.ToString());
+                    sl.SetCellValue(iR, 12, row.estudiante.CorreoElectronicoAcudiente.ToString());
+                    sl.SetCellValue(iR, 13, row.estudiante.ObservacionesEstudiante.ToString());
+                    sl.SetCellValue(iR, 14, row.estudiante.EstadoEstudiante.ToString());
                     sl.SetCellValue(iR, 15, row.grupo.NombreGrupo.ToString());
                     //sl.SetCellValue(iR, 16, row.grupo.IdGrupo.ToString());
-                    sl.SetCellValue(iR, 17, row.Ruta_foto.ToString());
+                    sl.SetCellValue(iR, 17, row.estudiante.Ruta_foto.ToString());
                     iR++;
                 }
                 sl.SaveAs(@"C:\Users\User\Documents\JardidPrueba.xlsx");

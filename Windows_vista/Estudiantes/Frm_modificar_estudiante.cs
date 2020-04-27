@@ -20,8 +20,7 @@ namespace Windows_vista
 
         int id_Estudiante;
         BLEstudiante blEstudiante = new BLEstudiante();
-        BLGrupo blGrupo = new BLGrupo();
-        List<Grupo> lista = null;
+        
         Usuario usuario;
 
         public void cargarDatos(Estudiante estudiante)
@@ -43,12 +42,6 @@ namespace Windows_vista
             combo_genero.Items.Add("Masculino").ToString();
 
 
-            lista = blGrupo.ListarGruposNombreyID();
-
-            for (int i = 0; i < lista.Count; i++)
-            {
-                combo_grupo.Items.Add(lista[i].NombreGrupo).ToString();
-            }
 
             Txt_numero_documento.Text = estudiante.DocumentoEstudiante;
             Combo_tipo_documento.SelectedItem = estudiante.TipoDocumento;
@@ -62,7 +55,6 @@ namespace Windows_vista
             Txt_celular.Text = estudiante.CelularAcudiente;
             Txt_nombre_acudiente.Text = estudiante.NombreAcudiente;
             Txt_observaciones.Text = estudiante.ObservacionesEstudiante;
-            combo_grupo.SelectedItem = estudiante.grupo.NombreGrupo;
             Txt_foto.Text = estudiante.Ruta_foto;
         }
 
@@ -96,7 +88,6 @@ namespace Windows_vista
                 estudiante.ObservacionesEstudiante = Txt_observaciones.Text;
                 estudiante.UsuarioModificacion = "1";
                 estudiante.FechaModificacion = fechaActual;
-                estudiante.grupo.IdGrupo = IDPorNombre(combo_grupo.Text);
 
                 bool flag = blEstudiante.ModificarEstudiante(estudiante);
                 if (flag)
@@ -111,21 +102,6 @@ namespace Windows_vista
             }
         }
 
-
-        public int IDPorNombre(String nombre)
-        {
-            int value = 0;
-
-            for (int i = 0; i < lista.Count; i++)
-            {
-                if (lista[i].NombreGrupo == nombre)
-                {
-                    value = lista[i].IdGrupo;
-                }
-            }
-
-            return value;
-        }
 
         public String OrdenarTipoDocumento(String tipoDocumento)
         {
@@ -420,18 +396,10 @@ namespace Windows_vista
             }
         }
 
-        private void combo_grupo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            if (combo_grupo.Text == "Seleccione...")
-            {
-                e.Cancel = true;
-                errorGrupo.SetError(combo_grupo, "Seleccione el grupo del estudiante");
-                combo_grupo.Focus();
-            }
-            else
-            {
-                errorGrupo.Clear();
-            }
+
         }
     }
 }

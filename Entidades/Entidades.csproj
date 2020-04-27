@@ -52,6 +52,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="Logro.cs" />
     <Compile Include="Materiaa.cs" />
+    <Compile Include="Matricula.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="Periodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

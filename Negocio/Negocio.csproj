@@ -58,6 +58,7 @@
     <Compile Include="BLGrupo.cs" />
     <Compile Include="BLLogro.cs" />
     <Compile Include="BLMateria.cs" />
+    <Compile Include="BLMatricula.cs" />
     <Compile Include="BLPago.cs" />
     <Compile Include="BLPeriodo.cs" />
     <Compile Include="BLUsuario.cs" />

@@ -106,6 +106,7 @@
     <Compile Include="DaoGrupo.cs" />
     <Compile Include="DaoLogro.cs" />
     <Compile Include="DaoMateria.cs" />
+    <Compile Include="DaoMatricula.cs" />
     <Compile Include="DaoPago.cs" />
     <Compile Include="DaoPeriodo.cs" />
     <Compile Include="DaoUsuario.cs" />

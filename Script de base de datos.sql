@@ -410,6 +410,120 @@ CREATE PROCEDURE eliminarGrupo
    AS
    UPDATE Grupos set estado_grupo='I' where id_grupo=@ID;
 GO
+
+create table Matriculas(
+		Id_matricula int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+		Numero_matricula int not null,
+		Ano_reguistro date not null,
+ 		Fecha_creacion datetime,
+		Estado_matricula varchar (2) NOT NULL CHECK(Estado_matricula IN ('A', 'I')),
+		ID_estudiante int,
+		ID_grupo int
+);
+ALTER TABLE Matriculas ADD FOREIGN KEY (ID_grupo) REFERENCES Grupos(id_grupo);
+ALTER TABLE Matriculas ADD FOREIGN KEY (ID_estudiante) REFERENCES Estudiantes(ID_estudiante);
+
+INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+VALUES   ('20210931','2003-03-26 13:00:00.000','2003-03-26 13:00:00.000','A','1','1');  
+
+INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+VALUES   ('20210932','2003-03-26 13:00:00.000','2003-03-26 13:00:00.000','A','2','2'); 
+
+INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+VALUES   ('20210933','2003-03-26 13:00:00.000','2003-03-26 13:00:00.000','A','3','1');
+
+INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+VALUES   ('20210934','2003-03-26 13:00:00.000','2003-03-26 13:00:00.000','A','4','2');
+
+INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+VALUES   ('20210935','2003-03-26 13:00:00.000','2003-03-26 13:00:00.000','A','5','1'); 
+
+CREATE PROCEDURE registrarMatricula
+   @Numeromatricula varchar(20),
+   @Anoreguistro date,
+   @Fechacreacion datetime,
+   @Estadomatricula varchar(2),
+   @IDestudiante int,
+   @IDgrupo int
+   AS
+   INSERT INTO Matriculas(Numero_matricula,Ano_reguistro,Fecha_creacion,Estado_matricula,ID_estudiante,ID_grupo) 
+			VALUES   (@Numeromatricula,@Anoreguistro,@Fechacreacion,@Estadomatricula,@IDestudiante,@IDgrupo);  
+GO
+
+use JardinInfantil;
+CREATE PROCEDURE ListarMatricula
+AS
+SELECT   m.Id_matricula [Idmatricula],
+	     m.Numero_matricula [NumeroMatricula],
+		 m.Ano_reguistro [AnoReguistro],
+		 m.Estado_matricula[EstadoMatriculado],
+		 m.ID_estudiante[Idestudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
+
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante;
+GO
+
+
+CREATE PROCEDURE ListarMatriculasPorDocumento
+@Documento varchar(20)
+AS
+SELECT   m.Id_matricula [Idmatricula],
+	     m.Numero_matricula [NumeroMatricula],
+		 m.Ano_reguistro [AnoReguistro],
+		 m.Estado_matricula[EstadoMatriculado],
+		 m.ID_estudiante[Idestudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
+
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante where  e.Documento_Estudiante LIKE '%'+@Documento+'%';
+GO
+
+
+
+use JardinInfantil;
+
+CREATE PROCEDURE ListarMatriculasPorGrupo
+@idGrupo int
+AS
+SELECT   m.Id_matricula [Idmatricula],
+	     m.Numero_matricula [NumeroMatricula],
+		 m.Ano_reguistro [AnoReguistro],
+		 m.Estado_matricula[EstadoMatriculado],
+		 m.ID_estudiante[Idestudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
+
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante where  gr.id_grupo = @idGrupo;
+GO
+
+exec ListarMatriculasPorDocumento '123';
+
+CREATE PROCEDURE ListarMatriculasPorDocumentoyGrupo
+@Documento varchar(20),
+@idGrupo int
+AS
+SELECT   
+		 m.Id_matricula [Idmatricula],
+	     m.Numero_matricula [NumeroMatricula],
+		 m.Ano_reguistro [AnoReguistro],
+		 m.Estado_matricula[EstadoMatriculado],
+		 m.ID_estudiante[Idestudiante],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
+
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante where  e.Documento_Estudiante LIKE '%'+@Documento+'%' and gr.id_grupo = @idGrupo;
+GO
+
+
 -- use JardinInfantil
 -- select * from grupos;
 
@@ -435,50 +549,46 @@ create table Estudiantes(
     Usuario_Modificacion varchar(30) NULL DEFAULT '',
     Fecha_Modificacion datetime NULL DEFAULT '2020-03-07 00:00:00.000',
 	Estado_Estudiante varchar (2) NOT NULL CHECK(Estado_Estudiante IN ('A', 'I')),
-    ID_grupo int
 );
 
-ALTER TABLE Estudiantes ADD FOREIGN KEY (ID_grupo) REFERENCES Grupos(id_grupo);
 
-INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-VALUES   ('6578465','RC','Valery Sofia ','Perez Casitllo','2003-03-26 13:00:00.000','','Piedad Borja Rivas','KR 24 A # 32 A SUR 32','F','6941023','3057485965','piedad_borja@hotmail.com','Observaciones sobre el primer estudiante','1','2020-03-07 12:00:00.000','1','2020-03-07 12:00:00.000','A','1');  
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante) 
+VALUES   ('6578465','RC','Valery Sofia ','Perez Casitllo','2003-03-26 13:00:00.000','','Piedad Borja Rivas','KR 24 A # 32 A SUR 32','F','6941023','3057485965','piedad_borja@hotmail.com','Observaciones sobre el primer estudiante','1','2020-03-07 12:00:00.000','1','2020-03-07 12:00:00.000','A');  
 
-INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-VALUES   ('106468','TI','Manuel Esteban ','Carvajal Carvajal','2008-12-30 14:00:00.000','','Ever Gomez Perez','CALLE 32 Norte','M','9685741','3214578965','ever_gomez@hotmail.com','Observaciones sobre el segundo estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');   
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante) 
+VALUES   ('106468','TI','Manuel Esteban ','Carvajal Carvajal','2008-12-30 14:00:00.000','','Ever Gomez Perez','CALLE 32 Norte','M','9685741','3214578965','ever_gomez@hotmail.com','Observaciones sobre el segundo estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');   
 
-INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-VALUES   ('10008548','RC','Daniel Gustavo ','Gomez','2013-04-06 12:32:00.000','','Carlos Armani Rodriguez','KR 56 SUR','M','6945896','3157489654','carlos_armani@hotmail.com','Observaciones sobre el cuarto estudiante','1','2020-03-07 01:40:00.000','1','2020-03-07 01:40:00.000','A','2');  
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante) 
+VALUES   ('10008548','RC','Daniel Gustavo ','Gomez','2013-04-06 12:32:00.000','','Carlos Armani Rodriguez','KR 56 SUR','M','6945896','3157489654','carlos_armani@hotmail.com','Observaciones sobre el cuarto estudiante','1','2020-03-07 01:40:00.000','1','2020-03-07 01:40:00.000','A');  
 
-INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-VALUES   ('85744566','RC','Esteban  ','Gomez','2010-02-11 04:32:00.000','','Manuel Perez Ordoñez','KR 43 NORTE ','M','3747852','3114785964','manuel_perez@hotmail.com','Observaciones sobre el quinto estudiante','1','2020-03-07 12:45:00.000','1','2020-03-07 00:00:00.000','A','1');  
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante) 
+VALUES   ('85744566','RC','Esteban  ','Gomez','2010-02-11 04:32:00.000','','Manuel Perez Ordoñez','KR 43 NORTE ','M','3747852','3114785964','manuel_perez@hotmail.com','Observaciones sobre el quinto estudiante','1','2020-03-07 12:45:00.000','1','2020-03-07 00:00:00.000','A');  
 
-INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante,ID_grupo) 
-VALUES   ('6699547','RC','Pedro Franco ','Armani','2004-02-01 15:30:00.000','','Gustavo Alzate','AV 32 # 312 SUR','M','9475965','313371823','gustavo_alzate@hotmail.com','Observaciones sobre el sexto estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A','2');  
+INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Usuario_Modificacion,Fecha_Modificacion,Estado_Estudiante) 
+VALUES   ('6699547','RC','Pedro Franco ','Armani','2004-02-01 15:30:00.000','','Gustavo Alzate','AV 32 # 312 SUR','M','9475965','313371823','gustavo_alzate@hotmail.com','Observaciones sobre el sexto estudiante','1','2020-03-07 00:00:00.000','1','2020-03-07 00:00:00.000','A');  
 
 select * from Estudiantes;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantes
 CREATE PROCEDURE ListarEstudiantes
 AS
-SELECT   e.ID_estudiante [IdEstudiante],
-	     e.Documento_Estudiante [DocumentoEstudiante],
-	     e.Tipo_Documento [TipoDocumento],
-		 e.Nombre_Estudiante [NombreEstudiante],
-		 e.Apellido_Estudiante [ApellidoEstudiante],
-		 e.Fecha_Nacimiento [FechaNacimiento],
-		 e.Ruta_foto [RutaFoto],
-		 e.Acudiente_Nombre [AcudienteNombre],
-		 e.Direccion [Direccion],
-		 e.Genero_Estudiante [GeneroEstudiante],
-	     e.Telefono [Telefono],
-		 e.Celular [Celular],
-		 e.Correo_Electronico [CorreoElectronico],
-		 e.Observaciones [Observaciones],
-		 e.Estado_Estudiante [EstadoEstudiante],
-		 e.ID_grupo [IDgrupo],
-		 gr.Nombre_Grupo [NombreGrupo]
+SELECT   ID_estudiante [IdEstudiante],
+	     Documento_Estudiante [DocumentoEstudiante],
+	     Tipo_Documento [TipoDocumento],
+		 Nombre_Estudiante [NombreEstudiante],
+		 Apellido_Estudiante [ApellidoEstudiante],
+		 Fecha_Nacimiento [FechaNacimiento],
+		 Ruta_foto [RutaFoto],
+		 Acudiente_Nombre [AcudienteNombre],
+		 Direccion [Direccion],
+		 Genero_Estudiante [GeneroEstudiante],
+	     Telefono [Telefono],
+		 Celular [Celular],
+		 Correo_Electronico [CorreoElectronico],
+		 Observaciones [Observaciones],
+		 Estado_Estudiante [EstadoEstudiante]
 
-FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A';
+FROM Estudiantes;
 GO
 EXEC ListarEstudiantes
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -486,54 +596,28 @@ EXEC ListarEstudiantes
 CREATE PROCEDURE ListarEstudiantePorDocumento
 @Documento varchar(20)
 AS
-SELECT   e.ID_estudiante [IdEstudiante],
-	     e.Documento_Estudiante [DocumentoEstudiante],
-	     e.Tipo_Documento [TipoDocumento],
-		 e.Nombre_Estudiante [NombreEstudiante],
-		 e.Apellido_Estudiante [ApellidoEstudiante],
-		 e.Fecha_Nacimiento [FechaNacimiento],
-		 e.Ruta_foto [RutaFoto],
-		 e.Acudiente_Nombre [AcudienteNombre],
-		 e.Direccion [Direccion],
-		 e.Genero_Estudiante [GeneroEstudiante],
-	     e.Telefono [Telefono],
-		 e.Celular [Celular],
-		 e.Correo_Electronico [CorreoElectronico],
-		 e.Observaciones [Observaciones],
-		 e.Estado_Estudiante [EstadoEstudiante],
-		 e.ID_grupo [IDgrupo],
-		 gr.Nombre_Grupo [NombreGrupo]
+SELECT   ID_estudiante [IdEstudiante],
+	     Documento_Estudiante [DocumentoEstudiante],
+	     Tipo_Documento [TipoDocumento],
+		 Nombre_Estudiante [NombreEstudiante],
+		 Apellido_Estudiante [ApellidoEstudiante],
+		 Fecha_Nacimiento [FechaNacimiento],
+		 Ruta_foto [RutaFoto],
+		 Acudiente_Nombre [AcudienteNombre],
+		 Direccion [Direccion],
+		 Genero_Estudiante [GeneroEstudiante],
+	     Telefono [Telefono],
+		 Celular [Celular],
+		 Correo_Electronico [CorreoElectronico],
+		 Observaciones [Observaciones],
+		 Estado_Estudiante [EstadoEstudiante]
 
-FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A' AND Documento_Estudiante=@Documento;
+FROM Estudiantes;
 GO
 
 EXEC ListarEstudiantePorDocumento '106468'
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarEstudiantePorDocumentoyGrupo
-CREATE PROCEDURE ListarEstudiantePorDocumentoyGrupo
-@Documento varchar(20),
-@idGrupo int
-AS
-SELECT   e.ID_estudiante [IdEstudiante],
-	     e.Documento_Estudiante [DocumentoEstudiante],
-	     e.Tipo_Documento [TipoDocumento],
-		 e.Nombre_Estudiante [NombreEstudiante],
-		 e.Apellido_Estudiante [ApellidoEstudiante],
-		 e.Fecha_Nacimiento [FechaNacimiento],
-		 e.Ruta_foto [RutaFoto],
-		 e.Acudiente_Nombre [AcudienteNombre],
-		 e.Direccion [Direccion],
-		 e.Genero_Estudiante [GeneroEstudiante],
-	     e.Telefono [Telefono],
-		 e.Celular [Celular],
-		 e.Correo_Electronico [CorreoElectronico],
-		 e.Observaciones [Observaciones],
-		 e.Estado_Estudiante [EstadoEstudiante],
-		 e.ID_grupo [IDgrupo],
-		 gr.Nombre_Grupo [NombreGrupo]
-
-FROM Estudiantes e INNER JOIN Grupos gr ON gr.id_grupo = e.ID_grupo where gr.estado_grupo = 'A' AND e.Estado_Estudiante = 'A'  and e.ID_grupo = @idGrupo and e.Documento_Estudiante LIKE '%'+@Documento+'%';
-GO
 
 EXEC ListarEstudiantePorDocumentoyGrupo '',1;
 -- select * from Estudiantes;
@@ -567,11 +651,10 @@ CREATE PROCEDURE registrarEstudiante
    @Observaciones varchar(30),
    @UsuarioCreacion varchar(30),
    @FechaCreacion datetime,
-   @EstadoEstudiante varchar(2),
-   @IDgrupo int
+   @EstadoEstudiante varchar(2)
    AS
-   INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Estado_Estudiante,ID_grupo) 
-			VALUES   (@DocumentoEstudiante,@TipoDocumento,@NombreEstudiante,@ApellidoEstudiante,@FechaNacimiento,@RutaFoto,@AcudienteNombre,@Direccion,@GeneroEstudiante,@Telefono,@Celular,@CorreoElectronico,@Observaciones,@UsuarioCreacion,@FechaCreacion,@EstadoEstudiante,@IDgrupo);  
+   INSERT INTO Estudiantes (Documento_Estudiante,Tipo_Documento,Nombre_Estudiante,Apellido_Estudiante,Fecha_Nacimiento,Ruta_foto,Acudiente_Nombre,Direccion,Genero_Estudiante,Telefono,Celular,Correo_Electronico,Observaciones,Usuario_Creacion,Fecha_Creacion,Estado_Estudiante) 
+			VALUES   (@DocumentoEstudiante,@TipoDocumento,@NombreEstudiante,@ApellidoEstudiante,@FechaNacimiento,@RutaFoto,@AcudienteNombre,@Direccion,@GeneroEstudiante,@Telefono,@Celular,@CorreoElectronico,@Observaciones,@UsuarioCreacion,@FechaCreacion,@EstadoEstudiante);  
 GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DROP PROCEDURE modificarEstudiante
@@ -591,10 +674,9 @@ CREATE PROCEDURE modificarEstudiante
    @CorreoElectronico varchar(100),
    @Observaciones varchar(30),
    @UsuarioModificacion varchar(30),
-   @FechaModificacion datetime,
-   @IdGrupo int
+   @FechaModificacion datetime
    AS
-   UPDATE Estudiantes SET Documento_Estudiante=@DocumentoEstudiante, Tipo_Documento=@TipoDocumento, Nombre_Estudiante=@NombreEstudiante, Apellido_Estudiante=@ApellidoEstudiante, Fecha_Nacimiento=@FechaNacimiento, Ruta_foto=@RutaFoto, Acudiente_Nombre=@AcudienteNombre, Direccion=@Direccion, Genero_Estudiante=@GeneroEstudiante, Telefono=@Telefono,  Celular=@Celular, Correo_Electronico=@CorreoElectronico, Observaciones=@Observaciones, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion, ID_grupo=@IdGrupo where ID_estudiante=@IDEstudiante;
+   UPDATE Estudiantes SET Documento_Estudiante=@DocumentoEstudiante, Tipo_Documento=@TipoDocumento, Nombre_Estudiante=@NombreEstudiante, Apellido_Estudiante=@ApellidoEstudiante, Fecha_Nacimiento=@FechaNacimiento, Ruta_foto=@RutaFoto, Acudiente_Nombre=@AcudienteNombre, Direccion=@Direccion, Genero_Estudiante=@GeneroEstudiante, Telefono=@Telefono,  Celular=@Celular, Correo_Electronico=@CorreoElectronico, Observaciones=@Observaciones, Usuario_Modificacion=@UsuarioModificacion, Fecha_Modificacion=@FechaModificacion where ID_estudiante=@IDEstudiante;
 GO
 use JardinInfantil
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
