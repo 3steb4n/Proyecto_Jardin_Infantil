@@ -229,6 +229,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear pago";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_crear_pago_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_crear_pago_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorEstudiante)).EndInit();

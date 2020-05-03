@@ -47,13 +47,14 @@ namespace Windows_vista.pagos
             combo_tipo_abono.Items.AddRange(items_pago);
             combo_tipo_abono.SelectedIndex = 0;
 
-            label_nombre_estudiante.Text = pago.Estudiante.NombreEstudiante;
-            label_nombre_acudiente.Text = pago.Estudiante.NombreAcudiente;
+            label_Numero_matricula.Text = pago.Matricula.Numeromatricula.ToString(); 
+            label_nombre_estudiante.Text = pago.Matricula.estudiante.NombreEstudiante;
+            label_nombre_acudiente.Text = pago.Matricula.estudiante.NombreAcudiente;
             label_concepto_pago.Text = pago.ConceptoPago.NombreConcepto;
             label_fecha.Text = pago.FechaCreacion.ToString();
             label_id_pago.Text = "# " + pago.IdPago.ToString();
             label_valor_pago.Text = pago.ValorMonto.ToString();
-            label_documento_estudiante.Text = pago.Estudiante.DocumentoEstudiante.ToString();
+            label_documento_estudiante.Text = pago.Matricula.estudiante.DocumentoEstudiante.ToString();
             Txt_valor_total.Text = pago.ValorMonto.ToString();
             Txt_valor_faltante.Text = valorFaltante.ToString();
 
@@ -227,6 +228,16 @@ namespace Windows_vista.pagos
             {
                 errorDescripcion.Clear();
             }
+        }
+
+        private void Frm_abonar_pago_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

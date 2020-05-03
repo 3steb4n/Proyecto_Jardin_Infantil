@@ -47,15 +47,16 @@ namespace Windows_vista.pagos
 
                 cantidadPagada = (cantidadPagada + listaAbonoPagos[i].ValorAbono);
             }
-            label_nombre_estudiante.Text = pago.Estudiante.NombreEstudiante;
-            label_nombre_acudiente.Text = pago.Estudiante.NombreAcudiente;
+            label_Id_matricula.Text = pago.Matricula.Numeromatricula.ToString();
+            label_nombre_estudiante.Text = pago.Matricula.estudiante.NombreEstudiante;
+            label_nombre_acudiente.Text = pago.Matricula.estudiante.NombreAcudiente;
             label_concepto_pago.Text = pago.ConceptoPago.NombreConcepto;
             label_fecha.Text = pago.FechaCreacion.ToString();
             label_estado_valor.Text = "Pagado";
             label_id_pago.Text = "# " + pago.IdPago.ToString();
             label_valor_pago.Text = pago.ValorMonto.ToString();
             label_abonado_valor.Text = cantidadPagada.ToString();
-            label_documento_estudiante.Text = pago.Estudiante.DocumentoEstudiante.ToString();
+            label_documento_estudiante.Text = pago.Matricula.estudiante.DocumentoEstudiante.ToString();
 
             if (cantidadPagada == pago.ValorMonto)
             {
@@ -91,6 +92,11 @@ namespace Windows_vista.pagos
         private void button2_Click(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

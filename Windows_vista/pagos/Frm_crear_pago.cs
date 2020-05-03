@@ -18,23 +18,23 @@ namespace Windows_vista.pagos
         }
 
         Usuario usuario;
-        List<Estudiante> lista_estudiante = null;
+        List<Matricula> lista_matricula = null;
         List<ConceptoPago> lista_concepto_pago = null;
 
         BLPago blPago = new BLPago();
-        BLEstudiante blEstudiante = new BLEstudiante();
+        BLMatricula bLMatricula = new BLMatricula();
         BLConceptoPago blConceptoPago = new BLConceptoPago();
 
         private void CargarDatos()
         {
             // se llena el combo de estudiante
-            lista_estudiante = blEstudiante.ListarEstudiante();
+            lista_matricula = bLMatricula.ListarMatricula();
             ComboboxItem item_estudiante1 = new ComboboxItem(); item_estudiante1.Text = "Seleccione..."; item_estudiante1.Value = "";
             ComboboxItem item_estudiante;
-            Object[] items_estudiantes = new Object[lista_estudiante.Count];
-            for (int i = 0; i < lista_estudiante.Count; i++)
+            Object[] items_estudiantes = new Object[lista_matricula.Count];
+            for (int i = 0; i < lista_matricula.Count; i++)
             {
-                items_estudiantes[i] = item_estudiante = new ComboboxItem(); item_estudiante.Text = lista_estudiante[i].NombreEstudiante + " " + lista_estudiante[i].ApellidoEstudiante; item_estudiante.Value = lista_estudiante[i].Id_estudiante;
+                items_estudiantes[i] = item_estudiante = new ComboboxItem(); item_estudiante.Text = lista_matricula[i].estudiante.NombreEstudiante + " " + lista_matricula[i].estudiante.ApellidoEstudiante; item_estudiante.Value = lista_matricula[i].Id_matricula;
             }
             combo_estudiantes.Items.Add(item_estudiante1);
             combo_estudiantes.Items.AddRange(items_estudiantes);
@@ -78,7 +78,7 @@ namespace Windows_vista.pagos
             pago.UsuarioCreacion = usuario.Id_usuario.ToString();
             pago.FechaCreacion = fechaActual;
             pago.ConceptoPago.IdConcepto = int.Parse((combo_concepto.SelectedItem as ComboboxItem).Value.ToString());
-            pago.Estudiante.Id_estudiante = int.Parse((combo_estudiantes.SelectedItem as ComboboxItem).Value.ToString());
+            pago.Matricula.Id_matricula = int.Parse((combo_estudiantes.SelectedItem as ComboboxItem).Value.ToString());
 
 
 
@@ -167,6 +167,11 @@ namespace Windows_vista.pagos
         {
             Frm_admin_pagos frm_admin_pagos = new Frm_admin_pagos(usuario);
             frm_admin_pagos.Show();
+        }
+
+        private void Frm_crear_pago_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -975,6 +975,7 @@ GO
 EXEC Listar_Concepto_Pago;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop table Pagos
+use JardinInfantil;
 create table Pagos(
     Id_Pago int IDENTITY(1,1) NOT NULL PRIMARY KEY,
     Valor_Monto int,
@@ -982,11 +983,11 @@ create table Pagos(
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
     Id_Concepto_Pago int,
-    Id_Estudiante int
+    Id_Matricula int
 );
 
 ALTER TABLE Pagos ADD FOREIGN KEY (Id_Concepto_Pago) REFERENCES Concepto_Pago(Id_Concepto);
-ALTER TABLE Pagos ADD FOREIGN KEY (Id_Estudiante) REFERENCES Estudiantes(ID_estudiante);
+ALTER TABLE Pagos ADD FOREIGN KEY (Id_Matricula) REFERENCES Matriculas(Id_matricula);
 
 select * from Pagos;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -997,10 +998,10 @@ CREATE PROCEDURE registrarPago
    @UsuarioCreacion varchar(30),
    @FechaCreacion datetime,
    @IdConceptoPago varchar(2),
-   @IdEstudiante int
+   @IdMatricula int
    AS
-   INSERT INTO Pagos (Valor_Monto, Descripcion_Pago, Usuario_Creacion, Fecha_Creacion, Id_Concepto_Pago, Id_Estudiante) 
-			VALUES   (@ValorMonto, @DescripcionPago, @UsuarioCreacion, @FechaCreacion, @IdConceptoPago, @IdEstudiante);  
+   INSERT INTO Pagos (Valor_Monto, Descripcion_Pago, Usuario_Creacion, Fecha_Creacion, Id_Concepto_Pago, Id_Matricula) 
+			VALUES   (@ValorMonto, @DescripcionPago, @UsuarioCreacion, @FechaCreacion, @IdConceptoPago, @IdMatricula);  
 GO
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- drop procedure ListarPago
@@ -1015,7 +1016,8 @@ SELECT   p.Id_Pago [idPago],
 		 p.Fecha_Creacion [FechaCreacion],
 		 c.Id_Concepto [IdConcepto],
 		 c.Nombre_Concepto [NombreConcepto],
-		 e.ID_estudiante [IDEstudiante],
+		 m.Id_matricula [IDMatricula],
+		 m.Numero_matricula [NumeroMatricula],
 		 e.Documento_Estudiante [DocumentoEstudiante],
 		 e.Nombre_Estudiante [NombreEstudiante],
 		 e.Apellido_Estudiante [ApellidoEstudiante],
@@ -1025,7 +1027,7 @@ SELECT   p.Id_Pago [idPago],
 		 e.Celular [celular],
 		 e.Direccion [direccion]
 
-FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Estudiantes e ON e.ID_estudiante = p.Id_Estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion;
+FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Matriculas m ON m.Id_matricula = p.Id_Matricula INNER JOIN Estudiantes e ON e.ID_estudiante = m.ID_estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion;
 GO
 
 EXEC ListarPago
@@ -1044,6 +1046,8 @@ SELECT   p.Id_Pago [idPago],
 		 p.Fecha_Creacion [FechaCreacion],
 		 c.Id_Concepto [IdConcepto],
 		 c.Nombre_Concepto [NombreConcepto],
+		 m.Id_matricula [IDMatricula],
+		 m.Numero_matricula [NumeroMatricula],
 		 e.ID_estudiante [IDEstudiante],
 		 e.Documento_Estudiante [DocumentoEstudiante],
 		 e.Nombre_Estudiante [NombreEstudiante],
@@ -1054,7 +1058,7 @@ SELECT   p.Id_Pago [idPago],
 		 e.Celular [celular],
 		 e.Direccion [direccion]
 
-FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Estudiantes e ON e.ID_estudiante = p.Id_Estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion where e.Documento_Estudiante LIKE '%'+@documentoEstudiante+'%' and c.Nombre_Concepto LIKE '%'+@nombreConcepto+'%' ;
+FROM Pagos p INNER JOIN Concepto_Pago c ON  c.Id_Concepto = p.Id_Concepto_Pago INNER JOIN Matriculas m ON m.Id_matricula = p.Id_Matricula INNER JOIN Estudiantes e ON e.ID_estudiante = m.ID_estudiante INNER JOIN Usuarios u ON u.Id_Usuario = p.Usuario_Creacion where e.Documento_Estudiante LIKE '%'+@documentoEstudiante+'%' and c.Nombre_Concepto LIKE '%'+@nombreConcepto+'%' ;
 GO
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- LIKE '%'+@Documento+'%'   and c.Nombre_Concepto = @nombreConcepto
 -- drop table Abono_Pago 

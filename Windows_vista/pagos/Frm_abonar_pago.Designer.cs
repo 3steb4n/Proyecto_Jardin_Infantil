@@ -34,6 +34,8 @@
             this.Txt_valor_abonar = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Numero_matricula = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label_documento_estudiante = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label_valor_pago = new System.Windows.Forms.Label();
@@ -105,6 +107,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(this.label_Numero_matricula);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label_documento_estudiante);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label_valor_pago);
@@ -124,6 +128,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 160);
             this.panel1.TabIndex = 111;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label_Numero_matricula
+            // 
+            this.label_Numero_matricula.AutoSize = true;
+            this.label_Numero_matricula.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Numero_matricula.ForeColor = System.Drawing.Color.White;
+            this.label_Numero_matricula.Location = new System.Drawing.Point(664, 31);
+            this.label_Numero_matricula.Name = "label_Numero_matricula";
+            this.label_Numero_matricula.Size = new System.Drawing.Size(140, 21);
+            this.label_Numero_matricula.TabIndex = 123;
+            this.label_Numero_matricula.Text = "Numero_matricula";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label14.Location = new System.Drawing.Point(444, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(214, 32);
+            this.label14.TabIndex = 122;
+            this.label14.Text = "Numero Matricula:";
             // 
             // label_documento_estudiante
             // 
@@ -415,6 +442,7 @@
             this.Name = "Frm_abonar_pago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abonar pago";
+            this.Load += new System.EventHandler(this.Frm_abonar_pago_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorTipoAbono)).EndInit();
@@ -457,5 +485,7 @@
         private System.Windows.Forms.ErrorProvider errorDescripcion;
         private System.Windows.Forms.Label label_documento_estudiante;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_Numero_matricula;
+        private System.Windows.Forms.Label label14;
     }
 }

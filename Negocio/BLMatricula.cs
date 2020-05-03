@@ -13,13 +13,6 @@ namespace Negocio
             return daoMatricula.ListaGeneral();
         }
 
-        public List<Matricula> ListaridyNombre()
-        {
-            DaoMatricula daoMatricula = new DaoMatricula();
-
-            return daoMatricula.ListaidyNombre();
-
-        }
 
         public List<Matricula> ListarMatriculaporDocumento(String documento)
         {

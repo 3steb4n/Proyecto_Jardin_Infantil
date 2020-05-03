@@ -61,14 +61,16 @@ namespace Windows_vista.pagos
                         lista[i].FechaCreacion,
                         lista[i].ConceptoPago.IdConcepto,
                         lista[i].ConceptoPago.NombreConcepto,
-                        lista[i].Estudiante.Id_estudiante,
-                        lista[i].Estudiante.DocumentoEstudiante,
-                        lista[i].Estudiante.NombreEstudiante + " " + lista[i].Estudiante.ApellidoEstudiante,
-                        lista[i].Estudiante.NombreAcudiente,
-                        lista[i].Estudiante.CorreoElectronicoAcudiente,
-                        lista[i].Estudiante.TelefonoAcudiente,
-                        lista[i].Estudiante.CelularAcudiente,
-                        lista[i].Estudiante.Direccion
+                        lista[i].Matricula.Id_matricula,
+                        lista[i].Matricula.Numeromatricula,
+                        lista[i].Matricula.estudiante.Id_estudiante,
+                        lista[i].Matricula.estudiante.DocumentoEstudiante,
+                        lista[i].Matricula.estudiante.NombreEstudiante + " " + lista[i].Matricula.estudiante.ApellidoEstudiante,
+                        lista[i].Matricula.estudiante.NombreAcudiente,
+                        lista[i].Matricula.estudiante.CorreoElectronicoAcudiente,
+                        lista[i].Matricula.estudiante.TelefonoAcudiente,
+                        lista[i].Matricula.estudiante.CelularAcudiente,
+                        lista[i].Matricula.estudiante.Direccion
                     );
                     ;
                 }
@@ -143,14 +145,16 @@ namespace Windows_vista.pagos
                         lista[i].FechaCreacion,
                         lista[i].ConceptoPago.IdConcepto,
                         lista[i].ConceptoPago.NombreConcepto,
-                        lista[i].Estudiante.Id_estudiante,
-                        lista[i].Estudiante.DocumentoEstudiante,
-                        lista[i].Estudiante.NombreEstudiante + " " + lista[i].Estudiante.ApellidoEstudiante,
-                        lista[i].Estudiante.NombreAcudiente,
-                        lista[i].Estudiante.CorreoElectronicoAcudiente,
-                        lista[i].Estudiante.TelefonoAcudiente,
-                        lista[i].Estudiante.CelularAcudiente,
-                        lista[i].Estudiante.Direccion
+                        lista[i].Matricula.Id_matricula,
+                        lista[i].Matricula.Numeromatricula,
+                        lista[i].Matricula.estudiante.Id_estudiante,
+                        lista[i].Matricula.estudiante.DocumentoEstudiante,
+                        lista[i].Matricula.estudiante.NombreEstudiante + " " + lista[i].Matricula.estudiante.ApellidoEstudiante,
+                        lista[i].Matricula.estudiante.NombreAcudiente,
+                        lista[i].Matricula.estudiante.CorreoElectronicoAcudiente,
+                        lista[i].Matricula.estudiante.TelefonoAcudiente,
+                        lista[i].Matricula.estudiante.CelularAcudiente,
+                        lista[i].Matricula.estudiante.Direccion
                     );
                     ;
                 }
@@ -193,10 +197,11 @@ namespace Windows_vista.pagos
                     pago.ValorMonto = (int)dgv_pagos[2, dgv_pagos.CurrentRow.Index].Value;
                     pago.FechaCreacion = (DateTime)dgv_pagos[7, dgv_pagos.CurrentRow.Index].Value;
                     pago.ConceptoPago.NombreConcepto = (String)dgv_pagos[9, dgv_pagos.CurrentRow.Index].Value;
-                    pago.Estudiante.Id_estudiante = (int)dgv_pagos[10, dgv_pagos.CurrentRow.Index].Value;
-                    pago.Estudiante.DocumentoEstudiante = (String)dgv_pagos[11, dgv_pagos.CurrentRow.Index].Value;
-                    pago.Estudiante.NombreEstudiante = (String)dgv_pagos[12, dgv_pagos.CurrentRow.Index].Value;
-                    pago.Estudiante.NombreAcudiente = (String)dgv_pagos[13, dgv_pagos.CurrentRow.Index].Value;
+                    pago.Matricula.Numeromatricula = (int)dgv_pagos[11, dgv_pagos.CurrentRow.Index].Value;
+                    pago.Matricula.estudiante.Id_estudiante = (int)dgv_pagos[12, dgv_pagos.CurrentRow.Index].Value;
+                    pago.Matricula.estudiante.DocumentoEstudiante = (String)dgv_pagos[13, dgv_pagos.CurrentRow.Index].Value;
+                    pago.Matricula.estudiante.NombreEstudiante = (String)dgv_pagos[14, dgv_pagos.CurrentRow.Index].Value;
+                    pago.Matricula.estudiante.NombreAcudiente = (String)dgv_pagos[15, dgv_pagos.CurrentRow.Index].Value;
 
                     Frm_pago_detalle frm_admin_usuarios = new Frm_pago_detalle(pago, usuario);
                     frm_admin_usuarios.Show();
@@ -240,6 +245,16 @@ namespace Windows_vista.pagos
             Frm_inicio_sesion frm_inicio_sesion = new Frm_inicio_sesion();
             frm_inicio_sesion.Show();
             this.Close();
+        }
+
+        private void dgv_pagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Frm_admin_pagos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

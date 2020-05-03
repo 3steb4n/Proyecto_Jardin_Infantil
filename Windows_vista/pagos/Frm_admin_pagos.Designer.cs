@@ -46,6 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_pagos = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.combo_concepto_pago = new System.Windows.Forms.ComboBox();
+            this.Btn_detalle = new System.Windows.Forms.Button();
             this.id_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor_monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +60,8 @@
             this.Fecha_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_concepto_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_concepto_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero_Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +70,6 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.combo_concepto_pago = new System.Windows.Forms.ComboBox();
-            this.Btn_detalle = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -276,6 +278,8 @@
             this.Fecha_registro,
             this.id_concepto_pago,
             this.nombre_concepto_pago,
+            this.Id_matricula,
+            this.Numero_Matricula,
             this.id_estudiante,
             this.Documento_estudiante,
             this.Nombre_estudiante,
@@ -308,7 +312,52 @@
             this.dgv_pagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pagos.Size = new System.Drawing.Size(937, 505);
             this.dgv_pagos.TabIndex = 56;
+            this.dgv_pagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pagos_CellContentClick);
             this.dgv_pagos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_pagos_CellFormatting);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(271, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 32);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Gestión de pagos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 15);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Concepto pago:";
+            // 
+            // combo_concepto_pago
+            // 
+            this.combo_concepto_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_concepto_pago.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_concepto_pago.FormattingEnabled = true;
+            this.combo_concepto_pago.Location = new System.Drawing.Point(766, 70);
+            this.combo_concepto_pago.Name = "combo_concepto_pago";
+            this.combo_concepto_pago.Size = new System.Drawing.Size(271, 28);
+            this.combo_concepto_pago.TabIndex = 63;
+            // 
+            // Btn_detalle
+            // 
+            this.Btn_detalle.BackColor = System.Drawing.Color.Teal;
+            this.Btn_detalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_detalle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_detalle.ForeColor = System.Drawing.Color.White;
+            this.Btn_detalle.Location = new System.Drawing.Point(959, 629);
+            this.Btn_detalle.Name = "Btn_detalle";
+            this.Btn_detalle.Size = new System.Drawing.Size(120, 32);
+            this.Btn_detalle.TabIndex = 65;
+            this.Btn_detalle.Text = "Ver detalle";
+            this.Btn_detalle.UseVisualStyleBackColor = false;
+            this.Btn_detalle.Click += new System.EventHandler(this.Btn_detalle_Click);
             // 
             // id_pago
             // 
@@ -372,6 +421,19 @@
             this.nombre_concepto_pago.Name = "nombre_concepto_pago";
             this.nombre_concepto_pago.ReadOnly = true;
             // 
+            // Id_matricula
+            // 
+            this.Id_matricula.HeaderText = "Id_matricula";
+            this.Id_matricula.Name = "Id_matricula";
+            this.Id_matricula.ReadOnly = true;
+            this.Id_matricula.Visible = false;
+            // 
+            // Numero_Matricula
+            // 
+            this.Numero_Matricula.HeaderText = "Numero de la Matricula";
+            this.Numero_Matricula.Name = "Numero_Matricula";
+            this.Numero_Matricula.ReadOnly = true;
+            // 
             // id_estudiante
             // 
             this.id_estudiante.HeaderText = "id_estudiante";
@@ -421,50 +483,6 @@
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 32);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Gestión de pagos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "Concepto pago:";
-            // 
-            // combo_concepto_pago
-            // 
-            this.combo_concepto_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_concepto_pago.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combo_concepto_pago.FormattingEnabled = true;
-            this.combo_concepto_pago.Location = new System.Drawing.Point(766, 70);
-            this.combo_concepto_pago.Name = "combo_concepto_pago";
-            this.combo_concepto_pago.Size = new System.Drawing.Size(271, 28);
-            this.combo_concepto_pago.TabIndex = 63;
-            // 
-            // Btn_detalle
-            // 
-            this.Btn_detalle.BackColor = System.Drawing.Color.Teal;
-            this.Btn_detalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_detalle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_detalle.ForeColor = System.Drawing.Color.White;
-            this.Btn_detalle.Location = new System.Drawing.Point(959, 629);
-            this.Btn_detalle.Name = "Btn_detalle";
-            this.Btn_detalle.Size = new System.Drawing.Size(120, 32);
-            this.Btn_detalle.TabIndex = 65;
-            this.Btn_detalle.Text = "Ver detalle";
-            this.Btn_detalle.UseVisualStyleBackColor = false;
-            this.Btn_detalle.Click += new System.EventHandler(this.Btn_detalle_Click);
-            // 
             // Frm_admin_pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +503,7 @@
             this.Name = "Frm_admin_pagos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Frm_admin_pagos_Load);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -524,6 +543,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_registro;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_concepto_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_concepto_pago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento_estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_estudiante;

@@ -54,15 +54,16 @@ namespace Datos
                             pago.FechaCreacion = (DateTime)dr["FechaCreacion"];
                             pago.ConceptoPago.IdConcepto = (int)dr["IdConcepto"];
                             pago.ConceptoPago.NombreConcepto = (String)dr["NombreConcepto"];
-                            pago.Estudiante.Id_estudiante = (int)dr["IDEstudiante"];
-                            pago.Estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
-                            pago.Estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
-                            pago.Estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
-                            pago.Estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
-                            pago.Estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
-                            pago.Estudiante.TelefonoAcudiente = (String)dr["telefono"];
-                            pago.Estudiante.CelularAcudiente = (String)dr["celular"];
-                            pago.Estudiante.Direccion = (String)dr["direccion"];
+                            pago.Matricula.Id_matricula = (int)dr["IDMatricula"];
+                            pago.Matricula.Numeromatricula = (int)dr["NumeroMatricula"];
+                            pago.Matricula.estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
+                            pago.Matricula.estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
+                            pago.Matricula.estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
+                            pago.Matricula.estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
+                            pago.Matricula.estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            pago.Matricula.estudiante.TelefonoAcudiente = (String)dr["telefono"];
+                            pago.Matricula.estudiante.CelularAcudiente = (String)dr["celular"];
+                            pago.Matricula.estudiante.Direccion = (String)dr["direccion"];
 
                             list.Add(pago);
                         }
@@ -105,15 +106,16 @@ namespace Datos
                             pago.FechaCreacion = (DateTime)dr["FechaCreacion"];
                             pago.ConceptoPago.IdConcepto = (int)dr["IdConcepto"];
                             pago.ConceptoPago.NombreConcepto = (String)dr["NombreConcepto"];
-                            pago.Estudiante.Id_estudiante = (int)dr["IDEstudiante"];
-                            pago.Estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
-                            pago.Estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
-                            pago.Estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
-                            pago.Estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
-                            pago.Estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
-                            pago.Estudiante.TelefonoAcudiente = (String)dr["telefono"];
-                            pago.Estudiante.CelularAcudiente = (String)dr["celular"];
-                            pago.Estudiante.Direccion = (String)dr["direccion"];
+                            pago.Matricula.Id_matricula = (int)dr["IDMatricula"];
+                            pago.Matricula.Numeromatricula = (int)dr["NumeroMatricula"];
+                            pago.Matricula.estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
+                            pago.Matricula.estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
+                            pago.Matricula.estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
+                            pago.Matricula.estudiante.NombreAcudiente = (String)dr["AcudienteNombre"];
+                            pago.Matricula.estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            pago.Matricula.estudiante.TelefonoAcudiente = (String)dr["telefono"];
+                            pago.Matricula.estudiante.CelularAcudiente = (String)dr["celular"];
+                            pago.Matricula.estudiante.Direccion = (String)dr["direccion"];
 
                             list.Add(pago);
                         }
@@ -144,7 +146,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@UsuarioCreacion", pago.UsuarioCreacion);
                     cmd.Parameters.AddWithValue("@FechaCreacion", pago.FechaCreacion);
                     cmd.Parameters.AddWithValue("@IdConceptoPago", pago.ConceptoPago.IdConcepto);
-                    cmd.Parameters.AddWithValue("@IdEstudiante", pago.Estudiante.Id_estudiante);
+                    cmd.Parameters.AddWithValue("@IdMatricula", pago.Matricula.Id_matricula);
 
                     flag = cmd.ExecuteNonQuery() != 0;
                 }

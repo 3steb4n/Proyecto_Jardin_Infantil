@@ -11,17 +11,17 @@ namespace Entidades
         DateTime _fechaCreacion;
         ConceptoPago _conceptoPago;
         Usuario _usuario;
-        Estudiante _estudiante;
+        Matricula _matricula;
 
         public Pago()
         {
             _conceptoPago = new ConceptoPago();
             _usuario = new Usuario();
-            _estudiante = new Estudiante();
+            _matricula = new Matricula();
 
         }
 
-        public Pago(int idPago, int valorMonto, String descripcionPago, String usuarioCreacion, DateTime fechaCreacion, ConceptoPago conceptoPago, Usuario usuario, Estudiante estudiante)
+        public Pago(int idPago, int valorMonto, String descripcionPago, String usuarioCreacion, DateTime fechaCreacion, ConceptoPago conceptoPago, Usuario usuario, Matricula matricula)
         {
             this._idPago = idPago;
             this._valorMonto = valorMonto;
@@ -30,7 +30,7 @@ namespace Entidades
             this._fechaCreacion = fechaCreacion;
             this._conceptoPago = conceptoPago;
             this._usuario = usuario;
-            this._estudiante = estudiante;
+            this._matricula = matricula;
         }
 
         public int IdPago
@@ -72,10 +72,10 @@ namespace Entidades
             set => _usuario = value;
         }
 
-        public Estudiante Estudiante
+        public Matricula Matricula
         {
-            get => _estudiante;
-            set => _estudiante = value;
+            get => _matricula;
+            set => _matricula = value;
         }
     }
 }
