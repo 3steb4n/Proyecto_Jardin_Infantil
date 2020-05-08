@@ -33,7 +33,7 @@ namespace Windows_vista.reportes
 
         public void CargarDatos()
         {
-            lista = blmatricula.ListarMatricula();
+            lista = blmatricula.ListarReporteEstudiante();
             dgv_ListarEstudiantePorGrupo.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
@@ -74,10 +74,10 @@ namespace Windows_vista.reportes
 
         }
 
-        public void CargarDatoFiltroDocumentoGrupo(String documento, int idGrupo)
+        public void CargarDatoFiltroDocumentoGrupo(int idGrupo)
         {
             List<Matricula> matricula = new List<Matricula>();
-            matricula = blmatricula.ListarMatriculasPorDocumentoyGrupo(documento, idGrupo);
+            matricula = blmatricula.ListarReporteEstudianteGrupo(idGrupo);
             dgv_ListarEstudiantePorGrupo.Rows.Clear();
 
             for (int i = 0; i < matricula.Count; i++)
@@ -157,7 +157,7 @@ namespace Windows_vista.reportes
                 style.Font.Bold = true;
 
                 List<Matricula> matricula = new List<Matricula>();
-                matricula = blmatricula.ListarMatriculasPorDocumentoyGrupo("", IDPorNombre(combo_grupo.Text));
+                matricula = blmatricula.ListarReporteEstudianteGrupo(IDPorNombre(combo_grupo.Text));
 
                 int iC = 1;
                 foreach (DataGridViewColumn column in dgv_ListarEstudiantePorGrupo.Columns)
@@ -185,7 +185,7 @@ namespace Windows_vista.reportes
                     sl.SetCellValue(iR, 14, row.estudiante.EstadoEstudiante.ToString());
                     sl.SetCellValue(iR, 15, row.grupo.NombreGrupo.ToString());
                     //sl.SetCellValue(iR, 16, row.grupo.IdGrupo.ToString());
-                    sl.SetCellValue(iR, 17, row.estudiante.Ruta_foto.ToString());
+                    //sl.SetCellValue(iR, 17, row.estudiante.Ruta_foto.ToString());
                     iR++;
                 }
                 sl.SaveAs(@"C:\Users\User\Documents\JardidPrueba.xlsx");
@@ -214,7 +214,7 @@ namespace Windows_vista.reportes
             }
             else
             {
-                CargarDatoFiltroDocumentoGrupo("" , IDPorNombre(combo_grupo.Text));
+                CargarDatoFiltroDocumentoGrupo(IDPorNombre(combo_grupo.Text));
             }
         }
 

@@ -522,7 +522,55 @@ SELECT
 
 FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante where  e.Documento_Estudiante LIKE '%'+@Documento+'%' and gr.id_grupo = @idGrupo;
 GO
+use JardinInfantil;
+CREATE PROCEDURE ListarReporteMatricula
+AS
+SELECT   
+		 m.ID_estudiante [IdEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 e.Tipo_Documento [TipoDocumento],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Fecha_Nacimiento [FechaNacimiento],
+		 e.Acudiente_Nombre [NombreAcudiente],
+		 e.Direccion [Direccion],
+		 e.Genero_Estudiante [Genero],
+		 e.Telefono [Telefono],
+		 e.Celular [Celular],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Observaciones [Observaciones],
+		 e.Estado_Estudiante [EstadoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
 
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante ;
+GO
+
+use JardinInfantil;
+CREATE PROCEDURE ListarReporteMatriculaPorGrupo
+@idGrupo int
+AS
+SELECT   
+		 m.ID_estudiante [IdEstudiante],
+		 e.Documento_Estudiante [DocumentoEstudiante],
+		 e.Tipo_Documento [TipoDocumento],
+		 e.Nombre_Estudiante [NombreEstudiante],
+		 e.Apellido_Estudiante [ApellidoEstudiante],
+		 e.Fecha_Nacimiento [FechaNacimiento],
+		 e.Acudiente_Nombre [NombreAcudiente],
+		 e.Direccion [Direccion],
+		 e.Genero_Estudiante [Genero],
+		 e.Telefono [Telefono],
+		 e.Celular [Celular],
+		 e.Correo_Electronico [CorreoElectronico],
+		 e.Observaciones [Observaciones],
+		 e.Estado_Estudiante [EstadoEstudiante],
+		 m.ID_grupo [Idgrupo],
+		 gr.Nombre_Grupo [NombreGrupo]
+
+FROM Matriculas m INNER JOIN Grupos gr ON gr.id_grupo = m.ID_grupo INNER JOIN Estudiantes e on e.ID_estudiante = m.ID_estudiante where gr.id_grupo = @idGrupo ;
+GO
+select * from Usuarios;
 
 -- use JardinInfantil
 -- select * from grupos;
@@ -1120,18 +1168,19 @@ select * from Abono_Pago;
 create table Notas(
     Id_Nota int IDENTITY (1,1) NOT NULL PRIMARY KEY,
     Nota decimal (2,1) NOT NULL,
+	Valoracion int ,
     Usuario_Creacion varchar(30),
     Fecha_Creacion datetime,
     Usuario_Modificacion varchar(30),
     Fecha_Modificacion datetime,
     Id_usuario int,
-    Id_estudiante int,
+    Id_Matricula int,
     Id_materia int,
     Id_periodo int
 );
 
 ALTER TABLE Notas ADD FOREIGN KEY (Id_usuario) REFERENCES Usuarios(Id_Usuario);
-ALTER TABLE Notas ADD FOREIGN KEY (Id_estudiante) REFERENCES Estudiantes(ID_estudiante);
+ALTER TABLE Notas ADD FOREIGN KEY (Id_Matricula) REFERENCES Matricula(ID_estudiante);
 ALTER TABLE Notas ADD FOREIGN KEY (Id_materia) REFERENCES Materias(Id_Materia);
 ALTER TABLE Notas ADD FOREIGN KEY (Id_periodo) REFERENCES Periodos(Id_periodo);
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

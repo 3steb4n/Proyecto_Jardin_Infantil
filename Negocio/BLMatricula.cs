@@ -29,11 +29,23 @@ namespace Negocio
             return daoMatricula.ListarPorGrupo(idGrupo);
         }
 
+        public List<Matricula> ListarReporteEstudiante()
+        {
+            DaoMatricula daoMatricula = new DaoMatricula();
+            return daoMatricula.ListarReporte();
+        }
+
         public List<Matricula> ListarMatriculasPorDocumentoyGrupo(String documento, int idGrupo)
         {
             DaoMatricula daoMatricula = new DaoMatricula();
 
             return daoMatricula.ListarPorDocumentoyGrupo(documento, idGrupo);
+        }
+
+        public List<Matricula> ListarReporteEstudianteGrupo(int idGrupo)
+        {
+            DaoMatricula daoMatricula = new DaoMatricula();
+            return daoMatricula.ListarReporteMatriculaGrupo(idGrupo);
         }
 
         public bool InsertarMatriculas(Matricula matricula)

@@ -67,6 +67,102 @@ namespace Datos
                 return list;
             }
         }
+        public List<Matricula> ListarReporte()
+        {
+            List<Matricula> list = new List<Matricula>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarReporteMatricula", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Matricula matricula = new Matricula();
+
+                            matricula.estudiante.Id_estudiante = (int)dr["IdEstudiante"];
+                            matricula.estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
+                            matricula.estudiante.TipoDocumento = (String)dr["TipoDocumento"];
+                            matricula.estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
+                            matricula.estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
+                            matricula.estudiante.FechaNacimiento = (DateTime)dr["FechaNacimiento"];
+                            matricula.estudiante.NombreAcudiente = (String)dr["NombreAcudiente"];
+                            matricula.estudiante.Direccion = (String)dr["Direccion"];
+                            matricula.estudiante.Genero = (String)dr["Genero"];
+                            matricula.estudiante.TelefonoAcudiente = (String)dr["Telefono"];
+                            matricula.estudiante.CelularAcudiente = (String)dr["Celular"];
+                            matricula.estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            matricula.estudiante.ObservacionesEstudiante = (String)dr["Observaciones"];
+                            matricula.estudiante.EstadoEstudiante = (String)dr["EstadoEstudiante"];
+                            matricula.grupo.IdGrupo = (int)dr["Idgrupo"];
+                            matricula.grupo.NombreGrupo = (String)dr["NombreGrupo"];
+
+                            list.Add(matricula);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante listaGeneral: " + e);
+                return list;
+            }
+        }
+
+        public List<Matricula> ListarReporteMatriculaGrupo(int idGrupo)
+        {
+            List<Matricula> list = new List<Matricula>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarReporteMatriculaPorGrupo", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Matricula matricula = new Matricula();
+
+                            matricula.estudiante.Id_estudiante = (int)dr["IdEstudiante"];
+                            matricula.estudiante.DocumentoEstudiante = (String)dr["DocumentoEstudiante"];
+                            matricula.estudiante.TipoDocumento = (String)dr["TipoDocumento"];
+                            matricula.estudiante.NombreEstudiante = (String)dr["NombreEstudiante"];
+                            matricula.estudiante.ApellidoEstudiante = (String)dr["ApellidoEstudiante"];
+                            matricula.estudiante.FechaNacimiento = (DateTime)dr["FechaNacimiento"];
+                            matricula.estudiante.NombreAcudiente = (String)dr["NombreAcudiente"];
+                            matricula.estudiante.Direccion = (String)dr["Direccion"];
+                            matricula.estudiante.Genero = (String)dr["Genero"];
+                            matricula.estudiante.TelefonoAcudiente = (String)dr["Telefono"];
+                            matricula.estudiante.CelularAcudiente = (String)dr["Celular"];
+                            matricula.estudiante.CorreoElectronicoAcudiente = (String)dr["CorreoElectronico"];
+                            matricula.estudiante.ObservacionesEstudiante = (String)dr["Observaciones"];
+                            matricula.estudiante.EstadoEstudiante = (String)dr["EstadoEstudiante"];
+                            matricula.grupo.IdGrupo = (int)dr["Idgrupo"];
+                            matricula.grupo.NombreGrupo = (String)dr["NombreGrupo"];
+
+                            list.Add(matricula);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante listaGeneral: " + e);
+                return list;
+            }
+        }
         public List<Matricula> ListaPorDocumento(String documento)
         {
 
