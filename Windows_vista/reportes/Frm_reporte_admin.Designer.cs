@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnEstudiantesGrupos;
+            System.Windows.Forms.Button button1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_reporte_admin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Volver = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             btnEstudiantesGrupos = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -47,9 +49,52 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnEstudiantesGrupos
+            // 
+            btnEstudiantesGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            btnEstudiantesGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            btnEstudiantesGrupos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            btnEstudiantesGrupos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btnEstudiantesGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnEstudiantesGrupos.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            btnEstudiantesGrupos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            btnEstudiantesGrupos.Image = global::Windows_vista.Properties.Resources.ListarE;
+            btnEstudiantesGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnEstudiantesGrupos.Location = new System.Drawing.Point(0, 0);
+            btnEstudiantesGrupos.Name = "btnEstudiantesGrupos";
+            btnEstudiantesGrupos.Size = new System.Drawing.Size(238, 47);
+            btnEstudiantesGrupos.TabIndex = 6;
+            btnEstudiantesGrupos.Text = "Lista Estudiantes Por Grupos";
+            btnEstudiantesGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnEstudiantesGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btnEstudiantesGrupos.UseVisualStyleBackColor = false;
+            btnEstudiantesGrupos.Click += new System.EventHandler(this.btnEstudiantesGrupos_Click);
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            button1.Dock = System.Windows.Forms.DockStyle.Top;
+            button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button1.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
+            button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            button1.Image = global::Windows_vista.Properties.Resources.ListarE;
+            button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            button1.Location = new System.Drawing.Point(0, 94);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(238, 47);
+            button1.TabIndex = 7;
+            button1.Text = "Lista Estudiantes Por Materia";
+            button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panel1.Controls.Add(button1);
             this.panel1.Controls.Add(this.btn_Volver);
             this.panel1.Controls.Add(this.btnReporteXML);
             this.panel1.Controls.Add(btnEstudiantesGrupos);
@@ -88,27 +133,7 @@
             this.btnReporteXML.TabIndex = 1;
             this.btnReporteXML.Text = "Reporte XML";
             this.btnReporteXML.UseVisualStyleBackColor = false;
-            // 
-            // btnEstudiantesGrupos
-            // 
-            btnEstudiantesGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            btnEstudiantesGrupos.Dock = System.Windows.Forms.DockStyle.Top;
-            btnEstudiantesGrupos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            btnEstudiantesGrupos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            btnEstudiantesGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnEstudiantesGrupos.Font = new System.Drawing.Font("Segoe UI Symbol", 10F);
-            btnEstudiantesGrupos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            btnEstudiantesGrupos.Image = global::Windows_vista.Properties.Resources.ListarE;
-            btnEstudiantesGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnEstudiantesGrupos.Location = new System.Drawing.Point(0, 0);
-            btnEstudiantesGrupos.Name = "btnEstudiantesGrupos";
-            btnEstudiantesGrupos.Size = new System.Drawing.Size(238, 47);
-            btnEstudiantesGrupos.TabIndex = 6;
-            btnEstudiantesGrupos.Text = "Lista Estudiantes Por Grupos";
-            btnEstudiantesGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            btnEstudiantesGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btnEstudiantesGrupos.UseVisualStyleBackColor = false;
-            btnEstudiantesGrupos.Click += new System.EventHandler(this.btnEstudiantesGrupos_Click);
+            this.btnReporteXML.Click += new System.EventHandler(this.btnReporteXML_Click);
             // 
             // panel2
             // 

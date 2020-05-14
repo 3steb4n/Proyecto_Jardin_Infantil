@@ -60,5 +60,41 @@ namespace Datos
                 return list;
             }
         }
+
+        public List<Grado> ListaReporteGrados()
+        {
+            List<Grado> list = new List<Grado>();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(CadenaConexion))
+                {
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("ListarReporteGrado", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr != null & dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Grado grado = new Grado();
+
+                            grado.IdGrado = (int)dr["idGrado"];
+                            grado.NombreGrado = (String)dr["NombreGrado"];
+                            grado.Descripcion = (String)dr["Descripcion"];
+                            grado.Estado = (String)dr["Estado"];
+
+                            list.Add(grado);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al consultar mediante listaGeneral: " + e);
+                return list;
+            }
+        }
     }
 }

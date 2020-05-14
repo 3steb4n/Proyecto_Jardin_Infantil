@@ -154,6 +154,7 @@
             this.Name = "frm_reporte_secretaria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_reporte_secretaria";
+            this.Load += new System.EventHandler(this.frm_reporte_secretaria_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

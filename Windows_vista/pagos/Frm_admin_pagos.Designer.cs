@@ -46,10 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_pagos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.combo_concepto_pago = new System.Windows.Forms.ComboBox();
-            this.Btn_detalle = new System.Windows.Forms.Button();
             this.id_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor_monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +66,11 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.combo_concepto_pago = new System.Windows.Forms.ComboBox();
+            this.Btn_detalle = new System.Windows.Forms.Button();
+            this.PDF = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -315,50 +316,6 @@
             this.dgv_pagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pagos_CellContentClick);
             this.dgv_pagos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_pagos_CellFormatting);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 32);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Gestión de pagos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "Concepto pago:";
-            // 
-            // combo_concepto_pago
-            // 
-            this.combo_concepto_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_concepto_pago.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combo_concepto_pago.FormattingEnabled = true;
-            this.combo_concepto_pago.Location = new System.Drawing.Point(766, 70);
-            this.combo_concepto_pago.Name = "combo_concepto_pago";
-            this.combo_concepto_pago.Size = new System.Drawing.Size(271, 28);
-            this.combo_concepto_pago.TabIndex = 63;
-            // 
-            // Btn_detalle
-            // 
-            this.Btn_detalle.BackColor = System.Drawing.Color.Teal;
-            this.Btn_detalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_detalle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_detalle.ForeColor = System.Drawing.Color.White;
-            this.Btn_detalle.Location = new System.Drawing.Point(959, 629);
-            this.Btn_detalle.Name = "Btn_detalle";
-            this.Btn_detalle.Size = new System.Drawing.Size(120, 32);
-            this.Btn_detalle.TabIndex = 65;
-            this.Btn_detalle.Text = "Ver detalle";
-            this.Btn_detalle.UseVisualStyleBackColor = false;
-            this.Btn_detalle.Click += new System.EventHandler(this.Btn_detalle_Click);
-            // 
             // id_pago
             // 
             this.id_pago.HeaderText = "# de pago";
@@ -483,11 +440,70 @@
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(271, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 32);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Gestión de pagos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 15);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Concepto pago:";
+            // 
+            // combo_concepto_pago
+            // 
+            this.combo_concepto_pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_concepto_pago.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_concepto_pago.FormattingEnabled = true;
+            this.combo_concepto_pago.Location = new System.Drawing.Point(766, 70);
+            this.combo_concepto_pago.Name = "combo_concepto_pago";
+            this.combo_concepto_pago.Size = new System.Drawing.Size(271, 28);
+            this.combo_concepto_pago.TabIndex = 63;
+            // 
+            // Btn_detalle
+            // 
+            this.Btn_detalle.BackColor = System.Drawing.Color.Teal;
+            this.Btn_detalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_detalle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_detalle.ForeColor = System.Drawing.Color.White;
+            this.Btn_detalle.Location = new System.Drawing.Point(959, 629);
+            this.Btn_detalle.Name = "Btn_detalle";
+            this.Btn_detalle.Size = new System.Drawing.Size(120, 32);
+            this.Btn_detalle.TabIndex = 65;
+            this.Btn_detalle.Text = "Ver detalle";
+            this.Btn_detalle.UseVisualStyleBackColor = false;
+            this.Btn_detalle.Click += new System.EventHandler(this.Btn_detalle_Click);
+            // 
+            // PDF
+            // 
+            this.PDF.BackColor = System.Drawing.Color.Teal;
+            this.PDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PDF.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PDF.ForeColor = System.Drawing.Color.White;
+            this.PDF.Location = new System.Drawing.Point(809, 629);
+            this.PDF.Name = "PDF";
+            this.PDF.Size = new System.Drawing.Size(120, 32);
+            this.PDF.TabIndex = 66;
+            this.PDF.Text = "Exportar PDF";
+            this.PDF.UseVisualStyleBackColor = false;
+            this.PDF.Click += new System.EventHandler(this.PDF_Click);
+            // 
             // Frm_admin_pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 673);
+            this.Controls.Add(this.PDF);
             this.Controls.Add(this.Btn_detalle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.combo_concepto_pago);
@@ -553,5 +569,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.Button PDF;
     }
 }

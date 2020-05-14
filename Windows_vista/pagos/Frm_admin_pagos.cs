@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 using Windows_vista.docentes;
 
 namespace Windows_vista.pagos
@@ -255,6 +258,55 @@ namespace Windows_vista.pagos
         private void Frm_admin_pagos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void exportgridopdf(DataGridView dgv_pagos,string filename)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdf = new PdfPTable(dgv_pagos.Columns.Count);
+            pdf.DefaultCell.Padding = 3;
+            pdf.WidthPercentage = 100;
+            pdf.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdf.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            foreach (DataGridViewColumn column in dgv_pagos.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdf.AddCell(cell);
+            }
+
+            foreach (DataGridViewRow row in dgv_pagos.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdf.AddCell(new Phrase(cell.Value.ToString(), text));
+                }
+            }
+
+            var savefiledialoge = new SaveFileDialog();
+            savefiledialoge.FileName = filename;
+            savefiledialoge.DefaultExt = ".pdf";
+            if (savefiledialoge.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefiledialoge.FileName,FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfdoc, stream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(pdf);
+                    pdfdoc.Close();
+                    stream.Close();
+                }
+            }
+        }
+        
+        
+        private void PDF_Click(object sender, EventArgs e)
+        {
+            exportgridopdf(dgv_pagos, "text");
         }
     }
 }

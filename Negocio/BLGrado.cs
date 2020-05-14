@@ -12,5 +12,10 @@ namespace Negocio
             return daoGrado.ListaGeneral();
         }
 
+        public List<Grado> ListarReporteGrados()
+        {
+            DaoGrado daoGrado = new DaoGrado();
+            return daoGrado.ListaReporteGrados();
+        }
     }
 }

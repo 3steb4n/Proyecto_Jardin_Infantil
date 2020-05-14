@@ -291,6 +291,16 @@ SELECT  Id_Grado [idGrado],
 		FROM Grados  where Estado = 'A';
 GO
 
+CREATE PROCEDURE ListarReporteGrado
+AS
+SELECT  Id_Grado [idGrado],
+		Nombre_Grado [NombreGrado],
+		Descripcion_Grado [Descripcion],
+		Estado [Estado]
+		FROM Grados  ;
+GO
+
+
 EXEC ListarGrados;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -8,5 +8,10 @@ namespace Windows_vista.reportes
         {
             InitializeComponent();
         }
+
+        private void frm_reporte_docente_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

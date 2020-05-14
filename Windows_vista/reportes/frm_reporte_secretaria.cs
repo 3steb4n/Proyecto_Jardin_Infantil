@@ -43,5 +43,10 @@ namespace Windows_vista.reportes
             frm.Show();
             this.Close();
         }
+
+        private void frm_reporte_secretaria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

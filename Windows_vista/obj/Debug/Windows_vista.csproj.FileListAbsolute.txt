@@ -242,3 +242,7 @@ D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\bin\Debug\Datos.pdb
 D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\obj\Debug\Windows_vista.csproj.CopyComplete
 D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\obj\Debug\Windows_vista.estudiantes.Frm_crear_matricula.resources
 D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\obj\Debug\Windows_vista.estudiantes.Frm_administracion__matriculas.resources
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\obj\Debug\Windows_vista.reportes.Frm_Listado_Estudiantes_vs_Materias.resources
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\bin\Debug\itextsharp.dll
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\bin\Debug\itextsharp.xml
+D:\Trabajos U\jardid\Jardinv3.0\jardin\Windows_vista\obj\Debug\Windows_vista.reportes.Frm_Reporte_XML.resources

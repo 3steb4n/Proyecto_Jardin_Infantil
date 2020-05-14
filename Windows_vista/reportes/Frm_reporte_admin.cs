@@ -55,5 +55,19 @@ namespace Windows_vista.reportes
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Frm_Listado_Estudiantes_vs_Materias frm  = new Frm_Listado_Estudiantes_vs_Materias();
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnReporteXML_Click(object sender, EventArgs e)
+        {
+            Frm_Reporte_XML frm = new Frm_Reporte_XML();
+            frm.Show();
+            this.Close();
+        }
     }
 }
