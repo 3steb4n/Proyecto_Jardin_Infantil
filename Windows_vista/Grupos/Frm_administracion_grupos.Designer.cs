@@ -40,15 +40,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_grupos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
-            this.Btn_reportes = new System.Windows.Forms.Button();
-            this.Btn_materias = new System.Windows.Forms.Button();
-            this.BtnGrupos = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion_Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +49,15 @@
             this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Btn_reportes = new System.Windows.Forms.Button();
+            this.Btn_materias = new System.Windows.Forms.Button();
+            this.BtnGrupos = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             Btn_usuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).BeginInit();
             this.panel4.SuspendLayout();
@@ -211,6 +211,63 @@
             this.dgv_grupos.Size = new System.Drawing.Size(942, 477);
             this.dgv_grupos.TabIndex = 34;
             // 
+            // id_grupo
+            // 
+            this.id_grupo.HeaderText = "";
+            this.id_grupo.Name = "id_grupo";
+            this.id_grupo.ReadOnly = true;
+            this.id_grupo.Visible = false;
+            // 
+            // Nombre_grupo
+            // 
+            this.Nombre_grupo.HeaderText = "Grupo";
+            this.Nombre_grupo.Name = "Nombre_grupo";
+            this.Nombre_grupo.ReadOnly = true;
+            // 
+            // Descripcion_Grupo
+            // 
+            this.Descripcion_Grupo.HeaderText = "Descripción";
+            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
+            this.Descripcion_Grupo.ReadOnly = true;
+            // 
+            // Estado_grupo
+            // 
+            this.Estado_grupo.HeaderText = "Estado grupo";
+            this.Estado_grupo.Name = "Estado_grupo";
+            this.Estado_grupo.ReadOnly = true;
+            // 
+            // Nombre_grado
+            // 
+            this.Nombre_grado.HeaderText = "Grado";
+            this.Nombre_grado.Name = "Nombre_grado";
+            this.Nombre_grado.ReadOnly = true;
+            // 
+            // id_grado
+            // 
+            this.id_grado.HeaderText = "id_grado";
+            this.id_grado.Name = "id_grado";
+            this.id_grado.ReadOnly = true;
+            this.id_grado.Visible = false;
+            // 
+            // id_docente
+            // 
+            this.id_docente.HeaderText = "id_docente";
+            this.id_docente.Name = "id_docente";
+            this.id_docente.ReadOnly = true;
+            this.id_docente.Visible = false;
+            // 
+            // nombres_docente
+            // 
+            this.nombres_docente.HeaderText = "Nombre docente";
+            this.nombres_docente.Name = "nombres_docente";
+            this.nombres_docente.ReadOnly = true;
+            // 
+            // apellidos_docente
+            // 
+            this.apellidos_docente.HeaderText = "Apellidos docente";
+            this.apellidos_docente.Name = "apellidos_docente";
+            this.apellidos_docente.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -275,6 +332,7 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_materias
             // 
@@ -328,63 +386,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // id_grupo
-            // 
-            this.id_grupo.HeaderText = "";
-            this.id_grupo.Name = "id_grupo";
-            this.id_grupo.ReadOnly = true;
-            this.id_grupo.Visible = false;
-            // 
-            // Nombre_grupo
-            // 
-            this.Nombre_grupo.HeaderText = "Grupo";
-            this.Nombre_grupo.Name = "Nombre_grupo";
-            this.Nombre_grupo.ReadOnly = true;
-            // 
-            // Descripcion_Grupo
-            // 
-            this.Descripcion_Grupo.HeaderText = "Descripción";
-            this.Descripcion_Grupo.Name = "Descripcion_Grupo";
-            this.Descripcion_Grupo.ReadOnly = true;
-            // 
-            // Estado_grupo
-            // 
-            this.Estado_grupo.HeaderText = "Estado grupo";
-            this.Estado_grupo.Name = "Estado_grupo";
-            this.Estado_grupo.ReadOnly = true;
-            // 
-            // Nombre_grado
-            // 
-            this.Nombre_grado.HeaderText = "Grado";
-            this.Nombre_grado.Name = "Nombre_grado";
-            this.Nombre_grado.ReadOnly = true;
-            // 
-            // id_grado
-            // 
-            this.id_grado.HeaderText = "id_grado";
-            this.id_grado.Name = "id_grado";
-            this.id_grado.ReadOnly = true;
-            this.id_grado.Visible = false;
-            // 
-            // id_docente
-            // 
-            this.id_docente.HeaderText = "id_docente";
-            this.id_docente.Name = "id_docente";
-            this.id_docente.ReadOnly = true;
-            this.id_docente.Visible = false;
-            // 
-            // nombres_docente
-            // 
-            this.nombres_docente.HeaderText = "Nombre docente";
-            this.nombres_docente.Name = "nombres_docente";
-            this.nombres_docente.ReadOnly = true;
-            // 
-            // apellidos_docente
-            // 
-            this.apellidos_docente.HeaderText = "Apellidos docente";
-            this.apellidos_docente.Name = "apellidos_docente";
-            this.apellidos_docente.ReadOnly = true;
-            // 
             // Frm_administracion_grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +406,7 @@
             this.Name = "Frm_administracion_grupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de grupos";
+            this.Load += new System.EventHandler(this.Frm_administracion_grupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_grupos)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

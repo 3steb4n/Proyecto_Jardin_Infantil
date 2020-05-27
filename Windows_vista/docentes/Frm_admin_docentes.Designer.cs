@@ -35,6 +35,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_admin_docentes));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Btn_cerrar = new System.Windows.Forms.Button();
+            this.Btn_pagos = new System.Windows.Forms.Button();
             this.Btn_reportes = new System.Windows.Forms.Button();
             this.Btn_estudiantes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,8 +60,6 @@
             this.Estado_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado_clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_pagos = new System.Windows.Forms.Button();
-            this.Btn_cerrar = new System.Windows.Forms.Button();
             Btn_usuarios = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -108,6 +108,37 @@
             this.panel5.Size = new System.Drawing.Size(238, 532);
             this.panel5.TabIndex = 12;
             // 
+            // Btn_cerrar
+            // 
+            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
+            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
+            this.Btn_cerrar.Name = "Btn_cerrar";
+            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
+            this.Btn_cerrar.TabIndex = 10;
+            this.Btn_cerrar.Text = "Cerrar sesión";
+            this.Btn_cerrar.UseVisualStyleBackColor = false;
+            // 
+            // Btn_pagos
+            // 
+            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
+            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
+            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
+            this.Btn_pagos.Name = "Btn_pagos";
+            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
+            this.Btn_pagos.TabIndex = 9;
+            this.Btn_pagos.Text = "Pagos";
+            this.Btn_pagos.UseVisualStyleBackColor = false;
+            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
+            // 
             // Btn_reportes
             // 
             this.Btn_reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
@@ -122,6 +153,7 @@
             this.Btn_reportes.TabIndex = 4;
             this.Btn_reportes.Text = "Reportes";
             this.Btn_reportes.UseVisualStyleBackColor = false;
+            this.Btn_reportes.Click += new System.EventHandler(this.Btn_reportes_Click);
             // 
             // Btn_estudiantes
             // 
@@ -365,37 +397,6 @@
             this.label1.Size = new System.Drawing.Size(234, 32);
             this.label1.TabIndex = 32;
             this.label1.Text = "Gestión de docentes";
-            // 
-            // Btn_pagos
-            // 
-            this.Btn_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_pagos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_pagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_pagos.Image = global::Windows_vista.Properties.Resources.pagar;
-            this.Btn_pagos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_pagos.Location = new System.Drawing.Point(0, 135);
-            this.Btn_pagos.Name = "Btn_pagos";
-            this.Btn_pagos.Size = new System.Drawing.Size(238, 44);
-            this.Btn_pagos.TabIndex = 9;
-            this.Btn_pagos.Text = "Pagos";
-            this.Btn_pagos.UseVisualStyleBackColor = false;
-            this.Btn_pagos.Click += new System.EventHandler(this.Btn_pagos_Click);
-            // 
-            // Btn_cerrar
-            // 
-            this.Btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.Btn_cerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrar.Image = global::Windows_vista.Properties.Resources.flecha;
-            this.Btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_cerrar.Location = new System.Drawing.Point(0, 179);
-            this.Btn_cerrar.Name = "Btn_cerrar";
-            this.Btn_cerrar.Size = new System.Drawing.Size(238, 44);
-            this.Btn_cerrar.TabIndex = 10;
-            this.Btn_cerrar.Text = "Cerrar sesión";
-            this.Btn_cerrar.UseVisualStyleBackColor = false;
             // 
             // Frm_admin_docentes
             // 

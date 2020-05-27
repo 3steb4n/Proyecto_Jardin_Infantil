@@ -3,6 +3,7 @@ using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Windows_vista.reportes;
 
 namespace Windows_vista.Materia
 {
@@ -191,6 +192,13 @@ namespace Windows_vista.Materia
         private void dgv_materias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+            Frm_reporte_admin frm = new Frm_reporte_admin(usuario);
+            frm.Show();
+            this.Close();
         }
     }
 }

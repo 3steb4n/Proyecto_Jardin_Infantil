@@ -8,6 +8,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using Windows_vista.docentes;
+using Windows_vista.reportes;
 
 namespace Windows_vista.pagos
 {
@@ -226,7 +227,9 @@ namespace Windows_vista.pagos
 
         private void Btn_reportes_Click(object sender, EventArgs e)
         {
-
+            frm_reporte_secretaria frm = new frm_reporte_secretaria(usuario);
+            frm.Show();
+            this.Close();
         }
 
         private void Btn_usuarios_Click(object sender, EventArgs e)

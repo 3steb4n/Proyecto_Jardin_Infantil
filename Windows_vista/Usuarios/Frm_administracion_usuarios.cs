@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Windows_vista.Materia;
+using Windows_vista.reportes;
 
 
 namespace Windows_vista
@@ -208,6 +209,13 @@ namespace Windows_vista
         private void Btn_cerrar_Click_1(object sender, EventArgs e)
         {
             Frm_inicio_sesion frm = new Frm_inicio_sesion();
+            frm.Show();
+            this.Close();
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+            Frm_reporte_admin frm = new Frm_reporte_admin(usuario);
             frm.Show();
             this.Close();
         }

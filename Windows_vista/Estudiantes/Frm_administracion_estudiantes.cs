@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Windows_vista.docentes;
 using Windows_vista.pagos;
 using Windows_vista.estudiantes;
+using Windows_vista.reportes;
 
 namespace Windows_vista
 {
@@ -238,6 +239,13 @@ namespace Windows_vista
         private void Frm_administracion_estudiantes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_reportes_Click(object sender, EventArgs e)
+        {
+            frm_reporte_secretaria frm = new frm_reporte_secretaria(usuario);
+            frm.Show();
+            this.Close();
         }
     }
 
